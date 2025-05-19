@@ -1,0 +1,3 @@
+should contain 3D models
+
+create new sub-folders for proper organization
