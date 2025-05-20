@@ -63,3 +63,7 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+
+func _on_static_body_3d_2_interacted(body: Variant) -> void:
+	pass # Replace with function body.

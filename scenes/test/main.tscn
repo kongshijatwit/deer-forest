@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://l6hd73ii6ydx"]
+[gd_scene load_steps=11 format=3 uid="uid://l6hd73ii6ydx"]
 
 [ext_resource type="PackedScene" uid="uid://bd5yk33i3obay" path="res://scenes/test/player.tscn" id="1_wwlvk"]
+[ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/examplerelic.gd" id="2_7p1hh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwlvk"]
 sky_top_color = Color(0, 0.474662, 0.72518, 1)
@@ -62,11 +63,16 @@ mesh = SubResource("BoxMesh_7p1hh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ae60x")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Objects"]
+[node name="ExampleRelic" type="StaticBody3D" parent="Objects"]
 transform = Transform3D(5.28297, 0, 0, 0, 2.99909, 0, 0, 0, 1, -8.01695, 1.52612, -3)
+script = ExtResource("2_7p1hh")
+prompt_message = "Claim Relic"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/ExampleRelic"]
 mesh = SubResource("BoxMesh_7p1hh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/ExampleRelic"]
 shape = SubResource("ConvexPolygonShape3D_ae60x")
+
+[connection signal="interacted" from="Objects/ExampleRelic" to="Player" method="_on_static_body_3d_2_interacted"]
+[connection signal="interacted" from="Objects/ExampleRelic" to="Objects/ExampleRelic" method="_on_interacted"]
