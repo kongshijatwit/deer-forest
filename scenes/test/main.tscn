@@ -51,11 +51,22 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_wwlvk")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -3)
+[node name="Objects" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects"]
+transform = Transform3D(5.28297, 0, 0, 0, 0.832534, 0, 0, 0, 1, 8, 0.437564, -3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D"]
 mesh = SubResource("BoxMesh_7p1hh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ae60x")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Objects"]
+transform = Transform3D(5.28297, 0, 0, 0, 2.99909, 0, 0, 0, 1, -8.01695, 1.52612, -3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D2"]
+mesh = SubResource("BoxMesh_7p1hh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_ae60x")
