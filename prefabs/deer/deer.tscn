@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxqbeieje54w3"]
+
+[ext_resource type="Script" uid="uid://chbnlf4sb5tev" path="res://scripts/deer/deer.gd" id="1_rvdin"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_so5nf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvdin"]
+albedo_color = Color(0.971633, 0.00975379, 1, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rvdin"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gcwh4"]
+radius = 6.04495
+
+[node name="Deer" type="CharacterBody3D"]
+script = ExtResource("1_rvdin")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_so5nf")
+surface_material_override/0 = SubResource("StandardMaterial3D_rvdin")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_rvdin")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="DetectionCollider" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_gcwh4")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_entered"]

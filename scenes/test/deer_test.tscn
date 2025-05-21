@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2g1vks7dnx6g"]
+[gd_scene load_steps=6 format=3 uid="uid://b2g1vks7dnx6g"]
+
+[ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="1_61it4"]
 
 [sub_resource type="Environment" id="Environment_bftmh"]
 
@@ -29,3 +31,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bftmh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_eqqxn")
+
+[node name="Deer" parent="." instance=ExtResource("1_61it4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27438, 1, 6.38368)
