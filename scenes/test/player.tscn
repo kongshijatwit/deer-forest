@@ -31,4 +31,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68553, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104002, 0)
 
 [node name="InteractRay" parent="Head" instance=ExtResource("2_60koi")]
-target_position = Vector3(0, 0, -1.5)
+target_position = Vector3(0, 0, -2)

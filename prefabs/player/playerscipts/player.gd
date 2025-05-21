@@ -54,6 +54,10 @@ func _physics_process(delta):
 	# Head bobbing
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
+	
+	# Shooting
+	#if Input.is_action_just_pressed("shoot"):
+		
 
 	move_and_slide()
 	
