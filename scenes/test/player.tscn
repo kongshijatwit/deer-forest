@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bd5yk33i3obay"]
 
-[ext_resource type="Script" uid="uid://ttpkwhwrvat3" path="res://prefabs/player/playerscipts/player.gd" id="1_0xn31"]
+[ext_resource type="Script" uid="uid://ttpkwhwrvat3" path="res://scripts/player/player.gd" id="1_0xn31"]
 [ext_resource type="PackedScene" uid="uid://xqqi8tpajkv5" path="res://prefabs/player/interact/interact_ray.tscn" id="2_60koi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xn31"]
