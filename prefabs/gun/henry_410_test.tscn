@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5nh2vagn31cw"]
+
+[ext_resource type="PackedScene" uid="uid://sh4ccvic3cv5" path="res://assets/models/Henry410_Test.glb" id="1_bkcot"]
+
+[node name="Henry410_Test" instance=ExtResource("1_bkcot")]
