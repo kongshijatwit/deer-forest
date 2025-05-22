@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://caki3btvmox6q"]
+[gd_scene load_steps=11 format=4 uid="uid://4s5bw0umlj7t"]
 
 [ext_resource type="Script" uid="uid://b7508wptpu8mq" path="res://scripts/bullet.gd" id="1_mvg3x"]
 
@@ -62,7 +62,9 @@ emission = Color(0.950934, 0.870469, 3.85046e-07, 1)
 material = SubResource("StandardMaterial3D_fukiw")
 size = Vector3(0.04, 0.04, 0.04)
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="RigidBody3D" type="RigidBody3D" groups=["bullet"]]
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_mvg3x")
 
 [node name="Slug" type="MeshInstance3D" parent="."]

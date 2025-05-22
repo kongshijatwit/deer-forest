@@ -18,7 +18,9 @@ func _physics_process(delta: float) -> void:
 	position += transform.basis * Vector3(0,0,-SPEED) * delta
 	if hitbox.get_contact_count() == 1:
 		var hitobjects = hitbox.get_colliding_bodies()
+		print("HIT")
 		if hitobjects[0].is_in_group("deer"):
+			print("DEER HIT")
 			blood_particles.emitting = true
 		else:
 			metal_particles.emitting = true

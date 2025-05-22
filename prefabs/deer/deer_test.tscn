@@ -1,5 +1,7 @@
 [gd_scene load_steps=30 format=4 uid="uid://fmdsv1u00roj"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q45y3"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddy8c"]
 resource_name = "Fur"
 cull_mode = 2
@@ -609,9 +611,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qt2md")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q45y3"]
-
 [node name="Deer_Test" type="CharacterBody3D" groups=["deer"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.554368, 0, 0)
+shape = SubResource("CapsuleShape3D_q45y3")
 
 [node name="Torso" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504924, -0.00546803, 0)
@@ -671,7 +675,3 @@ skeleton = NodePath("")
 [node name="Cube" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_fdcjn")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.554368, 0, 0)
-shape = SubResource("CapsuleShape3D_q45y3")
