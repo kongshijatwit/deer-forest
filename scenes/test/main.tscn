@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://l6hd73ii6ydx"]
+[gd_scene load_steps=13 format=3 uid="uid://j7ueufhlgp0l"]
 
-[ext_resource type="PackedScene" uid="uid://bd5yk33i3obay" path="res://scenes/test/player.tscn" id="1_wwlvk"]
-[ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/examplerelic.gd" id="2_7p1hh"]
+[ext_resource type="PackedScene" uid="uid://bywsm3o3ossrd" path="res://scenes/test/player.tscn" id="1_wwlvk"]
+[ext_resource type="Script" path="res://scripts/examplerelic.gd" id="2_7p1hh"]
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_ae60x"]
+[ext_resource type="PackedScene" uid="uid://fmdsv1u00roj" path="res://prefabs/deer/deer_test.tscn" id="4_o0ihb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwlvk"]
 sky_top_color = Color(0, 0.474662, 0.72518, 1)
@@ -77,6 +78,9 @@ shape = SubResource("ConvexPolygonShape3D_ae60x")
 
 [node name="LogHutV1_1" parent="." instance=ExtResource("3_ae60x")]
 transform = Transform3D(-0.0287636, 0, 0.699409, 0, 0.7, 0, -0.699409, 0, -0.0287636, -9.85106, 0, 12.8477)
+
+[node name="Deer_Test" parent="." instance=ExtResource("4_o0ihb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5878, 10.3574)
 
 [connection signal="interacted" from="Objects/ExampleRelic" to="Player" method="_on_static_body_3d_2_interacted"]
 [connection signal="interacted" from="Objects/ExampleRelic" to="Objects/ExampleRelic" method="_on_interacted"]

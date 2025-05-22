@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0isstq4ht4k0"]
+
+[ext_resource type="Script" uid="uid://b7508wptpu8mq" path="res://scripts/bullet.gd" id="1_8eusd"]
+[ext_resource type="PackedScene" uid="uid://caw1vra3byqcf" path="res://assets/models/FiredSlug.glb" id="1_wvu4c"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rtf00"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtf00"]
+albedo_color = Color(0.835294, 0.831373, 0.403922, 1)
+emission_enabled = true
+emission = Color(0.950934, 0.870469, 3.85046e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tu616"]
+material = SubResource("StandardMaterial3D_rtf00")
+size = Vector3(0.04, 0.04, 0.04)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvu4c"]
+albedo_color = Color(0.498964, 0, 0.0547284, 1)
+emission_enabled = true
+emission = Color(0.471883, 0.0646582, 0.118103, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_8m3r4"]
+material = SubResource("StandardMaterial3D_wvu4c")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="FiredSlug" instance=ExtResource("1_wvu4c")]
+script = ExtResource("1_8eusd")
+
+[node name="Slug" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000311226, 0.00102709, 0.00699659)
+target_position = Vector3(0, 0, -0.5)
+collide_with_areas = true
+
+[node name="MetalParticles" type="GPUParticles3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00196514, 0.000401214, -0.0970599)
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_rtf00")
+draw_pass_1 = SubResource("BoxMesh_tu616")
+
+[node name="BloodParticles" type="GPUParticles3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00196514, 0.000401214, -0.0970599)
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_rtf00")
+draw_pass_1 = SubResource("BoxMesh_8m3r4")
+
+[node name="Timer" type="Timer" parent="." index="4"]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

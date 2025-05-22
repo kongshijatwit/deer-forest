@@ -317,33 +317,6 @@ shadow_mesh = SubResource("ArrayMesh_2yu1g")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sodhj"]
 points = PackedVector3Array(0.0940976, -0.0108027, 0.00301446, -0.000765078, 0.00143441, -0.0214651, -0.000765078, 0.00143441, 0.0213794, 0.0818467, 0.00449503, -0.00156942, 0.0971651, -9.67961e-05, -0.0214651, 0.0971651, -9.67961e-05, 0.0213794, 0.0038266, -0.00774205, 0.0213794, 0.0436179, -0.00927146, -0.0214651, 0.0895059, -0.0138651, 0.00148371, 0.0038266, -0.00774205, -0.0214651, 0.0908898, -0.00909744, 0.0205665, 0.0908898, -0.00909744, -0.0206523, 0.0787984, -0.0138651, -0.00156942, 0.0436179, -0.00927146, 0.0213794, 0.0787984, 0.00449503, 0.00148371, 0.0390262, 0.00143441, -0.0214651, 0.0390262, 0.00143441, 0.0213794, 0.0910397, 0.00296382, -4.28576e-05, 0.0787984, -0.0138651, 0.00148371, 0.0940976, -0.0108027, -0.00156942, 0.0895059, -0.0138651, -4.28576e-05, 0.0803225, 0.00449503, 0.00148371, 0.0833901, -0.0138651, -0.00156942, 0.0910397, 0.00296382, 0.00148371, 0.0787984, 0.00449503, -0.00156942, 0.0952366, -0.00321585, -0.0206214, 0.0952366, -0.00321585, 0.0205356, 0.0818467, 0.00449503, -4.28576e-05)
 
-[sub_resource type="Animation" id="Animation_h34ym"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StaticBody3D2/LogDoorV1_1:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5708, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StaticBody3D2/CollisionShape3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5708, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_hivxs"]
 resource_name = "DoorClose"
 tracks/0/type = "value"
@@ -396,6 +369,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_h34ym"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D2/LogDoorV1_1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D2/CollisionShape3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4qw2f"]
@@ -459,12 +459,12 @@ script = ExtResource("7_5iss0")
 prompt_message = "Door"
 
 [node name="LogDoorV1_1" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(21.3322, 0, 0, 0, -9.0908e-07, 104.393, 0, -20.7973, -4.56316e-06, 0, 0, 0)
+transform = Transform3D(21.3322, 0, 0, 0, -7.5286e-05, 104.393, 0, -20.7973, -0.000377902, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pexqc")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(21.3322, 0, 0, 0, -9.0908e-07, 104.393, 0, -20.7973, -4.56316e-06, 0, 0, 0)
+transform = Transform3D(21.3322, 0, 0, 0, -7.5286e-05, 104.393, 0, -20.7973, -0.000377902, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_sodhj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody3D2"]

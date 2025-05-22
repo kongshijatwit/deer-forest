@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd5yk33i3obay"]
+[gd_scene load_steps=7 format=3 uid="uid://bywsm3o3ossrd"]
 
 [ext_resource type="Script" uid="uid://ttpkwhwrvat3" path="res://scripts/player/player.gd" id="1_0xn31"]
 [ext_resource type="PackedScene" uid="uid://xqqi8tpajkv5" path="res://prefabs/player/interact/interact_ray.tscn" id="2_60koi"]
+[ext_resource type="PackedScene" uid="uid://d2xigii8t148c" path="res://prefabs/gun/view_model.tscn" id="3_n0lew"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xn31"]
 albedo_color = Color(1, 0.376471, 1, 1)
@@ -29,6 +30,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68553, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104002, 0)
+cull_mask = 1048573
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D"]
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="SubViewport" type="SubViewport" parent="Head/Camera3D/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="view_model_camera" parent="Head/Camera3D/SubViewportContainer/SubViewport" instance=ExtResource("3_n0lew")]
+cull_mask = 1047554
 
 [node name="InteractRay" parent="Head" instance=ExtResource("2_60koi")]
 target_position = Vector3(0, 0, -2)
