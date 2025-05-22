@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://dcpb3dnc1lv3g"]
 
-[ext_resource type="PackedScene" uid="uid://sh4ccvic3cv5" path="res://assets/models/Henry410_Test.glb" id="1_323y8"]
+[ext_resource type="PackedScene" uid="uid://sh4ccvic3cv5" path="res://assets/models/Test/Henry410_Test.glb" id="1_323y8"]
 [ext_resource type="Script" uid="uid://q1sfdgkuxc2x" path="res://scripts/gun/gun_item.gd" id="1_lllca"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ckb18"]

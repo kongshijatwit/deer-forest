@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://caw1vra3byqcf"
-path="res://.godot/imported/FiredSlug.glb-7c2ae9062ed5c9c3ad061234ce84f2c6.scn"
+uid="uid://sh4ccvic3cv5"
+path="res://.godot/imported/Henry410_Test.glb-6baea3f0d6ef29976dbda3f572a496b9.scn"
 
 [deps]
 
-source_file="res://assets/models/FiredSlug.glb"
-dest_files=["res://.godot/imported/FiredSlug.glb-7c2ae9062ed5c9c3ad061234ce84f2c6.scn"]
+source_file="res://assets/models/Test/Henry410_Test.glb"
+dest_files=["res://.godot/imported/Henry410_Test.glb-6baea3f0d6ef29976dbda3f572a496b9.scn"]
 
 [params]
 

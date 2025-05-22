@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://j7ueufhlgp0l"]
 
 [ext_resource type="Script" uid="uid://cjf72u5b2tgpf" path="res://scenes/test/signal_manager.gd" id="1_dxjet"]
-[ext_resource type="PackedScene" uid="uid://bywsm3o3ossrd" path="res://scenes/test/player.tscn" id="1_wwlvk"]
-[ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/examplerelic.gd" id="2_7p1hh"]
+[ext_resource type="PackedScene" uid="uid://bywsm3o3ossrd" path="res://prefabs/player/player.tscn" id="1_wwlvk"]
+[ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/interactables/examplerelic.gd" id="2_7p1hh"]
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_ae60x"]
 [ext_resource type="PackedScene" uid="uid://fmdsv1u00roj" path="res://prefabs/deer/deer_test.tscn" id="4_o0ihb"]
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="6_2qhjg"]
@@ -25,7 +25,7 @@ glow_enabled = true
 size = Vector3(60, 2, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwlvk"]
-albedo_color = Color(1, 1, 0.513726, 1)
+albedo_color = Color(0.344354, 0, 0.0355977, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wwlvk"]
 material = SubResource("StandardMaterial3D_wwlvk")
@@ -89,4 +89,3 @@ shape = SubResource("ConvexPolygonShape3D_ae60x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7191, 1.60812, 15.6118)
 
 [connection signal="interacted" from="Objects/ExampleRelic" to="Objects/ExampleRelic" method="_on_interacted"]
-[connection signal="interacted" from="Objects/ExampleRelic" to="Player" method="_on_static_body_3d_2_interacted"]

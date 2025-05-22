@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://gwewtc3aglqf"
-path="res://.godot/imported/Deer_Test.glb-803f95a591046be19dbe1f26c677d2ee.scn"
+path="res://.godot/imported/Deer_Test.glb-4117279a20e2f2d2fca91149c5483aa0.scn"
 
 [deps]
 
-source_file="res://assets/models/Deer_Test.glb"
-dest_files=["res://.godot/imported/Deer_Test.glb-803f95a591046be19dbe1f26c677d2ee.scn"]
+source_file="res://assets/models/Test/Deer_Test.glb"
+dest_files=["res://.godot/imported/Deer_Test.glb-4117279a20e2f2d2fca91149c5483aa0.scn"]
 
 [params]
 

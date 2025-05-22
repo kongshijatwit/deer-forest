@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4hseksh477rh" path="res://assets/models/LogCabin/LogHutStyle1RoofNormal.png" id="4_ns3tx"]
 [ext_resource type="Texture2D" uid="uid://dp81fm7dtogy5" path="res://assets/models/LogCabin/LogFloorV1.1Albedo.png" id="5_p2pql"]
 [ext_resource type="Texture2D" uid="uid://qrdssqdgp5or" path="res://assets/models/LogCabin/LogFloorV1.1Normal.png" id="6_bo2r4"]
-[ext_resource type="Script" uid="uid://cxldghd73haa" path="res://assets/models/LogCabin/door.gd" id="7_5iss0"]
+[ext_resource type="Script" uid="uid://cxldghd73haa" path="res://scripts/interactables/door.gd" id="7_5iss0"]
 [ext_resource type="Texture2D" uid="uid://dmm6pbg3c3cu7" path="res://assets/models/LogCabin/LogDoor1Albedo.png" id="8_85eji"]
 [ext_resource type="Texture2D" uid="uid://daa8k025u4g" path="res://assets/models/LogCabin/LogDoor1Normal.png" id="9_d1yh7"]
 [ext_resource type="PackedScene" uid="uid://dcpb3dnc1lv3g" path="res://prefabs/gun/henry_410_item.tscn" id="10_pwbp5"]

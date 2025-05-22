@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxqbeieje54w3"]
 
 [ext_resource type="Script" uid="uid://chbnlf4sb5tev" path="res://scripts/deer/deer.gd" id="1_rvdin"]
-[ext_resource type="PackedScene" uid="uid://b762tl3jw1go6" path="res://assets/models/deer_test.tscn" id="2_55h0u"]
+[ext_resource type="PackedScene" uid="uid://dats8wolor4hm" path="res://assets/models/Test/deer_test.tscn" id="2_55h0u"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_55h0u"]
 height = 2.32635
