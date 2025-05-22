@@ -52,9 +52,13 @@ mesh = SubResource("BoxMesh_wwlvk")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_wwlvk")]
-
 [node name="Objects" type="Node3D" parent="."]
+
+[node name="LogHutV1_1" parent="Objects" instance=ExtResource("3_ae60x")]
+transform = Transform3D(-0.0287636, 0, 0.699409, 0, 0.7, 0, -0.699409, 0, -0.0287636, -9.85106, 0, 12.8477)
+
+[node name="Deer_Test" parent="Objects" instance=ExtResource("4_o0ihb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5878, 10.3574)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Objects"]
 transform = Transform3D(5.28297, 0, 0, 0, 0.832534, 0, 0, 0, 1, 8, 0.437564, -3)
@@ -76,11 +80,7 @@ mesh = SubResource("BoxMesh_7p1hh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/ExampleRelic"]
 shape = SubResource("ConvexPolygonShape3D_ae60x")
 
-[node name="LogHutV1_1" parent="." instance=ExtResource("3_ae60x")]
-transform = Transform3D(-0.0287636, 0, 0.699409, 0, 0.7, 0, -0.699409, 0, -0.0287636, -9.85106, 0, 12.8477)
+[node name="Player" parent="." instance=ExtResource("1_wwlvk")]
 
-[node name="Deer_Test" parent="." instance=ExtResource("4_o0ihb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5878, 10.3574)
-
-[connection signal="interacted" from="Objects/ExampleRelic" to="Player" method="_on_static_body_3d_2_interacted"]
 [connection signal="interacted" from="Objects/ExampleRelic" to="Objects/ExampleRelic" method="_on_interacted"]
+[connection signal="interacted" from="Objects/ExampleRelic" to="Player" method="_on_static_body_3d_2_interacted"]
