@@ -1,26 +1,32 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxqbeieje54w3"]
 
 [ext_resource type="Script" uid="uid://chbnlf4sb5tev" path="res://scripts/deer/deer.gd" id="1_rvdin"]
+[ext_resource type="PackedScene" uid="uid://b762tl3jw1go6" path="res://assets/models/deer_test.tscn" id="2_55h0u"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_so5nf"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_55h0u"]
+height = 2.32635
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvdin"]
-albedo_color = Color(0.971633, 0.00975379, 1, 1)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rvdin"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bt2a0"]
+size = Vector3(0.805916, 2.03346, 2.20898)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gcwh4"]
 radius = 6.04495
 
 [node name="Deer" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_rvdin")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_so5nf")
-surface_material_override/0 = SubResource("StandardMaterial3D_rvdin")
+[node name="Deer_Test" parent="." instance=ExtResource("2_55h0u")]
 
-[node name="Collider" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_rvdin")
+[node name="head_collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(-2.31815e-08, 2.31815e-08, 0.75, 0.53033, 0.53033, 0, -0.53033, 0.53033, -3.27835e-08, 0.0144947, 0.340001, 0.841865)
+shape = SubResource("CylinderShape3D_55h0u")
+
+[node name="torso_collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158319, -0.545403, -0.606497)
+shape = SubResource("BoxShape3D_bt2a0")
 
 [node name="Area3D" type="Area3D" parent="."]
 

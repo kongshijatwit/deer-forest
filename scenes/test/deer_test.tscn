@@ -34,7 +34,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bftmh")
 shape = SubResource("BoxShape3D_eqqxn")
 
 [node name="Deer" parent="." instance=ExtResource("1_61it4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.274, 1.5, 6.384)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.274, 2.1, 6.384)
 
 [node name="bullet" parent="." instance=ExtResource("2_eqqxn")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 25.3186, 0.953884, -3.04457)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.05936, 0.953884, -2.99092)

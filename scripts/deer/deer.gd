@@ -15,7 +15,6 @@ var react_timer: float
 var walk_timer: float
 var run_timer: float
 
-var walk_direction: Vector3
 var run_direction: Vector3
 var walk_speed: float = 100.0
 var run_speed: float = 200
@@ -43,7 +42,7 @@ func _process(delta: float) -> void:
                 if current_state == STATE.IDLE:
                     print("keep idling")
                 elif current_state == STATE.WALK:
-                    walk_direction = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1))
+                    rotate_y(deg_to_rad(randf_range(0.0, 360.0)))
                 idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
             
         STATE.WALK:
@@ -80,19 +79,21 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
     if current_state == STATE.RUN:
-        var direction: Vector3 = -(spook_object_position - global_position).normalized()
-        direction.y = 0
-        velocity = direction * run_speed * delta
+        # var direction: Vector3 = -(spook_object_position - global_position).normalized()
+        # direction.y = 0
+        velocity = run_direction * run_speed * delta
 
     elif current_state == STATE.WALK:
-        velocity = walk_direction * run_speed * delta
+        velocity = transform.basis.z * walk_speed * delta
         
     move_and_slide()
 
 
 func _on_area_entered(area: Area3D) -> void:
-    print("bullet position " + str(area.get_parent().position.z));
     spook_object_position = area.get_parent().position
     run_direction = -(spook_object_position - global_position).normalized()
+    run_direction.y = 0
+    look_at(spook_object_position)
+    rotation.x = rad_to_deg(0)
     current_state = STATE.SPOOK
     # area.get_parent().queue_free()
