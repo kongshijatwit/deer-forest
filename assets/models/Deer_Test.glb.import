@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://bsehfwvy2mtql"
-=======
-uid="uid://doguy65ymgnmh"
->>>>>>> development
+uid="uid://gwewtc3aglqf"
 path="res://.godot/imported/Deer_Test.glb-803f95a591046be19dbe1f26c677d2ee.scn"
 
 [deps]
@@ -37,5 +33,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1
