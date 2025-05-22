@@ -39,7 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.274, 2.1, 6.384)
 leash = NodePath("../Marker3D")
 
 [node name="bullet" parent="." instance=ExtResource("2_eqqxn")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 16.9287, 0.953884, -2.99092)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.61269, 0.953884, -2.18403)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9272, 0, 13.2787)

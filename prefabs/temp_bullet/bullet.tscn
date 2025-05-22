@@ -27,7 +27,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ecxuq")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_fh0yl")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["bullet"]]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
