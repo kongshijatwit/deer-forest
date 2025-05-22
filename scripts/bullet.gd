@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 60
+const SPEED = 200
 
 @onready var mesh = $RigidBody3D/Slug
 @onready var hitbox = $RigidBody3D

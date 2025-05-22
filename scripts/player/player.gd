@@ -11,6 +11,7 @@ const BOB_AMP = 0.04
 var t_bob = 0.0
 
 var gravity = 9.8
+var gun_equipped = false
 
 # Bullets
 var bullet = load("res://prefabs/gun/bullet.tscn")
@@ -21,10 +22,14 @@ var bullet_count = 100
 @onready var camera = $Head/Camera3D
 @onready var interactray = $Head/InteractRay
 @onready var gun_barrel = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/RayCast3D
+@onready var gun_smoke = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/SmokeParticles
+@onready var gun_flash = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/MuzzleFlash
+@onready var gun_viewmodel = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Head/Camera3D/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
+	gun_viewmodel.visible = false
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -65,10 +70,12 @@ func _physics_process(delta):
 	$Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera.global_transform = camera.global_transform
 	
 	# Shooting
-	if Input.is_action_just_pressed("shoot") and bullet_count >= 0:
+	if Input.is_action_just_pressed("shoot") and bullet_count >= 0 and gun_equipped:
 		instance = bullet.instantiate()
 		instance.position = gun_barrel.global_position
 		instance.transform.basis = gun_barrel.global_transform.basis
+		gun_smoke.emitting = true
+		gun_flash.emitting = true
 		get_tree().root.add_child(instance)
 		bullet_count -= 1
 		
@@ -81,7 +88,8 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
-
-
-func _on_static_body_3d_2_interacted(body: Variant) -> void:
-	pass # Replace with function body.
+	
+func gun_taken():
+	gun_viewmodel.visible = true
+	gun_equipped = true
+	
