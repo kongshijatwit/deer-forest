@@ -64,7 +64,7 @@ transform = Transform3D(-0.0287636, 0, 0.699409, 0, 0.7, 0, -0.699409, 0, -0.028
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5878, 10.3574)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Objects"]
-transform = Transform3D(5.28297, 0, 0, 0, 0.832534, 0, 0, 0, 1, 8, 0.437564, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.437564, -3)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D"]
 mesh = SubResource("BoxMesh_7p1hh")
@@ -73,7 +73,7 @@ mesh = SubResource("BoxMesh_7p1hh")
 shape = SubResource("ConvexPolygonShape3D_ae60x")
 
 [node name="ExampleRelic" type="StaticBody3D" parent="Objects"]
-transform = Transform3D(5.28297, 0, 0, 0, 2.99909, 0, 0, 0, 1, -8.01695, 1.52612, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01695, 0.54959, -3)
 script = ExtResource("2_7p1hh")
 prompt_message = "Claim Relic"
 
@@ -85,8 +85,8 @@ shape = SubResource("ConvexPolygonShape3D_ae60x")
 
 [node name="Player" parent="." instance=ExtResource("1_wwlvk")]
 
-[node name="Deer" parent="." instance=ExtResource("6_2qhjg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94497, 1.60812, 10.5881)
+[node name="Deer" parent="." groups=["deer"] instance=ExtResource("6_2qhjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7191, 1.60812, 15.6118)
 
 [connection signal="interacted" from="Objects/ExampleRelic" to="Objects/ExampleRelic" method="_on_interacted"]
 [connection signal="interacted" from="Objects/ExampleRelic" to="Player" method="_on_static_body_3d_2_interacted"]
