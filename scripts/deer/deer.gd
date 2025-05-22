@@ -59,7 +59,6 @@ func _process(delta: float) -> void:
 			print("going to idle state: graze -> idle")
 
 		STATE.SPOOK:
-			print("spooking")
 			if react_timer > 0:
 				react_timer -= delta
 			else:
@@ -93,23 +92,25 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area3D) -> void:
-	# Getting object-entered position for run direction
-	spook_object_position = area.get_parent().position
-	run_direction = -(spook_object_position - global_position).normalized()
+	print("spooked by: " + area.get_parent().name)
+	
+	if area.is_in_group("bullet"):
+		# spook_object_position = area.get_parent().position
+		spook_object_position = area.get_parent().position
+		run_direction = -(spook_object_position - global_position).normalized()
+		run_direction.y = 0
+		look_at(spook_object_position)
+		rotation.x = rad_to_deg(0)
+		current_state = STATE.SPOOK
 
 	if area.is_in_group("bound"):
 		run_direction = (leash.position - global_position).normalized()
 		spook_object_position = -leash.position
-		
-	run_direction.y = 0
-
-	# Look in running direction
-	look_at(spook_object_position)
-	rotation.x = rad_to_deg(0)
-
-	# Set state
-	current_state = STATE.SPOOK
-
+		run_direction.y = 0
+		look_at(spook_object_position)
+		rotation.x = rad_to_deg(0)
+		current_state = STATE.SPOOK
+	
 
 func _on_deer_hit(area: Area3D) -> void:
 	if area.is_in_group("bullet"):

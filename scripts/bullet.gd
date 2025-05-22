@@ -2,10 +2,10 @@ extends Node3D
 
 const SPEED = 200
 
-@onready var mesh = $RigidBody3D/Slug
-@onready var hitbox = $RigidBody3D
-@onready var metal_particles = $RigidBody3D/MetalParticles
-@onready var blood_particles = $RigidBody3D/BloodParticles
+@onready var mesh = $Slug
+@onready var hitbox = $"."
+@onready var metal_particles = $MetalParticles
+@onready var blood_particles = $BloodParticles
 
 
 # Called when the node enters the scene tree for the first time.

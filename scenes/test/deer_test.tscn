@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2g1vks7dnx6g"]
+[gd_scene load_steps=9 format=3 uid="uid://b2g1vks7dnx6g"]
 
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="1_61it4"]
 [ext_resource type="PackedScene" uid="uid://dbwrfnj2oc8wy" path="res://prefabs/temp_bullet/bullet.tscn" id="2_eqqxn"]
 [ext_resource type="PackedScene" uid="uid://bjfvi5eel24cl" path="res://prefabs/boundary/boundary.tscn" id="3_5wbek"]
+[ext_resource type="PackedScene" uid="uid://caki3btvmox6q" path="res://prefabs/temp_bullet/new_temp_bullet.tscn" id="4_6eskp"]
 
 [sub_resource type="Environment" id="Environment_bftmh"]
 
@@ -39,10 +40,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.274, 2.1, 6.384)
 leash = NodePath("../Marker3D")
 
 [node name="bullet" parent="." instance=ExtResource("2_eqqxn")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.20863, 0.953884, -2.18403)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 22.0633, 0.953884, -2.18403)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9272, 0, 13.2787)
 
 [node name="boundary" parent="." instance=ExtResource("3_5wbek")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.20028, 1, -1.4397)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("4_6eskp")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.5787, 10.2289, 4.39182)

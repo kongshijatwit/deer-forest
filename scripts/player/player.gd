@@ -14,7 +14,8 @@ var gravity = 9.8
 var gun_equipped = false
 
 # Bullets
-var bullet = load("res://prefabs/gun/bullet.tscn")
+# var bullet = load("res://prefabs/gun/bullet.tscn")
+var bullet = load("res://prefabs/temp_bullet/new_temp_bullet.tscn")
 var instance
 var bullet_count = 100
 
