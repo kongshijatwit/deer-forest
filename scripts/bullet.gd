@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 40.0
+const SPEED = 30
 
 @onready var mesh = $Slug
 @onready var ray = $RayCast3D
@@ -31,4 +31,5 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	print("MISS!")
 	queue_free()

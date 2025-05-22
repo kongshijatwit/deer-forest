@@ -45,4 +45,5 @@ render_target_update_mode = 4
 cull_mask = 1047554
 
 [node name="InteractRay" parent="Head" instance=ExtResource("2_60koi")]
+visible = false
 target_position = Vector3(0, 0, -2)

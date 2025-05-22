@@ -5,5 +5,5 @@
 [node name="Henry410_Test" instance=ExtResource("1_bkcot")]
 
 [node name="RayCast3D" type="RayCast3D" parent="." index="15"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00568686, 0.103039, 2.58013)
-target_position = Vector3(0, 0, -1)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00568686, 0.103039, 2.52701)
+target_position = Vector3(0, 0, -100)

@@ -15,7 +15,7 @@ var gravity = 9.8
 # Bullets
 var bullet = load("res://prefabs/gun/bullet.tscn")
 var instance
-var bullet_count = 10
+var bullet_count = 100
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -70,7 +70,6 @@ func _physics_process(delta):
 		instance.position = gun_barrel.global_position
 		instance.transform.basis = gun_barrel.global_transform.basis
 		get_tree().root.add_child(instance)
-		print("PEW!")
 		bullet_count -= 1
 		
 
