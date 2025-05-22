@@ -1,5 +1,67 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5nh2vagn31cw"]
+[gd_scene load_steps=8 format=3 uid="uid://b2bx47xg1tc2e"]
 
 [ext_resource type="PackedScene" uid="uid://sh4ccvic3cv5" path="res://assets/models/Henry410_Test.glb" id="1_bkcot"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uvx32"]
+particle_flag_damping_as_friction = true
+direction = Vector3(0, 0, 1)
+spread = 12.47
+radial_velocity_min = 0.999978
+radial_velocity_max = 1.99998
+gravity = Vector3(0, 1, 0)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0qyb"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.835294)
+distance_fade_mode = 1
+distance_fade_min_distance = 10.0
+distance_fade_max_distance = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_4miyy"]
+material = SubResource("StandardMaterial3D_o0qyb")
+height = 0.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bkcot"]
+direction = Vector3(0, 0, 1)
+spread = 5.0
+initial_velocity_min = 14.49
+initial_velocity_max = 16.49
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qap4o"]
+albedo_color = Color(1, 0.461714, 0.119723, 1)
+emission_enabled = true
+emission = Color(0.555679, 0.337091, 0.161185, 1)
+emission_energy_multiplier = 6.31
+
+[sub_resource type="BoxMesh" id="BoxMesh_srkr2"]
+material = SubResource("StandardMaterial3D_qap4o")
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="Henry410_Test" instance=ExtResource("1_bkcot")]
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="15"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00568686, 0.103039, 2.52701)
+target_position = Vector3(0, 0, -100)
+
+[node name="SmokeParticles" type="GPUParticles3D" parent="." index="16"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0992099, 0, 2.69202)
+emitting = false
+amount = 30
+lifetime = 4.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_uvx32")
+draw_pass_1 = SubResource("SphereMesh_4miyy")
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="." index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130712, 2.06096)
+emitting = false
+amount = 16
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bkcot")
+draw_pass_1 = SubResource("BoxMesh_srkr2")
