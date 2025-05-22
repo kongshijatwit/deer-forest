@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://l6hd73ii6ydx"]
+
+[ext_resource type="PackedScene" uid="uid://bd5yk33i3obay" path="res://scenes/test/player.tscn" id="1_wwlvk"]
+[ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/examplerelic.gd" id="2_7p1hh"]
+[ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_ae60x"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwlvk"]
+sky_top_color = Color(0, 0.474662, 0.72518, 1)
+sky_horizon_color = Color(0.520643, 0.631558, 0.685188, 1)
+ground_horizon_color = Color(0.520643, 0.631558, 0.685188, 1)
+
+[sub_resource type="Sky" id="Sky_7p1hh"]
+sky_material = SubResource("ProceduralSkyMaterial_wwlvk")
+
+[sub_resource type="Environment" id="Environment_ae60x"]
+background_mode = 2
+sky = SubResource("Sky_7p1hh")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lmefh"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwlvk"]
+albedo_color = Color(1, 1, 0.513726, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wwlvk"]
+material = SubResource("StandardMaterial3D_wwlvk")
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7p1hh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ae60x"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="Main" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ae60x")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_lmefh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_wwlvk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_wwlvk")]
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects"]
+transform = Transform3D(5.28297, 0, 0, 0, 0.832534, 0, 0, 0, 1, 8, 0.437564, -3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D"]
+mesh = SubResource("BoxMesh_7p1hh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ae60x")
+
+[node name="ExampleRelic" type="StaticBody3D" parent="Objects"]
+transform = Transform3D(5.28297, 0, 0, 0, 2.99909, 0, 0, 0, 1, -8.01695, 1.52612, -3)
+script = ExtResource("2_7p1hh")
+prompt_message = "Claim Relic"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/ExampleRelic"]
+mesh = SubResource("BoxMesh_7p1hh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/ExampleRelic"]
+shape = SubResource("ConvexPolygonShape3D_ae60x")
+
+[node name="LogHutV1_1" parent="." instance=ExtResource("3_ae60x")]
+transform = Transform3D(-0.0287636, 0, 0.699409, 0, 0.7, 0, -0.699409, 0, -0.0287636, -9.85106, 0, 12.8477)
+
+[connection signal="interacted" from="Objects/ExampleRelic" to="Player" method="_on_static_body_3d_2_interacted"]
+[connection signal="interacted" from="Objects/ExampleRelic" to="Objects/ExampleRelic" method="_on_interacted"]
