@@ -1,8 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://exjuq6a8nmu4"]
-
-[ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="1_61it4"]
-[ext_resource type="PackedScene" uid="uid://bjfvi5eel24cl" path="res://prefabs/boundary/boundary.tscn" id="3_5wbek"]
-[ext_resource type="PackedScene" uid="uid://4s5bw0umlj7t" path="res://prefabs/gun/bullet.tscn" id="4_6eskp"]
+[gd_scene load_steps=5 format=3 uid="uid://exjuq6a8nmu4"]
 
 [sub_resource type="Environment" id="Environment_bftmh"]
 
@@ -33,16 +29,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bftmh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_eqqxn")
-
-[node name="Deer" parent="." node_paths=PackedStringArray("leash") instance=ExtResource("1_61it4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.274, 2.1, 6.384)
-leash = NodePath("../Marker3D")
-
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9272, 0, 13.2787)
-
-[node name="boundary" parent="." instance=ExtResource("3_5wbek")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.20028, 1, -1.4397)
-
-[node name="RigidBody3D" parent="." instance=ExtResource("4_6eskp")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.5787, 10.2289, 4.39182)
