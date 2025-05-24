@@ -1,13 +1,12 @@
 extends Node3D
 
-# [x] Create bed interactable object
-# [x] Need to get bed emitted signal when player interacts with bed, call start_new_month()
-# [ ] Fade to black -> Increment month and respawn deer + monsters -> "A new month has begun, bringing more deer"
-#
-
 # Questions:
 #  - How many total months?
 #  - Do bullets correlate to amount of deer/monsters
+
+# Cannot go to sleep unless one of the two conditions are met
+# - Killed enough deer
+# - Collected the artifact piece
 
 signal reset
 const BED_STRING: String = "bed"
@@ -17,7 +16,6 @@ var artifact_piece_collected: bool = false
 
 
 func _ready() -> void:
-	print("this is your president speaking")
 	var bed_node: Node3D = get_tree().root.get_child(0).find_child(BED_STRING)
 	if bed_node == null:
 		push_warning("no bed found but that's okay")

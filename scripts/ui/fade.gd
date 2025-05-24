@@ -14,7 +14,6 @@ func on_animation_finished(anim_name):
 	if anim_name == FADE_TO_BLACK:
 		$AnimationPlayer.play(FADE_TO_NORMAL)
 	if anim_name == FADE_TO_NORMAL:
-		print("emit")
 		transitioned.emit()
 	
 
