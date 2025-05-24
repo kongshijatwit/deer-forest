@@ -12,11 +12,12 @@ extends Node3D
 signal reset
 const BED_STRING: String = "bed"
 var month: int = 0
+var deer_killed: int = 0
+var artifact_piece_collected: bool = false
 
 
 func _ready() -> void:
 	print("this is your president speaking")
-	# var bed_node: Node3D = $"../".find_child(BED_STRING)
 	var bed_node: Node3D = get_tree().root.get_child(0).find_child(BED_STRING)
 	if bed_node == null:
 		push_warning("no bed found but that's okay")

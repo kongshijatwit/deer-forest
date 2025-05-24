@@ -5,6 +5,10 @@ signal sleep()
 const SLEEP_PROMPT: String = "Go to sleep"
 var can_use: bool = true
 
+# Cannot go to sleep unless one of the two conditions are met
+# - Killed enough deer
+# - Collected the artifact piece
+
 func _ready() -> void:
 	# TODO: Take in another signal that resets `can_use`
 	prompt_message = SLEEP_PROMPT
