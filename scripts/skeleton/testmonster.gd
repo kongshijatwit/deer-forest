@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 4.5
 var skeleton_state_machine
 var player_detected = false
 var timer_started = false
+var walk_done = true
+var turn_done = false
 
 @onready var ray = $RayCast3D
 @onready var head = $Humanoid/Skeleton3D/Head
@@ -24,6 +26,7 @@ func _process(delta: float) -> void:
 	
 	match skeleton_state_machine.get_current_node():
 		"run":
+			walk_done = true
 			print(timer.get_time_left())
 			if ray.get_collider() != player and !timer_started:
 				timer.set_paused(false)
@@ -41,10 +44,23 @@ func _process(delta: float) -> void:
 			velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
 			rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 10.0)
 			move_and_slide()
+		"walk":
+			if !turn_done:
+				rotate(global_transform.basis.y,deg_to_rad(randf_range(0.0, 360.0)))
+				turn_done = true
+			nav_agent.set_target_position(position + Vector3(0,0,-5))
+			var next_nav_point = nav_agent.get_next_path_position()
+			velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
+			move_and_slide()
+		"idle":
+			turn_done = false
+			
+		
 					
 					
 	anim_tree.set("parameters/conditions/run", _player_detection())
 	anim_tree.set("parameters/conditions/idle", !player_detected)
+	
 	
 		
 func _player_detection():
