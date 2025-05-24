@@ -4,24 +4,27 @@
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uvx32"]
 particle_flag_damping_as_friction = true
-direction = Vector3(0, 0, 1)
-spread = 12.47
+direction = Vector3(0, -10, 5)
+spread = 13.527
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
 radial_velocity_min = 0.999978
 radial_velocity_max = 1.99998
-gravity = Vector3(0, 1, 0)
+gravity = Vector3(0, 0.02, 0)
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0qyb"]
 transparency = 1
-albedo_color = Color(0, 0, 0, 0.835294)
+albedo_color = Color(0.58, 0.58, 0.58, 0.823529)
 distance_fade_mode = 1
-distance_fade_min_distance = 10.0
-distance_fade_max_distance = 2.0
+distance_fade_min_distance = 6.0
+distance_fade_max_distance = 3.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_4miyy"]
 material = SubResource("StandardMaterial3D_o0qyb")
-height = 0.5
+radius = 0.2
+height = 0.2
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bkcot"]
 direction = Vector3(0, 0, 1)
@@ -49,10 +52,10 @@ target_position = Vector3(0, 0, -100)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0992099, 0, 2.69202)
 emitting = false
 amount = 30
-lifetime = 4.0
+lifetime = 3.0
 one_shot = true
-speed_scale = 1.5
 explosiveness = 1.0
+randomness = 0.1
 process_material = SubResource("ParticleProcessMaterial_uvx32")
 draw_pass_1 = SubResource("SphereMesh_4miyy")
 
@@ -60,7 +63,7 @@ draw_pass_1 = SubResource("SphereMesh_4miyy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130712, 2.06096)
 emitting = false
 amount = 16
-lifetime = 0.1
+lifetime = 0.05
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_bkcot")

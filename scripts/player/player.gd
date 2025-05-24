@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
+const CROUCH_SPEED = 2.5
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.005
 
@@ -78,6 +79,10 @@ func _physics_process(delta):
 		gun_flash.emitting = true
 		get_tree().root.add_child(instance)
 		bullet_count -= 1
+		
+	# Crouching
+	# if Input.is_action_pressed("crouch"):
+		
 		
 
 	move_and_slide()

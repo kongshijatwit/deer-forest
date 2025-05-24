@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://j7ueufhlgp0l"]
+[gd_scene load_steps=21 format=3 uid="uid://j7ueufhlgp0l"]
 
 [ext_resource type="Script" uid="uid://cjf72u5b2tgpf" path="res://scenes/test/signal_manager.gd" id="1_dxjet"]
 [ext_resource type="PackedScene" uid="uid://bywsm3o3ossrd" path="res://prefabs/player/player.tscn" id="1_wwlvk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_ae60x"]
 [ext_resource type="PackedScene" uid="uid://fmdsv1u00roj" path="res://prefabs/deer/deer_test.tscn" id="4_o0ihb"]
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="6_2qhjg"]
+[ext_resource type="PackedScene" uid="uid://cx2cblbyuclbd" path="res://prefabs/skeleton/testmonster.tscn" id="7_6eh6t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwlvk"]
 sky_top_color = Color(0, 0.474662, 0.72518, 1)
@@ -21,8 +22,25 @@ sky = SubResource("Sky_7p1hh")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_6eh6t"]
+vertices = PackedVector3Array(-59.4479, 0.523306, -16.9973, -49.9479, 0.523306, -16.9973, -49.6979, 0.523306, -17.7473, -48.9479, 0.523306, -29.2473, -59.4479, 0.523306, -29.2473, -48.9479, 0.523306, -17.7473, -48.1979, 0.523306, -17.7473, -47.9479, 0.523306, -16.9973, -30.4479, 0.523306, -16.9973, -30.4479, 0.523306, -29.2473, -49.6979, 0.523306, -16.2473, -59.4479, 0.523306, -0.247297, -48.9479, 0.523306, -0.247297, -48.9479, 0.523306, -16.2473, -48.1979, 0.523306, -16.2473, -30.4479, 0.523306, -0.247297)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(6, 5, 3), PackedInt32Array(6, 3, 7), PackedInt32Array(7, 3, 8), PackedInt32Array(8, 3, 9), PackedInt32Array(1, 10, 0), PackedInt32Array(0, 10, 11), PackedInt32Array(11, 10, 12), PackedInt32Array(10, 13, 12), PackedInt32Array(12, 13, 14), PackedInt32Array(14, 7, 12), PackedInt32Array(12, 7, 8), PackedInt32Array(12, 8, 15)]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_lmefh"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6eh6t"]
+albedo_color = Color(0.926985, 0.529812, 0.503089, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yvr0t"]
+material = SubResource("StandardMaterial3D_6eh6t")
+size = Vector3(60, 2, 60)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yvr0t"]
+data = PackedVector3Array(-2.5, 4, 0.5, 2.5, 4, 0.5, -2.5, -4, 0.5, 2.5, 4, 0.5, 2.5, -4, 0.5, -2.5, -4, 0.5, 2.5, 4, -0.5, -2.5, 4, -0.5, 2.5, -4, -0.5, -2.5, 4, -0.5, -2.5, -4, -0.5, 2.5, -4, -0.5, 2.5, 4, 0.5, 2.5, 4, -0.5, 2.5, -4, 0.5, 2.5, 4, -0.5, 2.5, -4, -0.5, 2.5, -4, 0.5, -2.5, 4, -0.5, -2.5, 4, 0.5, -2.5, -4, -0.5, -2.5, 4, 0.5, -2.5, -4, 0.5, -2.5, -4, -0.5, 2.5, 4, 0.5, -2.5, 4, 0.5, 2.5, 4, -0.5, -2.5, 4, 0.5, -2.5, 4, -0.5, 2.5, 4, -0.5, -2.5, -4, 0.5, 2.5, -4, 0.5, -2.5, -4, -0.5, 2.5, -4, 0.5, 2.5, -4, -0.5, -2.5, -4, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6eh6t"]
+size = Vector3(5, 8, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwlvk"]
 albedo_color = Color(0.344354, 0, 0.0355977, 1)
@@ -42,7 +60,36 @@ script = ExtResource("1_dxjet")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ae60x")
 
-[node name="Player" parent="." instance=ExtResource("1_wwlvk")]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_6eh6t")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="NavigationRegion3D"]
+
+[node name="Ground2" type="StaticBody3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -44.9479, -0.476694, -14.7473)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/CSGCombiner3D/Ground2"]
+shape = SubResource("BoxShape3D_lmefh")
+
+[node name="BadArea" type="MeshInstance3D" parent="NavigationRegion3D/CSGCombiner3D/Ground2"]
+mesh = SubResource("BoxMesh_yvr0t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/CSGCombiner3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/CSGCombiner3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0498, 4.08451, -11.5266)
+shape = SubResource("ConcavePolygonShape3D_yvr0t")
+
+[node name="Obstacle" type="MeshInstance3D" parent="NavigationRegion3D/CSGCombiner3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0498, 4.08451, -11.5266)
+mesh = SubResource("BoxMesh_6eh6t")
+skeleton = NodePath("../..")
+
+[node name="Player" parent="NavigationRegion3D" instance=ExtResource("1_wwlvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.8809, 0, -5.96996)
+
+[node name="testmonster" parent="NavigationRegion3D" instance=ExtResource("7_6eh6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.9628, 0, -16.9563)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
