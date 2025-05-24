@@ -6,7 +6,6 @@ const FADE_TO_NORMAL: String = "fade_to_normal"
 
 func _ready():
 	$AnimationPlayer.animation_finished.connect(on_animation_finished)
-	transition()
 
 func transition():
 	$AnimationPlayer.play(FADE_TO_BLACK)

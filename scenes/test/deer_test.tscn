@@ -17,7 +17,6 @@ albedo_color = Color(0.270588, 0.219608, 0, 0)
 [node name="deer_test" type="Node3D"]
 
 [node name="game_manager" parent="." instance=ExtResource("1_61it4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.062146, 0.998067, 0, -0.998067, -0.062146, 0, 22.5088, 51.1628)

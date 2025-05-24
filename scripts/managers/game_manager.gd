@@ -32,5 +32,6 @@ func _process(delta: float) -> void:
 
 func start_new_month() -> void:
 	# reset monster/deer spawns
+	$fade.transition()
 	reset.emit()
 	month += 1
