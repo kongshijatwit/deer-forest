@@ -9,6 +9,9 @@ const MAX_RUN_TIME: float = 5.0
 const MAX_REACT_TIME: float = 0.35
 const MIN_WALK_TIME: float = 1.0
 const MAX_WALK_TIME: float = 3.5
+const GAMEMANAGER_NAME: String = "game_manager"
+
+var gamemanager_node: Node = null
 
 var spook_object_position := Vector3.ZERO
 var current_state := STATE.IDLE
@@ -27,6 +30,7 @@ func _ready():
 	react_timer = MAX_REACT_TIME
 	walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
 	run_timer = MAX_RUN_TIME
+	add_gamemanager_signal()
 
 
 func _process(delta: float) -> void:
@@ -116,3 +120,18 @@ func _on_deer_hit(area: Area3D) -> void:
 	if area.is_in_group("bullet"):
 		await get_tree().create_timer(0.01).timeout
 		current_state = STATE.DEAD
+
+func add_gamemanager_signal():
+	var gamemanager: Node3D = get_tree().root.get_child(0).find_child(GAMEMANAGER_NAME)
+	if gamemanager == null:
+		push_warning("no bed found but that's okay")
+	else:
+		gamemanager.reset.connect(reset_deer)
+
+func reset_deer():
+	print(name + ": deer has been reset")
+	pass
+
+func print_deer_state_change(prev: STATE) -> void:
+	print("changing state: " + str(prev) + " -> " + str(current_state))
+	pass
