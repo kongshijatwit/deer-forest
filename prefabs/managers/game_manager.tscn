@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc8iw3toa1o3k"]
+
+[ext_resource type="Script" uid="uid://6yg0hxw1e478" path="res://scripts/managers/game_manager.gd" id="1_0h1wg"]
+[ext_resource type="PackedScene" uid="uid://s6cj65kg7cdv" path="res://prefabs/ui/fade.tscn" id="2_njnq8"]
+
+[node name="game_manager" type="Node3D"]
+script = ExtResource("1_0h1wg")
+
+[node name="fade" parent="." instance=ExtResource("2_njnq8")]

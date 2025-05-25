@@ -9,6 +9,11 @@ const MAX_RUN_TIME: float = 5.0
 const MAX_REACT_TIME: float = 0.35
 const MIN_WALK_TIME: float = 1.0
 const MAX_WALK_TIME: float = 3.5
+const GAMEMANAGER_NAME: String = "game_manager"
+const BOUNDARY_GROUP: String = "boundary"
+const BULLET_GROUP: String = "bullet"
+
+var gamemanager_node: Node = null
 
 var spook_object_position := Vector3.ZERO
 var current_state := STATE.IDLE
@@ -21,12 +26,15 @@ var run_direction: Vector3
 var walk_speed: float = 100.0
 var run_speed: float = 200
 
+# Debug constants
+const DEBUG_MODE: bool = true
+const KILL_DEER_INPUT: String = "ui_up"
+const RESET_DEER_INPUT: String = "ui_down"
+
 
 func _ready():
-	idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
-	react_timer = MAX_REACT_TIME
-	walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
-	run_timer = MAX_RUN_TIME
+	reset_all_timers()
+	add_gamemanager_signal()
 
 
 func _process(delta: float) -> void:
@@ -37,12 +45,12 @@ func _process(delta: float) -> void:
 			else:
 				current_state = (randi() % 3) as STATE
 				if current_state == STATE.IDLE:
-					print("keep idling: idle -> idle")
+					pass
 				elif current_state == STATE.WALK:
 					rotate_y(deg_to_rad(randf_range(0.0, 360.0)))
-					print("going to walk state: idle -> walk")
 				elif current_state == STATE.GRAZE:
-					print("going to graze state: idle -> graze")
+					pass
+				debug_state_change(STATE.IDLE)
 				idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
 			
 		STATE.WALK:
@@ -52,11 +60,11 @@ func _process(delta: float) -> void:
 				current_state = STATE.IDLE
 				walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
 				velocity = Vector3.ZERO
-				print("going to idle state: walk -> idle")
+				debug_state_change(STATE.WALK)
 
 		STATE.GRAZE:
 			current_state = STATE.IDLE
-			print("going to idle state: graze -> idle")
+			debug_state_change(STATE.GRAZE)
 
 		STATE.SPOOK:
 			if react_timer > 0:
@@ -64,7 +72,7 @@ func _process(delta: float) -> void:
 			else:
 				current_state = STATE.RUN
 				react_timer = MAX_REACT_TIME
-				print("going to run state: spook -> run")
+				debug_state_change(STATE.SPOOK)
 
 		STATE.RUN:
 			if run_timer > 0:
@@ -73,13 +81,12 @@ func _process(delta: float) -> void:
 				current_state = STATE.IDLE
 				run_timer = MAX_RUN_TIME
 				velocity = Vector3.ZERO
-				print("going to idle state: run -> idle")
+				debug_state_change(STATE.RUN)
 		
 		STATE.DEAD:
-			queue_free()
-			print("dead")
-		
-
+			pass
+	debug_inputs()
+			
 
 func _physics_process(delta: float) -> void:
 	if current_state == STATE.RUN:
@@ -92,27 +99,84 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area3D) -> void:
-	print("spooked by: " + area.get_parent().name)
-	
-	if area.is_in_group("bullet"):
-		# spook_object_position = area.get_parent().position
+	var previous_state: STATE = current_state
+
+	if area.is_in_group(BULLET_GROUP):
 		spook_object_position = area.get_parent().position
 		run_direction = -(spook_object_position - global_position).normalized()
 		run_direction.y = 0
 		look_at(spook_object_position)
 		rotation.x = rad_to_deg(0)
 		current_state = STATE.SPOOK
+		debug_state_change(previous_state)
 
-	if area.is_in_group("bound"):
+	if area.is_in_group(BOUNDARY_GROUP):
 		run_direction = (leash.position - global_position).normalized()
 		spook_object_position = -leash.position
 		run_direction.y = 0
 		look_at(spook_object_position)
 		rotation.x = rad_to_deg(0)
 		current_state = STATE.SPOOK
+		debug_state_change(previous_state)
 	
 
 func _on_deer_hit(area: Area3D) -> void:
-	if area.is_in_group("bullet"):
+	if area.is_in_group(BULLET_GROUP):
 		await get_tree().create_timer(0.01).timeout
-		current_state = STATE.DEAD
+		kill_deer()
+
+
+func add_gamemanager_signal():
+	var gamemanager: Node3D = get_tree().root.get_child(0).find_child(GAMEMANAGER_NAME)
+	if gamemanager == null:
+		push_warning("no bed found but that's okay")
+	else:
+		gamemanager.reset.connect(reset_deer)
+
+
+func kill_deer() -> void:
+	velocity = Vector3.ZERO
+	var previous_state: STATE = current_state  # DEBUG VAR
+	current_state = STATE.DEAD
+	debug_state_change(previous_state)
+	set_active(false)
+
+
+func reset_deer():
+	current_state = STATE.IDLE
+	reset_all_timers()
+	set_active(true)
+	print(name + ": deer has been reset")
+
+
+func reset_all_timers() -> void:
+	idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+	react_timer = MAX_REACT_TIME
+	walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
+	run_timer = MAX_RUN_TIME
+
+
+func set_active(active: bool) -> void:
+	for n: Node3D in get_children():
+		if n.is_class("Area3D"):
+			n.monitorable = active
+			n.monitoring = active
+			n.input_ray_pickable = active
+		elif n.is_class("CollisionShape3D"):
+			n.disabled = !active
+		n.visible = active
+
+
+func debug_state_change(prev: STATE) -> void:
+	if DEBUG_MODE:
+		print("changing state: " + STATE.keys()[prev] + " -> " + STATE.keys()[current_state])
+		if current_state == STATE.DEAD:
+			print("dead")
+
+
+func debug_inputs() -> void:
+	if Input.is_action_just_pressed(RESET_DEER_INPUT) && current_state == STATE.DEAD:
+		reset_deer()
+	elif Input.is_action_just_pressed(KILL_DEER_INPUT) && current_state != STATE.DEAD:
+		kill_deer()
+
