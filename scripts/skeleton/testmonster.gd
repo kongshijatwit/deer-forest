@@ -46,11 +46,12 @@ func _process(delta: float) -> void:
 			move_and_slide()
 		"walk":
 			if !turn_done:
-				rotate(global_transform.basis.y,deg_to_rad(randf_range(0.0, 360.0)))
+				var angle = randf_range(0.0, 360.0)
+				nav_agent.set_target_position(global_position + Vector3(5 * cos(angle), 0, 5 * sin(angle)))
 				turn_done = true
-			nav_agent.set_target_position(position + Vector3(0,0,-5))
 			var next_nav_point = nav_agent.get_next_path_position()
 			velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
+			rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 10.0)
 			move_and_slide()
 		"idle":
 			turn_done = false
