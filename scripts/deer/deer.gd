@@ -2,9 +2,10 @@ extends CharacterBody3D
 
 @export var leash: Marker3D
 
-enum STATE {IDLE = 0, WALK, GRAZE, SPOOK, RUN, DEAD}
+enum STATE {IDLE = 0, ROTATE, WALK, GRAZE, SPOOK, RUN, DEAD}
 const MIN_IDLE_TIME: float = 2.0
 const MAX_IDLE_TIME: float = 2.5
+const ROTATE_TIME: float = 5.0
 const MAX_RUN_TIME: float = 5.0
 const MAX_REACT_TIME: float = 0.35
 const MIN_WALK_TIME: float = 1.0
@@ -25,6 +26,7 @@ var run_timer: float
 var run_direction: Vector3
 var walk_speed: float = 100.0
 var run_speed: float = 200
+var rotate_angle: float
 
 # Debug constants
 const DEBUG_MODE: bool = true
@@ -43,16 +45,28 @@ func _process(delta: float) -> void:
 			if idle_timer > 0:
 				idle_timer -= delta
 			else:
-				current_state = (randi() % 3) as STATE
+				current_state = (randi() % 4) as STATE
 				if current_state == STATE.IDLE:
-					pass
+					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+				elif current_state == STATE.ROTATE:
+					rotate_angle = deg_to_rad(randf_range(0.0, 360.0))
+					idle_timer = ROTATE_TIME
 				elif current_state == STATE.WALK:
-					rotate_y(deg_to_rad(randf_range(0.0, 360.0)))
+					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
 				elif current_state == STATE.GRAZE:
+					# Play a graze animation
 					pass
 				debug_state_change(STATE.IDLE)
+		
+		STATE.ROTATE:
+			if idle_timer > 0:
+				idle_timer -= delta
+			else:
+				current_state = STATE.IDLE
 				idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
-			
+				debug_state_change(STATE.ROTATE)
+			rotation.y = lerp_angle(rotation.y, rotate_angle, delta)
+
 		STATE.WALK:
 			if walk_timer > 0:
 				walk_timer -= delta
@@ -129,7 +143,7 @@ func _on_deer_hit(area: Area3D) -> void:
 func add_gamemanager_signal():
 	var gamemanager: Node3D = get_tree().root.get_child(0).find_child(GAMEMANAGER_NAME)
 	if gamemanager == null:
-		push_warning("no bed found but that's okay")
+		push_warning("no gamemanager found but that's okay")
 	else:
 		gamemanager.reset.connect(reset_deer)
 
