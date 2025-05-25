@@ -1,6 +1,6 @@
 extends Interactable
 
-@export var player_path := "/root/Main/Player"
+@export var player_path := "/root/Main/NavigationRegion3D/Player"
 
 var player = null
 
