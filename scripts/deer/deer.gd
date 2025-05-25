@@ -179,4 +179,3 @@ func debug_inputs() -> void:
 		reset_deer()
 	elif Input.is_action_just_pressed(KILL_DEER_INPUT) && current_state != STATE.DEAD:
 		kill_deer()
-

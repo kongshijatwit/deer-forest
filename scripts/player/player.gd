@@ -26,6 +26,7 @@ var bullet_count = 100
 @onready var gun_smoke = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/SmokeParticles
 @onready var gun_flash = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/MuzzleFlash
 @onready var gun_viewmodel = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera
+@onready var gun_sound = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/AudioStreamPlayer3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -77,6 +78,9 @@ func _physics_process(delta):
 		instance.transform.basis = gun_barrel.global_transform.basis
 		gun_smoke.emitting = true
 		gun_flash.emitting = true
+		gun_smoke.restart()
+		gun_flash.restart()
+		gun_sound.play()
 		get_tree().root.add_child(instance)
 		bullet_count -= 1
 		
