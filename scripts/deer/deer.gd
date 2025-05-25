@@ -141,7 +141,7 @@ func _on_deer_hit(area: Area3D) -> void:
 
 
 func add_gamemanager_signal():
-	var gamemanager: Node3D = get_tree().root.get_child(0).find_child(GAMEMANAGER_NAME)
+	var gamemanager: Node3D = get_tree().root.get_child(1).find_child(GAMEMANAGER_NAME)
 	if gamemanager == null:
 		push_warning("no gamemanager found but that's okay")
 	else:
@@ -193,4 +193,3 @@ func debug_inputs() -> void:
 		reset_deer()
 	elif Input.is_action_just_pressed(KILL_DEER_INPUT) && current_state != STATE.DEAD:
 		kill_deer()
-
