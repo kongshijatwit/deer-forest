@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://j7ueufhlgp0l"]
+[gd_scene load_steps=22 format=3 uid="uid://j7ueufhlgp0l"]
 
 [ext_resource type="Script" uid="uid://cjf72u5b2tgpf" path="res://scenes/test/signal_manager.gd" id="1_dxjet"]
 [ext_resource type="PackedScene" uid="uid://bywsm3o3ossrd" path="res://prefabs/player/player.tscn" id="1_wwlvk"]
 [ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/interactables/examplerelic.gd" id="2_7p1hh"]
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_ae60x"]
+[ext_resource type="PackedScene" uid="uid://b5c6rjgcc1llg" path="res://prefabs/skeleton/ragdoll_skeleton_test.tscn" id="3_yvr0t"]
 [ext_resource type="PackedScene" uid="uid://fmdsv1u00roj" path="res://prefabs/deer/deer_test.tscn" id="4_o0ihb"]
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="6_2qhjg"]
 [ext_resource type="PackedScene" uid="uid://cx2cblbyuclbd" path="res://prefabs/skeleton/testmonster.tscn" id="7_6eh6t"]
@@ -88,6 +89,9 @@ skeleton = NodePath("../..")
 
 [node name="Player" parent="NavigationRegion3D" instance=ExtResource("1_wwlvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.8809, 0, -5.96996)
+
+[node name="Skeleton_Test" parent="NavigationRegion3D" instance=ExtResource("3_yvr0t")]
+transform = Transform3D(-0.998081, 0, -0.0619195, 0, 1, 0, 0.0619195, 0, -0.998081, -20.5837, 0, -1.5999)
 
 [node name="testmonster" parent="NavigationRegion3D" instance=ExtResource("7_6eh6t")]
 transform = Transform3D(-0.998081, 0, -0.0619195, 0, 1, 0, 0.0619195, 0, -0.998081, -50.9628, 0, -16.9563)
