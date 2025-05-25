@@ -15,6 +15,14 @@ run/main_scene="uid://j7ueufhlgp0l"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MadTalkGlobals="*res://addons/madtalk/runtime/MadTalkGlobals.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/madtalk/plugin.cfg")
+
 [global_group]
 
 bullet=""
