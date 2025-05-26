@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://j7ueufhlgp0l"]
+[gd_scene load_steps=23 format=3 uid="uid://j7ueufhlgp0l"]
 
 [ext_resource type="Script" uid="uid://cjf72u5b2tgpf" path="res://scenes/test/signal_manager.gd" id="1_dxjet"]
 [ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/interactables/examplerelic.gd" id="2_7p1hh"]
