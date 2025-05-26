@@ -16,4 +16,3 @@ func on_animation_finished(anim_name):
 	if anim_name == FADE_TO_NORMAL:
 		transitioned.emit()
 	
-
