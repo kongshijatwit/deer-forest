@@ -119,14 +119,14 @@ func gun_taken():
 	gun_equipped = true
 	
 func _make_footstep():
-	print("maybe collider broken")
 	if groundray.is_colliding():
-		print("MMMM GROUND")
 		if groundray.get_collider().is_in_group("snow"):
 			print("Snow Fella")
 			var random_int = randi_range(0,7)
 			feet_sfx.stream = load(feet_sfx_lib[random_int])
 			feet_sfx.play()
+		elif groundray.get_collider().is_in_group("wood"):
+			print("Wood Fella")
 		else:
 			feet_sfx.stop()
 	

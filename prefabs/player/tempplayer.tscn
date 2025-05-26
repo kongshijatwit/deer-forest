@@ -2350,7 +2350,7 @@ bones/85/rotation = Quaternion(0.00403108, -3.52234e-16, -2.11657e-22, 0.999992)
 bones/85/scale = Vector3(1, 1, 1)
 
 [node name="Head" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -3.01352e-09, 5.95283e-08, 3.01353e-09, 1, -2.23517e-08, -5.95284e-08, 2.23517e-08, 1, -1.62785e-09, 2.92384, 1.80677e-07)
+transform = Transform3D(1, -3.01353e-09, 5.95284e-08, 3.01354e-09, 1, -2.23517e-08, -5.95285e-08, 2.23517e-08, 1, -1.62785e-09, 2.92384, 1.80677e-07)
 bone_name = "Head"
 bone_idx = 3
 
@@ -2360,7 +2360,7 @@ mesh = SubResource("ArrayMesh_3vmci")
 skeleton = NodePath("")
 
 [node name="Neck_2" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -8.6839e-11, 4.56964e-10, 8.6839e-11, 1, -1.63913e-07, -4.57007e-10, 1.63913e-07, 1, 2.02532e-13, 2.67641, 1.41561e-07)
+transform = Transform3D(1, -8.68461e-11, 4.56993e-10, 8.68461e-11, 1, -1.63913e-07, -4.57035e-10, 1.63913e-07, 1, 2.02372e-13, 2.67641, 1.41561e-07)
 bone_name = "Neck_2"
 bone_idx = 4
 
