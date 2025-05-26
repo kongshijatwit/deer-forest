@@ -203,4 +203,3 @@ func spawn_dummy():
 	dummy.get_node("CollisionShape3D").disabled = true
 	add_child(dummy)
 	# add timer for despawn
-

@@ -21,7 +21,6 @@ condition_type = 0
 condition_values = []
 effect_type = 0
 effect_values = []
-port_index = -1
 
 [sub_resource type="Resource" id="4"]
 script = ExtResource("2_48vp3")
@@ -88,7 +87,6 @@ condition_type = 10
 condition_values = []
 effect_type = 1
 effect_values = ["my_var", 5.0]
-port_index = -1
 
 [sub_resource type="Resource" id="Resource_jrxya"]
 script = ExtResource("2_48vp3")
@@ -133,7 +131,6 @@ condition_type = 0
 condition_values = []
 effect_type = 0
 effect_values = []
-port_index = -1
 
 [sub_resource type="Resource" id="8"]
 script = ExtResource("2_48vp3")
