@@ -16,7 +16,7 @@ var artifact_piece_collected: bool = false
 
 
 func _ready() -> void:
-	var bed_node: Node3D = get_tree().root.get_child(0).find_child(BED_STRING)
+	var bed_node: Node3D = get_tree().root.get_child(1).find_child(BED_STRING)
 	if bed_node == null:
 		push_warning("no bed found but that's okay")
 	else:
