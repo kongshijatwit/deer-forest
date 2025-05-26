@@ -15,6 +15,7 @@ const BOUNDARY_GROUP: String = "boundary"
 const BULLET_GROUP: String = "bullet"
 
 var gamemanager_node: Node = null
+var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
 
 var spook_object_position := Vector3.ZERO
 var current_state := STATE.IDLE
@@ -29,7 +30,7 @@ var run_speed: float = 200
 var rotate_angle: float
 
 # Debug constants
-const DEBUG_MODE: bool = true
+const DEBUG_MODE: bool = false
 const KILL_DEER_INPUT: String = "ui_up"
 const RESET_DEER_INPUT: String = "ui_down"
 
@@ -154,6 +155,7 @@ func kill_deer() -> void:
 	current_state = STATE.DEAD
 	debug_state_change(previous_state)
 	set_active(false)
+	spawn_dummy()
 
 
 func reset_deer():
@@ -193,3 +195,12 @@ func debug_inputs() -> void:
 		reset_deer()
 	elif Input.is_action_just_pressed(KILL_DEER_INPUT) && current_state != STATE.DEAD:
 		kill_deer()
+
+
+func spawn_dummy():
+	var dummy = dummy_prefab.instantiate()
+	dummy.position.y = -2
+	dummy.get_node("CollisionShape3D").disabled = true
+	add_child(dummy)
+	# add timer for despawn
+
