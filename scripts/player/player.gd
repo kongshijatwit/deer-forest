@@ -21,6 +21,7 @@ var bullet_count = 100
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var groundray = $GroundRay
 @onready var interactray = $Head/InteractRay
 @onready var gun_barrel = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/RayCast3D
 @onready var gun_smoke = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/SmokeParticles
@@ -43,6 +44,12 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
+	
+	#Checks ground for footsteps
+	if is_on_floor():
+		if groundray.is_colliding():
+			if groundray.get_collider().is_in_group("snow"):
+				print("snow")
 	
 	# Add the gravity.
 	if not is_on_floor():
