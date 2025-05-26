@@ -27,6 +27,7 @@ enabled=PackedStringArray("res://addons/madtalk/plugin.cfg")
 
 bullet=""
 detectbox=""
+snow=""
 
 [input]
 

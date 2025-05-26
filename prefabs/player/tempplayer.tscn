@@ -1,13 +1,15 @@
-[gd_scene load_steps=109 format=4 uid="uid://cx2cblbyuclbd"]
+[gd_scene load_steps=97 format=4 uid="uid://cut4wtq6x7bm8"]
 
-[ext_resource type="Script" uid="uid://lx4i3rn61dgp" path="res://scripts/skeleton/testmonster.gd" id="1_cwyr3"]
+[ext_resource type="Script" uid="uid://ttpkwhwrvat3" path="res://scripts/player/player.gd" id="1_d2i1d"]
+[ext_resource type="PackedScene" uid="uid://d2xigii8t148c" path="res://prefabs/gun/view_model.tscn" id="2_5qkxa"]
+[ext_resource type="PackedScene" uid="uid://xqqi8tpajkv5" path="res://prefabs/player/interact/interact_ray.tscn" id="3_hm3fc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_867we"]
 resource_name = "Material.001"
 cull_mode = 2
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cwyr3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_v4hvw"]
 _surfaces = [{
 "aabb": AABB(-0.223312, -0.223312, -0.223312, 0.446625, 0.446625, 0.446625),
 "format": 34896613377,
@@ -37,9 +39,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD//wAAVNX//////v9U1QAA/////1TV/v///wAAVNX+/wAAAABU1f/////+/1TV/v///wAAVNX//wAA/v9U1f//AAD+//+/AAD//////7///////v//vwAAAAD///+/AAAAAP//VNX+/wAAAABU1QAAAAAAAFTV//8AAP7/VNUAAAAAAAD///7///8AAP//AAD//wAA///+/wAAAAD//wAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVqqqqqqqqqqqqqqqqqqqqqqoqqiqqKqoqqiqqKqoqqir/////////////////////VFVUVVRVVFVUVVRVVFVUVf+//7//v/+//7//v/+//79U1VTVVNVU1VTVVNVU1VTV")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_cwyr3")
+shadow_mesh = SubResource("ArrayMesh_v4hvw")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wvheu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_u86y4"]
 _surfaces = [{
 "aabb": AABB(-0.108898, -0.108898, -0.108898, 0.217795, 0.217795, 0.217795),
 "format": 34896613377,
@@ -69,9 +71,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD//wAAVNX//////v9U1QAA/////1TV/v///wAAVNX+/wAAAABU1f/////+/1TV/v///wAAVNX//wAA/v9U1f//AAD+//+/AAD//////7///////v//vwAAAAD///+/AAAAAP//VNX+/wAAAABU1QAAAAAAAFTV//8AAP7/VNUAAAAAAAD///7///8AAP//AAD//wAA///+/wAAAAD//wAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVqqqqqqqqqqqqqqqqqqqqqqoqqiqqKqoqqiqqKqoqqir/////////////////////VFVUVVRVVFVUVVRVVFVUVf+//7//v/+//7//v/+//79U1VTVVNVU1VTVVNVU1VTV")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_wvheu")
+shadow_mesh = SubResource("ArrayMesh_u86y4")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ox1nu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lge3j"]
 _surfaces = [{
 "aabb": AABB(-0.0271874, -0.0271926, -0.0162154, 0.0543747, 0.0543852, 0.0324308),
 "format": 34359742465,
@@ -101,9 +103,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("nP7Du/rC3jww1oQ8FLjevLbHxLsy1oS8nP7Du/rC3jw01oS8FLjevLbHxLsw1oQ8ArjePErHxDsw1oQ8Vv7DOxXD3rwy1oS8Vv7DOxXD3rww1oQ8ArjePErHxDs01oS8nP7Du/rC3jw01oS8Vv7DOxXD3rwy1oS8ArjePErHxDs01oS8FLjevLbHxLsy1oS8nP7Du/rC3jww1oQ8ArjePErHxDs01oS8ArjePErHxDsw1oQ8nP7Du/rC3jw01oS8FLjevLbHxLsy1oS8Vv7DOxXD3rww1oQ8Vv7DOxXD3rwy1oS8FLjevLbHxLsw1oQ8FLjevLbHxLsw1oQ8ArjePErHxDsw1oQ8Vv7DOxXD3rww1oQ8nP7Du/rC3jww1oQ85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAP////////+//////////7//////////v/////////+/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///78bTuQx////vxtO5DH///+/G07kMf///78bTuQx////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ox1nu")
+shadow_mesh = SubResource("ArrayMesh_lge3j")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_htiym"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_dfbfh"]
 _surfaces = [{
 "aabb": AABB(-0.042418, -0.0369216, -0.0162154, 0.084836, 0.0738432, 0.0324308),
 "format": 34359742465,
@@ -133,9 +135,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("fsStvBw7Fz0y1oQ8db4tvYAKdDsw1oS8fsStvBw7Fz0y1oS8db4tvYAKdDsy1oQ8jL4tPTgKdLsy1oQ8qsStPBc7F70w1oS8qsStPBc7F70y1oQ8jL4tPTgKdLsy1oS8fsStvBw7Fz0y1oS8qsStPBc7F70w1oS8jL4tPTgKdLsy1oS8db4tvYAKdDsw1oS8fsStvBw7Fz0y1oQ8jL4tPTgKdLsy1oS8jL4tPTgKdLsy1oQ8fsStvBw7Fz0y1oS8db4tvYAKdDsw1oS8qsStPBc7F70y1oQ8qsStPBc7F70w1oS8db4tvYAKdDsy1oQ8db4tvYAKdDsy1oQ8jL4tPTgKdLsy1oQ8qsStPBc7F70y1oQ8fsStvBw7Fz0y1oQ85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAP////////+//////////7//////////v/////////+/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///78bTuQx////vxtO5DH///+/G07kMf///78bTuQx////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_htiym")
+shadow_mesh = SubResource("ArrayMesh_dfbfh")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lc8cq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_a8qmc"]
 _surfaces = [{
 "aabb": AABB(-0.0417454, -0.036492, -0.0162154, 0.0834908, 0.0729839, 0.0324308),
 "format": 34359742465,
@@ -165,9 +167,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("BEKovJV4FT001oQ8Nf0qvfjhVzsu1oS8BEKovJV4FT0w1oS8Nf0qvfjhVzs01oQ8PP0qPTjiV7s01oQ8DEKoPJd4Fb0u1oS8DEKoPJd4Fb001oQ8PP0qPTjiV7sw1oS8Nf0qvfjhVzsu1oS8DEKoPJd4Fb001oQ8DEKoPJd4Fb0u1oS8Nf0qvfjhVzs01oQ8Nf0qvfjhVzs01oQ8PP0qPTjiV7s01oQ8DEKoPJd4Fb001oQ8BEKovJV4FT001oQ8BEKovJV4FT0w1oS8DEKoPJd4Fb0u1oS8PP0qPTjiV7sw1oS8Nf0qvfjhVzsu1oS8BEKovJV4FT001oQ8PP0qPTjiV7sw1oS8PP0qPTjiV7s01oQ8BEKovJV4FT0w1oS85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AABtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+//3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v+OxGs7///+/47Eazv///7/jsRrO////v+OxGs7///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_lc8cq")
+shadow_mesh = SubResource("ArrayMesh_a8qmc")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_d48pf"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_yk8wt"]
 _surfaces = [{
 "aabb": AABB(-0.0315552, -0.0299827, -0.0248277, 0.0631103, 0.0599653, 0.0496555),
 "format": 34359742465,
@@ -197,9 +199,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("Xo8pvDOe9TyAxbU6Pm8TvJpfkLyQY8u8VgFIPHoqfzyEY8u8/D8BvSS1UrsAxbU6OG8TPJxfkDyIY8s8ZI8pPDae9bwAxbW6VgFIvHoqf7yIY8s8/D8BPSS1UjsAxbW6Pm8TvJpfkLyQY8u8VgFIvHoqf7yIY8s8ZI8pPDae9bwAxbW6/D8BvSS1UrsAxbU6/D8BvSS1UrsAxbU6OG8TPJxfkDyIY8s8VgFIvHoqf7yIY8s8Xo8pvDOe9TyAxbU6Xo8pvDOe9TyAxbU6/D8BPSS1UjsAxbW6OG8TPJxfkDyIY8s8VgFIPHoqfzyEY8u8VgFIPHoqfzyEY8u8ZI8pPDae9bwAxbW6/D8BPSS1UjsAxbW6Pm8TvJpfkLyQY8u8rxwW087i2JavHBbTzuLYlq8cFtPO4tiWrxwW087i2JbnrE9jzuImaeesT2PO4iZp56xPY87iJmnnrE9jzuImaRtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/TFIwnf///z9MUjCd////P0xSMJ3///8/TFIwnf///z/jsRrO////v+OxGs7///+/47Eazv///7/jsRrO////v87isy3///+/zuKzLf///7/O4rMt////v87isy3///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_d48pf")
+shadow_mesh = SubResource("ArrayMesh_yk8wt")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1n6xw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_r14d6"]
 _surfaces = [{
 "aabb": AABB(-0.0436344, -0.0376987, -0.0394625, 0.0872688, 0.0753974, 0.078925),
 "format": 34359742465,
@@ -229,9 +231,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("wLu3vPRpGj34DVm8qqusvNRTIrxmoyG9AEsGOfTKvjxooyG9ALoyvSh8kzvwDVm8p6usPNhTIjxooyE9wLu3PPRpGr3oDVk8wEwGufLKvrxooyE9ALoyPSh8k7voDVk8ALoyvSh8kzvwDVm8p6usPNhTIjxooyE9wEwGufLKvrxooyE9wLu3vPRpGj34DVm8wLu3vPRpGj34DVm8ALoyPSh8k7voDVk8p6usPNhTIjxooyE9AEsGOfTKvjxooyG9AEsGOfTKvjxooyG9wLu3PPRpGr3oDVk8ALoyPSh8k7voDVk8qqusvNRTIrxmoyG9qqusvNRTIrxmoyG9wEwGufLKvrxooyE9wLu3PPRpGr3oDVk8ALoyvSh8kzvwDVm8rxwW087i2JavHBbTzuLYlq8cFtPO4tiWrxwW087i2JbnrE9jzuImaeesT2PO4iZp56xPY87iJmnnrE9jzuImaUxSMJ3///8/TFIwnf///z9MUjCd////P0xSMJ3///8/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///7/O4rMt////v87isy3///+/zuKzLf///7/O4rMt////vxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_1n6xw")
+shadow_mesh = SubResource("ArrayMesh_r14d6")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lxe6m"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0b2vk"]
 _surfaces = [{
 "aabb": AABB(-0.030713, -0.0294447, -0.0187323, 0.0614259, 0.0588894, 0.0374647),
 "format": 34359742465,
@@ -261,9 +263,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/cIbvBI28TyOdJk8zJn7vBT2dbuQdJm8/cIbvBI28TyRdJm8zJn7vBT2dbuQdJk8vpn7PFj2dTuOdJk84cIbPAk28byQdJm84cIbPAk28byQdJk8vpn7PFj2dTuRdJm8zJn7vBT2dbuQdJk8vpn7PFj2dTuOdJk84cIbPAk28byQdJk8/cIbvBI28TyOdJk8/cIbvBI28TyOdJk8vpn7PFj2dTuRdJm8vpn7PFj2dTuOdJk8/cIbvBI28TyRdJm8/cIbvBI28TyRdJm84cIbPAk28byQdJm8vpn7PFj2dTuRdJm8zJn7vBT2dbuQdJm8zJn7vBT2dbuQdJm84cIbPAk28byQdJk84cIbPAk28byQdJm8zJn7vBT2dbuQdJk85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAP9//3////8//3//f////z//f/9/////P/9//3////8/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///7//////////v/////////+//////////7//////////vxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_lxe6m")
+shadow_mesh = SubResource("ArrayMesh_0b2vk")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_q3msm"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_41nah"]
 _surfaces = [{
 "aabb": AABB(-0.0432396, -0.0374465, -0.0187323, 0.0864792, 0.0748929, 0.0374647),
 "format": 34359742465,
@@ -293,9 +295,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("sn+0vGhhGT2OdJk8ABwxvew3izuQdJm8sn+0vGhhGT2RdJm8ABwxvew3izuQdJk8/hsxPXw4i7uOdJk8rn+0PHphGb2QdJm8rn+0PHphGb2QdJk8/hsxPXw4i7uRdJm8ABwxvew3izuQdJk8/hsxPXw4i7uOdJk8rn+0PHphGb2QdJk8sn+0vGhhGT2OdJk8sn+0vGhhGT2OdJk8/hsxPXw4i7uRdJm8/hsxPXw4i7uOdJk8sn+0vGhhGT2RdJm8sn+0vGhhGT2RdJm8rn+0PHphGb2QdJm8/hsxPXw4i7uRdJm8ABwxvew3izuQdJm8ABwxvew3izuQdJm8rn+0PHphGb2QdJk8rn+0PHphGb2QdJm8ABwxvew3izuQdJk85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAP9//3////8//3//f////z//f/9/////P/9//3////8/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///7//////////v/////////+//////////7//////////vxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_q3msm")
+shadow_mesh = SubResource("ArrayMesh_41nah")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p1xyr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_rjudh"]
 _surfaces = [{
 "aabb": AABB(-0.050074, -0.0418121, -0.0187323, 0.100148, 0.0836243, 0.0374647),
 "format": 34359742465,
@@ -325,9 +327,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("enzsvEBDKz2OdJk8ZxpNvV4jDTyQdJm8enzsvEBDKz2RdJm8ZxpNvV4jDTyQdJk8aRpNPRYjDbyOdJk8hnzsPDBDK72QdJm8hnzsPDBDK72QdJk8aRpNPRYjDbyRdJm8ZxpNvV4jDTyQdJk8aRpNPRYjDbyOdJk8hnzsPDBDK72QdJk8enzsvEBDKz2OdJk8enzsvEBDKz2OdJk8aRpNPRYjDbyRdJm8aRpNPRYjDbyOdJk8enzsvEBDKz2RdJm8enzsvEBDKz2RdJm8hnzsPDBDK72QdJm8aRpNPRYjDbyRdJm8ZxpNvV4jDTyQdJm8ZxpNvV4jDTyQdJm8hnzsPDBDK72QdJk8hnzsPDBDK72QdJm8ZxpNvV4jDTyQdJk85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAP9//3////8//3//f////z//f/9/////P/9//3////8/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///7//////////v/////////+//////////7//////////vxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_p1xyr")
+shadow_mesh = SubResource("ArrayMesh_rjudh")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_b30v4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vm7ac"]
 _surfaces = [{
 "aabb": AABB(-0.0287019, -0.02816, -0.016557, 0.0574038, 0.0563201, 0.0331139),
 "format": 34359742465,
@@ -357,9 +359,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("0p/1uwCw5jx6ooc8UiDrvL4Tpbt4ooe80p/1uwCw5jx6ooe8UiDrvL4Tpbt7ooc8KiDrPCYUpTt6ooc8Mp/1O+av5rx4ooe8Mp/1O+av5rx7ooc8KiDrPCYUpTt6ooe8UiDrvL4Tpbt7ooc8KiDrPCYUpTt6ooc8Mp/1O+av5rx7ooc80p/1uwCw5jx6ooc80p/1uwCw5jx6ooc8KiDrPCYUpTt6ooe8KiDrPCYUpTt6ooc80p/1uwCw5jx6ooe80p/1uwCw5jx6ooe8Mp/1O+av5rx4ooe8KiDrPCYUpTt6ooe8UiDrvL4Tpbt4ooe8UiDrvL4Tpbt4ooe8Mp/1O+av5rx7ooc8Mp/1O+av5rx4ooe8UiDrvL4Tpbt7ooc85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAP9//3////8//3//f////z//f/9/////P/9//3////8/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///7//////////v/////////+//////////7//////////vxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_b30v4")
+shadow_mesh = SubResource("ArrayMesh_vm7ac")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cvm18"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4n4yd"]
 _surfaces = [{
 "aabb": AABB(-0.0430954, -0.0373543, -0.016557, 0.0861907, 0.0747086, 0.0331139),
 "format": 34359742465,
@@ -389,9 +391,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("LFGzvNIAGT16ooc8xYQwvdQyiDt4ooe8LFGzvNIAGT16ooe8xYQwvdQyiDt7ooc8uIQwPZAyiLt6ooc8ElGzPMoAGb14ooe8ElGzPMoAGb17ooc8uIQwPZAyiLt6ooe8LFGzvNIAGT16ooc8uIQwPZAyiLt6ooe8uIQwPZAyiLt6ooc8LFGzvNIAGT16ooe8LFGzvNIAGT16ooe8ElGzPMoAGb14ooe8uIQwPZAyiLt6ooe8xYQwvdQyiDt4ooe8xYQwvdQyiDt4ooe8ElGzPMoAGb17ooc8ElGzPMoAGb14ooe8xYQwvdQyiDt7ooc8xYQwvdQyiDt7ooc8uIQwPZAyiLt6ooc8ElGzPMoAGb17ooc8LFGzvNIAGT16ooc85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAOOxGs7///+/47Eazv///7/jsRrO////v+OxGs7///+//////////7//////////v/////////+//////////78bTuQx////vxtO5DH///+/G07kMf///78bTuQx////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_cvm18")
+shadow_mesh = SubResource("ArrayMesh_4n4yd")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ccga7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mh6cr"]
 _surfaces = [{
 "aabb": AABB(-0.0448177, -0.0384545, -0.016557, 0.0896354, 0.076909, 0.0331139),
 "format": 34359742465,
@@ -421,9 +423,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("JG3BvHyCHT17ooc8xZI3vSxArDt3ooe8JG3BvHyCHT15ooe8xZI3vSxArDt8ooc8zpI3PcA/rLt7ooc8PG3BPHCCHb13ooe8PG3BPHCCHb18ooc8zpI3PcA/rLt5ooe8xZI3vSxArDt8ooc8zpI3PcA/rLt7ooc8PG3BPHCCHb18ooc8JG3BvHyCHT17ooc8JG3BvHyCHT17ooc8zpI3PcA/rLt5ooe8zpI3PcA/rLt7ooc8JG3BvHyCHT15ooe8JG3BvHyCHT15ooe8PG3BPHCCHb13ooe8zpI3PcA/rLt5ooe8xZI3vSxArDt3ooe8xZI3vSxArDt3ooe8PG3BPHCCHb18ooc8PG3BPHCCHb13ooe8xZI3vSxArDt8ooc85DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAP9//3////8//3//f////z//f/9/////P/9//3////8/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///7//////////v/////////+//////////7//////////vxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ccga7")
+shadow_mesh = SubResource("ArrayMesh_mh6cr")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2o5fj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hnnad"]
 _surfaces = [{
 "aabb": AABB(-0.0262887, -0.0266186, -0.0126151, 0.0525774, 0.0532372, 0.0252303),
 "format": 34359742465,
@@ -453,9 +455,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("Coymu0IP2jywr048YlvXvLiW17usr068Coymu0IP2jysr068YlvXvLiW17uwr048gFvXPAKX1zuwr048iIymOzAP2rysr068iIymOzAP2rywr048gFvXPAKX1zusr068YlvXvLiW17uwr048gFvXPAKX1zuwr048iIymOzAP2rywr048Coymu0IP2jywr048Coymu0IP2jysr068iIymOzAP2rysr068gFvXPAKX1zusr068YlvXvLiW17usr068Coymu0IP2jywr048gFvXPAKX1zusr068gFvXPAKX1zuwr048Coymu0IP2jysr068YlvXvLiW17usr068iIymOzAP2rywr048iIymOzAP2rysr068YlvXvLiW17uwr0485DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAP9//3////8//3//f////z//f/9/////P/9//3////8//////////7//////////v/////////+//////////7/jsRrO////v+OxGs7///+/47Eazv///7/jsRrO////vxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_2o5fj")
+shadow_mesh = SubResource("ArrayMesh_hnnad")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_a5eyp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_loj7a"]
 _surfaces = [{
 "aabb": AABB(-0.037872, -0.0340178, -0.0126151, 0.075744, 0.0680354, 0.0252303),
 "format": 34359742465,
@@ -485,9 +487,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("+YaIvCJWCz2sr048rB8bvaDqVjqwr068+YaIvCJWCz2wr068rB8bvaDqVjqsr048qh8bPSDvVrqsr0489IaIPDRWC72wr0689IaIPDRWC72sr048qh8bPSDvVrqwr068+YaIvCJWCz2sr048qh8bPSDvVrqwr068qh8bPSDvVrqsr048+YaIvCJWCz2wr068rB8bvaDqVjqwr0689IaIPDRWC72sr0489IaIPDRWC72wr068rB8bvaDqVjqsr048rB8bvaDqVjqsr048qh8bPSDvVrqsr0489IaIPDRWC72sr048+YaIvCJWCz2sr048+YaIvCJWCz2wr0689IaIPDRWC72wr068qh8bPSDvVrqwr068rB8bvaDqVjqwr0685DHjsf/////kMeOx/////+Qx47H/////5DHjsf////8azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAOOxGs7///+/47Eazv///7/jsRrO////v+OxGs7///+/G07kMf///78bTuQx////vxtO5DH///+/G07kMf///7//f/9/////P/9//3////8//3//f////z//f/9/////P/////////+//////////7//////////v/////////+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_a5eyp")
+shadow_mesh = SubResource("ArrayMesh_loj7a")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4gwwo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_swypn"]
 _surfaces = [{
 "aabb": AABB(-0.0352145, -0.0360236, -0.0126151, 0.0762266, 0.0683437, 0.0252303),
 "format": 34359742465,
@@ -517,9 +519,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("oYNlvBhiBD2wr048GD0QveAXZrqsr068oYNlvBhiBD2sr068GD0QveAXZrqwr048oYNlvBhiBD2wr048UvwnPcgwObusr068UvwnPcgwObuwr048oYNlvBhiBD2sr068GD0QveAXZrqsr068RUCiPISNE72wr048RUCiPISNE72sr068GD0QveAXZrqwr048GD0QveAXZrqwr048UvwnPcgwObuwr048RUCiPISNE72wr048oYNlvBhiBD2wr048oYNlvBhiBD2sr068RUCiPISNE72sr068UvwnPcgwObusr068GD0QveAXZrqsr068RUCiPISNE72sr068UvwnPcgwObuwr048UvwnPcgwObusr068RUCiPISNE72wr0485DHjsf/////kMeOx/////+Qx47H/////5DHjsf/////jsRrO////v+OxGs7///+/47Eazv///7/jsRrO////vxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+//3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////vxrOG07///+/Gs4bTv///78azhtO////vxrOG07///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_4gwwo")
+shadow_mesh = SubResource("ArrayMesh_swypn")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xxt8p"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0bv5i"]
 _surfaces = [{
 "aabb": AABB(-0.0855922, -0.0655026, -0.0825721, 0.171184, 0.131005, 0.165144),
 "format": 34359742465,
@@ -549,9 +551,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("ud1+vTAmhj2WG6m9nN1+PTQmhr2WG6m97kqvPazm7LyWG6m98Eqvvevm7DyWG6m98Eqvvevm7DyWG6k97kqvPazm7LyWG6k9nN1+PTQmhr2WG6k9ud1+vTAmhj2WG6k98Eqvvevm7DyWG6m9nN1+PTQmhr2WG6k9nN1+PTQmhr2WG6m98Eqvvevm7DyWG6k9ud1+vTAmhj2WG6k97kqvPazm7LyWG6m97kqvPazm7LyWG6k9ud1+vTAmhj2WG6m97kqvPazm7LyWG6k9nN1+PTQmhr2WG6m9nN1+PTQmhr2WG6k97kqvPazm7LyWG6m98Eqvvevm7DyWG6k9ud1+vTAmhj2WG6m9ud1+vTAmhj2WG6k98Eqvvevm7DyWG6m9/////////7//////////v/////////+//////////7//f/9/////P/9//3////8//3//f////z//f/9/////PxtO5DH///+/G07kMf///78bTuQx////vxtO5DH///+/47Eazv///7/jsRrO////v+OxGs7///+/47Eazv///78azhtO//8AABrOG07//wAAGs4bTv//AAAazhtO//8AAOQx47H/////5DHjsf/////kMeOx/////+Qx47H/////")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_xxt8p")
+shadow_mesh = SubResource("ArrayMesh_0bv5i")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bufs8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_gkb6m"]
 _surfaces = [{
 "aabb": AABB(-0.259513, -0.2104, -0.0825721, 0.519025, 0.420801, 0.165144),
 "format": 34896613377,
@@ -581,9 +583,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("gS///wAAyjwAAEOk///KPAAAQ6QAAMo8gS//////yjx90AAAAABDEAAAQ6T//0MQfdAAAP//QxAAAEOkAABDEH3QAAD//ykXgS//////KRf//7tb//8pFwAAQ6T//ykX//+7W///yjx90AAAAADKPH3QAAD//8o8//+7WwAAyjz//7tbAAAAAAAAQ6QAAAAAfdAAAAAAAACBL///AAAAAP//u1v//0MQgS///wAAQxD//7tbAABDEIEv/////0MQmZfK0JmXytCZl8rQmZfK0CfIru8nyK7vJ8iu7yfIru//////////////////////ZWg0L2VoNC9laDQvZWg0L++cDuPvnA7j75wO4++cDuPXN1AQ1zdQENc3UBDXN1AQ")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_bufs8")
+shadow_mesh = SubResource("ArrayMesh_gkb6m")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_av7f6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qnv1s"]
 _surfaces = [{
 "aabb": AABB(-0.29357, -0.240555, -0.103653, 0.587139, 0.48111, 0.207306),
 "format": 34896613377,
@@ -613,9 +615,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("5jH//wAAyjwAAKmg///KPAAAqaAAAMo85jH///7/yjwYzgAAAABDEAAAqaD//0MQGM4AAP//QxAAAKmgAABDEBjOAAD//ykX5jH///7/KRf//1Vf/v8pFwAAqaD//ykX//9VX/7/yjwYzgAAAADKPBjOAAD//8o8//9VXwAAyjz//1VfAAAAAAAAqaAAAAAAGM4AAAAAAADmMf//AAAAAP//VV/+/0MQ5jH//wAAQxD//1VfAABDEOYx///+/0MQmZfK0JmXytCZl8rQmZfK0CfIru8nyK7vJ8iu7yfIru//////////////////////ZWg0L2VoNC9laDQvZWg0L++cDuPvnA7j75wO4++cDuPXN1AQ1zdQENc3UBDXN1AQ")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_av7f6")
+shadow_mesh = SubResource("ArrayMesh_qnv1s")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_o5wk2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vpr13"]
 _surfaces = [{
 "aabb": AABB(-0.0271906, -0.0271958, -0.0162154, 0.0543811, 0.0543916, 0.0324308),
 "format": 34359742465,
@@ -645,9 +647,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("9oTDO6jJ3jwy1oQ8rr7ePFpOxLs01oS8rr7ePFpOxLsy1oQ89oTDO6jJ3jwy1oS8yL7evBZOxDsy1oQ8YoXDu7rJ3rw01oS8yL7evBZOxDsy1oS8YoXDu7rJ3rwy1oQ89oTDO6jJ3jwy1oS8YoXDu7rJ3rw01oS8rr7ePFpOxLs01oS8yL7evBZOxDsy1oS89oTDO6jJ3jwy1oQ8yL7evBZOxDsy1oS89oTDO6jJ3jwy1oS8yL7evBZOxDsy1oQ8rr7ePFpOxLs01oS8YoXDu7rJ3rwy1oQ8rr7ePFpOxLsy1oQ8YoXDu7rJ3rw01oS8rr7ePFpOxLsy1oQ8yL7evBZOxDsy1oQ89oTDO6jJ3jwy1oQ8YoXDu7rJ3rwy1oQ8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO//////////////+//////////7//////////v/////////+/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///7/tse0x////v+2x7TH///+/7bHtMf///7/tse0x////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_o5wk2")
+shadow_mesh = SubResource("ArrayMesh_vpr13")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4uunc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fk217"]
 _surfaces = [{
 "aabb": AABB(-0.042416, -0.0369329, -0.0162154, 0.084832, 0.0738657, 0.0324308),
 "format": 34359742465,
@@ -677,9 +679,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("dJutPPBGFz0w1oQ8cbwtPRCFdTs21oS8cbwtPRCFdTsw1oQ8dJutPPBGFz001oS8ZLwtvYCEdbsw1oQ8WJutvOhGF7021oS8ZLwtvYCEdbs01oS8WJutvOhGF70w1oQ8dJutPPBGFz001oS8WJutvOhGF7021oS8cbwtPRCFdTs21oS8ZLwtvYCEdbs01oS8dJutPPBGFz0w1oQ8ZLwtvYCEdbs01oS8dJutPPBGFz001oS8ZLwtvYCEdbsw1oQ8cbwtPRCFdTs21oS8WJutvOhGF70w1oQ8cbwtPRCFdTsw1oQ8WJutvOhGF7021oS8cbwtPRCFdTsw1oQ8ZLwtvYCEdbsw1oQ8dJutPPBGFz0w1oQ8WJutvOhGF70w1oQ8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO//////////////+//////////7//////////v/////////+/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///7/tse0x////v+2x7TH///+/7bHtMf///7/tse0x////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_4uunc")
+shadow_mesh = SubResource("ArrayMesh_fk217")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7d521"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xgfv3"]
 _surfaces = [{
 "aabb": AABB(-0.0417436, -0.0365029, -0.0162154, 0.0834873, 0.0730057, 0.0324308),
 "format": 34359742465,
@@ -709,9 +711,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("WRmoPACEFT0y1oQ8YvsqPfhVWTs01oS8YvsqPfhVWTsy1oQ8WRmoPACEFT0y1oS8YPsqvRBXWbsy1oQ8TxmovBCEFb001oS8YPsqvRBXWbsy1oS8TxmovBCEFb0y1oQ8YvsqPfhVWTs01oS8TxmovBCEFb0y1oQ8YvsqPfhVWTsy1oQ8TxmovBCEFb001oS8YvsqPfhVWTsy1oQ8YPsqvRBXWbsy1oQ8WRmoPACEFT0y1oQ8TxmovBCEFb0y1oQ8WRmoPACEFT0y1oS8TxmovBCEFb001oS8YvsqPfhVWTs01oS8YPsqvRBXWbsy1oS8WRmoPACEFT0y1oQ8YPsqvRBXWbsy1oS8WRmoPACEFT0y1oS8YPsqvRBXWbsy1oQ8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO/////+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+//3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////vxFOEc7///+/EU4Rzv///78RThHO////vxFOEc7///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_7d521")
+shadow_mesh = SubResource("ArrayMesh_xgfv3")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4hohk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e261m"]
 _surfaces = [{
 "aabb": AABB(-0.0315569, -0.0299881, -0.0248277, 0.0631137, 0.0599763, 0.0496555),
 "format": 34359742465,
@@ -741,9 +743,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("ZUwpPMap9TyAxbU6dJYTPIRVkLyIY8u8wEEBPUCbUbsAxbU6KCRIvFQPfzx8Y8u8nZYTvJ1VkDyIY8s8m0wpvLKp9bwAxbW6zEEBvfibUTsAxbW6+SNIPCcPf7yIY8s8dJYTPIRVkLyIY8u8+SNIPCcPf7yIY8s8wEEBPUCbUbsAxbU6m0wpvLKp9bwAxbW6wEEBPUCbUbsAxbU6nZYTvJ1VkDyIY8s8ZUwpPMap9TyAxbU6+SNIPCcPf7yIY8s8ZUwpPMap9TyAxbU6zEEBvfibUTsAxbW6KCRIvFQPfzx8Y8u8nZYTvJ1VkDyIY8s8KCRIvFQPfzx8Y8u8m0wpvLKp9bwAxbW6dJYTPIRVkLyIY8u8zEEBvfibUTsAxbW6SeMb0zYdKGlJ4xvTNh0oaUnjG9M2HShpSeMb0zYdKGkbU0pjNh3WlhtTSmM2HdaWG1NKYzYd1pYbU0pjNh3Wlu2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/ra01nf///z+trTWd////P62tNZ3///8/ra01nf///z8RThHO////vxFOEc7///+/EU4Rzv///78RThHO////vzYdri3///+/Nh2uLf///782Ha4t////vzYdri3///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_4hohk")
+shadow_mesh = SubResource("ArrayMesh_e261m")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_o568u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vca6n"]
 _surfaces = [{
 "aabb": AABB(-0.043632, -0.0377107, -0.0394625, 0.087264, 0.0754212, 0.0789249),
 "format": 34359742465,
@@ -773,9 +775,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("xpG3PGZ2Gj3wDVm8xrasPAQlIrxmoyG9hbcyPWA+lDvoDVm8AD8TubLKvjxmoyG9oLasvJwkIjxmoyE9pJG3vIF2Gr3wDVk8dLcyvTg/lLvwDVk8AFITOebKvrxmoyE9hbcyPWA+lDvoDVm8oLasvJwkIjxmoyE9xpG3PGZ2Gj3wDVm8AFITOebKvrxmoyE9xpG3PGZ2Gj3wDVm8dLcyvTg/lLvwDVk8AD8TubLKvjxmoyG9oLasvJwkIjxmoyE9AD8TubLKvjxmoyG9pJG3vIF2Gr3wDVk8xrasPAQlIrxmoyG9dLcyvTg/lLvwDVk8xrasPAQlIrxmoyG9AFITOebKvrxmoyE9hbcyPWA+lDvoDVm8pJG3vIF2Gr3wDVk8SeMb0zYdKGlJ4xvTNh0oaUnjG9M2HShpSeMb0zYdKGkbU0pjNh3WlhtTSmM2HdaWG1NKYzYd1pYbU0pjNh3Wlq2tNZ3///8/ra01nf///z+trTWd////P62tNZ3///8/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///782Ha4t////vzYdri3///+/Nh2uLf///782Ha4t////v+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_o568u")
+shadow_mesh = SubResource("ArrayMesh_vca6n")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_x6u6x"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bweb5"]
 _surfaces = [{
 "aabb": AABB(-0.030715, -0.0294498, -0.0187323, 0.0614299, 0.0588995, 0.0374647),
 "format": 34359742465,
@@ -805,9 +807,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("QYEbPKZA8TyRdJk88p37PDjkdLuRdJm88p37PDjkdLuPdJk8QYEbPKZA8TyQdJm88p37vDjkdDuRdJk8QYEbvKZA8byRdJm88p37vDjkdDuQdJm8QYEbvKZA8byPdJk88p37PDjkdLuPdJk88p37vDjkdDuRdJk8QYEbPKZA8TyRdJk8QYEbvKZA8byPdJk8QYEbPKZA8TyRdJk88p37vDjkdDuQdJm8QYEbPKZA8TyQdJm88p37vDjkdDuRdJk8QYEbPKZA8TyQdJm8QYEbvKZA8byRdJm88p37PDjkdLuRdJm88p37vDjkdDuQdJm88p37PDjkdLuRdJm8QYEbvKZA8byPdJk88p37PDjkdLuPdJk8QYEbvKZA8byRdJm8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO//////9//3////8//3//f////z//f/9/////P/9//3////8/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///7//////////v/////////+//////////7//////////v+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_x6u6x")
+shadow_mesh = SubResource("ArrayMesh_bweb5")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_b2jdd"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vahp5"]
 _surfaces = [{
 "aabb": AABB(-0.0432373, -0.0374582, -0.0187323, 0.0864746, 0.0749163, 0.0374647),
 "format": 34359742465,
@@ -837,9 +839,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("7lW0PLBtGT2RdJk8oBkxPdD4izuRdJm8oBkxPdD4izuPdJk87lW0PLBtGT2QdJm8nRkxvVz5i7uRdJk861W0vMJtGb2RdJm8nRkxvVz5i7uQdJm861W0vMJtGb2PdJk8oBkxPdD4izuPdJk8nRkxvVz5i7uRdJk87lW0PLBtGT2RdJk861W0vMJtGb2PdJk87lW0PLBtGT2RdJk8nRkxvVz5i7uQdJm87lW0PLBtGT2QdJm8nRkxvVz5i7uRdJk87lW0PLBtGT2QdJm861W0vMJtGb2RdJm8oBkxPdD4izuRdJm8nRkxvVz5i7uQdJm8oBkxPdD4izuRdJm861W0vMJtGb2PdJk8oBkxPdD4izuPdJk861W0vMJtGb2RdJm8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO//////9//3////8//3//f////z//f/9/////P/9//3////8/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///7//////////v/////////+//////////7//////////v+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_b2jdd")
+shadow_mesh = SubResource("ArrayMesh_vahp5")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_05xa2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_clwon"]
 _surfaces = [{
 "aabb": AABB(-0.0500694, -0.0418275, -0.0187323, 0.100139, 0.083655, 0.0374647),
 "format": 34359742465,
@@ -869,9 +871,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("1k3sPFZTKz2SdJk8lxVNPQqTDTyQdJm8lxVNPQqTDTyQdJk81k3sPFZTKz2PdJm8mhVNvcKSDbySdJk84k3svEdTK72QdJm8mhVNvcKSDbyPdJm84k3svEdTK72QdJk8lxVNPQqTDTyQdJk8mhVNvcKSDbySdJk81k3sPFZTKz2SdJk84k3svEdTK72QdJk81k3sPFZTKz2SdJk8mhVNvcKSDbyPdJm81k3sPFZTKz2PdJm8mhVNvcKSDbySdJk81k3sPFZTKz2PdJm84k3svEdTK72QdJm8lxVNPQqTDTyQdJm8mhVNvcKSDbyPdJm8lxVNPQqTDTyQdJm84k3svEdTK72QdJk8lxVNPQqTDTyQdJk84k3svEdTK72QdJm8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO//////9//3////8//3//f////z//f/9/////P/9//3////8/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///7//////////v/////////+//////////7//////////v+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_05xa2")
+shadow_mesh = SubResource("ArrayMesh_clwon")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3jslf"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vfqnh"]
 _surfaces = [{
 "aabb": AABB(-0.0287045, -0.0281641, -0.016557, 0.0574091, 0.0563281, 0.0331139),
 "format": 34359742465,
@@ -901,9 +903,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("ziL1Ozq45jx8ooc8FibrPDSUpLt4ooe8FibrPDSUpLt7ooc8ziL1Ozq45jx2ooe8niXrvJyTpDt8ooc88iD1u2C45rx4ooe8niXrvJyTpDt2ooe88iD1u2C45rx7ooc8FibrPDSUpLt7ooc8niXrvJyTpDt8ooc8ziL1Ozq45jx8ooc88iD1u2C45rx7ooc8ziL1Ozq45jx8ooc8niXrvJyTpDt2ooe8ziL1Ozq45jx2ooe8niXrvJyTpDt8ooc8ziL1Ozq45jx2ooe88iD1u2C45rx4ooe8FibrPDSUpLt4ooe8niXrvJyTpDt2ooe8FibrPDSUpLt4ooe88iD1u2C45rx7ooc8FibrPDSUpLt7ooc88iD1u2C45rx4ooe8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO//////9//3////8//3//f////z//f/9/////P/9//3////8/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///7//////////v/////////+//////////7//////////v+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_3jslf")
+shadow_mesh = SubResource("ArrayMesh_vfqnh")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vreuf"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_eik2k"]
 _surfaces = [{
 "aabb": AABB(-0.0430931, -0.0373659, -0.016557, 0.0861863, 0.0747318, 0.0331139),
 "format": 34359742465,
@@ -933,9 +935,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("giezPAYNGT15ooc8coIwPQzziDt7ooe8coIwPQzziDt4ooc8giezPAYNGT15ooe8ZYIwvcjyiLt5ooc8aCezvPwMGb17ooe8ZYIwvcjyiLt5ooe8aCezvPwMGb14ooc8giezPAYNGT15ooc8ZYIwvcjyiLt5ooe8giezPAYNGT15ooe8ZYIwvcjyiLt5ooc8giezPAYNGT15ooe8aCezvPwMGb17ooe8coIwPQzziDt7ooe8ZYIwvcjyiLt5ooe8coIwPQzziDt7ooe8aCezvPwMGb14ooc8coIwPQzziDt4ooc8aCezvPwMGb17ooe8coIwPQzziDt4ooc8ZYIwvcjyiLt5ooc8giezPAYNGT15ooc8aCezvPwMGb14ooc8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO/////xFOEc7///+/EU4Rzv///78RThHO////vxFOEc7///+//////////7//////////v/////////+//////////7/tse0x////v+2x7TH///+/7bHtMf///7/tse0x////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_vreuf")
+shadow_mesh = SubResource("ArrayMesh_eik2k")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4wy07"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6xx2e"]
 _surfaces = [{
 "aabb": AABB(-0.0448149, -0.038467, -0.016557, 0.0896298, 0.0769341, 0.0331139),
 "format": 34359742465,
@@ -965,9 +967,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("QULBPKSPHT16ooc81Y83PRgIrTt6ooe81Y83PRgIrTt5ooc8QULBPKSPHT14ooe83o83vawHrbt6ooc8WELBvJiPHb16ooe83o83vawHrbt4ooe8WELBvJiPHb15ooc81Y83PRgIrTt5ooc83o83vawHrbt6ooc8QULBPKSPHT16ooc8WELBvJiPHb15ooc8QULBPKSPHT16ooc83o83vawHrbt4ooe8QULBPKSPHT14ooe83o83vawHrbt6ooc8QULBPKSPHT14ooe8WELBvJiPHb16ooe81Y83PRgIrTt6ooe83o83vawHrbt4ooe81Y83PRgIrTt6ooe8WELBvJiPHb15ooc81Y83PRgIrTt5ooc8WELBvJiPHb16ooe8Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO//////9//3////8//3//f////z//f/9/////P/9//3////8/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///7//////////v/////////+//////////7//////////v+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_4wy07")
+shadow_mesh = SubResource("ArrayMesh_6xx2e")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_77grm"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hgq8k"]
 _surfaces = [{
 "aabb": AABB(-0.0262922, -0.0266213, -0.0126151, 0.0525844, 0.0532426, 0.0252303),
 "format": 34359742465,
@@ -997,9 +999,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("hBWmO/MU2jywr048w2LXPE4h17usr068w2LXPE4h17uor048hBWmO/MU2jysr068x2LXvNwh1zuwr048kBWmu9AU2rysr068x2LXvNwh1zusr068kBWmu9AU2ryor048w2LXPE4h17uor048x2LXvNwh1zuwr048hBWmO/MU2jywr048kBWmu9AU2ryor048hBWmO/MU2jysr068kBWmu9AU2rysr068w2LXPE4h17usr068x2LXvNwh1zusr068hBWmO/MU2jywr048x2LXvNwh1zusr068hBWmO/MU2jysr068x2LXvNwh1zuwr048w2LXPE4h17usr068kBWmu9AU2ryor048w2LXPE4h17uor048kBWmu9AU2rysr068Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO//////9//3////8//3//f////z//f/9/////P/9//3////8//////////7//////////v/////////+//////////78RThHO////vxFOEc7///+/EU4Rzv///78RThHO////v+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_77grm")
+shadow_mesh = SubResource("ArrayMesh_hgq8k")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_baan3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4hblo"]
 _surfaces = [{
 "aabb": AABB(-0.0378716, -0.0340266, -0.0126151, 0.0757431, 0.0680532, 0.0252303),
 "format": 34359742465,
@@ -1029,9 +1031,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("9mCIPHpfCz2sr048LB8bPYA1XDqwr068LB8bPYA1XDqkr0489mCIPHpfCz2wr068PB8bvUAzXLqsr048FWGIvHBfC72wr068PB8bvUAzXLqwr068FWGIvHBfC72kr0489mCIPHpfCz2sr048PB8bvUAzXLqwr0689mCIPHpfCz2wr068PB8bvUAzXLqsr048LB8bPYA1XDqwr068FWGIvHBfC72kr048LB8bPYA1XDqkr048FWGIvHBfC72wr068LB8bPYA1XDqkr048PB8bvUAzXLqsr0489mCIPHpfCz2sr048FWGIvHBfC72kr0489mCIPHpfCz2wr068FWGIvHBfC72wr068LB8bPYA1XDqwr068PB8bvUAzXLqwr068Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AADtMRFO/////+0xEU7/////7TERTv/////tMRFO/////xFOEc7///+/EU4Rzv///78RThHO////vxFOEc7///+/7bHtMf///7/tse0x////v+2x7TH///+/7bHtMf///7//f/9/////P/9//3////8//3//f////z//f/9/////P/////////+//////////7//////////v/////////+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_baan3")
+shadow_mesh = SubResource("ArrayMesh_4hblo")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rqjuo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_06gf0"]
 _surfaces = [{
 "aabb": AABB(-0.0410107, -0.0360341, -0.0126151, 0.0762256, 0.0683617, 0.0252303),
 "format": 34359742465,
@@ -1061,9 +1063,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("WTtlPPJpBD20r048hz0QPYAsYbqor068hz0QPYAsYbqsr048WTtlPPJpBD2or068WTtlPPJpBD20r048yfonvfCdOruor068WTtlPPJpBD2or068yfonvfCdOru0r048hz0QPYAsYbqor068LhiivIKYE72sr048hz0QPYAsYbqsr048LhiivIKYE72or068hz0QPYAsYbqsr048yfonvfCdOru0r048WTtlPPJpBD20r048LhiivIKYE72sr048WTtlPPJpBD2or068LhiivIKYE72or068hz0QPYAsYbqor068yfonvfCdOruor068LhiivIKYE72sr048yfonvfCdOruor068yfonvfCdOru0r048LhiivIKYE72or068Ec7tsf//AAARzu2x//8AABHO7bH//wAAEc7tsf//AAARThHO////vxFOEc7///+/EU4Rzv///78RThHO////v+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+//3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v+0xEU7/////7TERTv/////tMRFO/////+0xEU7/////")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_rqjuo")
+shadow_mesh = SubResource("ArrayMesh_06gf0")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j502m"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ulqmu"]
 _surfaces = [{
 "aabb": AABB(-0.0855767, -0.0655357, -0.0825721, 0.171154, 0.131071, 0.165144),
 "format": 34359742465,
@@ -1093,9 +1095,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("O7l+PYQ3hj2WG6m9Cbl+vZA3hr2WG6m95EKvPUxG7TyWG6m92EKvvS5G7byWG6m95EKvPUxG7TyWG6k92EKvvS5G7byWG6k9O7l+PYQ3hj2WG6k9Cbl+vZA3hr2WG6k95EKvPUxG7TyWG6m9Cbl+vZA3hr2WG6k95EKvPUxG7TyWG6k9Cbl+vZA3hr2WG6m9O7l+PYQ3hj2WG6k92EKvvS5G7byWG6m9O7l+PYQ3hj2WG6m92EKvvS5G7byWG6k92EKvvS5G7byWG6k9Cbl+vZA3hr2WG6m92EKvvS5G7byWG6m9Cbl+vZA3hr2WG6k95EKvPUxG7TyWG6k9O7l+PYQ3hj2WG6m95EKvPUxG7TyWG6m9O7l+PYQ3hj2WG6k9/////////7//////////v/////////+//////////7//f/9/////P/9//3////8//3//f////z//f/9/////P+2x7TH///+/7bHtMf///7/tse0x////v+2x7TH///+/EU4Rzv///78RThHO////vxFOEc7///+/EU4Rzv///7/tMRFO/////+0xEU7/////7TERTv/////tMRFO/////xHO7bH//wAAEc7tsf//AAARzu2x//8AABHO7bH//wAA")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_j502m")
+shadow_mesh = SubResource("ArrayMesh_ulqmu")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jkf64"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_rxbhg"]
 _surfaces = [{
 "aabb": AABB(-0.259481, -0.210487, -0.0825721, 0.518962, 0.420974, 0.165144),
 "format": 34896613377,
@@ -1125,9 +1127,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("cdD//wAAt+///1Wk//+373HQ/////7fv//9VpAAAt++NLwAAAAA1w///VaT//zXD//9VpAAANcONLwAA//81w40vAAD//y6XcdD/////Lpf//1Wk//8ulwAAqVv//y6XAACpW///t++NLwAAAAC37wAAqVsAALfvjS8AAP//t+8AAKlbAAD/////VaQAAP//cdD//wAA//+NLwAAAAD//wAAqVv//zXDcdD//wAANcNx0P////81wwAAqVsAADXD1bdTkNW3U5DVt1OQ1bdTkJ0Xw1CdF8NQnRfDUJ0Xw1D/////////////////////KUirbylIq28pSKtvKUirbwnj9ZwJ4/WcCeP1nAnj9Zxh6DuvYeg7r2HoO69h6Duv")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_jkf64")
+shadow_mesh = SubResource("ArrayMesh_rxbhg")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_l2xxj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1rqcq"]
 _surfaces = [{
 "aabb": AABB(-0.293537, -0.24065, -0.103653, 0.587074, 0.481301, 0.207306),
 "format": 34896613377,
@@ -1157,9 +1159,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("DM7//wAAt+///7ug/v+37wzO/////7fv//+7oAAAt+/yMQAAAAA1w///u6D+/zXD//+7oAAANcPyMQAA/v81w/IxAAD+/y6XDM7/////Lpf//7ug/v8ulwAAQ1///y6XAABDX///t+/yMQAAAAC37wAAQ18AALfv8jEAAP7/t+8AAENfAAD/////u6AAAP//DM7//wAA///yMQAAAAD//wAAQ1///zXDDM7//wAANcMMzv////81wwAAQ18AADXD1bdTkNW3U5DVt1OQ1bdTkJ0Xw1CdF8NQnRfDUJ0Xw1D/////////////////////KUirbylIq28pSKtvKUirbwnj9ZwJ4/WcCeP1nAnj9Zxh6DuvYeg7r2HoO69h6Duv")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_l2xxj")
+shadow_mesh = SubResource("ArrayMesh_1rqcq")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7rnba"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0gfyp"]
 _surfaces = [{
 "aabb": AABB(-0.0930182, -0.0872256, -0.23048, 0.186036, 0.174451, 0.46096),
 "format": 34359742465,
@@ -1189,9 +1191,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("TIC+PVCjsj3wAmw+VIC+vVCjsj3wAmy+TIC+PVCjsj3wAmy+UYC+vVCjsj3wAmw+TIC+PVCjsr3wAmw+VIC+vVCjsr3wAmy+UYC+vVCjsr3wAmw+TIC+PVCjsr3wAmy+TIC+PVCjsj3wAmy+VIC+vVCjsr3wAmy+TIC+PVCjsr3wAmy+VIC+vVCjsj3wAmy+TIC+PVCjsj3wAmw+TIC+PVCjsr3wAmy+TIC+PVCjsr3wAmw+TIC+PVCjsj3wAmy+VIC+vVCjsj3wAmy+UYC+vVCjsr3wAmw+VIC+vVCjsr3wAmy+UYC+vVCjsj3wAmw+UYC+vVCjsj3wAmw+TIC+PVCjsr3wAmw+UYC+vVCjsr3wAmw+TIC+PVCjsj3wAmw+/3//////////f/////////9//////////3//////////fwAAAAAAAP9/AAAAAAAA/38AAAAAAAD/fwAA//8AAP////////+//////////7//////////v/////////+/////f////7////9/////v////3////+/////f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_7rnba")
+shadow_mesh = SubResource("ArrayMesh_0gfyp")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_kwx23"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_7d15w"]
 _surfaces = [{
 "aabb": AABB(-0.0877532, -0.372552, -0.127801, 0.175506, 0.67668, 0.255602),
 "format": 34896613377,
@@ -1221,9 +1223,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("///+/wAAqioAAP////+qKgAA//8AAKoq///+//7/qioAAAAAAACqKgAA/////6oqAAAAAP//qioAAP//AACqKgAAAAD///8////+//7//z///wAA/v//PwAA//////8///8AAP7/qioAAAAAAACqKgAAAAD//6oq//8AAAAAqir//wAAAAAAAAAA//8AAAAAAAAAAAAAAAD///7/AAAAAP//AAD+/6oq///+/wAAqir//wAAAACqKv///v/+/6oqqqqqqqqqqqqqqqqqqqqqqlTVVNVU1VTVVNVU1VTVVNX/////////////////////VFVUVVRVVFVUVVRVVFVUVf+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_kwx23")
+shadow_mesh = SubResource("ArrayMesh_7d15w")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6gl21"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_m7mse"]
 _surfaces = [{
 "aabb": AABB(-0.142316, -0.383705, -0.137701, 0.284633, 0.678146, 0.275402),
 "format": 34896613377,
@@ -1253,9 +1255,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/////wAAqioAAP////+qKgAA//8AAKoq////////qioAAAAAAACqKgAA/////6oqAAAAAP//qioAAP//AACqKgAAAAD///8//////////z///wAA////PwAA//////8///8AAP//qioAAAAAAACqKgAAAAD//6oq//8AAAAAqir//wAAAAAAAAAA//8AAAAAAAAAAAAAAAD/////AAAAAP//AAD//6oq/////wAAqir//wAAAACqKv///////6oqqqqqqqqqqqqqqqqqqqqqqlTVVNVU1VTVVNVU1VTVVNX/////////////////////VFVUVVRVVFVUVVRVVFVUVf+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_6gl21")
+shadow_mesh = SubResource("ArrayMesh_m7mse")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_84lb5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ipq25"]
 _surfaces = [{
 "aabb": AABB(-0.0930182, -0.0872256, -0.23048, 0.186036, 0.174451, 0.46096),
 "format": 34359742465,
@@ -1285,9 +1287,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("ToC+vVCjsj3wAmw+UIC+PVCjsj3wAmy+U4C+PVCjsj3wAmw+ToC+vVCjsj3wAmy+ToC+vVCjsr3wAmw+UIC+PVCjsr3wAmy+ToC+vVCjsr3wAmy+U4C+PVCjsr3wAmw+ToC+vVCjsj3wAmy+UIC+PVCjsr3wAmy+UIC+PVCjsj3wAmy+ToC+vVCjsr3wAmy+ToC+vVCjsj3wAmw+ToC+vVCjsr3wAmy+ToC+vVCjsj3wAmy+ToC+vVCjsr3wAmw+UIC+PVCjsj3wAmy+U4C+PVCjsr3wAmw+U4C+PVCjsj3wAmw+UIC+PVCjsr3wAmy+U4C+PVCjsj3wAmw+ToC+vVCjsr3wAmw+ToC+vVCjsj3wAmw+U4C+PVCjsr3wAmw+/3///wAAAAD/f///AAAAAP9///8AAAAA/3//////AAD/fwAA//////9/AAD//////38AAP//////fwAA//////////////+//////////7//////////v/////////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7////9/////v////3////+/////f////7////9/////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_84lb5")
+shadow_mesh = SubResource("ArrayMesh_ipq25")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_d23hr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vkjmo"]
 _surfaces = [{
 "aabb": AABB(-0.0877531, -0.372552, -0.127801, 0.175506, 0.67668, 0.255602),
 "format": 34896613377,
@@ -1317,9 +1319,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD+/wAAVNX//////v9U1QAA/v///1TV/v///wAAVNX+/wAAAABU1f/////+/1TV/v///wAAVNX//wAA/v9U1f//AAD+//+/AAD+/////7///////v//vwAAAAD///+/AAAAAP//VNX+/wAAAABU1QAAAAAAAFTV//8AAP7/VNUAAAAAAAD///7///8AAP//AAD+/wAA///+/wAAAAD//wAAAAD//1TVAAD+/wAAVNUAAP7///9U1QAAAAAAAFTVqqqqqqqqqqqqqqqqqqqqqqoqqiqqKqoqqiqqKqoqqir/////////////////////VFVUVVRVVFVUVVRVVFVUVf+//7//v/+//7//v/+//79U1VTVVNVU1VTVVNVU1VTV")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_d23hr")
+shadow_mesh = SubResource("ArrayMesh_vkjmo")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qv8lv"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_17qhv"]
 _surfaces = [{
 "aabb": AABB(-0.142316, -0.383705, -0.137701, 0.284633, 0.678146, 0.275402),
 "format": 34896613377,
@@ -1349,9 +1351,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD//wAAVNX///////9U1QAA/////1TV/////wAAVNX//wAAAABU1f///////1TV/////wAAVNX//wAA//9U1f//AAD///+/AAD//////7//////////vwAAAAD///+/AAAAAP//VNX//wAAAABU1QAAAAAAAFTV//8AAP//VNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD//wAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVqqqqqqqqqqqqqqqqqqqqqqoqqiqqKqoqqiqqKqoqqir/////////////////////VFVUVVRVVFVUVVRVVFVUVf+//7//v/+//7//v/+//79U1VTVVNVU1VTVVNVU1VTV")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_qv8lv")
+shadow_mesh = SubResource("ArrayMesh_17qhv")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_oy3u2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jevrk"]
 _surfaces = [{
 "aabb": AABB(-0.348336, -0.566558, -0.155199, 0.696672, 1.06829, 0.310398),
 "format": 34896613377,
@@ -1381,7 +1383,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD//wAAVNX//////v9U1QAA/////1TV/////wAAVNX/////AAD//wAAAAAAAP////8AAAAA//8AAP//AAD//wAA//8AAFTVAAAAAP//VNUAAAAAAABU1QAA/////1TV//////7/VNX//wAAAABU1f//AAD+/1TV/////wAAVNUAAAAA//9U1f//AAAAAFTVAAAAAAAAVNX//wAA/v9U1QAA//////+///8AAP7//78AAAAA////v//////+//+/qqqqqqqqqqqqqqqqqqqqqv+//7//v/+//7//v/+//79U1VTVVNVU1VTVVNVU1VTVqiqqKqoqqiqqKqoqqiqqKlRVVFVUVVRVVFVUVVRVVFX/////////////////////")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_oy3u2")
+shadow_mesh = SubResource("ArrayMesh_jevrk")
 
 [sub_resource type="Animation" id="Animation_0dxma"]
 resource_name = "Default"
@@ -1709,6 +1711,23 @@ tracks/10/path = NodePath("Humanoid/Skeleton3D:foot.R")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat32Array(0, 1, -0.713486, 2.52555e-07, -8.30443e-08, 0.70067, 0.266667, 1, -0.713879, 0.000828016, 0.000727506, 0.700268, 0.366667, 1, -0.714251, 0.00161156, 0.00141623, 0.699887, 0.466667, 1, -0.714703, 0.00256798, 0.00225691, 0.69942, 0.6, 1, -0.715379, 0.00400422, 0.00351934, 0.698716, 0.666667, 1, -0.715729, 0.00475011, 0.00417496, 0.69835, 0.733333, 1, -0.716075, 0.00548977, 0.00482511, 0.697985, 0.833333, 1, -0.71657, 0.00655147, 0.00575833, 0.69746, 0.966667, 1, -0.717138, 0.00777302, 0.00683205, 0.696855, 1.06667, 1, -0.717459, 0.00846679, 0.00744186, 0.696509, 1.26667, 1, -0.717512, 0.00838327, 0.00773301, 0.696452, 1.3, 1, -0.716904, 0.00649383, 0.00713227, 0.697105, 1.33333, 1, -0.715717, 0.00283474, 0.00596876, 0.698359, 1.36667, 1, -0.713855, -0.00282533, 0.00416879, 0.700275, 1.4, 1, -0.711548, -0.00971699, 0.00197687, 0.702568, 1.43333, 1, -0.708832, -0.0176594, -0.000549642, 0.705156, 1.46667, 1, -0.70575, -0.0264705, -0.00335302, 0.707958, 1.5, 1, -0.702346, -0.0359674, -0.00637516, 0.710898, 1.53333, 1, -0.698652, -0.0460118, -0.00957219, 0.713917, 1.6, 1, -0.690894, -0.0663107, -0.0160352, 0.71973, 1.63333, 1, -0.686975, -0.0761946, -0.0191832, 0.722421, 1.66667, 1, -0.683135, -0.0856562, -0.0221973, 0.724912, 1.7, 1, -0.679596, -0.0941944, -0.0249177, 0.727087, 1.73333, 1, -0.676398, -0.101769, -0.0273314, 0.72896, 1.76667, 1, -0.673638, -0.108202, -0.029382, 0.730507, 1.8, 1, -0.671414, -0.11332, -0.0310134, 0.731711, 1.83333, 1, -0.669822, -0.116947, -0.0321696, 0.732548, 1.86667, 1, -0.669254, -0.118235, -0.0325802, 0.732843, 1.9, 1, -0.669497, -0.117658, -0.0324352, 0.73272, 1.93333, 1, -0.670474, -0.115373, -0.0318052, 0.732218, 1.96667, 1, -0.672102, -0.111538, -0.030748, 0.731364, 2, 1, -0.674297, -0.106316, -0.0293085, 0.730179, 2.03333, 1, -0.677092, -0.0995751, -0.0274501, 0.728613, 2.06667, 1, -0.680207, -0.0919404, -0.0253455, 0.72679, 2.1, 1, -0.683556, -0.0835783, -0.0230403, 0.724731, 2.13333, 1, -0.687058, -0.0746563, -0.0205807, 0.722464, 2.16667, 1, -0.690635, -0.0653433, -0.0180134, 0.72002, 2.2, 1, -0.694198, -0.0558523, -0.015397, 0.717449, 2.23333, 1, -0.697633, -0.046483, -0.0128142, 0.714831, 2.26667, 1, -0.700884, -0.0374072, -0.0103123, 0.712219, 2.3, 1, -0.703899, -0.0287966, -0.00793856, 0.709672, 2.33333, 1, -0.70663, -0.0208224, -0.00574029, 0.707254, 2.36667, 1, -0.708908, -0.0140365, -0.00386961, 0.705151, 2.4, 1, -0.71077, -0.00839379, -0.00231408, 0.703371, 2.43333, 1, -0.712179, -0.00406197, -0.00111992, 0.701985, 2.46667, 1, -0.713099, -0.00120825, -0.000333233, 0.701063, 2.5, 1, -0.713486, 2.52555e-07, -8.30443e-08, 0.70067)
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.13333, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_make_footstep"
+}, {
+"args": [],
+"method": &"_make_footstep"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1jwa3"]
 _data = {
@@ -1718,80 +1737,13 @@ _data = {
 &"walk": SubResource("Animation_slhmq")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cwyr3"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aa7my"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cv2ar"]
-animation = &"Default"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cwyr3"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wvheu"]
-animation = &"run"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ox1nu"]
-animation = &"walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cwyr3"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wvheu"]
-break_loop_at_end = true
-advance_mode = 2
-advance_condition = &"run"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ox1nu"]
-break_loop_at_end = true
-advance_mode = 2
-advance_condition = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lc8cq"]
-break_loop_at_end = true
-advance_mode = 2
-advance_condition = &"run"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_htiym"]
-break_loop_at_end = true
-priority = 2
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d48pf"]
-break_loop_at_end = true
-priority = 2
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b5wr2"]
-break_loop_at_end = true
-advance_mode = 2
-advance_condition = &"dead"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_45y30"]
-break_loop_at_end = true
-advance_mode = 2
-advance_condition = &"dead"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7k80q"]
-break_loop_at_end = true
-advance_mode = 2
-advance_condition = &"dead"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_b30v4"]
-states/Default/node = SubResource("AnimationNodeAnimation_cv2ar")
-states/Default/position = Vector2(775, 90)
-states/idle/node = SubResource("AnimationNodeAnimation_cwyr3")
-states/idle/position = Vector2(453, 58)
-states/run/node = SubResource("AnimationNodeAnimation_wvheu")
-states/run/position = Vector2(443, 167)
-states/walk/node = SubResource("AnimationNodeAnimation_ox1nu")
-states/walk/position = Vector2(632, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_cwyr3"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_wvheu"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_ox1nu"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_lc8cq"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_htiym"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_d48pf"), "idle", "Default", SubResource("AnimationNodeStateMachineTransition_b5wr2"), "walk", "Default", SubResource("AnimationNodeStateMachineTransition_45y30"), "run", "Default", SubResource("AnimationNodeStateMachineTransition_7k80q")]
-
-[node name="testmonster" type="CharacterBody3D"]
-script = ExtResource("1_cwyr3")
+[node name="tempplayer" type="CharacterBody3D"]
+script = ExtResource("1_d2i1d")
 
 [node name="Humanoid" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Humanoid"]
 bones/0/name = "Torso"
@@ -1806,7 +1758,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, -2.01665e-08, 1.37254e-07, 4.64952e-08, 0.980876, -0.194636, -1.30704e-07, 0.194636, 0.980876, -5.30858e-15, 1.0676, 1.39698e-09)
 bones/1/enabled = true
 bones/1/position = Vector3(-5.30858e-15, 1.0676, 1.39698e-09)
-bones/1/rotation = Quaternion(0.0589524, 0.46102, -0.0142891, 0.885314)
+bones/1/rotation = Quaternion(0.0977864, 6.7312e-08, 1.67457e-08, 0.995207)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Root"
 bones/2/parent = 1
@@ -1834,7 +1786,7 @@ bones/5/parent = 0
 bones/5/rest = Transform3D(-0.537545, 0.841483, 0.0543291, -0.84319, -0.537063, -0.0243599, 0.00867969, -0.0589043, 0.998226, 0.29029, 0.977994, 0.0171184)
 bones/5/enabled = true
 bones/5/position = Vector3(0.29029, 0.977994, 0.0171184)
-bones/5/rotation = Quaternion(0.0609404, -0.0535998, 0.855858, -0.510803)
+bones/5/rotation = Quaternion(0.0609404, -0.0535998, 0.855859, -0.510803)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "forearm.L"
 bones/6/parent = 5
@@ -2366,7 +2318,7 @@ bones/81/parent = 80
 bones/81/rest = Transform3D(1, -2.44016e-07, 4.72418e-07, -4.76762e-07, -0.0181235, 0.999836, -2.35414e-07, -0.999836, -0.0181235, 4.37809e-08, 0.756624, -5.68782e-10)
 bones/81/enabled = true
 bones/81/position = Vector3(4.37809e-08, 0.756624, -5.68782e-10)
-bones/81/rotation = Quaternion(-0.713486, 2.52555e-07, -8.30443e-08, 0.70067)
+bones/81/rotation = Quaternion(-0.713486, 2.52555e-07, -8.30444e-08, 0.70067)
 bones/81/scale = Vector3(1, 1, 1)
 bones/82/name = "Foot_R"
 bones/82/parent = 81
@@ -2398,16 +2350,17 @@ bones/85/rotation = Quaternion(0.00403108, -3.52234e-16, -2.11657e-22, 0.999992)
 bones/85/scale = Vector3(1, 1, 1)
 
 [node name="Head" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.574513, -0.0738489, 0.815157, 0.0224602, 0.996969, 0.0744904, -0.818187, -0.0244871, 0.574431, -0.0105086, 2.92414, -0.0158987)
+transform = Transform3D(1, -3.01352e-09, 5.95283e-08, 3.01353e-09, 1, -2.23517e-08, -5.95284e-08, 2.23517e-08, 1, -1.62785e-09, 2.92384, 1.80677e-07)
 bone_name = "Head"
 bone_idx = 3
 
 [node name="Head" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Head"]
+visible = false
 mesh = SubResource("ArrayMesh_3vmci")
 skeleton = NodePath("")
 
 [node name="Neck_2" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.574513, -0.0738487, 0.815157, 0.0224603, 0.996969, 0.0744901, -0.818187, -0.0244869, 0.574431, 0.00776366, 2.67746, -0.00983991)
+transform = Transform3D(1, -8.6839e-11, 4.56964e-10, 8.6839e-11, 1, -1.63913e-07, -4.57007e-10, 1.63913e-07, 1, 2.02532e-13, 2.67641, 1.41561e-07)
 bone_name = "Neck_2"
 bone_idx = 4
 
@@ -2416,7 +2369,7 @@ mesh = SubResource("ArrayMesh_ab63n")
 skeleton = NodePath("")
 
 [node name="Pointer_3_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272355, -0.00735495, -0.962169, 0.571727, 0.805539, 0.155677, 0.773919, -0.592498, 0.223597, 0.858259, 2.30221, 0.762568)
+transform = Transform3D(0.272356, -0.0073548, -0.962168, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.858259, 2.30221, 0.762568)
 bone_name = "Pointer_3_L"
 bone_idx = 11
 
@@ -2425,7 +2378,7 @@ mesh = SubResource("ArrayMesh_hg66s")
 skeleton = NodePath("")
 
 [node name="Pointer_2_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272357, -0.00735522, -0.962168, 0.571726, 0.80554, 0.155678, 0.77392, -0.592497, 0.223599, 0.84485, 2.29944, 0.706794)
+transform = Transform3D(0.272356, -0.00735463, -0.962168, 0.571726, 0.805539, 0.155678, 0.773919, -0.592496, 0.223598, 0.84485, 2.29944, 0.706794)
 bone_name = "Pointer_2_L"
 bone_idx = 12
 
@@ -2434,7 +2387,7 @@ mesh = SubResource("ArrayMesh_sq6gx")
 skeleton = NodePath("")
 
 [node name="Pointer_1_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272355, -0.00735552, -0.962169, 0.571727, 0.805538, 0.155677, 0.773918, -0.592498, 0.223598, 0.827407, 2.29585, 0.634242)
+transform = Transform3D(0.272356, -0.00735507, -0.962168, 0.571726, 0.805539, 0.155678, 0.773918, -0.592497, 0.223598, 0.827407, 2.29585, 0.634243)
 bone_name = "Pointer_1_L"
 bone_idx = 13
 
@@ -2443,7 +2396,7 @@ mesh = SubResource("ArrayMesh_mulx4")
 skeleton = NodePath("")
 
 [node name="Thumb_2_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272356, -0.00735304, -0.962169, 0.571726, 0.805539, 0.155679, 0.773919, -0.592497, 0.223597, 0.728971, 2.30121, 0.53109)
+transform = Transform3D(0.272355, -0.00735396, -0.962168, 0.571727, 0.805538, 0.155678, 0.773919, -0.592498, 0.223597, 0.728971, 2.30121, 0.53109)
 bone_name = "Thumb_2_L"
 bone_idx = 16
 
@@ -2452,7 +2405,7 @@ mesh = SubResource("ArrayMesh_wg0fq")
 skeleton = NodePath("")
 
 [node name="Thumb_1_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272357, -0.00735471, -0.962168, 0.571727, 0.805539, 0.155679, 0.773919, -0.592497, 0.223599, 0.756899, 2.29348, 0.48636)
+transform = Transform3D(0.272355, -0.0073545, -0.962169, 0.571726, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.756899, 2.29349, 0.48636)
 bone_name = "Thumb_1_L"
 bone_idx = 17
 
@@ -2461,7 +2414,7 @@ mesh = SubResource("ArrayMesh_tqsgr")
 skeleton = NodePath("")
 
 [node name="Middle_3_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272354, -0.00735509, -0.962169, 0.571727, 0.805539, 0.155677, 0.77392, -0.592497, 0.223597, 0.904658, 2.29693, 0.778345)
+transform = Transform3D(0.272355, -0.00735512, -0.962168, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.904658, 2.29693, 0.778344)
 bone_name = "Middle_3_L"
 bone_idx = 21
 
@@ -2470,7 +2423,7 @@ mesh = SubResource("ArrayMesh_ucqsn")
 skeleton = NodePath("")
 
 [node name="Middle_2_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272356, -0.00735536, -0.962168, 0.571728, 0.805538, 0.155678, 0.773919, -0.592498, 0.223598, 0.890044, 2.29392, 0.71756)
+transform = Transform3D(0.272356, -0.00735494, -0.962168, 0.571727, 0.805538, 0.155678, 0.773918, -0.592498, 0.223598, 0.890044, 2.29392, 0.71756)
 bone_name = "Middle_2_L"
 bone_idx = 22
 
@@ -2479,7 +2432,7 @@ mesh = SubResource("ArrayMesh_0sr6s")
 skeleton = NodePath("")
 
 [node name="Middle_1_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272355, -0.00735441, -0.962169, 0.571726, 0.805539, 0.155677, 0.77392, -0.592497, 0.223597, 0.870066, 2.28979, 0.634464)
+transform = Transform3D(0.272356, -0.00735473, -0.962168, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.870066, 2.28979, 0.634463)
 bone_name = "Middle_1_L"
 bone_idx = 23
 
@@ -2488,7 +2441,7 @@ mesh = SubResource("ArrayMesh_b1pej")
 skeleton = NodePath("")
 
 [node name="Index_3_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272355, -0.0073546, -0.962169, 0.571726, 0.805539, 0.155677, 0.77392, -0.592496, 0.223597, 0.942678, 2.28947, 0.75392)
+transform = Transform3D(0.272356, -0.00735503, -0.962169, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.942678, 2.28947, 0.753919)
 bone_name = "Index_3_L"
 bone_idx = 27
 
@@ -2497,7 +2450,7 @@ mesh = SubResource("ArrayMesh_yesw1")
 skeleton = NodePath("")
 
 [node name="Index_2_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272355, -0.00735429, -0.962169, 0.571727, 0.805539, 0.155678, 0.773919, -0.592498, 0.223597, 0.928661, 2.28658, 0.695619)
+transform = Transform3D(0.272356, -0.00735477, -0.962169, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.928661, 2.28658, 0.695618)
 bone_name = "Index_2_L"
 bone_idx = 28
 
@@ -2506,7 +2459,7 @@ mesh = SubResource("ArrayMesh_s18qi")
 skeleton = NodePath("")
 
 [node name="Index_1_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272356, -0.0073548, -0.962168, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.91018, 2.28277, 0.618746)
+transform = Transform3D(0.272356, -0.00735506, -0.962168, 0.571727, 0.805539, 0.155678, 0.773919, -0.592498, 0.223598, 0.91018, 2.28277, 0.618746)
 bone_name = "Index_1_L"
 bone_idx = 29
 
@@ -2515,7 +2468,7 @@ mesh = SubResource("ArrayMesh_2f470")
 skeleton = NodePath("")
 
 [node name="Pinky_3_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272356, -0.00735439, -0.962169, 0.571726, 0.805539, 0.155678, 0.77392, -0.592496, 0.223598, 0.970916, 2.28222, 0.715394)
+transform = Transform3D(0.272356, -0.00735532, -0.962169, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.970916, 2.28222, 0.715394)
 bone_name = "Pinky_3_L"
 bone_idx = 33
 
@@ -2524,7 +2477,7 @@ mesh = SubResource("ArrayMesh_kcl15")
 skeleton = NodePath("")
 
 [node name="Pinky_2_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272356, -0.00735465, -0.962169, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.959016, 2.27977, 0.665893)
+transform = Transform3D(0.272356, -0.00735527, -0.962168, 0.571727, 0.805539, 0.155678, 0.773919, -0.592498, 0.223598, 0.959016, 2.27977, 0.665892)
 bone_name = "Pinky_2_L"
 bone_idx = 34
 
@@ -2533,7 +2486,7 @@ mesh = SubResource("ArrayMesh_l17kx")
 skeleton = NodePath("")
 
 [node name="Pinky_1_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272355, -0.00735611, -0.962169, 0.571727, 0.805539, 0.155677, 0.773919, -0.592498, 0.223599, 0.943036, 2.27647, 0.599426)
+transform = Transform3D(0.272356, -0.00735536, -0.962168, 0.571727, 0.805538, 0.155678, 0.773919, -0.592497, 0.223598, 0.943035, 2.27647, 0.599425)
 bone_name = "Pinky_1_L"
 bone_idx = 35
 
@@ -2542,7 +2495,7 @@ mesh = SubResource("ArrayMesh_s55nu")
 skeleton = NodePath("")
 
 [node name="Hand_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272356, -0.00735503, -0.962169, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.856154, 2.28048, 0.49974)
+transform = Transform3D(0.272356, -0.00735507, -0.962169, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.856154, 2.28048, 0.49974)
 bone_name = "Hand_L"
 bone_idx = 36
 
@@ -2551,7 +2504,7 @@ mesh = SubResource("ArrayMesh_o7xbp")
 skeleton = NodePath("")
 
 [node name="Forearm_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.272356, -0.00735459, -0.962168, 0.571726, 0.805539, 0.155678, 0.77392, -0.592497, 0.223598, 0.776954, 2.26299, 0.171106)
+transform = Transform3D(0.272356, -0.00735474, -0.962168, 0.571727, 0.805539, 0.155678, 0.773919, -0.592497, 0.223598, 0.776954, 2.26299, 0.171107)
 bone_name = "Forearm_L"
 bone_idx = 37
 
@@ -2560,7 +2513,7 @@ mesh = SubResource("ArrayMesh_kxspk")
 skeleton = NodePath("")
 
 [node name="UpperArm_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.991936, -0.0721929, 0.10417, 0.0735539, 0.997248, -0.00927823, -0.103213, 0.0168655, 0.994516, 0.535629, 2.36198, -0.0269403)
+transform = Transform3D(0.991936, -0.0721922, 0.10417, 0.0735532, 0.997248, -0.00927819, -0.103213, 0.0168654, 0.994516, 0.535629, 2.36198, -0.0269402)
 bone_name = "UpperArm_L"
 bone_idx = 38
 
@@ -2569,7 +2522,7 @@ mesh = SubResource("ArrayMesh_ey3y5")
 skeleton = NodePath("")
 
 [node name="Pointer_3_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111034, -0.589975, 2.32625, 0.802323)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632139, 0.602677, -0.835642, -0.537936, -0.111035, -0.589976, 2.32625, 0.802323)
 bone_name = "Pointer_3_R"
 bone_idx = 45
 
@@ -2578,7 +2531,7 @@ mesh = SubResource("ArrayMesh_c2gdd")
 skeleton = NodePath("")
 
 [node name="Pointer_2_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632139, 0.602677, -0.835641, -0.537935, -0.111034, -0.594941, 2.32225, 0.745248)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632139, 0.602677, -0.835642, -0.537935, -0.111035, -0.594942, 2.32225, 0.745248)
 bone_name = "Pointer_2_R"
 bone_idx = 46
 
@@ -2587,7 +2540,7 @@ mesh = SubResource("ArrayMesh_as1eu")
 skeleton = NodePath("")
 
 [node name="Pointer_1_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254011, -0.557698, 0.790223, -0.487014, 0.632138, 0.602677, -0.835641, -0.537936, -0.111036, -0.601402, 2.31704, 0.671005)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632138, 0.602677, -0.835641, -0.537936, -0.111035, -0.601403, 2.31704, 0.671005)
 bone_name = "Pointer_1_R"
 bone_idx = 47
 
@@ -2596,7 +2549,7 @@ mesh = SubResource("ArrayMesh_0p2bx")
 skeleton = NodePath("")
 
 [node name="Thumb_2_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254013, -0.557696, 0.790223, -0.487013, 0.632139, 0.602676, -0.835641, -0.537936, -0.111034, -0.554753, 2.35216, 0.540814)
+transform = Transform3D(0.254012, -0.557696, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111034, -0.554754, 2.35216, 0.540814)
 bone_name = "Thumb_2_R"
 bone_idx = 50
 
@@ -2605,7 +2558,7 @@ mesh = SubResource("ArrayMesh_g3r62")
 skeleton = NodePath("")
 
 [node name="Thumb_1_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254013, -0.557697, 0.790222, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111033, -0.588067, 2.32661, 0.50798)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537936, -0.111034, -0.588068, 2.32661, 0.507981)
 bone_name = "Thumb_1_R"
 bone_idx = 51
 
@@ -2614,7 +2567,7 @@ mesh = SubResource("ArrayMesh_yk5h7")
 skeleton = NodePath("")
 
 [node name="Middle_3_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557698, 0.790222, -0.487013, 0.632138, 0.602677, -0.835641, -0.537935, -0.111035, -0.620876, 2.30278, 0.832719)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632138, 0.602677, -0.835642, -0.537935, -0.111035, -0.620877, 2.30278, 0.83272)
 bone_name = "Middle_3_R"
 bone_idx = 55
 
@@ -2623,7 +2576,7 @@ mesh = SubResource("ArrayMesh_8xcts")
 skeleton = NodePath("")
 
 [node name="Middle_2_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557698, 0.790223, -0.487013, 0.632138, 0.602677, -0.835641, -0.537935, -0.111035, -0.626288, 2.29842, 0.770517)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111034, -0.62629, 2.29842, 0.770517)
 bone_name = "Middle_2_R"
 bone_idx = 56
 
@@ -2632,7 +2585,7 @@ mesh = SubResource("ArrayMesh_imx0d")
 skeleton = NodePath("")
 
 [node name="Middle_1_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.25401, -0.557698, 0.790223, -0.487012, 0.63214, 0.602676, -0.835642, -0.537934, -0.111035, -0.633688, 2.29246, 0.685483)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111035, -0.633689, 2.29246, 0.685484)
 bone_name = "Middle_1_R"
 bone_idx = 57
 
@@ -2641,7 +2594,7 @@ mesh = SubResource("ArrayMesh_psock")
 skeleton = NodePath("")
 
 [node name="Index_3_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254011, -0.557698, 0.790222, -0.487013, 0.632139, 0.602677, -0.835642, -0.537934, -0.111036, -0.656332, 2.27569, 0.822407)
+transform = Transform3D(0.254011, -0.557697, 0.790223, -0.487012, 0.63214, 0.602677, -0.835642, -0.537935, -0.111035, -0.656333, 2.27569, 0.822407)
 bone_name = "Index_3_R"
 bone_idx = 61
 
@@ -2650,7 +2603,7 @@ mesh = SubResource("ArrayMesh_jras7")
 skeleton = NodePath("")
 
 [node name="Index_2_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254013, -0.557697, 0.790222, -0.487013, 0.632138, 0.602677, -0.835641, -0.537937, -0.111035, -0.661523, 2.2715, 0.762747)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632139, 0.602677, -0.835641, -0.537936, -0.111034, -0.661524, 2.2715, 0.762747)
 bone_name = "Index_2_R"
 bone_idx = 62
 
@@ -2659,7 +2612,7 @@ mesh = SubResource("ArrayMesh_r57j2")
 skeleton = NodePath("")
 
 [node name="Index_1_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557698, 0.790222, -0.487012, 0.632139, 0.602678, -0.835642, -0.537935, -0.111035, -0.668368, 2.26599, 0.684081)
+transform = Transform3D(0.254013, -0.557697, 0.790223, -0.487013, 0.632138, 0.602677, -0.835641, -0.537936, -0.111035, -0.668369, 2.26598, 0.684081)
 bone_name = "Index_1_R"
 bone_idx = 63
 
@@ -2668,7 +2621,7 @@ mesh = SubResource("ArrayMesh_cgp8w")
 skeleton = NodePath("")
 
 [node name="Pinky_3_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111035, -0.688197, 2.25127, 0.795528)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111035, -0.688198, 2.25127, 0.795528)
 bone_name = "Pinky_3_R"
 bone_idx = 67
 
@@ -2677,7 +2630,7 @@ mesh = SubResource("ArrayMesh_3s2my")
 skeleton = NodePath("")
 
 [node name="Pinky_2_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632138, 0.602677, -0.835641, -0.537936, -0.111035, -0.692604, 2.24771, 0.744873)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632139, 0.602677, -0.835642, -0.537936, -0.111035, -0.692605, 2.24771, 0.744873)
 bone_name = "Pinky_2_R"
 bone_idx = 68
 
@@ -2686,7 +2639,7 @@ mesh = SubResource("ArrayMesh_7bjcb")
 skeleton = NodePath("")
 
 [node name="Pinky_1_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111034, -0.698523, 2.24294, 0.676856)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487012, 0.632139, 0.602677, -0.835642, -0.537935, -0.111035, -0.698524, 2.24294, 0.676856)
 bone_name = "Pinky_1_R"
 bone_idx = 69
 
@@ -2695,7 +2648,7 @@ mesh = SubResource("ArrayMesh_2y0ff")
 skeleton = NodePath("")
 
 [node name="Hand_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557697, 0.790222, -0.487013, 0.632139, 0.602677, -0.835641, -0.537935, -0.111035, -0.659695, 2.27212, 0.553799)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632139, 0.602677, -0.835642, -0.537936, -0.111035, -0.659696, 2.27212, 0.553799)
 bone_name = "Hand_R"
 bone_idx = 70
 
@@ -2704,7 +2657,7 @@ mesh = SubResource("ArrayMesh_gfbrm")
 skeleton = NodePath("")
 
 [node name="Forearm_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632138, 0.602677, -0.835641, -0.537935, -0.111035, -0.68824, 2.24757, 0.217405)
+transform = Transform3D(0.254012, -0.557697, 0.790223, -0.487013, 0.632139, 0.602677, -0.835642, -0.537935, -0.111035, -0.688241, 2.24757, 0.217405)
 bone_name = "Forearm_R"
 bone_idx = 71
 
@@ -2713,7 +2666,7 @@ mesh = SubResource("ArrayMesh_poc84")
 skeleton = NodePath("")
 
 [node name="UpperArm_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -1.02818e-06, 7.45058e-09, 1.03371e-06, 1, -3.1665e-08, 0, 4.84288e-08, 1, -0.527138, 2.3442, 5.30854e-08)
+transform = Transform3D(1, 1.65484e-07, -1.86265e-08, -1.3737e-08, 1, 7.45058e-09, 2.23517e-08, 5.58794e-09, 1, -0.527138, 2.3442, 1.04308e-07)
 bone_name = "UpperArm_R"
 bone_idx = 72
 
@@ -2722,7 +2675,7 @@ mesh = SubResource("ArrayMesh_d30fn")
 skeleton = NodePath("")
 
 [node name="Foot_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -9.63496e-12, -1.34204e-12, 9.66338e-12, 1, -5.55068e-07, 1.27898e-12, 5.55068e-07, 1, 0.207107, 0.0872611, 0.0754534)
+transform = Transform3D(1, -9.66338e-12, -3.68061e-12, 9.60654e-12, 1, -1.65775e-07, 2.96918e-12, 2.04891e-07, 1, 0.207107, 0.0872616, 0.0754536)
 bone_name = "Foot_L"
 bone_idx = 76
 
@@ -2731,7 +2684,7 @@ mesh = SubResource("ArrayMesh_f8jj4")
 skeleton = NodePath("")
 
 [node name="LowerLeg_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -1.96513e-10, 5.6405e-09, 1.96514e-10, 1, -2.5332e-07, -5.64057e-09, 2.5332e-07, 1, 0.206944, 0.534247, -2.98023e-08)
+transform = Transform3D(1, -1.9654e-10, 5.63908e-09, 1.96525e-10, 1, -3.35276e-08, -5.63979e-09, 7.45058e-08, 1, 0.206945, 0.534247, -4.84288e-08)
 bone_name = "LowerLeg_L"
 bone_idx = 77
 
@@ -2740,7 +2693,7 @@ mesh = SubResource("ArrayMesh_quepg")
 skeleton = NodePath("")
 
 [node name="UpperLeg_L" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -4.71758e-09, -2.50164e-08, 4.71757e-09, 1, -2.16067e-07, 2.50162e-08, 2.16067e-07, 1, 0.206019, 1.22208, -4.65661e-08)
+transform = Transform3D(1, -4.71757e-09, -2.50166e-08, 4.71755e-09, 1, -7.07805e-08, 2.50161e-08, 1.11759e-07, 1, 0.20602, 1.22208, -1.76951e-08)
 bone_name = "UpperLeg_L"
 bone_idx = 78
 
@@ -2749,7 +2702,7 @@ mesh = SubResource("ArrayMesh_dwbx7")
 skeleton = NodePath("")
 
 [node name="Foot_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -5.01927e-11, -6.25064e-11, 5.01927e-11, 1, -5.56931e-07, 6.24425e-11, 5.56931e-07, 1, -0.207107, 0.0872612, 0.0754535)
+transform = Transform3D(1, -5.02496e-11, -6.39231e-11, 5.0278e-11, 1, -2.92435e-07, 6.32632e-11, 3.31551e-07, 1, -0.207107, 0.0872617, 0.0754536)
 bone_name = "Foot_R"
 bone_idx = 82
 
@@ -2758,7 +2711,7 @@ mesh = SubResource("ArrayMesh_mxsak")
 skeleton = NodePath("")
 
 [node name="LowerLeg_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -1.96577e-10, 5.61047e-09, 1.96576e-10, 1, -2.5332e-07, -5.61056e-09, 2.5332e-07, 1, -0.206944, 0.534247, -9.68575e-08)
+transform = Transform3D(1, -1.96586e-10, 5.60841e-09, 1.96572e-10, 1, -4.09782e-08, -5.60912e-09, 7.82311e-08, 1, -0.206945, 0.534247, -3.35276e-08)
 bone_name = "LowerLeg_R"
 bone_idx = 83
 
@@ -2767,7 +2720,7 @@ mesh = SubResource("ArrayMesh_ktnln")
 skeleton = NodePath("")
 
 [node name="UpperLeg_R" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, -4.71954e-09, -2.50163e-08, 4.71954e-09, 1, -1.49012e-08, 2.50162e-08, 1.49012e-08, 1, -0.206019, 1.22208, -2.79397e-09)
+transform = Transform3D(1, -4.71959e-09, -2.50172e-08, 4.71957e-09, 1, -6.33299e-08, 2.50167e-08, 1.04308e-07, 1, -0.20602, 1.22208, 1.21072e-08)
 bone_name = "UpperLeg_R"
 bone_idx = 84
 
@@ -2776,7 +2729,7 @@ mesh = SubResource("ArrayMesh_xb54e")
 skeleton = NodePath("")
 
 [node name="Torso_2" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
-transform = Transform3D(1, 8.35327e-10, 1.03608e-07, -8.35323e-10, 1, -4.00469e-08, -1.03608e-07, 4.00469e-08, 1, 1.42944e-09, 2.08308, -2.32831e-08)
+transform = Transform3D(1, 8.35327e-10, 1.03608e-07, -8.35323e-10, 1, -4.19095e-08, -1.03608e-07, 4.19095e-08, 1, 1.42944e-09, 2.08308, 2.8871e-08)
 bone_name = "Torso_2"
 bone_idx = 85
 
@@ -2789,32 +2742,41 @@ libraries = {
 &"": SubResource("AnimationLibrary_1jwa3")
 }
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.96902, 0.251642)
-target_position = Vector3(0, 0, 10)
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02908, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104002, 0)
+cull_mask = 1048573
+current = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D"]
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="SubViewport" type="SubViewport" parent="Head/Camera3D/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="view_model_camera" parent="Head/Camera3D/SubViewportContainer/SubViewport" instance=ExtResource("2_5qkxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5709, 0)
+cull_mask = 1047554
+current = true
+
+[node name="InteractRay" parent="Head" instance=ExtResource("3_hm3fc")]
+visible = false
+target_position = Vector3(0, 0, -2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.55883, 0)
-shape = SubResource("CapsuleShape3D_cwyr3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00912, 0)
+shape = SubResource("CapsuleShape3D_aa7my")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_height_offset = 0.5
+[node name="GroundRay" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37405, 0)
+collide_with_areas = true
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_b30v4")
-anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/dead = false
-parameters/conditions/idle = false
-parameters/conditions/run = false
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 1.55883, 0)
-shape = SubResource("CapsuleShape3D_cwyr3")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[node name="feet_sfx" type="AudioStreamPlayer3D" parent="."]
+attenuation_model = 1
+volume_db = 1.0
+max_polyphony = 8
