@@ -3,16 +3,19 @@ extends CharacterBody3D
 
 const SPEED = 2.0
 const JUMP_VELOCITY = 4.5
+const BONES_TIMER: float = 4.5
 var skeleton_state_machine 
 var player_detected = false
 var timer_started = false
 var walk_done = true
 var turn_done = false
 var dead = false
+var last_position: Vector3
+var bones_despawn_timer: float
 
 @onready var ray = $RayCast3D
 @onready var head = $Humanoid/Skeleton3D/Head
-# @onready var phys_skel = $Humanoid/Skeleton3D/PhysicalBoneSimulator3D
+@onready var phys_skel = $Humanoid/Skeleton3D/PhysicalBoneSimulator3D
 @onready var anim_tree = $AnimationTree
 @onready var anim_player = $AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
@@ -23,6 +26,7 @@ var dead = false
 
 
 func _ready():
+	bones_despawn_timer = BONES_TIMER
 	skeleton_state_machine = anim_tree.get("parameters/playback")
 		
 
@@ -62,6 +66,22 @@ func _process(delta: float) -> void:
 		"idle":
 			turn_done = false
 			
+	if Input.is_action_just_pressed("ui_down"):
+		reset_ragdoll()
+		set_active(true)
+		position = last_position
+		anim_tree.set("parameters/conditions/idle", true)
+		dead = false
+		bones_despawn_timer = BONES_TIMER
+		$Humanoid.visible = true
+
+	if dead and $Humanoid.visible:
+		if bones_despawn_timer > 0:
+			bones_despawn_timer -= delta
+		else:
+			print("SET FALSE NOW")
+			$Humanoid.visible = false
+
 	anim_tree.set("parameters/conditions/run", _player_detection())
 	anim_tree.set("parameters/conditions/idle", !player_detected)
 	anim_tree.set("parameters/conditions/dead", dead)
@@ -77,41 +97,27 @@ func _player_detection():
 		return false
 	
 # Death
-# func _on_area_3d_area_entered(area: Area3D) -> void:
-# 	print("Skeleboned")
-# 	if area.is_in_group("bullet"):
-# 		print("Skeleboned by bullet")
-# 		dead = true
-# 		set_active(false)
-# 		spawn_dummy()
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	print("Skeleboned")
+	if area.is_in_group("bullet"):
+		print("Skeleboned by bullet")
+		last_position = position
+		start_ragdoll()
+		set_active(false)
+		dead = true
 
-# func _on_area_3d_area_entered(area: Area3D) -> void:
-# 	print("Skeleboned")
-# 	if area.is_in_group("bullet"):
-# 		print("Skeleboned by bullet")
-# 		phys_skel.active = true
-# 		phys_skel.physical_bones_start_simulation()
-# 		$CollisionShape3D.disabled = true
-# 		$Area3D/CollisionShape3D.disabled = true
-# 		anim_player.active = false
-# 		anim_tree.active = false
+func set_active(active: bool):
+	$CollisionShape3D.set_deferred("disabled", !active)
+	$Area3D/CollisionShape3D.set_deferred("disabled", !active)
+	anim_player.active = active
+	anim_tree.active = active
 
+func start_ragdoll():
+	phys_skel.active = true
+	phys_skel.physical_bones_start_simulation()
+	await get_tree().create_timer(3.0).timeout
 
-# func spawn_dummy():
-# 	var dummy = dummy_prefab.instantiate()
-# 	# dummy.position.y = -2
-# 	dummy.get_node("CollisionShape3D").disabled = true
-# 	add_child(dummy)
-
-# func set_active(active: bool) -> void:
-# 	for n: Node in get_children():
-# 		if n.is_class("Area3D"):
-# 			n.set_deferred("monitorable", active)
-# 			n.set_deferred("monitoring", active)
-# 			n.set_deferred("input_ray_pickable", active)
-
-# 		elif n.is_class("CollisionShape3D"):
-# 			n.set_deferred("disabled", !active)
-
-# 		if n.is_class("Node3D"):
-# 			n.visible = active
+func reset_ragdoll():
+	$Humanoid/Skeleton3D.reset_bone_poses()
+	phys_skel.physical_bones_stop_simulation()
+	phys_skel.active = false
