@@ -1,7 +1,9 @@
 extends CharacterBody3D
 
 
-const SPEED = 2.0
+const ATTACK_RANGE = 2
+const SPEED = 1.0
+const RUN_SPEED = 5.1
 const JUMP_VELOCITY = 4.5
 const BONES_TIMER: float = 4.5
 var skeleton_state_machine 
@@ -12,6 +14,8 @@ var turn_done = false
 var dead = false
 var last_position: Vector3
 var bones_despawn_timer: float
+var gamble = 1
+var has_gambled = false
 
 @onready var ray = $RayCast3D
 @onready var head = $Humanoid/Skeleton3D/Head
@@ -31,30 +35,17 @@ func _ready():
 		
 
 func _process(delta: float) -> void:
-	ray.rotation = head.rotation
-	ray.transform = head.transform
+	if !(skeleton_state_machine.get_current_node() == "Secret"):
+		ray.rotation = head.rotation
+		ray.transform = head.transform
+	print(skeleton_state_machine.get_current_node())
 	
 	match skeleton_state_machine.get_current_node():
-		"run":
-			walk_done = true
-			print(timer.get_time_left())
-			if ray.get_collider() != player and !timer_started:
-				timer.set_paused(false)
-				timer.start()
-				timer_started = true
-			if timer.get_time_left() < 1:
-				timer.stop()
-				player_detected = false
-			if ray.get_collider() == player:
-				timer_started = false
-				timer.set_paused(true)
-
-			nav_agent.set_target_position(player.global_transform.origin)
-			var next_nav_point = nav_agent.get_next_path_position()
-			velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
-			rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 10.0)
-			move_and_slide()
-		"walk":
+		"Run":
+			run(delta)
+		"Secret":
+			run(delta)
+		"Walk":
 			if !turn_done:
 				var angle = randf_range(0.0, 360.0)
 				nav_agent.set_target_position(global_position + Vector3(5 * cos(angle), 0, 5 * sin(angle)))
@@ -63,9 +54,13 @@ func _process(delta: float) -> void:
 			velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
 			rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 10.0)
 			move_and_slide()
-		"idle":
+		"Idle":
 			turn_done = false
-			
+			if !has_gambled:
+				gamble = randi_range(1,2)
+				has_gambled = true
+		"Punch":
+			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP, true)
 	if Input.is_action_just_pressed("ui_down"):
 		reset_ragdoll()
 		set_active(true)
@@ -82,7 +77,9 @@ func _process(delta: float) -> void:
 			print("SET FALSE NOW")
 			$Humanoid.visible = false
 
-	anim_tree.set("parameters/conditions/run", _player_detection())
+	anim_tree.set("parameters/conditions/run", _player_detection() and gamble == 1)
+	anim_tree.set("parameters/conditions/secret", _player_detection() and gamble > 1)
+	anim_tree.set("parameters/conditions/punch", _target_in_range())
 	anim_tree.set("parameters/conditions/idle", !player_detected)
 	anim_tree.set("parameters/conditions/dead", dead)
 	
@@ -121,3 +118,26 @@ func reset_ragdoll():
 	$Humanoid/Skeleton3D.reset_bone_poses()
 	phys_skel.physical_bones_stop_simulation()
 	phys_skel.active = false
+
+func run(delta):
+	walk_done = true
+#	print(timer.get_time_left())
+	if ray.get_collider() != player and !timer_started:
+		timer.set_paused(false)
+		timer.start()
+		timer_started = true
+	if timer.get_time_left() < 1:
+		timer.stop()
+		player_detected = false
+		has_gambled = false
+	if ray.get_collider() == player:
+		timer_started = false
+		timer.set_paused(true)
+	nav_agent.set_target_position(player.global_transform.origin)
+	var next_nav_point = nav_agent.get_next_path_position()
+	velocity = (next_nav_point - global_transform.origin).normalized() * RUN_SPEED
+	rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 10.0)
+	move_and_slide()
+
+func _target_in_range():
+	return global_position.distance_to(player.global_position) < ATTACK_RANGE

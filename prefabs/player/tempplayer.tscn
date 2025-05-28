@@ -2769,7 +2769,7 @@ visible = false
 target_position = Vector3(0, 0, -2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00912, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.5, 0)
 shape = SubResource("CapsuleShape3D_aa7my")
 
 [node name="GroundRay" type="RayCast3D" parent="."]

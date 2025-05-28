@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://hu01nai5f5wn"
-path="res://.godot/imported/SkeletonAnimFull.glb-753ccb9bb6593d4536f2d8638edaece5.scn"
+uid="uid://cinfmnlpx3j2m"
+path="res://.godot/imported/SkeletonAnimFinal.glb-c05e7f2bc59c5a6a64508e0e827b528c.scn"
 
 [deps]
 
-source_file="res://assets/models/Skeleton/SkeletonAnimFull.glb"
-dest_files=["res://.godot/imported/SkeletonAnimFull.glb-753ccb9bb6593d4536f2d8638edaece5.scn"]
+source_file="res://assets/models/Skeleton/SkeletonAnimFinal.glb"
+dest_files=["res://.godot/imported/SkeletonAnimFinal.glb-c05e7f2bc59c5a6a64508e0e827b528c.scn"]
 
 [params]
 

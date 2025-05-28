@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_ju3kk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 theme_override_constants/separation = 10
 
 [node name="Audio_Name_Lbl" type="Label" parent="HBoxContainer"]
