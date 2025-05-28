@@ -1,5 +1,10 @@
 extends Control
 
+@onready var StartMenu = $PanelContainer/StartMenu
+@onready var QuitMenu = $PanelContainer/QuitMenu
+@onready var SoundMenu = $PanelContainer/SoundMenu
+@onready var msg = $MenuMessage
+
 func _ready() -> void:
 	hide()
 
@@ -23,7 +28,27 @@ func _on_resume_pressed() -> void:
 	resume()
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	StartMenu.visible = false
+	QuitMenu.visible = true
+	msg.text = "Are you sure you want to quit?"
 	
 func _process(delta):
 	testEsc()
+
+func _on_quit_real_pressed() -> void:
+	get_tree().quit()
+	
+func _on_cancel_pressed() -> void:
+	QuitMenu.visible = false
+	StartMenu.visible = true
+	msg.text = "Paused"
+	
+func _on_sound_settings_pressed() -> void:
+	StartMenu.visible = false
+	SoundMenu.visible = true
+	msg.text = "Sound Settings"
+	
+func _on_confirm_pressed() -> void:
+	SoundMenu.visible = false
+	StartMenu.visible = true
+	msg.text = "Paused"
