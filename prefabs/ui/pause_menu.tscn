@@ -48,11 +48,18 @@ texture = ExtResource("2_insce")
 expand_mode = 1
 
 [node name="MenuMessage" type="RichTextLabel" parent="."]
-layout_mode = 2
-offset_left = 437.5
-offset_top = 122.45
-offset_right = 714.5
-offset_bottom = 420.45
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.5
+offset_top = -111.6
+offset_right = 138.5
+offset_bottom = 186.4
+grow_horizontal = 2
+grow_vertical = 2
 text = "Paused"
 horizontal_alignment = 1
 
@@ -85,7 +92,7 @@ text = "Resume"
 
 [node name="Sound Settings" type="Button" parent="PanelContainer/StartMenu"]
 layout_mode = 2
-text = "Sound Setiings
+text = "Sound Settings
 "
 
 [node name="Quit" type="Button" parent="PanelContainer/StartMenu"]
@@ -117,7 +124,7 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/SoundMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_constants/separation = 30
 
 [node name="Sound_Slider_Settings" parent="PanelContainer/SoundMenu/VBoxContainer" instance=ExtResource("4_iy8c5")]
