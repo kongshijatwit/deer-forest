@@ -17,6 +17,11 @@ const BULLET_GROUP: String = "bullet"
 var gamemanager_node: Node = null
 var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
 
+#Deer Sounds
+@onready var deer_sfx = $AudioStreamPlayer3D
+var deer_sfx_lib = ["res://assets/audio/sfx/deer/A_Deer-001.ogg", "res://assets/audio/sfx/deer/A_Deer-002.ogg", "res://assets/audio/sfx/deer/A_Deer-003.ogg",
+"res://assets/audio/sfx/deer/A_Deer-004.ogg", "res://assets/audio/sfx/deer/A_Deer-005.ogg"]
+
 var spook_object_position := Vector3.ZERO
 var current_state := STATE.IDLE
 var idle_timer: float
@@ -30,7 +35,7 @@ var run_speed: float = 200
 var rotate_angle: float
 
 # Debug constants
-const DEBUG_MODE: bool = false
+const DEBUG_MODE: bool = true
 const KILL_DEER_INPUT: String = "ui_up"
 const RESET_DEER_INPUT: String = "ui_down"
 
@@ -47,7 +52,9 @@ func _process(delta: float) -> void:
 				idle_timer -= delta
 			else:
 				current_state = (randi() % 4) as STATE
-				if current_state == STATE.IDLE:
+				if current_state == STATE.IDLE: 
+					deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
+					deer_sfx.play()
 					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
 				elif current_state == STATE.ROTATE:
 					rotate_angle = deg_to_rad(randf_range(0.0, 360.0))
