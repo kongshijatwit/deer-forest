@@ -150,4 +150,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6209, 7, 0)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_25u10")]
 
+[connection signal="player_hit" from="NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
 [connection signal="interacted" from="Objects/ExampleRelic" to="Objects/ExampleRelic" method="_on_interacted"]

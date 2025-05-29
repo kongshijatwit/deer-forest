@@ -30,7 +30,8 @@ func toggle(_body):
 		prompt_message = "Open Door"
 
 func _shelter():
-	if groundray.get_collider().is_in_group("wood"):
-		print("NO WIND!")
-		AudioServer.set_bus_effect_enabled(ambiance_bus, 0, true)
+	if groundray.is_colliding():
+		if groundray.get_collider().is_in_group("wood"):
+			print("NO WIND!")
+			AudioServer.set_bus_effect_enabled(ambiance_bus, 0, true)
 		

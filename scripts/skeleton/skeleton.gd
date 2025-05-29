@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 	if !(skeleton_state_machine.get_current_node() == "Secret"):
 		ray.rotation = head.rotation
 		ray.transform = head.transform
-	print(skeleton_state_machine.get_current_node())
 	
 	match skeleton_state_machine.get_current_node():
 		"Run":
@@ -79,12 +78,13 @@ func _process(delta: float) -> void:
 
 	anim_tree.set("parameters/conditions/run", _player_detection() and gamble == 1)
 	anim_tree.set("parameters/conditions/secret", _player_detection() and gamble > 1)
-	anim_tree.set("parameters/conditions/punch", _target_in_range())
+	anim_tree.set("parameters/conditions/punch", _target_in_range() and !player.crouching)
+	anim_tree.set("parameters/conditions/kick", _target_in_range() and player.crouching)
 	anim_tree.set("parameters/conditions/idle", !player_detected)
 	anim_tree.set("parameters/conditions/dead", dead)
 	
 	
-		
+# Checks if player is detected
 func _player_detection():
 	if ray.is_colliding():
 		if ray.get_collider() == player:
@@ -139,5 +139,10 @@ func run(delta):
 	rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 10.0)
 	move_and_slide()
 
+# Player in hit range
 func _target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
+	
+# Attack landed
+func _hit_finished():
+	player.hit(50, global_transform.origin)

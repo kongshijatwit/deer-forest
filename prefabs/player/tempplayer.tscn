@@ -1738,6 +1738,7 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aa7my"]
+height = 2.935
 
 [node name="tempplayer" type="CharacterBody3D"]
 script = ExtResource("1_d2i1d")
@@ -2351,6 +2352,7 @@ bones/85/scale = Vector3(1, 1, 1)
 
 [node name="Head" type="BoneAttachment3D" parent="Humanoid/Skeleton3D"]
 transform = Transform3D(1, -3.01361e-09, 5.95289e-08, 3.01361e-09, 1, -2.6077e-08, -5.95289e-08, 2.6077e-08, 1, -1.62788e-09, 2.92384, 1.50874e-07)
+visible = false
 bone_name = "Head"
 bone_idx = 3
 
@@ -2765,11 +2767,10 @@ cull_mask = 1047554
 current = true
 
 [node name="InteractRay" parent="Head" instance=ExtResource("3_hm3fc")]
-visible = false
 target_position = Vector3(0, 0, -2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51258, 0)
 shape = SubResource("CapsuleShape3D_aa7my")
 
 [node name="GroundRay" type="RayCast3D" parent="."]
