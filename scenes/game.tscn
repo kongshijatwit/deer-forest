@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnkm877aji76i"]
+[gd_scene load_steps=15 format=3 uid="uid://dnkm877aji76i"]
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://52u0hhl3hvvs" path="res://prefabs/bed.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bjfvi5eel24cl" path="res://prefabs/boundary/boundary.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://7t7et22kn5bi" path="res://prefabs/ui/pause_menu.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://b3dltjou21eqy" path="res://prefabs/ambient_areas/snow_area.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://br3yal5wxvsr6" path="res://prefabs/skeleton/skeleton.tscn" id="10_vtaks"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqjtg"]
 sky_top_color = Color(0, 0.474662, 0.72518, 1)
@@ -21,6 +25,10 @@ sky = SubResource("Sky_7p1hh")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_0tnpc"]
+vertices = PackedVector3Array(-124.5, 0.5, 73.25, -75.5, 0.5, 73.25, -75.5, 0.5, 25.5, -124.5, 0.5, 25.5, -75.25, 0.5, 75.5, -124.75, 0.5, 75.5, -174.5, 0.5, 174.5, -25.5, 0.5, 174.5, -174.5, 0.5, 75.5, -25.5, 0.5, 75.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(1, 4, 0), PackedInt32Array(0, 4, 5), PackedInt32Array(4, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(6, 8, 5), PackedInt32Array(4, 9, 7)]
+
 [node name="game" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -31,19 +39,82 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20,
 shadow_enabled = true
 
 [node name="game_manager" parent="." instance=ExtResource("1_iywne")]
+unique_name_in_owner = true
 
 [node name="player" parent="." instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0321, -9.53674e-07, -6.37558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.0288, -9.53674e-07, 72.1238)
 
-[node name="snow_ground" parent="." instance=ExtResource("1_uwrxv")]
+[node name="snow_ground_container" type="Node3D" parent="."]
+
+[node name="snow_ground" parent="snow_ground_container" instance=ExtResource("1_uwrxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="snow_ground2" parent="snow_ground_container" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, -0.5, 0)
+
+[node name="snow_ground6" parent="snow_ground_container" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, -0.5, 0)
+
+[node name="snow_ground3" parent="snow_ground_container" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, -0.5, 50)
+
+[node name="snow_ground4" parent="snow_ground_container" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 50)
+
+[node name="snow_ground5" parent="snow_ground_container" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 100)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="snow_ground_container"]
+navigation_mesh = SubResource("NavigationMesh_0tnpc")
+
+[node name="skeleton_snow_ground" parent="snow_ground_container/NavigationRegion3D" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, -0.5, 100)
+
+[node name="skeleton_snow_ground4" parent="snow_ground_container/NavigationRegion3D" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, -0.5, 150)
+
+[node name="skeleton_snow_ground2" parent="snow_ground_container/NavigationRegion3D" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, -0.5, 100)
+
+[node name="skeleton_snow_ground6" parent="snow_ground_container/NavigationRegion3D" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -0.5, 100)
+
+[node name="skeleton_snow_ground7" parent="snow_ground_container/NavigationRegion3D" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -0.5, 150)
+
+[node name="skeleton_snow_ground3" parent="snow_ground_container/NavigationRegion3D" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, -0.5, 50)
+
+[node name="skeleton_snow_ground5" parent="snow_ground_container/NavigationRegion3D" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, -0.5, 150)
 
 [node name="cabin" parent="." instance=ExtResource("3_lnu2h")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 15, 0.01, -15)
 
-[node name="Deer" parent="." instance=ExtResource("4_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.559, 1.57, 9.02)
-
 [node name="bed" parent="." instance=ExtResource("6_p57ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4945, 1.96547, -13.4579)
+
+[node name="boundary" parent="." instance=ExtResource("7_u5sy4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.5, 12.5, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_gee14")]
+
+[node name="SnowArea" parent="." instance=ExtResource("9_0tnpc")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+
+[node name="deer_container" type="Node3D" parent="."]
+
+[node name="Deer" parent="deer_container" instance=ExtResource("4_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5889, 1.57, -6.01191)
+
+[node name="skeleton_container" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -9.53674e-07, 126.949)
+
+[node name="Skeleton" parent="skeleton_container" instance=ExtResource("10_vtaks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01218, 0, -3.38268)
+
+[node name="Skeleton2" parent="skeleton_container" instance=ExtResource("10_vtaks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13736, 0, 5.74274)
