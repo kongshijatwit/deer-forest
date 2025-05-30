@@ -22,10 +22,6 @@ signal game_end
 const BED_STRING: String = "bed"
 const RELIC_STRING: String = "ExampleRelic"
 
-var month: int = 0
-var deer_killed: int = 0
-var artifact_piece_collected: bool = false
-
 
 
 func _ready() -> void:
@@ -39,31 +35,34 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"):
-		print(month)
+		print(GlobalVariables.month)
+		print(GlobalVariables.deer_killed)
+		print(GlobalVariables.artifact_piece_collected)
 
 
 func start_new_month() -> void:
 	# reset monster/deer spawns
 	$fade.transition()
 	reset.emit()
-	artifact_piece_collected = false
-	deer_killed = 0
-	month += 1
+	GlobalVariables.artifact_piece_collected = false
+	GlobalVariables.deer_killed = 0
+	GlobalVariables.month += 1
 
 
 func artifact_collected() -> void:
 	print("collected artifact")
-	artifact_piece_collected = true
+	GlobalVariables.artifact_piece_collected = true
+	GlobalVariables.artifact_pieces_gathered += 1
 
 
 func increment_dead_deer() -> void:
-	deer_killed += 1
+	GlobalVariables.deer_killed += 1
 
 
 func connect_signal(obj_string: String, sig_string: String, call_func: Callable) -> bool:
-	var node = get_tree().root.get_child(1).find_child(obj_string)
+	var node = get_tree().root.get_child(2).find_child(obj_string)
 	if node == null:
-		push_warning("no bed found but that's okay")
+		push_warning("no " + obj_string + " found but that's okay")
 		return false
 	else:
 		node.connect(sig_string, call_func)
