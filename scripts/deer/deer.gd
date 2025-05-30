@@ -120,6 +120,64 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func kill_deer() -> void:
+	# await get_tree().create_timer(0.01).timeout
+	velocity = Vector3.ZERO
+	var previous_state: STATE = current_state  # DEBUG VAR
+	current_state = STATE.DEAD
+	debug_state_change(previous_state)
+	set_active(false)
+	spawn_dummy()
+
+
+func reset_deer():
+	current_state = STATE.IDLE
+	reset_all_timers()
+	set_active(true)
+	print(name + ": deer has been reset")
+
+
+func set_active(active: bool) -> void:
+	for n: Node3D in get_children():
+		if n.is_class("Area3D"):
+			n.set_deferred("monitorable", active)
+			n.set_deferred("monitoring", active)
+			n.set_deferred("input_ray_pickable", active)
+		elif n.is_class("CollisionShape3D"):
+			n.set_deferred("disabled", !active)
+		n.visible = active
+
+func spawn_dummy():
+	var dummy = dummy_prefab.instantiate()
+	dummy.position.y = -2
+	dummy.get_node("CollisionShape3D").disabled = true
+	add_child(dummy)
+	# add timer for despawn
+
+
+#region Debug Functions
+
+func debug_deer_print(message: String) -> void:
+	if DEBUG_MODE:
+		print(message)
+
+func debug_state_change(prev: STATE) -> void:
+	if DEBUG_MODE:
+		print("changing state: " + STATE.keys()[prev] + " -> " + STATE.keys()[current_state])
+		if current_state == STATE.DEAD:
+			print("dead")
+
+func debug_inputs() -> void:
+	if Input.is_action_just_pressed(RESET_DEER_INPUT) && current_state == STATE.DEAD:
+		reset_deer()
+	elif Input.is_action_just_pressed(KILL_DEER_INPUT) && current_state != STATE.DEAD:
+		kill_deer()
+
+#endregion
+
+
+#region Hitbox Functions
+
 func _on_area_entered(area: Area3D) -> void:
 	var previous_state: STATE = current_state
 
@@ -140,13 +198,26 @@ func _on_area_entered(area: Area3D) -> void:
 		rotation.x = rad_to_deg(0)
 		current_state = STATE.SPOOK
 		debug_state_change(previous_state)
-	
 
-func _on_deer_hit(area: Area3D) -> void:
+func on_head_hit(area: Area3D) -> void:
 	if area.is_in_group(BULLET_GROUP):
-		await get_tree().create_timer(0.01).timeout
+		debug_deer_print("hit on head")
 		kill_deer()
 
+func on_body_hit(area: Area3D) -> void:
+	if area.is_in_group(BULLET_GROUP):
+		debug_deer_print("hit on body")
+		kill_deer()
+
+func on_leg_hit(area:Area3D) -> void:
+	if area.is_in_group(BULLET_GROUP):
+		debug_deer_print("hit on leg")
+		kill_deer()
+
+#endregion
+
+
+#region Setup Functions
 
 func add_gamemanager_signal():
 	var gamemanager: Node3D = get_tree().root.get_child(1).find_child(GAMEMANAGER_NAME)
@@ -155,58 +226,10 @@ func add_gamemanager_signal():
 	else:
 		gamemanager.reset.connect(reset_deer)
 
-
-func kill_deer() -> void:
-	velocity = Vector3.ZERO
-	var previous_state: STATE = current_state  # DEBUG VAR
-	current_state = STATE.DEAD
-	debug_state_change(previous_state)
-	set_active(false)
-	spawn_dummy()
-
-
-func reset_deer():
-	current_state = STATE.IDLE
-	reset_all_timers()
-	set_active(true)
-	print(name + ": deer has been reset")
-
-
 func reset_all_timers() -> void:
 	idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
 	react_timer = MAX_REACT_TIME
 	walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
 	run_timer = MAX_RUN_TIME
 
-
-func set_active(active: bool) -> void:
-	for n: Node3D in get_children():
-		if n.is_class("Area3D"):
-			n.monitorable = active
-			n.monitoring = active
-			n.input_ray_pickable = active
-		elif n.is_class("CollisionShape3D"):
-			n.disabled = !active
-		n.visible = active
-
-
-func debug_state_change(prev: STATE) -> void:
-	if DEBUG_MODE:
-		print("changing state: " + STATE.keys()[prev] + " -> " + STATE.keys()[current_state])
-		if current_state == STATE.DEAD:
-			print("dead")
-
-
-func debug_inputs() -> void:
-	if Input.is_action_just_pressed(RESET_DEER_INPUT) && current_state == STATE.DEAD:
-		reset_deer()
-	elif Input.is_action_just_pressed(KILL_DEER_INPUT) && current_state != STATE.DEAD:
-		kill_deer()
-
-
-func spawn_dummy():
-	var dummy = dummy_prefab.instantiate()
-	dummy.position.y = -2
-	dummy.get_node("CollisionShape3D").disabled = true
-	add_child(dummy)
-	# add timer for despawn
+#endregion
