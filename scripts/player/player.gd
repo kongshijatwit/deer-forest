@@ -6,6 +6,11 @@ const CROUCH_SPEED = 2.5
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.005
 
+var HEALTH = 100
+
+# Signal
+signal player_hit
+
 #Bobbing variables
 const BOB_FREQ = 1.5
 const BOB_AMP = 0.04
@@ -13,6 +18,7 @@ var t_bob = 0.0
 
 var gravity = 9.8
 var gun_equipped = false
+var crouching = false
 
 # Bullets
 var bullet = load("res://prefabs/gun/bullet.tscn")
@@ -129,4 +135,12 @@ func _make_footstep():
 			print("Wood Fella")
 		else:
 			feet_sfx.stop()
+			
+func hit(damage, knockback_origin):
+	print("HIT!")
+	HEALTH -= damage
+	velocity.y += 3
+	move_and_slide()
+	velocity += (global_transform.origin - knockback_origin).normalized() * 10
+	
 	

@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://cjf72u5b2tgpf" path="res://scenes/test/signal_manager.gd" id="1_dxjet"]
 [ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/interactables/examplerelic.gd" id="2_7p1hh"]
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_ae60x"]
+[ext_resource type="PackedScene" uid="uid://br3yal5wxvsr6" path="res://prefabs/skeleton/skeleton.tscn" id="3_bteet"]
 [ext_resource type="PackedScene" uid="uid://fmdsv1u00roj" path="res://prefabs/deer/deer_test.tscn" id="4_o0ihb"]
 [ext_resource type="PackedScene" uid="uid://cut4wtq6x7bm8" path="res://prefabs/player/tempplayer.tscn" id="4_yvr0t"]
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="6_2qhjg"]
-[ext_resource type="PackedScene" uid="uid://cx2cblbyuclbd" path="res://prefabs/skeleton/testmonster.tscn" id="7_6eh6t"]
 [ext_resource type="PackedScene" uid="uid://7t7et22kn5bi" path="res://prefabs/ui/pause_menu.tscn" id="9_25u10"]
 [ext_resource type="PackedScene" uid="uid://b3dltjou21eqy" path="res://prefabs/ambient_areas/snow_area.tscn" id="9_bteet"]
 
@@ -25,8 +25,8 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_6eh6t"]
-vertices = PackedVector3Array(-59.4479, 0.523306, -17.2473, -51.9479, 0.523306, -17.2473, -51.6979, 0.523306, -17.7473, -50.9479, 0.523306, -29.2473, -59.4479, 0.523306, -29.2473, -50.9479, 0.523306, -17.7473, -47.1979, 0.523306, -12.7473, -46.9479, 0.523306, -10.9973, -46.6979, 0.523306, -10.7473, -37.4479, 0.523306, -6.9973, -36.1979, 0.523306, -6.9973, -49.9479, 0.523306, -16.4973, -50.9479, 0.523306, -16.2473, -50.9479, 0.523306, -12.7473, -49.9479, 0.523306, -17.4973, -30.4479, 0.523306, -5.9973, -30.4479, 0.523306, -29.2473, -35.6979, 0.523306, -5.9973, -51.9479, 0.523306, -16.4973, -52.9479, 0.523306, -12.7473, -59.4479, 0.523306, -11.4973, -53.1979, 0.523306, -11.4973, -47.1979, 0.523306, -10.4973, -46.6979, 0.523306, -0.247299, -52.9479, 0.523306, -10.4973, -59.4479, 0.523306, -0.247299, -36.9479, 0.523306, -0.247299, -36.9479, 0.523306, -4.7473, -37.9479, 0.523306, -5.2473, -37.9479, 0.523306, -6.7473, -35.9479, 0.523306, -4.9973, -30.4479, 0.523306, -0.247299)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 10), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 6), PackedInt32Array(14, 3, 6), PackedInt32Array(6, 3, 10), PackedInt32Array(10, 3, 15), PackedInt32Array(15, 3, 16), PackedInt32Array(6, 11, 14), PackedInt32Array(10, 15, 17), PackedInt32Array(14, 5, 3), PackedInt32Array(12, 13, 18), PackedInt32Array(18, 13, 19), PackedInt32Array(20, 19, 21), PackedInt32Array(18, 19, 1), PackedInt32Array(1, 19, 0), PackedInt32Array(0, 19, 20), PackedInt32Array(7, 8, 22), PackedInt32Array(22, 8, 23), PackedInt32Array(20, 21, 24), PackedInt32Array(20, 24, 25), PackedInt32Array(25, 24, 23), PackedInt32Array(24, 22, 23), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 23), PackedInt32Array(8, 9, 29), PackedInt32Array(29, 28, 8), PackedInt32Array(8, 28, 23), PackedInt32Array(26, 27, 30), PackedInt32Array(30, 17, 26), PackedInt32Array(26, 17, 15), PackedInt32Array(26, 15, 31)]
+vertices = PackedVector3Array(-59.4479, 0.523306, -11.7473, -53.1979, 0.523306, -11.7473, -52.9479, 0.523306, -12.7473, -49.1979, 0.523306, -29.2473, -59.4479, 0.523306, -29.2473, -49.1979, 0.523306, -12.7473, -47.1979, 0.523306, -12.7473, -46.9479, 0.523306, -10.9973, -46.6979, 0.523306, -10.7473, -38.1979, 0.523306, -6.4973, -37.9479, 0.523306, -5.9973, -30.4479, 0.523306, -5.9973, -39.1979, 0.523306, -6.4973, -30.4479, 0.523306, -29.2473, -47.1979, 0.523306, -10.4973, -46.6979, 0.523306, -0.247299, -52.9479, 0.523306, -10.4973, -59.4479, 0.523306, -0.247299, -38.9479, 0.523306, -0.247299, -38.9479, 0.523306, -4.9973, -39.6979, 0.523306, -5.2473, -39.6979, 0.523306, -6.2473, -38.1979, 0.523306, -4.9973, -30.4479, 0.523306, -0.247299)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(8, 7, 6), PackedInt32Array(11, 10, 9), PackedInt32Array(9, 12, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 11), PackedInt32Array(11, 6, 3), PackedInt32Array(11, 3, 13), PackedInt32Array(6, 5, 3), PackedInt32Array(7, 8, 14), PackedInt32Array(14, 8, 15), PackedInt32Array(0, 1, 16), PackedInt32Array(0, 16, 17), PackedInt32Array(17, 16, 15), PackedInt32Array(16, 14, 15), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 15), PackedInt32Array(8, 12, 21), PackedInt32Array(21, 20, 8), PackedInt32Array(8, 20, 15), PackedInt32Array(18, 19, 22), PackedInt32Array(22, 10, 18), PackedInt32Array(18, 10, 11), PackedInt32Array(18, 11, 23)]
 agent_height = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lmefh"]
@@ -88,8 +88,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0498, 4.08451, -11.5266)
 mesh = SubResource("BoxMesh_6eh6t")
 skeleton = NodePath("../..")
 
-[node name="testmonster" parent="NavigationRegion3D" instance=ExtResource("7_6eh6t")]
-transform = Transform3D(-0.998081, 0, -0.0619195, 0, 1, 0, 0.0619195, 0, -0.998081, -50.9628, 0, -16.9563)
+[node name="Skeleton" parent="NavigationRegion3D" instance=ExtResource("3_bteet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9279, 0, -21.1157)
 
 [node name="Player" parent="NavigationRegion3D" instance=ExtResource("4_yvr0t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7982, 0, 2.91108)
@@ -150,4 +150,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6209, 7, 0)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_25u10")]
 
+[connection signal="player_hit" from="NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
 [connection signal="interacted" from="Objects/ExampleRelic" to="Objects/ExampleRelic" method="_on_interacted"]
