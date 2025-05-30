@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv20tbnkrhys2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j6lt7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l2yss"]
+size = Vector3(50, 1, 50)
+
+[node name="snow_ground" type="StaticBody3D" groups=["snow"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("BoxMesh_j6lt7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l2yss")
