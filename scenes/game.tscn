@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnkm877aji76i"]
+
+[ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://cut4wtq6x7bm8" path="res://prefabs/player/tempplayer.tscn" id="2_yqjtg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqjtg"]
+sky_top_color = Color(0, 0.474662, 0.72518, 1)
+sky_horizon_color = Color(0.520643, 0.631558, 0.685188, 1)
+ground_horizon_color = Color(0.520643, 0.631558, 0.685188, 1)
+
+[sub_resource type="Sky" id="Sky_7p1hh"]
+sky_material = SubResource("ProceduralSkyMaterial_yqjtg")
+
+[sub_resource type="Environment" id="Environment_lnu2h"]
+background_mode = 2
+sky = SubResource("Sky_7p1hh")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lnu2h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+shadow_enabled = true
+
+[node name="snow_ground" parent="." instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="tempplayer" parent="." instance=ExtResource("2_yqjtg")]
