@@ -23,7 +23,8 @@ var has_gambled = false
 @onready var anim_tree = $AnimationTree
 @onready var anim_player = $AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
-@onready var player = $"../Player"
+# @onready var player = $"../Player"
+@onready var player = $"../../%player"
 @onready var timer = $Timer
 
 # var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
