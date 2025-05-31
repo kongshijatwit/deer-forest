@@ -220,7 +220,7 @@ func on_leg_hit(area:Area3D) -> void:
 #region Setup Functions
 
 func add_gamemanager_signal():
-	var gamemanager: Node3D = get_tree().root.get_child(1).find_child(GAMEMANAGER_NAME)
+	var gamemanager: Node3D = get_tree().root.get_child(2).find_child(GAMEMANAGER_NAME)
 	if gamemanager == null:
 		push_warning("no gamemanager found but that's okay")
 	else:
