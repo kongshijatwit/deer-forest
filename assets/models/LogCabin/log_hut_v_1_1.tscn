@@ -487,6 +487,7 @@ shape = SubResource("ConcavePolygonShape3D_sb6au")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540456, 2.25043, 4.98334)
+collision_layer = 2
 script = ExtResource("7_5iss0")
 prompt_message = "Door"
 
