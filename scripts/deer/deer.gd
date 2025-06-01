@@ -25,7 +25,7 @@ var walk_timer: float
 var run_timer: float
 
 # Collision Groups
-const BOUNDARY_GROUP: String = "boundary"
+const BOUNDARY_GROUP: String = "bound"
 const BULLET_GROUP: String = "bullet"
 const PLAYER_GROUP: String = "player"
 
@@ -64,19 +64,21 @@ func _process(delta: float) -> void:
 			if idle_timer > 0:
 				idle_timer -= delta
 			else:
-				current_state = (randi() % 4) as STATE
-				if current_state == STATE.IDLE: 
-					deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
-					deer_sfx.play()
-					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
-				elif current_state == STATE.ROTATE:
-					rotate_angle = deg_to_rad(randf_range(0.0, 360.0))
-					idle_timer = ROTATE_TIME
-				elif current_state == STATE.WALK:
-					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
-				elif current_state == STATE.GRAZE:
-					# Play a graze animation
-					pass
+				current_state = STATE.WALK
+				idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+				# current_state = (randi() % 4) as STATE
+				# if current_state == STATE.IDLE: 
+				# 	deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
+				# 	deer_sfx.play()
+				# 	idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+				# elif current_state == STATE.ROTATE:
+				# 	rotate_angle = deg_to_rad(randf_range(0.0, 360.0))
+				# 	idle_timer = ROTATE_TIME
+				# elif current_state == STATE.WALK:
+				# 	idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+				# elif current_state == STATE.GRAZE:
+				# 	# Play a graze animation
+				# 	pass
 				debug_state_change(STATE.IDLE)
 		
 		STATE.ROTATE:
@@ -167,15 +169,12 @@ func set_active(active: bool) -> void:
 #region Hitbox Functions
 
 func _on_area_entered(area: Area3D) -> void:
-	var previous_state: STATE = current_state
-	print("spooked by: " + area.get_parent().name)
-
 	if area.is_in_group(BULLET_GROUP):
 		spook_object_position = area.get_parent().position
 		spooked_by_object(spook_object_position, true)
 
 	if area.is_in_group(BOUNDARY_GROUP):
-		spook_object_position = -original_position
+		spook_object_position = original_position
 		spooked_by_object(spook_object_position, false)
 
 func _on_body_entered(body: Node3D) -> void:
@@ -226,6 +225,7 @@ func spooked_by_object(object_position: Vector3, run_away: bool):
 	if run_away: run_direction *= -1
 	run_direction.y = 0
 	look_at(object_position)
+	if !run_away: rotation.y += deg_to_rad(180)
 	rotation.x = rad_to_deg(0)
 
 	# Debug
