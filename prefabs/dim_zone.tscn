@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwr51xtfo6uoi"]
+
+[ext_resource type="Script" uid="uid://ds04qfqst6fnk" path="res://scripts/environment/dim_zone.gd" id="1_puaic"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cn52l"]
+
+[node name="dim_zone" type="Node3D" groups=["dim"]]
+script = ExtResource("1_puaic")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_cn52l")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = null
