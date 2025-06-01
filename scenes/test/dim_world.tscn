@@ -16,14 +16,11 @@ ambient_light_source = 3
 tonemap_mode = 3
 sdfgi_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.180465, 0.199519, 0.229475, 1)
 fog_depth_curve = 16961.8
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
-volumetric_fog_albedo = Color(0.122252, 0.122252, 0.122252, 1)
-volumetric_fog_emission = Color(0.266295, 0.108176, 0.0749878, 1)
-volumetric_fog_emission_energy = 0.1
-volumetric_fog_length = 128.0
+volumetric_fog_albedo = Color(0.252028, 0.252028, 0.252028, 1)
+volumetric_fog_emission = Color(0.35, 0.35, 0.35, 1)
+volumetric_fog_emission_energy = 0.35
 adjustment_enabled = true
 
 [node name="dim_world" type="Node3D"]
@@ -32,5 +29,5 @@ adjustment_enabled = true
 environment = SubResource("Environment_tpbg1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.41741, 7.33787)
+transform = Transform3D(1, 0, 0, 0, 0.0241705, 0.999708, 0, -0.999708, 0.0241705, 0, 6.41741, 7.33787)
 visible = false
