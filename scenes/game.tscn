@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnkm877aji76i"]
+[gd_scene load_steps=15 format=3 uid="uid://dnkm877aji76i"]
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://br3yal5wxvsr6" path="res://prefabs/skeleton/skeleton.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://drkufm64ckkt7" path="res://scenes/test/dim_world.tscn" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bwr51xtfo6uoi" path="res://prefabs/dim_zone.tscn" id="12_kvuet"]
+[ext_resource type="PackedScene" uid="uid://c1d4h3mvm2eof" path="res://prefabs/particles/snow.tscn" id="13_kvuet"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0tnpc"]
 vertices = PackedVector3Array(-75.5, 0.5, 75.25, -75.5, 0.5, 25.5, -174.5, 0.5, 25.5, -25.5, 0.5, 174.5, -25.5, 0.5, 75.5, -174.5, 0.5, 174.5)
@@ -28,6 +29,9 @@ unique_name_in_owner = true
 [node name="player" parent="." instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.0288, -9.53674e-07, 72.1238)
+
+[node name="snow" parent="player" instance=ExtResource("13_kvuet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 
 [node name="snow_ground_container" type="Node3D" parent="."]
 
