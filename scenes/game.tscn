@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnkm877aji76i"]
+[gd_scene load_steps=14 format=3 uid="uid://dnkm877aji76i"]
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
@@ -10,20 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://7t7et22kn5bi" path="res://prefabs/ui/pause_menu.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b3dltjou21eqy" path="res://prefabs/ambient_areas/snow_area.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://br3yal5wxvsr6" path="res://prefabs/skeleton/skeleton.tscn" id="10_vtaks"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqjtg"]
-sky_top_color = Color(0, 0.474662, 0.72518, 1)
-sky_horizon_color = Color(0.520643, 0.631558, 0.685188, 1)
-ground_horizon_color = Color(0.520643, 0.631558, 0.685188, 1)
-
-[sub_resource type="Sky" id="Sky_7p1hh"]
-sky_material = SubResource("ProceduralSkyMaterial_yqjtg")
-
-[sub_resource type="Environment" id="Environment_lnu2h"]
-background_mode = 2
-sky = SubResource("Sky_7p1hh")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="PackedScene" uid="uid://drkufm64ckkt7" path="res://scenes/test/dim_world.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bwr51xtfo6uoi" path="res://prefabs/dim_zone.tscn" id="12_kvuet"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0tnpc"]
 vertices = PackedVector3Array(-75.5, 0.5, 75.25, -75.5, 0.5, 25.5, -174.5, 0.5, 25.5, -25.5, 0.5, 174.5, -25.5, 0.5, 75.5, -174.5, 0.5, 174.5)
@@ -31,12 +19,8 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 4, 3), PackedInt32Arr
 
 [node name="game" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lnu2h")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
-shadow_enabled = true
+[node name="dim_world" parent="." instance=ExtResource("11_dinhu")]
+unique_name_in_owner = true
 
 [node name="game_manager" parent="." instance=ExtResource("1_iywne")]
 unique_name_in_owner = true
@@ -127,3 +111,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01218, 0, -3.38268)
 
 [node name="Skeleton2" parent="skeleton_container" instance=ExtResource("10_vtaks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13736, 0, 5.74274)
+
+[node name="dim_zone" parent="." instance=ExtResource("12_kvuet")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -125, 0, 125)
