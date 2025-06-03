@@ -18,9 +18,9 @@ sdfgi_enabled = true
 fog_enabled = true
 fog_depth_curve = 16961.8
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
 volumetric_fog_albedo = Color(0.252028, 0.252028, 0.252028, 1)
 volumetric_fog_emission = Color(0.35, 0.35, 0.35, 1)
-volumetric_fog_emission_energy = 0.35
 adjustment_enabled = true
 
 [node name="dim_world" type="Node3D"]
