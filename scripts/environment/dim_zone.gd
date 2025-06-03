@@ -13,11 +13,11 @@ func _ready() -> void:
 	if world_env == null: push_error("not found")
 
 func zone_entered(body: Node3D) -> void:
-	if body.is_in_group("player") or body.name == "Player": 
+	if body.is_in_group("player") or body.name == "player": 
 		set_fog(true)
 
 func zone_exited(body: Node3D) -> void:
-	if body.is_in_group("player") or body.name == "Player": 
+	if body.is_in_group("player") or body.name == "player": 
 		set_fog(false)
 
 func set_fog(active: bool) -> void:
