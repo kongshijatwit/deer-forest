@@ -521,5 +521,9 @@ stream = ExtResource("11_sb6au")
 volume_db = 1.0
 bus = &"Sfx"
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0227509, 5.95612, -0.184402)
+size = Vector3(13.65, 11.7461, 13.4617)
+
 [connection signal="interacted" from="StaticBody3D2" to="StaticBody3D2" method="toggle"]
 [connection signal="interacted" from="Henry410_Item" to="Henry410_Item" method="_on_interacted"]

@@ -31,7 +31,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.0288, -9.53674e-07, 72.1238)
 
 [node name="snow" parent="player" instance=ExtResource("13_kvuet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
 
 [node name="snow_ground_container" type="Node3D" parent="."]
 
