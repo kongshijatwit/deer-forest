@@ -5,7 +5,8 @@ extends Interactable
 var player = null
 
 func _ready():
-	player = get_node(player_path)
+	# player = get_node(player_path)
+	player = get_node("../%player")
 
 func _on_interacted(body: Variant) -> void:
 	player.gun_taken()

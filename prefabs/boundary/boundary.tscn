@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjfvi5eel24cl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6udpq"]
+size = Vector3(50, 25, 1)
 
 [node name="boundary" type="Area3D" groups=["bound"]]
 

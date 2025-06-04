@@ -12,7 +12,8 @@ var groundray
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	playback = $AnimationTree.get("parameters/playback")
-	groundray = get_node(ray_path)
+	# groundray = get_node(ray_path)
+	groundray = get_node("../%player/GroundRay")
 
 func toggle(_body):
 	is_open = not is_open

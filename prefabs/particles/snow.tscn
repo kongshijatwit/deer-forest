@@ -53,7 +53,7 @@ billboard_keep_scale = true
 material = SubResource("StandardMaterial3D_c6d1h")
 
 [node name="snow" type="GPUParticles3D"]
-amount = 256
+amount = 750
 lifetime = 3.5
 visibility_aabb = AABB(-42.6461, -63.6795, -41.0934, 88.2335, 66.5858, 82.5975)
 process_material = SubResource("ParticleProcessMaterial_f7ufg")
