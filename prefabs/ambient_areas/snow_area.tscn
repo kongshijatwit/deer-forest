@@ -16,8 +16,8 @@ shape = SubResource("BoxShape3D_0mlr1")
 stream = ExtResource("2_fl6lh")
 attenuation_model = 1
 volume_db = 1.0
-unit_size = 50.0
-max_distance = 40.2
+unit_size = 100.0
+max_distance = 2323.5
 bus = &"Ambiance"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
