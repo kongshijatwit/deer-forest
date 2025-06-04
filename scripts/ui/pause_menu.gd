@@ -9,6 +9,10 @@ func _ready() -> void:
 	hide()
 
 func resume():
+	msg.text = "Paused"
+	QuitMenu.visible = false
+	SoundMenu.visible = false
+	StartMenu.visible = true
 	hide()
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

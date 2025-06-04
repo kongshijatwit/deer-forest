@@ -58,7 +58,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7o305")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sb6au"]
-size = Vector3(10, 1, 10)
+size = Vector3(10, 0.595703, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqilx"]
 resource_name = "LogRings.001"
@@ -451,7 +451,7 @@ transitions = ["Start", "DoorClose", SubResource("AnimationNodeStateMachineTrans
 
 [node name="LogHutV1_1" type="Node3D" groups=["wood"]]
 
-[node name="Area3D" type="Area3D" parent="." groups=["wood"]]
+[node name="Area3D" type="StaticBody3D" parent="." groups=["wood"]]
 
 [node name="FloorV1_1" type="MeshInstance3D" parent="Area3D"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
@@ -459,6 +459,7 @@ mesh = SubResource("ArrayMesh_ekhki")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125184, 0)
 shape = SubResource("BoxShape3D_sb6au")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
