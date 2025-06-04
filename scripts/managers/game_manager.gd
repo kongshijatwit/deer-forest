@@ -17,7 +17,7 @@ extends Node3D
 @export var deer_container: Node3D
 
 signal reset
-signal game_end
+# signal game_end
 
 const BED_STRING: String = "bed"
 const RELIC_STRING: String = "ExampleRelic"
@@ -31,13 +31,6 @@ func _ready() -> void:
 		for deer: Node3D in deer_container.get_children():
 			# deer.dead.connect(increment_dead_deer)
 			pass
-	
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_down"):
-		print(GlobalVariables.month)
-		print(GlobalVariables.deer_killed)
-		print(GlobalVariables.artifact_piece_collected)
 
 
 func start_new_month() -> void:

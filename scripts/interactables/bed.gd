@@ -11,7 +11,7 @@ func _ready() -> void:
 	prompt_message = SLEEP_PROMPT
 	interacted.connect(on_bed_interacted)
 
-func on_bed_interacted(body):
+func on_bed_interacted(_body):
 	if can_use:
 		can_use = false
 		sleep.emit()

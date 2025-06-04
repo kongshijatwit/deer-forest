@@ -58,7 +58,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7o305")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sb6au"]
-size = Vector3(10, 1, 10)
+size = Vector3(10, 0.595703, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqilx"]
 resource_name = "LogRings.001"
@@ -451,7 +451,7 @@ transitions = ["Start", "DoorClose", SubResource("AnimationNodeStateMachineTrans
 
 [node name="LogHutV1_1" type="Node3D" groups=["wood"]]
 
-[node name="Area3D" type="Area3D" parent="." groups=["wood"]]
+[node name="Area3D" type="StaticBody3D" parent="." groups=["wood"]]
 
 [node name="FloorV1_1" type="MeshInstance3D" parent="Area3D"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
@@ -459,6 +459,7 @@ mesh = SubResource("ArrayMesh_ekhki")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125184, 0)
 shape = SubResource("BoxShape3D_sb6au")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -487,7 +488,7 @@ shape = SubResource("ConcavePolygonShape3D_sb6au")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540456, 2.25043, 4.98334)
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("7_5iss0")
 prompt_message = "Door"
 
@@ -519,6 +520,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523676, 2.23216, 4.72721)
 stream = ExtResource("11_sb6au")
 volume_db = 1.0
 bus = &"Sfx"
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0227509, 5.95612, -0.184402)
+size = Vector3(13.65, 11.7461, 13.4617)
 
 [connection signal="interacted" from="StaticBody3D2" to="StaticBody3D2" method="toggle"]
 [connection signal="interacted" from="Henry410_Item" to="Henry410_Item" method="_on_interacted"]

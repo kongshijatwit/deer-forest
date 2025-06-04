@@ -8,8 +8,6 @@ const SENSITIVITY = 0.005
 
 var HEALTH = 100
 
-# Signal
-signal player_hit
 
 #Bobbing variables
 const BOB_FREQ = 1.5

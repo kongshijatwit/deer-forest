@@ -9,6 +9,10 @@ func _ready() -> void:
 	hide()
 
 func resume():
+	msg.text = "Paused"
+	QuitMenu.visible = false
+	SoundMenu.visible = false
+	StartMenu.visible = true
 	hide()
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -32,7 +36,7 @@ func _on_quit_pressed() -> void:
 	QuitMenu.visible = true
 	msg.text = "Are you sure you want to quit?"
 	
-func _process(delta):
+func _process(_delta):
 	testEsc()
 
 func _on_quit_real_pressed() -> void:
