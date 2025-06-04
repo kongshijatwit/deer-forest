@@ -8,6 +8,6 @@ func _ready():
 	# player = get_node(player_path)
 	player = get_node("../%player")
 
-func _on_interacted(body: Variant) -> void:
+func _on_interacted(_body: Variant) -> void:
 	player.gun_taken()
 	queue_free()

@@ -36,7 +36,7 @@ func _on_quit_pressed() -> void:
 	QuitMenu.visible = true
 	msg.text = "Are you sure you want to quit?"
 	
-func _process(delta):
+func _process(_delta):
 	testEsc()
 
 func _on_quit_real_pressed() -> void:
