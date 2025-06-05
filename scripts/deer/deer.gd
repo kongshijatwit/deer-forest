@@ -7,7 +7,7 @@ const GAMEMANAGER_NAME: String = "game_manager"
 var gamemanager_node: Node = null
 
 # State Machine
-enum STATE {IDLE = 0, ROTATE, WALK, GRAZE, SPOOK, RUN, DEAD}
+enum STATE {IDLE = 0, WALK, GRAZE, SPOOK, RUN, DEAD}
 var current_state := STATE.IDLE
 var spook_object_position := Vector3.ZERO
 
@@ -17,8 +17,8 @@ const MAX_IDLE_TIME: float = 2.5
 const ROTATE_TIME: float = 5.0
 const MAX_RUN_TIME: float = 5.0
 const MAX_REACT_TIME: float = 0.35
-const MIN_WALK_TIME: float = 1.0
-const MAX_WALK_TIME: float = 3.5
+const MIN_WALK_TIME: float = 2.5
+const MAX_WALK_TIME: float = 5.5
 var idle_timer: float
 var react_timer: float
 var walk_timer: float
@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 			if idle_timer > 0:
 				idle_timer -= delta
 			else:
-				current_state = (randi() % 4) as STATE
+				current_state = (randi() % 3) as STATE
 
 				if current_state == STATE.IDLE: 
 					deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
@@ -76,11 +76,8 @@ func _process(delta: float) -> void:
 					play_animation("Idle")
 					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
 
-				elif current_state == STATE.ROTATE:
-					rotate_angle = deg_to_rad(randf_range(0.0, 360.0))
-					idle_timer = ROTATE_TIME
-
 				elif current_state == STATE.WALK:
+					rotate_angle = deg_to_rad(randf_range(0.0, 90.0))
 					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
 					play_animation("Walk")
 
@@ -88,16 +85,6 @@ func _process(delta: float) -> void:
 					play_animation("Graze")
 
 				debug_state_change(STATE.IDLE)
-		
-		STATE.ROTATE:
-			if idle_timer > 0:
-				idle_timer -= delta
-			else:
-				current_state = STATE.IDLE
-				play_animation("Idle")
-				idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
-				debug_state_change(STATE.ROTATE)
-			rotation.y = lerp_angle(rotation.y, rotate_angle, delta)
 
 		STATE.WALK:
 			if walk_timer > 0:
@@ -108,10 +95,7 @@ func _process(delta: float) -> void:
 				walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
 				velocity = Vector3.ZERO
 				debug_state_change(STATE.WALK)
-
-		STATE.GRAZE:
-			# current_state = STATE.IDLE
-			debug_state_change(STATE.GRAZE)
+			rotation.y = lerp_angle(rotation.y, rotate_angle, delta)
 
 		STATE.SPOOK:
 			if react_timer > 0:
@@ -158,7 +142,7 @@ func kill_deer() -> void:
 	spawn_dummy()
 
 
-func reset_deer():
+func reset_deer() -> void:
 	current_state = STATE.IDLE
 	reset_all_timers()
 	set_active(true)
