@@ -33,11 +33,14 @@ const PLAYER_GROUP: String = "player"
 const WALK_SPEED: float = 100.0
 const RUN_SPEED: float = 400.0
 var original_position: Vector3
+var position_before_death: Vector3
 var run_direction: Vector3
 var rotate_angle: float
 
 # Ragdoll - NOTE: Might replace with skeleton features instead of dummy spawning
-var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
+# var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
+@onready var phys_skel: Skeleton3D = $deer_model/Armature/Skeleton3D
+@onready var skel_sim: PhysicalBoneSimulator3D = $deer_model/Armature/Skeleton3D/PhysicalBoneSimulator3D
 
 # Deer Sounds
 @onready var deer_sfx = $AudioStreamPlayer3D
@@ -117,7 +120,8 @@ func _process(delta: float) -> void:
 				debug_state_change(STATE.RUN)
 		
 		STATE.DEAD:
-			pass
+			if idle_timer < -1:
+				print("yeah")
 	debug_inputs()
 
 
@@ -137,15 +141,20 @@ func kill_deer() -> void:
 	velocity = Vector3.ZERO
 	var previous_state: STATE = current_state  # DEBUG VAR
 	current_state = STATE.DEAD
+	position_before_death = position
 	debug_state_change(previous_state)
 	set_active(false)
-	spawn_dummy()
+	start_ragdoll()
+	
+	# spawn_dummy()
 
 
 func reset_deer() -> void:
 	current_state = STATE.IDLE
+	position = position_before_death
 	reset_all_timers()
 	set_active(true)
+	reset_ragdoll()
 	print(name + ": deer has been reset")
 
 
@@ -155,9 +164,23 @@ func set_active(active: bool) -> void:
 			n.set_deferred("monitorable", active)
 			n.set_deferred("monitoring", active)
 			n.set_deferred("input_ray_pickable", active)
+			n.set_deferred("visible", active)
 		elif n.is_class("CollisionShape3D"):
 			n.set_deferred("disabled", !active)
-		n.visible = active
+			n.set_deferred("visible", active)
+		# n.visible = active
+
+
+func start_ragdoll() -> void:
+	skel_sim.active = true
+	skel_sim.physical_bones_start_simulation()
+	# await get_tree().create_timer(3.0).timeout
+
+
+func reset_ragdoll() -> void:
+	phys_skel.reset_bone_poses()
+	skel_sim.physical_bones_stop_simulation()
+	skel_sim.active = false
 
 #endregion
 
@@ -230,12 +253,12 @@ func spooked_by_object(object_position: Vector3, run_away: bool):
 	debug_state_change(previous_state)
 
 
-func spawn_dummy():
-	var dummy = dummy_prefab.instantiate()
-	dummy.position.y = -2
-	dummy.get_node("CollisionShape3D").disabled = true
-	add_child(dummy)
-	# TODO: add timer for despawn
+# func spawn_dummy():
+# 	var dummy = dummy_prefab.instantiate()
+# 	dummy.position.y = -2
+# 	dummy.get_node("CollisionShape3D").disabled = true
+# 	add_child(dummy)
+# 	# TODO: add timer for despawn
 
 
 func play_animation(anim_name: String) -> void:
@@ -244,7 +267,7 @@ func play_animation(anim_name: String) -> void:
 
 
 func graze_finished(anim_name: String) -> void:
-	if anim_name == "Graze":
+	if anim_name == "Graze" && current_state != STATE.DEAD:
 		current_state = STATE.IDLE
 		deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
 		deer_sfx.play()
