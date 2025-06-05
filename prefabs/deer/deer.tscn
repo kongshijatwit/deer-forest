@@ -20,6 +20,9 @@ radius = 6.04495
 size = Vector3(0.712237, 0.58262, 1.84764)
 
 [node name="Deer" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_rvdin")
 
 [node name="deer_model" parent="." instance=ExtResource("2_55h0u")]

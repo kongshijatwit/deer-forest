@@ -120,8 +120,8 @@ func _process(delta: float) -> void:
 				debug_state_change(STATE.RUN)
 		
 		STATE.DEAD:
-			if idle_timer < -1:
-				print("yeah")
+			velocity = Vector3.ZERO
+			
 	debug_inputs()
 
 
@@ -138,23 +138,21 @@ func _physics_process(delta: float) -> void:
 #region State Functions
 
 func kill_deer() -> void:
-	velocity = Vector3.ZERO
 	var previous_state: STATE = current_state  # DEBUG VAR
 	current_state = STATE.DEAD
-	position_before_death = position
+	position_before_death = global_position
 	debug_state_change(previous_state)
 	set_active(false)
 	start_ragdoll()
-	
-	# spawn_dummy()
+	velocity = Vector3.ZERO
 
 
 func reset_deer() -> void:
 	current_state = STATE.IDLE
-	position = position_before_death
 	reset_all_timers()
 	set_active(true)
 	reset_ragdoll()
+	global_position = position_before_death
 	print(name + ": deer has been reset")
 
 
@@ -251,14 +249,6 @@ func spooked_by_object(object_position: Vector3, run_away: bool):
 	var previous_state = current_state
 	current_state = STATE.SPOOK
 	debug_state_change(previous_state)
-
-
-# func spawn_dummy():
-# 	var dummy = dummy_prefab.instantiate()
-# 	dummy.position.y = -2
-# 	dummy.get_node("CollisionShape3D").disabled = true
-# 	add_child(dummy)
-# 	# TODO: add timer for despawn
 
 
 func play_animation(anim_name: String) -> void:
