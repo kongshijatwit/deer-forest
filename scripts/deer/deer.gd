@@ -2,6 +2,9 @@ extends CharacterBody3D
 
 #region Variables
 
+# Signals
+signal deer_dead
+
 # Gamemanager Reference
 const GAMEMANAGER_NAME: String = "game_manager"
 var gamemanager_node: Node = null
@@ -145,6 +148,7 @@ func kill_deer() -> void:
 	set_active(false)
 	start_ragdoll()
 	velocity = Vector3.ZERO
+	deer_dead.emit()
 
 
 func reset_deer() -> void:
@@ -179,6 +183,7 @@ func reset_ragdoll() -> void:
 	phys_skel.reset_bone_poses()
 	skel_sim.physical_bones_stop_simulation()
 	skel_sim.active = false
+	$deer_model.visible = true
 
 #endregion
 
