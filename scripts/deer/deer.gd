@@ -174,7 +174,7 @@ func _on_area_entered(area: Area3D) -> void:
 		spooked_by_object(spook_object_position, false)
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group(PLAYER_GROUP) or body.name == "Player":
+	if body.is_in_group(PLAYER_GROUP) or body.name == "Player" or body.name == "player":  # Remove when player is assigned to appropriate group
 		spooked_by_object(body.position, true)
 
 func on_head_hit(area: Area3D) -> void:
