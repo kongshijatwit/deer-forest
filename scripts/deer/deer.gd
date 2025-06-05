@@ -31,7 +31,7 @@ const PLAYER_GROUP: String = "player"
 
 # Positioning & Speed
 const WALK_SPEED: float = 100.0
-const RUN_SPEED: float = 300.0
+const RUN_SPEED: float = 400.0
 var original_position: Vector3
 var run_direction: Vector3
 var rotate_angle: float
@@ -42,6 +42,9 @@ var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_te
 # Deer Sounds
 @onready var deer_sfx = $AudioStreamPlayer3D
 var deer_sfx_lib = ["res://assets/audio/sfx/deer/A_Deer-001.ogg", "res://assets/audio/sfx/deer/A_Deer-002.ogg", "res://assets/audio/sfx/deer/A_Deer-003.ogg", "res://assets/audio/sfx/deer/A_Deer-004.ogg", "res://assets/audio/sfx/deer/A_Deer-005.ogg"]
+
+# Deer Animations
+@onready var deer_anim_player = $deer_model/AnimationPlayer
 
 # Debug constants
 const DEBUG_MODE: bool = true
@@ -56,6 +59,7 @@ func _ready():
 	add_gamemanager_signal()
 	original_position = position
 	$detection.body_entered.connect(_on_body_entered)
+	deer_anim_player.animation_finished.connect(graze_finished)
 
 
 func _process(delta: float) -> void:
@@ -64,21 +68,25 @@ func _process(delta: float) -> void:
 			if idle_timer > 0:
 				idle_timer -= delta
 			else:
-				current_state = STATE.WALK
-				idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
-				# current_state = (randi() % 4) as STATE
-				# if current_state == STATE.IDLE: 
-				# 	deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
-				# 	deer_sfx.play()
-				# 	idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
-				# elif current_state == STATE.ROTATE:
-				# 	rotate_angle = deg_to_rad(randf_range(0.0, 360.0))
-				# 	idle_timer = ROTATE_TIME
-				# elif current_state == STATE.WALK:
-				# 	idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
-				# elif current_state == STATE.GRAZE:
-				# 	# Play a graze animation
-				# 	pass
+				current_state = (randi() % 4) as STATE
+
+				if current_state == STATE.IDLE: 
+					deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
+					deer_sfx.play()
+					play_animation("Idle")
+					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+
+				elif current_state == STATE.ROTATE:
+					rotate_angle = deg_to_rad(randf_range(0.0, 360.0))
+					idle_timer = ROTATE_TIME
+
+				elif current_state == STATE.WALK:
+					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+					play_animation("Walk")
+
+				elif current_state == STATE.GRAZE:
+					play_animation("Graze")
+
 				debug_state_change(STATE.IDLE)
 		
 		STATE.ROTATE:
@@ -86,6 +94,7 @@ func _process(delta: float) -> void:
 				idle_timer -= delta
 			else:
 				current_state = STATE.IDLE
+				play_animation("Idle")
 				idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
 				debug_state_change(STATE.ROTATE)
 			rotation.y = lerp_angle(rotation.y, rotate_angle, delta)
@@ -95,12 +104,13 @@ func _process(delta: float) -> void:
 				walk_timer -= delta
 			else:
 				current_state = STATE.IDLE
+				play_animation("Idle")
 				walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
 				velocity = Vector3.ZERO
 				debug_state_change(STATE.WALK)
 
 		STATE.GRAZE:
-			current_state = STATE.IDLE
+			# current_state = STATE.IDLE
 			debug_state_change(STATE.GRAZE)
 
 		STATE.SPOOK:
@@ -108,6 +118,7 @@ func _process(delta: float) -> void:
 				react_timer -= delta
 			else:
 				current_state = STATE.RUN
+				play_animation("Skip")
 				react_timer = MAX_REACT_TIME
 				debug_state_change(STATE.SPOOK)
 
@@ -116,6 +127,7 @@ func _process(delta: float) -> void:
 				run_timer -= delta
 			else:
 				current_state = STATE.IDLE
+				play_animation("Idle")
 				run_timer = MAX_RUN_TIME
 				velocity = Vector3.ZERO
 				debug_state_change(STATE.RUN)
@@ -123,7 +135,7 @@ func _process(delta: float) -> void:
 		STATE.DEAD:
 			pass
 	debug_inputs()
-			
+
 
 func _physics_process(delta: float) -> void:
 	if current_state == STATE.RUN:
@@ -233,12 +245,27 @@ func spooked_by_object(object_position: Vector3, run_away: bool):
 	current_state = STATE.SPOOK
 	debug_state_change(previous_state)
 
+
 func spawn_dummy():
 	var dummy = dummy_prefab.instantiate()
 	dummy.position.y = -2
 	dummy.get_node("CollisionShape3D").disabled = true
 	add_child(dummy)
 	# TODO: add timer for despawn
+
+
+func play_animation(anim_name: String) -> void:
+	deer_anim_player.stop()
+	deer_anim_player.play(anim_name)
+
+
+func graze_finished(anim_name: String) -> void:
+	if anim_name == "Graze":
+		current_state = STATE.IDLE
+		deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
+		deer_sfx.play()
+		play_animation("Idle")
+		idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
 
 #endregion
 
@@ -260,5 +287,7 @@ func debug_inputs() -> void:
 		reset_deer()
 	elif Input.is_action_just_pressed(KILL_DEER_INPUT) && current_state != STATE.DEAD:
 		kill_deer()
+	if Input.is_action_just_pressed("aim_down"):
+		deer_anim_player.play("Walk")
 
 #endregion

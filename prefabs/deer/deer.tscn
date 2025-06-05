@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxqbeieje54w3"]
 
 [ext_resource type="Script" uid="uid://chbnlf4sb5tev" path="res://scripts/deer/deer.gd" id="1_rvdin"]
-[ext_resource type="PackedScene" uid="uid://dats8wolor4hm" path="res://assets/models/Test/deer_test.tscn" id="2_55h0u"]
+[ext_resource type="PackedScene" uid="uid://63uii8sjg15o" path="res://assets/models/Deer/deer_model.tscn" id="2_55h0u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55h0u"]
 radius = 0.25
@@ -25,33 +25,37 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_rvdin")
 
-[node name="Deer_Test" parent="." instance=ExtResource("2_55h0u")]
+[node name="deer_model" parent="." instance=ExtResource("2_55h0u")]
 
 [node name="head_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54328, 0.447181)
 
 [node name="head_collider" type="CollisionShape3D" parent="head_area"]
 transform = Transform3D(1, 0, 0, 0, -0.263385, -0.964691, 0, 0.964691, -0.263385, 0.00927734, 0.779845, 1.23847)
 shape = SubResource("CapsuleShape3D_55h0u")
 
 [node name="body_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54328, 0.447181)
 
 [node name="torso_collider" type="CollisionShape3D" parent="body_area"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00228687, -0.0235703, -0.547602)
 shape = SubResource("CapsuleShape3D_bt2a0")
 
 [node name="leg_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54328, 0.447181)
 
 [node name="top_right_collider" type="CollisionShape3D" parent="leg_area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240171, -0.989275, 0.175138)
 shape = SubResource("BoxShape3D_55h0u")
 
 [node name="detection" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.22385, 0.447181)
 
 [node name="DetectionCollider" type="CollisionShape3D" parent="detection"]
 shape = SubResource("SphereShape3D_gcwh4")
 
 [node name="torso" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00591111, 0.0372019, -0.506911)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00591111, 1.58048, -0.0597296)
 shape = SubResource("BoxShape3D_bt2a0")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
