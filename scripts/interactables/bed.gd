@@ -3,6 +3,8 @@ extends Interactable
 signal sleep()
 
 const SLEEP_PROMPT: String = "Go to sleep"
+
+@onready var audio_stream: AudioStreamPlayer3D = $AudioStreamPlayer3D
 var can_use: bool = true
 
 
@@ -15,7 +17,9 @@ func on_bed_interacted(_body):
 	if can_use:
 		can_use = false
 		sleep.emit()
+		audio_stream.play()
 		prompt_message = ""
+
 	else:
 		print("sleep unavailable")
 	# call a body.reset() function in the player that interacts with the bed to reset bullets?
