@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1v3jb26eu8pu"
-path.s3tc="res://.godot/imported/HuntingViewmodel (1)_leatherskibidi.png-f4480b3d39c9f43f70da595e104cff88.s3tc.ctex"
+uid="uid://cnexd2d65abyb"
+path.s3tc="res://.godot/imported/HuntingViewmodelNLA_winterskibidi.png-f84cbaa139e8a41614f6acdce03e077c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2152494f7cd0e55f423995619c051321"
+"md5": "23d168d620da7a97a8fdb72bc8ff0a1f"
 }
 
 [deps]
 
-source_file="res://assets/models/ViewModel/HuntingViewmodel (1)_leatherskibidi.png"
-dest_files=["res://.godot/imported/HuntingViewmodel (1)_leatherskibidi.png-f4480b3d39c9f43f70da595e104cff88.s3tc.ctex"]
+source_file="res://assets/models/ViewModel/HuntingViewmodelNLA_winterskibidi.png"
+dest_files=["res://.godot/imported/HuntingViewmodelNLA_winterskibidi.png-f84cbaa139e8a41614f6acdce03e077c.s3tc.ctex"]
 
 [params]
 
