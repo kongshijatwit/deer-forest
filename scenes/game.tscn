@@ -87,6 +87,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -0.5, 50)
 [node name="skeleton_snow_ground5" parent="snow_ground_container/NavigationRegion3D" instance=ExtResource("1_uwrxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, -0.5, 150)
 
+[node name="out_of_bounds" type="Node3D" parent="snow_ground_container"]
+
+[node name="snow_ground9" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.5, 150)
+
+[node name="snow_ground10" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.5, 100)
+
+[node name="snow_ground11" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.5, 50)
+
+[node name="snow_ground12" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.5, 0)
+
+[node name="snow_ground13" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.5, -50)
+
+[node name="snow_ground14" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -50)
+
+[node name="snow_ground15" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, -0.5, -50)
+
+[node name="snow_ground16" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, -0.5, -50)
+
+[node name="snow_ground17" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -0.5, -50)
+
+[node name="snow_ground18" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, -0.5, -50)
+
+[node name="snow_ground19" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, -0.5, 0)
+
+[node name="snow_ground20" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, -0.5, 50)
+
+[node name="snow_ground21" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, -0.5, 100)
+
+[node name="snow_ground22" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, -0.5, 150)
+
+[node name="snow_ground23" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, -0.5, 200)
+
+[node name="snow_ground24" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -0.5, 200)
+
+[node name="snow_ground25" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, -0.5, 200)
+
+[node name="snow_ground26" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, -0.5, 200)
+
+[node name="snow_ground27" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 200)
+
+[node name="snow_ground28" parent="snow_ground_container/out_of_bounds" instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.5, 200)
+
 [node name="cabin" parent="." instance=ExtResource("3_lnu2h")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 15, 0.01, -15)
 
@@ -98,6 +160,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4945, 1.96547, -13.4579)
 
 [node name="boundary" parent="." instance=ExtResource("7_u5sy4")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.5, 12.5, 0)
+
+[node name="boundary2" parent="." instance=ExtResource("7_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, 24.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
