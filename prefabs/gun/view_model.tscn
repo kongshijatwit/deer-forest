@@ -1,17 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2xigii8t148c"]
+[gd_scene load_steps=2 format=3 uid="uid://d2xigii8t148c"]
 
 [ext_resource type="PackedScene" uid="uid://cktu24rsmgrsu" path="res://prefabs/gun/hunting_viewmodel_nla.tscn" id="2_0l86n"]
-[ext_resource type="PackedScene" uid="uid://c21tsjxjxrof" path="res://prefabs/gun/hunting_viewmodel.tscn" id="2_65i06"]
 
 [node name="view_model_camera" type="Camera3D"]
 
 [node name="fps_rig" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.444, -0.3, -0.935)
-
-[node name="HuntingViewmodel" parent="fps_rig" instance=ExtResource("2_65i06")]
-transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.444, -2.2, -0.935)
-visible = false
-script = null
 
 [node name="HuntingViewmodelNLA" parent="fps_rig" instance=ExtResource("2_0l86n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.444, -2.2, -0.935)
