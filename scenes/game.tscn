@@ -30,7 +30,7 @@ unique_name_in_owner = true
 
 [node name="player" parent="." instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.0288, -9.53674e-07, 72.1238)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4445, -1.66893e-06, -16.9065)
 
 [node name="snow" parent="player" instance=ExtResource("13_kvuet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
