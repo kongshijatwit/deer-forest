@@ -20,6 +20,9 @@ var hit_sfx_lib = ["res://assets/audio/sfx/skeleton/A_Skeleton_Hit-001.ogg","res
 "res://assets/audio/sfx/skeleton/A_Skeleton_Hit-004.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Hit-005.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Hit-006.ogg"]
 var spot_sfx_lib = ["res://assets/audio/sfx/skeleton/A_Skeleton_Spotted-001.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Spotted-002.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Spotted-003.ogg",
 "res://assets/audio/sfx/skeleton/A_Skeleton_Spotted-004.ogg"]
+var feet_sfx_lib = ["res://assets/audio/sfx/player/A_Footsteps_Walk-001.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-002.ogg",
+"res://assets/audio/sfx/player/A_Footsteps_Walk-003.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-004.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-005.ogg",
+"res://assets/audio/sfx/player/A_Footsteps_Walk-006.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-007.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-008.ogg"]
 var run_finished = true
 
 @onready var ray = $RayCast3D
@@ -32,6 +35,8 @@ var run_finished = true
 @onready var player = $"../../%player"
 @onready var timer = $Timer
 @onready var nonfeet_sfx = $NonFeetSfx
+@onready var feet_sfx = $FeetSfx
+
 
 # var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
 
@@ -160,3 +165,7 @@ func _hit_finished():
 	nonfeet_sfx.stream = load(hit_sfx_lib[(randi() % 6)])
 	nonfeet_sfx.play()
 	player.hit(50, global_transform.origin)
+	
+func _footstep():
+	feet_sfx.stream = load(feet_sfx_lib[(randi() % 8)])
+	feet_sfx.play()
