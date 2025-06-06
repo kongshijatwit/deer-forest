@@ -156,8 +156,11 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 15, 0.01, -15)
 [node name="Lamp" parent="cabin" instance=ExtResource("7_trtic")]
 transform = Transform3D(0.214286, 0, 0, 0, 0.214286, 0, 0, 0, 0.214286, -3.5268, 0.649176, 2.03714)
 
+[node name="Lamp2" parent="cabin" instance=ExtResource("7_trtic")]
+transform = Transform3D(0.214286, 0, 0, 0, 0.214286, 0, 0, 0, 0.214286, 3.4774, 0.649176, -3.36553)
+
 [node name="bed" parent="." instance=ExtResource("6_p57ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4945, 1.23946, -13.4579)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.5568, 0.805385, -13.8599)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
