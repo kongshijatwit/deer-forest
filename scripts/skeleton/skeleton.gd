@@ -16,6 +16,11 @@ var last_position: Vector3
 var bones_despawn_timer: float
 var gamble = 1
 var has_gambled = false
+var hit_sfx_lib = ["res://assets/audio/sfx/skeleton/A_Skeleton_Hit-001.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Hit-002.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Hit-003.ogg",
+"res://assets/audio/sfx/skeleton/A_Skeleton_Hit-004.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Hit-005.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Hit-006.ogg"]
+var spot_sfx_lib = ["res://assets/audio/sfx/skeleton/A_Skeleton_Spotted-001.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Spotted-002.ogg","res://assets/audio/sfx/skeleton/A_Skeleton_Spotted-003.ogg",
+"res://assets/audio/sfx/skeleton/A_Skeleton_Spotted-004.ogg"]
+var run_finished = true
 
 @onready var ray = $RayCast3D
 @onready var head = $Humanoid/Skeleton3D/Head
@@ -26,6 +31,7 @@ var has_gambled = false
 # @onready var player = $"../Player"
 @onready var player = $"../../%player"
 @onready var timer = $Timer
+@onready var nonfeet_sfx = $NonFeetSfx
 
 # var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
 
@@ -42,6 +48,10 @@ func _process(delta: float) -> void:
 	
 	match skeleton_state_machine.get_current_node():
 		"Run":
+			if run_finished:
+				nonfeet_sfx.stream = load(spot_sfx_lib[(randi() % 4)])
+				nonfeet_sfx.play()
+				run_finished = false
 			run(delta)
 		"Secret":
 			run(delta)
@@ -55,6 +65,7 @@ func _process(delta: float) -> void:
 			rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 10.0)
 			move_and_slide()
 		"Idle":
+			run_finished = true
 			turn_done = false
 			if !has_gambled:
 				gamble = randi_range(1,2)
@@ -146,4 +157,6 @@ func _target_in_range():
 	
 # Attack landed
 func _hit_finished():
+	nonfeet_sfx.stream = load(hit_sfx_lib[(randi() % 6)])
+	nonfeet_sfx.play()
 	player.hit(50, global_transform.origin)
