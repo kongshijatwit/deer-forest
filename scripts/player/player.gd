@@ -77,10 +77,16 @@ func _physics_process(delta):
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 			anim_play.play("walk")
+			gun_anim_tree.set("parameters/conditions/idle", false)
+			gun_anim_tree.set("parameters/conditions/walk", true)
 		else:
+			gun_anim_tree.set("parameters/conditions/walk", false)
+			gun_anim_tree.set("parameters/conditions/idle", true)
 			velocity.x = 0.0
 			velocity.z = 0.0
 	else:
+		gun_anim_tree.set("parameters/conditions/walk", false)
+		gun_anim_tree.set("parameters/conditions/idle", true)
 		anim_play.stop()
 		anim_play.play("Default")
 		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0) # Adds inertia to fall
