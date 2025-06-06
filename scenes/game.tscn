@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnkm877aji76i"]
+[gd_scene load_steps=16 format=3 uid="uid://dnkm877aji76i"]
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://52u0hhl3hvvs" path="res://prefabs/bed.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://i0cgwwkaxqob" path="res://prefabs/Lamp/lamp.tscn" id="7_trtic"]
 [ext_resource type="PackedScene" uid="uid://bjfvi5eel24cl" path="res://prefabs/boundary/boundary.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://7t7et22kn5bi" path="res://prefabs/ui/pause_menu.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b3dltjou21eqy" path="res://prefabs/ambient_areas/snow_area.tscn" id="9_0tnpc"]
@@ -88,6 +89,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, -0.5, 150)
 
 [node name="cabin" parent="." instance=ExtResource("3_lnu2h")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 15, 0.01, -15)
+
+[node name="Lamp" parent="cabin" instance=ExtResource("7_trtic")]
+transform = Transform3D(0.214286, 0, 0, 0, 0.214286, 0, 0, 0, 0.214286, -3.5268, 0.649176, 2.03714)
 
 [node name="bed" parent="." instance=ExtResource("6_p57ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4945, 1.96547, -13.4579)

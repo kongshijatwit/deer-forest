@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://i0cgwwkaxqob"]
+
+[ext_resource type="PackedScene" uid="uid://disow78hjx32t" path="res://assets/models/Lamp/Lamp.glb" id="1_oxlln"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxlln"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.352941)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+rim_tint = 0.76
+refraction_enabled = true
+
+[node name="Lamp" instance=ExtResource("1_oxlln")]
+
+[node name="LampTop" parent="." index="0"]
+layers = 512
+
+[node name="Glass" parent="." index="1"]
+layers = 512
+surface_material_override/0 = SubResource("StandardMaterial3D_oxlln")
+
+[node name="LampBottom" parent="." index="2"]
+layers = 512
+
+[node name="Light" parent="." index="3"]
+visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.782135, -0.00257564)
+light_energy = 2.5
+shadow_enabled = true
+shadow_caster_mask = 4294966783
+omni_range = 4.5
