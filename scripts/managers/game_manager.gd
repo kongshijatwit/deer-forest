@@ -60,4 +60,3 @@ func connect_signal(obj_string: String, sig_string: String, call_func: Callable)
 	else:
 		node.connect(sig_string, call_func)
 		return true
-

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c28603uut48n2"
-path="res://.godot/imported/HuntingViewmodel (1).glb-772499cd07ab9fca0f059eebac53b02f.scn"
+uid="uid://citq8gtjs675t"
+path="res://.godot/imported/HuntingViewmodel (2).glb-e7bd904708fd7d013e8ec08b626bc735.scn"
 
 [deps]
 
-source_file="res://assets/models/ViewModel/HuntingViewmodel (1).glb"
-dest_files=["res://.godot/imported/HuntingViewmodel (1).glb-772499cd07ab9fca0f059eebac53b02f.scn"]
+source_file="res://assets/models/ViewModel/HuntingViewmodel (2).glb"
+dest_files=["res://.godot/imported/HuntingViewmodel (2).glb-e7bd904708fd7d013e8ec08b626bc735.scn"]
 
 [params]
 

@@ -2367,6 +2367,7 @@ bone_name = "Neck_2"
 bone_idx = 4
 
 [node name="Neck_2" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Neck_2"]
+visible = false
 mesh = SubResource("ArrayMesh_ab63n")
 skeleton = NodePath("")
 
@@ -2376,6 +2377,7 @@ bone_name = "Pointer_3_L"
 bone_idx = 11
 
 [node name="Pointer_3_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pointer_3_L"]
+visible = false
 mesh = SubResource("ArrayMesh_hg66s")
 skeleton = NodePath("")
 
@@ -2385,6 +2387,7 @@ bone_name = "Pointer_2_L"
 bone_idx = 12
 
 [node name="Pointer_2_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pointer_2_L"]
+visible = false
 mesh = SubResource("ArrayMesh_sq6gx")
 skeleton = NodePath("")
 
@@ -2394,6 +2397,7 @@ bone_name = "Pointer_1_L"
 bone_idx = 13
 
 [node name="Pointer_1_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pointer_1_L"]
+visible = false
 mesh = SubResource("ArrayMesh_mulx4")
 skeleton = NodePath("")
 
@@ -2403,6 +2407,7 @@ bone_name = "Thumb_2_L"
 bone_idx = 16
 
 [node name="Thumb_2_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Thumb_2_L"]
+visible = false
 mesh = SubResource("ArrayMesh_wg0fq")
 skeleton = NodePath("")
 
@@ -2412,6 +2417,7 @@ bone_name = "Thumb_1_L"
 bone_idx = 17
 
 [node name="Thumb_1_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Thumb_1_L"]
+visible = false
 mesh = SubResource("ArrayMesh_tqsgr")
 skeleton = NodePath("")
 
@@ -2421,6 +2427,7 @@ bone_name = "Middle_3_L"
 bone_idx = 21
 
 [node name="Middle_3_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Middle_3_L"]
+visible = false
 mesh = SubResource("ArrayMesh_ucqsn")
 skeleton = NodePath("")
 
@@ -2430,6 +2437,7 @@ bone_name = "Middle_2_L"
 bone_idx = 22
 
 [node name="Middle_2_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Middle_2_L"]
+visible = false
 mesh = SubResource("ArrayMesh_0sr6s")
 skeleton = NodePath("")
 
@@ -2439,6 +2447,7 @@ bone_name = "Middle_1_L"
 bone_idx = 23
 
 [node name="Middle_1_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Middle_1_L"]
+visible = false
 mesh = SubResource("ArrayMesh_b1pej")
 skeleton = NodePath("")
 
@@ -2448,6 +2457,7 @@ bone_name = "Index_3_L"
 bone_idx = 27
 
 [node name="Index_3_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Index_3_L"]
+visible = false
 mesh = SubResource("ArrayMesh_yesw1")
 skeleton = NodePath("")
 
@@ -2457,6 +2467,7 @@ bone_name = "Index_2_L"
 bone_idx = 28
 
 [node name="Index_2_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Index_2_L"]
+visible = false
 mesh = SubResource("ArrayMesh_s18qi")
 skeleton = NodePath("")
 
@@ -2466,6 +2477,7 @@ bone_name = "Index_1_L"
 bone_idx = 29
 
 [node name="Index_1_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Index_1_L"]
+visible = false
 mesh = SubResource("ArrayMesh_2f470")
 skeleton = NodePath("")
 
@@ -2475,6 +2487,7 @@ bone_name = "Pinky_3_L"
 bone_idx = 33
 
 [node name="Pinky_3_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pinky_3_L"]
+visible = false
 mesh = SubResource("ArrayMesh_kcl15")
 skeleton = NodePath("")
 
@@ -2484,6 +2497,7 @@ bone_name = "Pinky_2_L"
 bone_idx = 34
 
 [node name="Pinky_2_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pinky_2_L"]
+visible = false
 mesh = SubResource("ArrayMesh_l17kx")
 skeleton = NodePath("")
 
@@ -2493,6 +2507,7 @@ bone_name = "Pinky_1_L"
 bone_idx = 35
 
 [node name="Pinky_1_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pinky_1_L"]
+visible = false
 mesh = SubResource("ArrayMesh_s55nu")
 skeleton = NodePath("")
 
@@ -2502,6 +2517,7 @@ bone_name = "Hand_L"
 bone_idx = 36
 
 [node name="Hand_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Hand_L"]
+visible = false
 mesh = SubResource("ArrayMesh_o7xbp")
 skeleton = NodePath("")
 
@@ -2511,6 +2527,7 @@ bone_name = "Forearm_L"
 bone_idx = 37
 
 [node name="Forearm_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Forearm_L"]
+visible = false
 mesh = SubResource("ArrayMesh_kxspk")
 skeleton = NodePath("")
 
@@ -2520,6 +2537,7 @@ bone_name = "UpperArm_L"
 bone_idx = 38
 
 [node name="UpperArm_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/UpperArm_L"]
+visible = false
 mesh = SubResource("ArrayMesh_ey3y5")
 skeleton = NodePath("")
 
@@ -2529,6 +2547,7 @@ bone_name = "Pointer_3_R"
 bone_idx = 45
 
 [node name="Pointer_3_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pointer_3_R"]
+visible = false
 mesh = SubResource("ArrayMesh_c2gdd")
 skeleton = NodePath("")
 
@@ -2538,6 +2557,7 @@ bone_name = "Pointer_2_R"
 bone_idx = 46
 
 [node name="Pointer_2_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pointer_2_R"]
+visible = false
 mesh = SubResource("ArrayMesh_as1eu")
 skeleton = NodePath("")
 
@@ -2547,6 +2567,7 @@ bone_name = "Pointer_1_R"
 bone_idx = 47
 
 [node name="Pointer_1_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pointer_1_R"]
+visible = false
 mesh = SubResource("ArrayMesh_0p2bx")
 skeleton = NodePath("")
 
@@ -2556,6 +2577,7 @@ bone_name = "Thumb_2_R"
 bone_idx = 50
 
 [node name="Thumb_2_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Thumb_2_R"]
+visible = false
 mesh = SubResource("ArrayMesh_g3r62")
 skeleton = NodePath("")
 
@@ -2565,6 +2587,7 @@ bone_name = "Thumb_1_R"
 bone_idx = 51
 
 [node name="Thumb_1_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Thumb_1_R"]
+visible = false
 mesh = SubResource("ArrayMesh_yk5h7")
 skeleton = NodePath("")
 
@@ -2574,6 +2597,7 @@ bone_name = "Middle_3_R"
 bone_idx = 55
 
 [node name="Middle_3_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Middle_3_R"]
+visible = false
 mesh = SubResource("ArrayMesh_8xcts")
 skeleton = NodePath("")
 
@@ -2583,6 +2607,7 @@ bone_name = "Middle_2_R"
 bone_idx = 56
 
 [node name="Middle_2_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Middle_2_R"]
+visible = false
 mesh = SubResource("ArrayMesh_imx0d")
 skeleton = NodePath("")
 
@@ -2592,6 +2617,7 @@ bone_name = "Middle_1_R"
 bone_idx = 57
 
 [node name="Middle_1_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Middle_1_R"]
+visible = false
 mesh = SubResource("ArrayMesh_psock")
 skeleton = NodePath("")
 
@@ -2601,6 +2627,7 @@ bone_name = "Index_3_R"
 bone_idx = 61
 
 [node name="Index_3_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Index_3_R"]
+visible = false
 mesh = SubResource("ArrayMesh_jras7")
 skeleton = NodePath("")
 
@@ -2610,6 +2637,7 @@ bone_name = "Index_2_R"
 bone_idx = 62
 
 [node name="Index_2_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Index_2_R"]
+visible = false
 mesh = SubResource("ArrayMesh_r57j2")
 skeleton = NodePath("")
 
@@ -2619,6 +2647,7 @@ bone_name = "Index_1_R"
 bone_idx = 63
 
 [node name="Index_1_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Index_1_R"]
+visible = false
 mesh = SubResource("ArrayMesh_cgp8w")
 skeleton = NodePath("")
 
@@ -2628,6 +2657,7 @@ bone_name = "Pinky_3_R"
 bone_idx = 67
 
 [node name="Pinky_3_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pinky_3_R"]
+visible = false
 mesh = SubResource("ArrayMesh_3s2my")
 skeleton = NodePath("")
 
@@ -2637,6 +2667,7 @@ bone_name = "Pinky_2_R"
 bone_idx = 68
 
 [node name="Pinky_2_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pinky_2_R"]
+visible = false
 mesh = SubResource("ArrayMesh_7bjcb")
 skeleton = NodePath("")
 
@@ -2646,6 +2677,7 @@ bone_name = "Pinky_1_R"
 bone_idx = 69
 
 [node name="Pinky_1_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Pinky_1_R"]
+visible = false
 mesh = SubResource("ArrayMesh_2y0ff")
 skeleton = NodePath("")
 
@@ -2655,6 +2687,7 @@ bone_name = "Hand_R"
 bone_idx = 70
 
 [node name="Hand_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Hand_R"]
+visible = false
 mesh = SubResource("ArrayMesh_gfbrm")
 skeleton = NodePath("")
 
@@ -2664,6 +2697,7 @@ bone_name = "Forearm_R"
 bone_idx = 71
 
 [node name="Forearm_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Forearm_R"]
+visible = false
 mesh = SubResource("ArrayMesh_poc84")
 skeleton = NodePath("")
 
@@ -2673,6 +2707,7 @@ bone_name = "UpperArm_R"
 bone_idx = 72
 
 [node name="UpperArm_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/UpperArm_R"]
+visible = false
 mesh = SubResource("ArrayMesh_d30fn")
 skeleton = NodePath("")
 
@@ -2682,6 +2717,7 @@ bone_name = "Foot_L"
 bone_idx = 76
 
 [node name="Foot_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Foot_L"]
+visible = false
 mesh = SubResource("ArrayMesh_f8jj4")
 skeleton = NodePath("")
 
@@ -2691,6 +2727,7 @@ bone_name = "LowerLeg_L"
 bone_idx = 77
 
 [node name="LowerLeg_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/LowerLeg_L"]
+visible = false
 mesh = SubResource("ArrayMesh_quepg")
 skeleton = NodePath("")
 
@@ -2700,6 +2737,7 @@ bone_name = "UpperLeg_L"
 bone_idx = 78
 
 [node name="UpperLeg_L" type="MeshInstance3D" parent="Humanoid/Skeleton3D/UpperLeg_L"]
+visible = false
 mesh = SubResource("ArrayMesh_dwbx7")
 skeleton = NodePath("")
 
@@ -2709,6 +2747,7 @@ bone_name = "Foot_R"
 bone_idx = 82
 
 [node name="Foot_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Foot_R"]
+visible = false
 mesh = SubResource("ArrayMesh_mxsak")
 skeleton = NodePath("")
 
@@ -2718,6 +2757,7 @@ bone_name = "LowerLeg_R"
 bone_idx = 83
 
 [node name="LowerLeg_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/LowerLeg_R"]
+visible = false
 mesh = SubResource("ArrayMesh_ktnln")
 skeleton = NodePath("")
 
@@ -2727,6 +2767,7 @@ bone_name = "UpperLeg_R"
 bone_idx = 84
 
 [node name="UpperLeg_R" type="MeshInstance3D" parent="Humanoid/Skeleton3D/UpperLeg_R"]
+visible = false
 mesh = SubResource("ArrayMesh_xb54e")
 skeleton = NodePath("")
 
@@ -2736,6 +2777,7 @@ bone_name = "Torso_2"
 bone_idx = 85
 
 [node name="Torso_2" type="MeshInstance3D" parent="Humanoid/Skeleton3D/Torso_2"]
+visible = false
 mesh = SubResource("ArrayMesh_65u7f")
 skeleton = NodePath("")
 
@@ -2768,7 +2810,6 @@ current = true
 
 [node name="InteractRay" parent="Head" instance=ExtResource("3_hm3fc")]
 target_position = Vector3(0, 0, -2)
-collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51258, 0)

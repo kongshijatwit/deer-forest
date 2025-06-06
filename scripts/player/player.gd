@@ -21,17 +21,22 @@ var crouching = false
 # Bullets
 var bullet = load("res://prefabs/gun/bullet.tscn")
 var instance
-var bullet_count = 100
+var bullet_count = 1
+var bullet_reserve = 12
+var reload_finished = true
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var groundray = $GroundRay
 @onready var interactray = $Head/InteractRay
-@onready var gun_barrel = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/RayCast3D
-@onready var gun_smoke = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/SmokeParticles
-@onready var gun_flash = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/MuzzleFlash
+@onready var gun_barrel = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/HuntingViewmodel/RayCast3D
+@onready var gun_smoke = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/HuntingViewmodel/SmokeParticles
+@onready var gun_flash = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/HuntingViewmodel/MuzzleFlash
 @onready var gun_viewmodel = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera
-@onready var gun_sound = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/Henry410_Test/AudioStreamPlayer3D
+@onready var gun_sfx = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/HuntingViewmodel/AudioStreamPlayer3D
+@onready var gun_sfx_lib = ["res://assets/audio/sfx/gun/A_Shotgun.ogg","res://assets/audio/sfx/gun/A_Shotgun_Grab.ogg","res://assets/audio/sfx/gun/A_Shotgun_Reload-001.ogg",
+"res://assets/audio/sfx/gun/A_Shotgun_Reload-002.ogg"]
+@onready var gun_anim_tree = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/HuntingViewmodel/AnimationTree
 @onready var anim_play = $AnimationPlayer
 @onready var char_model = $Humanoid
 @onready var feet_sfx = $feet_sfx
@@ -55,6 +60,7 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
+	print(gun_anim_tree.get("parameters/playback").get_current_node())
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -92,7 +98,7 @@ func _physics_process(delta):
 	$Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera.global_transform = camera.global_transform
 	
 	# Shooting
-	if Input.is_action_just_pressed("shoot") and bullet_count >= 0 and gun_equipped:
+	if Input.is_action_just_pressed("shoot") and bullet_count > 0 and reload_finished and gun_equipped:
 		instance = bullet.instantiate()
 		instance.position = gun_barrel.global_position
 		instance.transform.basis = gun_barrel.global_transform.basis
@@ -100,9 +106,17 @@ func _physics_process(delta):
 		gun_flash.emitting = true
 		gun_smoke.restart()
 		gun_flash.restart()
-		gun_sound.play()
+		gun_sfx.stream = load(gun_sfx_lib[0])
+		gun_sfx.play()
 		get_tree().root.add_child(instance)
 		bullet_count -= 1
+		gun_anim_tree.set("parameters/conditions/shoot", true)
+		
+	if Input.is_action_just_pressed("reload") and bullet_count == 0 and bullet_reserve > 0 and gun_equipped:
+		bullet_count += 1
+		bullet_reserve -= 1
+		gun_anim_tree.set("parameters/conditions/reload", true)
+		reload_finished = false
 		
 	# Crouching
 	# if Input.is_action_pressed("crouch"):
@@ -121,6 +135,8 @@ func _headbob(time) -> Vector3:
 func gun_taken():
 	gun_viewmodel.visible = true
 	gun_equipped = true
+	gun_sfx.stream = load(gun_sfx_lib[1])
+	gun_sfx.play()
 	
 func _make_footstep():
 	if groundray.is_colliding():
@@ -140,5 +156,11 @@ func hit(damage, knockback_origin):
 	velocity.y += 3
 	move_and_slide()
 	velocity += (global_transform.origin - knockback_origin).normalized() * 10
+	
+func reload():
+	reload_finished = true
+	gun_anim_tree.set("parameters/conditions/reload", false)
+	gun_anim_tree.set("parameters/conditions/idle", !crouching)
+	gun_anim_tree.set("parameters/conditions/crouch", crouching)
 	
 	
