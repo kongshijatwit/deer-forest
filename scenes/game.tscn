@@ -157,7 +157,7 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 15, 0.01, -15)
 transform = Transform3D(0.214286, 0, 0, 0, 0.214286, 0, 0, 0, 0.214286, -3.5268, 0.649176, 2.03714)
 
 [node name="bed" parent="." instance=ExtResource("6_p57ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4945, 1.96547, -13.4579)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4945, 1.23946, -13.4579)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -169,7 +169,7 @@ transform = Transform3D(41.9327, 0, 0, 0, 41.9327, 0, 0, 0, 41.9327, -75, 25, 75
 [node name="deer_container" type="Node3D" parent="."]
 
 [node name="Deer" parent="deer_container" instance=ExtResource("4_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5889, 1.57, -6.01191)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.589, 0, -6.012)
 
 [node name="skeleton_container" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -9.53674e-07, 126.949)
