@@ -4,11 +4,13 @@
 [ext_resource type="AudioStream" uid="uid://0fcv4k4pqvkw" path="res://assets/audio/sfx/bed/A_GoToSleep.ogg" id="2_8vxqi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2k1l4"]
+size = Vector3(3, 1.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbuig"]
+size = Vector3(3, 1.5, 1)
 
 [node name="bed" type="StaticBody3D"]
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_2k1l4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
