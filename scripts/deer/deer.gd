@@ -47,7 +47,9 @@ var rotate_angle: float
 
 # Deer Sounds
 @onready var deer_sfx = $AudioStreamPlayer3D
-var deer_sfx_lib = ["res://assets/audio/sfx/deer/A_Deer-001.ogg", "res://assets/audio/sfx/deer/A_Deer-002.ogg", "res://assets/audio/sfx/deer/A_Deer-003.ogg", "res://assets/audio/sfx/deer/A_Deer-004.ogg", "res://assets/audio/sfx/deer/A_Deer-005.ogg"]
+var deer_sfx_lib = ["res://assets/audio/sfx/deer/A_Deer-001.ogg", "res://assets/audio/sfx/deer/A_Deer-002.ogg", "res://assets/audio/sfx/deer/A_Deer-003.ogg",
+"res://assets/audio/sfx/deer/A_Deer-004.ogg", "res://assets/audio/sfx/deer/A_Deer-005.ogg"]
+var deer_death_sfx_lib = ["res://assets/audio/sfx/deer/A_Deer_Dying-001.ogg","res://assets/audio/sfx/deer/A_Deer_Dying-002.ogg","res://assets/audio/sfx/deer/A_Deer_Dying-003.ogg"]
 
 # Deer Animations
 @onready var deer_anim_player = $deer_model/AnimationPlayer
@@ -141,6 +143,8 @@ func _physics_process(delta: float) -> void:
 #region State Functions
 
 func kill_deer() -> void:
+	deer_sfx.stream = load(deer_death_sfx_lib[(randi() % 3)])
+	deer_sfx.play()
 	var previous_state: STATE = current_state  # DEBUG VAR
 	current_state = STATE.DEAD
 	position_before_death = global_position
