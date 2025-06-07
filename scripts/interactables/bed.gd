@@ -9,9 +9,10 @@ var can_use: bool = false
 
 
 func _ready() -> void:
-	# TODO: Take in another signal that resets `can_use`
 	prompt_message = ""
 	interacted.connect(on_bed_interacted)
+	var game_manager: Node3D = %game_manager
+	game_manager.quest_complete.connect(allow_sleep)
 
 func on_bed_interacted(_body):
 	if can_use:

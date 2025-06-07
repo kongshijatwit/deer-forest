@@ -1,6 +1,6 @@
 extends Interactable
 
-
+signal deer_get
 const PICKUP_PROMPT: String = "Pickup Deer"
 var can_interact: bool = false
 
@@ -20,3 +20,4 @@ func pickup_deer(_body) -> void:
 		get_parent().get_node("deer_model").visible = false
 		prompt_message = ""
 		GlobalVariables.deer_killed += 1
+		deer_get.emit()

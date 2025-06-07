@@ -12,9 +12,9 @@ func _ready() -> void:
 
 
 func on_interacted(_body):
-	# get_relic.emit()
 	GlobalVariables.artifact_piece_collected = true
 	GlobalVariables.artifact_pieces_gathered += 1
+	get_relic.emit()
 	set_active(false)
 
 
