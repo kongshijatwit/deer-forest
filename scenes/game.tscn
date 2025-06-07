@@ -181,7 +181,7 @@ transform = Transform3D(41.9327, 0, 0, 0, 41.9327, 0, 0, 0, 41.9327, -75, 25, 75
 [node name="deer_container" type="Node3D" parent="."]
 
 [node name="Deer" parent="deer_container" instance=ExtResource("4_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.589, 0, -6.012)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4943, 0, -21.791)
 
 [node name="skeleton_container" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -9.53674e-07, 126.949)
