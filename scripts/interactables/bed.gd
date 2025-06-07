@@ -5,13 +5,14 @@ signal sleep
 const SLEEP_PROMPT: String = "Go to sleep"
 
 @onready var audio_stream: AudioStreamPlayer3D = $AudioStreamPlayer3D
-var can_use: bool = true
+var can_use: bool = false
 
 
 func _ready() -> void:
-	# TODO: Take in another signal that resets `can_use`
-	prompt_message = SLEEP_PROMPT
+	prompt_message = ""
 	interacted.connect(on_bed_interacted)
+	var game_manager: Node3D = %game_manager
+	game_manager.quest_complete.connect(allow_sleep)
 
 func on_bed_interacted(_body):
 	if can_use:

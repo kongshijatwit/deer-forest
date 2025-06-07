@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chbnlf4sb5tev" path="res://scripts/deer/deer.gd" id="1_rvdin"]
 [ext_resource type="PackedScene" uid="uid://63uii8sjg15o" path="res://assets/models/Deer/deer_model.tscn" id="2_55h0u"]
-[ext_resource type="Script" path="res://scripts/interactables/deer_pickup.gd" id="3_bt2a0"]
+[ext_resource type="Script" uid="uid://bcjcu30o2gutj" path="res://scripts/interactables/deer_pickup.gd" id="3_bt2a0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55h0u"]
 radius = 0.25
