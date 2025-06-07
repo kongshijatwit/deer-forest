@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkvj18catpkj2"]
+
+[ext_resource type="Script" uid="uid://bpfpdxjnb5btd" path="res://scripts/managers/dialogue_manager.gd" id="1_e45er"]
+[ext_resource type="Script" uid="uid://c6av3xe4m2ujl" path="res://addons/madtalk/runtime/madtalk_runtime.gd" id="2_y7y5u"]
+
+[node name="dialogue_manager" type="Node"]
+script = ExtResource("1_e45er")
+
+[node name="MadTalk" type="Node" parent="."]
+script = ExtResource("2_y7y5u")
+DialogMainControl = NodePath("../CanvasLayer/Control")
+DialogMessageBox = NodePath("../CanvasLayer/Control/dialog_panel")
+DialogMessageLabel = NodePath("../CanvasLayer/Control/dialog_panel/text")
+DialogSpeakerLabel = NodePath("../CanvasLayer/Control/dialog_panel/name")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dialog_panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 365.0
+offset_right = 1051.0
+offset_bottom = 598.0
+
+[node name="name" type="RichTextLabel" parent="CanvasLayer/Control/dialog_panel"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 39.0
+offset_right = 889.0
+offset_bottom = 74.0
+text = "example text"
+
+[node name="text" type="RichTextLabel" parent="CanvasLayer/Control/dialog_panel"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 82.0
+offset_right = 889.0
+offset_bottom = 202.0
+text = "example text"
