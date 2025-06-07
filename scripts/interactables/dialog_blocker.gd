@@ -1,5 +1,8 @@
 extends Interactable
 
+signal talking
+signal done_talking
+
 const TALK_PROMPT: String = "Talk"
 @onready var dialog_controller: Node = $"../%dialogue_manager/MadTalk"
 var finished_talking: bool = true
@@ -19,6 +22,8 @@ func begin_dialog(_body):
 			finished_talking = false
 			dialog_controller.start_dialog("villager")
 		elif !GlobalVariables.cultist_talked:
+			MadTalkGlobals.set_variable("cultist_reputation", GlobalVariables.cultist_reputation)
+			print(MadTalkGlobals.get_variable("cultist_reputation"))
 			GlobalVariables.cultist_talked = true
 			finished_talking = false
 			dialog_controller.start_dialog("cultist")
