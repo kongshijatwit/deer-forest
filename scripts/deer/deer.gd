@@ -153,7 +153,6 @@ func kill_deer() -> void:
 	start_ragdoll()
 	velocity = Vector3.ZERO
 	deer_dead.emit()
-	GlobalVariables.deer_killed += 1
 
 
 func reset_deer() -> void:

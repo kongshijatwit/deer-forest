@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnkm877aji76i"]
+[gd_scene load_steps=20 format=3 uid="uid://dnkm877aji76i"]
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c1d4h3mvm2eof" path="res://prefabs/particles/snow.tscn" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://bnxwuxpuflc8" path="res://prefabs/environment/world_border.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bgegiexum50jg" path="res://prefabs/environment/dialog_blocker.tscn" id="17_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://dnjfhpa6a8ec1" path="res://prefabs/relic.tscn" id="18_ssvqc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0tnpc"]
 vertices = PackedVector3Array(-75.5, 0.5, 75.25, -75.5, 0.5, 25.5, -174.5, 0.5, 25.5, -25.5, 0.5, 174.5, -25.5, 0.5, 75.5, -174.5, 0.5, 174.5)
@@ -220,3 +221,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 10, 175)
 
 [node name="world_border4" parent="bounds" instance=ExtResource("15_ir15t")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -175, 10, 75)
+
+[node name="relic" parent="." instance=ExtResource("18_ssvqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6501, 1.49906, -4.19217)

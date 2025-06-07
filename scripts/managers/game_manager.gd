@@ -14,23 +14,14 @@ extends Node3D
 # - Resetting the game when a new month begins
 
 
-@export var deer_container: Node3D
-
 signal reset
 # signal game_end
 
 const BED_STRING: String = "bed"
-const RELIC_STRING: String = "ExampleRelic"
-
 
 
 func _ready() -> void:
 	connect_signal(BED_STRING, "sleep", start_new_month)
-	connect_signal(RELIC_STRING, "get_relic", artifact_collected)
-	if deer_container != null:
-		for deer: Node3D in deer_container.get_children():
-			# deer.dead.connect(increment_dead_deer)
-			pass
 
 
 func start_new_month() -> void:
@@ -39,22 +30,12 @@ func start_new_month() -> void:
 	if GlobalVariables.deer_killed >= 1:  # Remember to replace with 15
 		GlobalVariables.villager_reputation = GlobalVariables.month + 1
 		GlobalVariables.cultist_reputation = GlobalVariables.month * -1 - 1
-	elif GlobalVariables.deer_killed < 15 and GlobalVariables.artifact_piece_collected:
+	elif GlobalVariables.deer_killed < 1 and GlobalVariables.artifact_piece_collected:
 		GlobalVariables.cultist_reputation += GlobalVariables.month + 1
 		GlobalVariables.villager_reputation = GlobalVariables.month * -1 - 1
 	GlobalVariables.artifact_piece_collected = false
 	GlobalVariables.deer_killed = 0
 	GlobalVariables.month += 1
-
-
-func artifact_collected() -> void:
-	print("collected artifact")
-	GlobalVariables.artifact_piece_collected = true
-	GlobalVariables.artifact_pieces_gathered += 1
-
-
-func increment_dead_deer() -> void:
-	GlobalVariables.deer_killed += 1
 
 
 func connect_signal(obj_string: String, sig_string: String, call_func: Callable) -> bool:
