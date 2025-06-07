@@ -1235,7 +1235,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_hkg3h"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(840, -180)
+position = Vector2(780, -180)
 comment = ""
 items = [SubResource("Resource_uwwod")]
 options = []
@@ -1262,7 +1262,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_uj1nl"]
 script = ExtResource("4_f2ijm")
 sequence_id = 2
-position = Vector2(1260, -160)
+position = Vector2(1200, -160)
 comment = ""
 items = [SubResource("Resource_ig706")]
 options = []
@@ -1276,7 +1276,7 @@ connected_to_id = -1
 message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "Hey hunter! I represent the nearby village. If you don’t mind, could you help the village out and bring us deer? All of our hunters have gone missing in this wretched weather and we fear for the worst."
+message_text = "I represent the nearby village. If you don’t mind, could you help the village out and bring us deer? All of our hunters have gone missing in this wretched weather and we fear for the worst."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -1288,7 +1288,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_lge7f"]
 script = ExtResource("4_f2ijm")
 sequence_id = 3
-position = Vector2(420, -180)
+position = Vector2(360, -180)
 comment = ""
 items = [SubResource("Resource_t2a6b")]
 options = []
