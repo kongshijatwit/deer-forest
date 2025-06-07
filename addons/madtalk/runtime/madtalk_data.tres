@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=90 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=103 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -221,7 +221,7 @@ connected_to_id = -1
 message_speaker_id = "Cultist"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "Hi"
+message_text = "Hello, Hunter."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -230,24 +230,140 @@ condition_values = []
 effect_type = 10
 effect_values = []
 
+[sub_resource type="Resource" id="Resource_m2qb1"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 10
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = ""
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 2
+condition_values = ["cultist_reputation", 1.0]
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="kur6e"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = -1
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = ""
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 2
+condition_values = ["cultist_reputation", 2.0]
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_ogynd"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = -1
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = ""
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 2
+condition_values = ["cultist_reputation", 3.0]
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="mjnvi"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = -1
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = ""
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 2
+condition_values = ["cultist_reputation", 4.0]
+effect_type = 10
+effect_values = []
+
 [sub_resource type="Resource" id="Resource_6d3fn"]
 script = ExtResource("4_f2ijm")
 sequence_id = 0
-position = Vector2(-40, 0)
+position = Vector2(-280, 0)
 comment = ""
-items = [SubResource("gi4cx")]
+items = [SubResource("gi4cx"), SubResource("Resource_m2qb1"), SubResource("kur6e"), SubResource("Resource_ogynd"), SubResource("mjnvi")]
 options = []
-continue_sequence_id = 7
-continue_port_index = 0
+continue_sequence_id = -1
+continue_port_index = 4
 
-[sub_resource type="Resource" id="0mplr"]
+[sub_resource type="Resource" id="wspnu"]
 script = ExtResource("2_48vp3")
 item_type = 0
 connected_to_id = -1
-message_speaker_id = "cultist"
+message_speaker_id = "Cultist"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "bye bye"
+message_text = "I’ve come here on behalf of my… group, to request your aid in ending this dreadful storm."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="6yf53"]
+script = ExtResource("4_f2ijm")
+sequence_id = 10
+position = Vector2(260, -160)
+comment = ""
+items = [SubResource("wspnu")]
+options = []
+continue_sequence_id = 11
+continue_port_index = 0
+
+[sub_resource type="Resource" id="hkg3h"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Yes, you’ve heard me right. It may sound strange at first, but we don’t have many options, the end is nowhere in sight. We need your help reclaiming pieces of a relic in the deepest part of the forest."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="0mplr"]
+script = ExtResource("4_f2ijm")
+sequence_id = 11
+position = Vector2(680, -180)
+comment = ""
+items = [SubResource("hkg3h")]
+options = []
+continue_sequence_id = 12
+continue_port_index = 0
+
+[sub_resource type="Resource" id="ig706"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "None of us are capable of dealing with both the storm and the evil presence that lies within. You appear to be well-suited since you’ve been out here surviving on your own."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -257,65 +373,23 @@ effect_type = 10
 effect_values = []
 
 [sub_resource type="Resource" id="uwwod"]
-script = ExtResource("2_48vp3")
-item_type = 1
-connected_to_id = 8
-message_speaker_id = ""
-message_speaker_variant = ""
-message_voice_clip = ""
-message_text = ""
-message_voice_clip_locales = {}
-message_text_locales = {}
-message_hide_on_end = 0
-condition_type = 3
-condition_values = ["cultist_reputation", 1.0]
-effect_type = 10
-effect_values = []
-
-[sub_resource type="Resource" id="wspnu"]
 script = ExtResource("4_f2ijm")
-sequence_id = 7
-position = Vector2(420, 20)
-comment = ""
-items = [SubResource("0mplr"), SubResource("uwwod")]
-options = []
-continue_sequence_id = 9
-continue_port_index = 1
-
-[sub_resource type="Resource" id="ig706"]
-script = ExtResource("2_48vp3")
-item_type = 0
-connected_to_id = -1
-message_speaker_id = "secret"
-message_speaker_variant = ""
-message_voice_clip = ""
-message_text = "secret tunnel!"
-message_voice_clip_locales = {}
-message_text_locales = {}
-message_hide_on_end = 0
-condition_type = 10
-condition_values = []
-effect_type = 10
-effect_values = []
-
-[sub_resource type="Resource" id="hkg3h"]
-script = ExtResource("4_f2ijm")
-sequence_id = 8
-position = Vector2(860, 40)
+sequence_id = 12
+position = Vector2(1100, -180)
 comment = ""
 items = [SubResource("ig706")]
 options = []
-continue_sequence_id = -1
+continue_sequence_id = 13
 continue_port_index = 0
 
 [sub_resource type="Resource" id="6d3fn"]
 script = ExtResource("2_48vp3")
 item_type = 0
 connected_to_id = -1
-message_speaker_id = "tunnel"
+message_speaker_id = "Cultist"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "generic tunnel!"
+message_text = "Speaking of which, we humbly request that you only hunt the deer required for survival. They only show up here once a month for a reason."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -326,10 +400,36 @@ effect_values = []
 
 [sub_resource type="Resource" id="uj1nl"]
 script = ExtResource("4_f2ijm")
-sequence_id = 9
-position = Vector2(880, 260)
+sequence_id = 13
+position = Vector2(1520, -180)
 comment = ""
 items = [SubResource("6d3fn")]
+options = []
+continue_sequence_id = 14
+continue_port_index = 0
+
+[sub_resource type="Resource" id="m2qb1"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "We have reports that a piece of the relic may currently be in the forest, please take care of the situation. We will offer our gratitude when we come for the relic at the start of the next month."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="86kbs"]
+script = ExtResource("4_f2ijm")
+sequence_id = 14
+position = Vector2(1940, -180)
+comment = ""
+items = [SubResource("m2qb1")]
 options = []
 continue_sequence_id = -1
 continue_port_index = 0
@@ -338,8 +438,8 @@ continue_port_index = 0
 script = ExtResource("5_vkpn8")
 sheet_id = "cultist"
 sheet_description = ""
-next_sequence_id = 10
-nodes = [SubResource("Resource_6d3fn"), SubResource("wspnu"), SubResource("hkg3h"), SubResource("uj1nl")]
+next_sequence_id = 15
+nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs")]
 
 [sub_resource type="Resource" id="12"]
 script = ExtResource("2_48vp3")
@@ -1026,14 +1126,14 @@ sheet_description = ""
 next_sequence_id = 1
 nodes = [SubResource("Resource_iyv7e")]
 
-[sub_resource type="Resource" id="Resource_0mplr"]
+[sub_resource type="Resource" id="Resource_dsmgf"]
 script = ExtResource("2_48vp3")
 item_type = 0
 connected_to_id = -1
 message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "Hey hunter! I represent the nearby village. If you don’t mind, could you help the village out and bring us deer? All of our hunters have gone missing in this wretched weather and we fear for the worst."
+message_text = "Hello, mister."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -1042,15 +1142,79 @@ condition_values = []
 effect_type = 10
 effect_values = []
 
+[sub_resource type="Resource" id="Resource_0mplr"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 3
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = ""
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 2
+condition_values = ["villager_reputation", 1.0]
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_fwb2u"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = -1
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = ""
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 2
+condition_values = ["villager_reputation", 2.0]
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_1yy6g"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = -1
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = ""
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 2
+condition_values = ["villager_reputation", 3.0]
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_ghijk"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = -1
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = ""
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 2
+condition_values = ["villager_reputation", 4.0]
+effect_type = 10
+effect_values = []
+
 [sub_resource type="Resource" id="Resource_6yf53"]
 script = ExtResource("4_f2ijm")
 sequence_id = 0
-position = Vector2(0, 0)
+position = Vector2(-180, 0)
 comment = ""
-items = [SubResource("Resource_0mplr")]
+items = [SubResource("Resource_dsmgf"), SubResource("Resource_0mplr"), SubResource("Resource_fwb2u"), SubResource("Resource_1yy6g"), SubResource("Resource_ghijk")]
 options = []
-continue_sequence_id = 1
-continue_port_index = 0
+continue_sequence_id = -1
+continue_port_index = 4
 
 [sub_resource type="Resource" id="Resource_uwwod"]
 script = ExtResource("2_48vp3")
@@ -1071,7 +1235,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_hkg3h"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(480, -40)
+position = Vector2(840, -180)
 comment = ""
 items = [SubResource("Resource_uwwod")]
 options = []
@@ -1098,19 +1262,45 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_uj1nl"]
 script = ExtResource("4_f2ijm")
 sequence_id = 2
-position = Vector2(900, 0)
+position = Vector2(1260, -160)
 comment = ""
 items = [SubResource("Resource_ig706")]
 options = []
 continue_sequence_id = -1
 continue_port_index = 0
 
+[sub_resource type="Resource" id="Resource_t2a6b"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Hey hunter! I represent the nearby village. If you don’t mind, could you help the village out and bring us deer? All of our hunters have gone missing in this wretched weather and we fear for the worst."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_lge7f"]
+script = ExtResource("4_f2ijm")
+sequence_id = 3
+position = Vector2(420, -180)
+comment = ""
+items = [SubResource("Resource_t2a6b")]
+options = []
+continue_sequence_id = 1
+continue_port_index = 0
+
 [sub_resource type="Resource" id="Resource_wspnu"]
 script = ExtResource("5_vkpn8")
 sheet_id = "villager"
 sheet_description = "Villager NPC"
-next_sequence_id = 3
-nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl")]
+next_sequence_id = 4
+nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f")]
 
 [resource]
 script = ExtResource("1_giduu")
