@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgegiexum50jg"]
+
+[ext_resource type="Script" uid="uid://lpb705voh2na" path="res://scripts/interactables/dialog_blocker.gd" id="1_ip2kf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_krcb4"]
+size = Vector3(1.5, 2.5, 0.3)
+
+[node name="dialog_blocker" type="StaticBody3D"]
+script = ExtResource("1_ip2kf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_krcb4")

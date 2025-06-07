@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_scgyh"]
 script = ExtResource("2_smxyh")
 id = "Villager"
-name = "squidward"
+name = "Villager"
 variants = {}
 metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
 
@@ -48,7 +48,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 44.0
 offset_top = 66.0
-offset_right = 448.0
+offset_right = 734.0
 offset_bottom = 190.0
 text = "test text"
 

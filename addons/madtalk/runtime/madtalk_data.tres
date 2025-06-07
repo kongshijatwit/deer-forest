@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=77 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=80 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -906,7 +906,7 @@ connected_to_id = -1
 message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "spongebob, what are you doing?"
+message_text = "Hey hunter! I represent the nearby village. If you don’t mind, could you help the village out and bring us deer? All of our hunters have gone missing in this wretched weather and we fear for the worst."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -922,15 +922,58 @@ position = Vector2(0, 0)
 comment = ""
 items = [SubResource("Resource_0mplr")]
 options = []
-continue_sequence_id = -1
+continue_sequence_id = 1
 continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_uwwod"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "I would offer something in return, but the blizzard has been so bad that all of the crops have died out and all of our trade routes are too dangerous. Honestly, you’re our only hope of survival."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
 
 [sub_resource type="Resource" id="Resource_hkg3h"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
 position = Vector2(480, -40)
 comment = ""
-items = []
+items = [SubResource("Resource_uwwod")]
+options = []
+continue_sequence_id = 2
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_ig706"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Just 15 deer should last us the month. Please consider our plea.
+"
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_uj1nl"]
+script = ExtResource("4_f2ijm")
+sequence_id = 2
+position = Vector2(900, 0)
+comment = ""
+items = [SubResource("Resource_ig706")]
 options = []
 continue_sequence_id = -1
 continue_port_index = 0
@@ -939,8 +982,8 @@ continue_port_index = 0
 script = ExtResource("5_vkpn8")
 sheet_id = "villager"
 sheet_description = "Villager NPC"
-next_sequence_id = 2
-nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h")]
+next_sequence_id = 3
+nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl")]
 
 [resource]
 script = ExtResource("1_giduu")
