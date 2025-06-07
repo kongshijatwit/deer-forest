@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=103 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=104 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -1126,22 +1126,6 @@ sheet_description = ""
 next_sequence_id = 1
 nodes = [SubResource("Resource_iyv7e")]
 
-[sub_resource type="Resource" id="Resource_dsmgf"]
-script = ExtResource("2_48vp3")
-item_type = 0
-connected_to_id = -1
-message_speaker_id = "Villager"
-message_speaker_variant = ""
-message_voice_clip = ""
-message_text = "Hello, mister."
-message_voice_clip_locales = {}
-message_text_locales = {}
-message_hide_on_end = 0
-condition_type = 10
-condition_values = []
-effect_type = 10
-effect_values = []
-
 [sub_resource type="Resource" id="Resource_0mplr"]
 script = ExtResource("2_48vp3")
 item_type = 1
@@ -1161,7 +1145,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_fwb2u"]
 script = ExtResource("2_48vp3")
 item_type = 1
-connected_to_id = -1
+connected_to_id = 4
 message_speaker_id = ""
 message_speaker_variant = ""
 message_voice_clip = ""
@@ -1211,7 +1195,7 @@ script = ExtResource("4_f2ijm")
 sequence_id = 0
 position = Vector2(-180, 0)
 comment = ""
-items = [SubResource("Resource_dsmgf"), SubResource("Resource_0mplr"), SubResource("Resource_fwb2u"), SubResource("Resource_1yy6g"), SubResource("Resource_ghijk")]
+items = [SubResource("Resource_0mplr"), SubResource("Resource_fwb2u"), SubResource("Resource_1yy6g"), SubResource("Resource_ghijk")]
 options = []
 continue_sequence_id = -1
 continue_port_index = 4
@@ -1276,7 +1260,7 @@ connected_to_id = -1
 message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "I represent the nearby village. If you don’t mind, could you help the village out and bring us deer? All of our hunters have gone missing in this wretched weather and we fear for the worst."
+message_text = "Hello, mister. I represent the nearby village. If you don’t mind, could you help the village out and bring us deer? All of our hunters have gone missing in this wretched weather and we fear for the worst."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -1295,12 +1279,38 @@ options = []
 continue_sequence_id = 1
 continue_port_index = 0
 
+[sub_resource type="Resource" id="Resource_ronjm"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Hello again, mister. I’d like to take the opportunity to thank you for your generous allowance of deer to me and my little village."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_scbln"]
+script = ExtResource("4_f2ijm")
+sequence_id = 4
+position = Vector2(360, 80)
+comment = ""
+items = [SubResource("Resource_ronjm")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
 [sub_resource type="Resource" id="Resource_wspnu"]
 script = ExtResource("5_vkpn8")
 sheet_id = "villager"
 sheet_description = "Villager NPC"
-next_sequence_id = 4
-nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f")]
+next_sequence_id = 5
+nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln")]
 
 [resource]
 script = ExtResource("1_giduu")
