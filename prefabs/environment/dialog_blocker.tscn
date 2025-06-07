@@ -6,6 +6,7 @@
 size = Vector3(1.5, 2.5, 0.3)
 
 [node name="dialog_blocker" type="StaticBody3D"]
+collision_layer = 3
 script = ExtResource("1_ip2kf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

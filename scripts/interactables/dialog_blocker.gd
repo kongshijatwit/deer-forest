@@ -1,14 +1,14 @@
 extends Interactable
 
-
-@onready var dialog_controller: Node = %dialog_manager/MadTalk
+const TALK_PROMPT: String = "Talk"
+@onready var dialog_controller: Node = $"../%dialogue_manager/MadTalk"
 var finished_talking: bool = true
 
 
 func _ready():
-	prompt_message = "Talk"
+	prompt_message = TALK_PROMPT
 	interacted.connect(begin_dialog)
-	dialog_controller.dialog_finished.connect()
+	dialog_controller.dialog_finished.connect(finish_dialog)
 
 
 func begin_dialog(_body):
@@ -23,8 +23,14 @@ func begin_dialog(_body):
 			finished_talking = false
 			dialog_controller.start_dialog("cultist")
 	
-	
-func finish_dialog(_sheet_name: Variant, _sequence_id: Variant):
-	prompt_message = "Talk"
-	finished_talking = true
 
+func finish_dialog(_sheet_name: Variant, _sequence_id: Variant):
+	prompt_message = TALK_PROMPT
+	finished_talking = true
+	if GlobalVariables.villager_talked and GlobalVariables.cultist_talked:
+		$CollisionShape3D.disabled = true
+		visible = false
+
+
+func reset_dialog_blocker():
+	pass
