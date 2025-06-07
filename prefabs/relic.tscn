@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnjfhpa6a8ec1"]
+
+[ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/interactables/examplerelic.gd" id="1_1j0x0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qatkl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1j0x0"]
+
+[node name="relic" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_1j0x0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qatkl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1j0x0")
