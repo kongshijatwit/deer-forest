@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=129 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=135 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -259,7 +259,7 @@ effect_values = []
 [sub_resource type="Resource" id="6yf53"]
 script = ExtResource("4_f2ijm")
 sequence_id = 10
-position = Vector2(260, -160)
+position = Vector2(240, -640)
 comment = ""
 items = [SubResource("wspnu")]
 options = []
@@ -285,7 +285,7 @@ effect_values = []
 [sub_resource type="Resource" id="0mplr"]
 script = ExtResource("4_f2ijm")
 sequence_id = 11
-position = Vector2(680, -180)
+position = Vector2(660, -660)
 comment = ""
 items = [SubResource("hkg3h")]
 options = []
@@ -311,7 +311,7 @@ effect_values = []
 [sub_resource type="Resource" id="uwwod"]
 script = ExtResource("4_f2ijm")
 sequence_id = 12
-position = Vector2(1100, -180)
+position = Vector2(1080, -660)
 comment = ""
 items = [SubResource("ig706")]
 options = []
@@ -337,7 +337,7 @@ effect_values = []
 [sub_resource type="Resource" id="uj1nl"]
 script = ExtResource("4_f2ijm")
 sequence_id = 13
-position = Vector2(1520, -180)
+position = Vector2(1500, -660)
 comment = ""
 items = [SubResource("6d3fn")]
 options = []
@@ -363,7 +363,7 @@ effect_values = []
 [sub_resource type="Resource" id="86kbs"]
 script = ExtResource("4_f2ijm")
 sequence_id = 14
-position = Vector2(1940, -180)
+position = Vector2(1920, -580)
 comment = ""
 items = [SubResource("m2qb1")]
 options = []
@@ -389,7 +389,7 @@ effect_values = []
 [sub_resource type="Resource" id="kur6e"]
 script = ExtResource("2_48vp3")
 item_type = 1
-connected_to_id = -1
+connected_to_id = 20
 message_speaker_id = ""
 message_speaker_variant = ""
 message_voice_clip = ""
@@ -437,7 +437,7 @@ effect_values = []
 [sub_resource type="Resource" id="kcpb4"]
 script = ExtResource("4_f2ijm")
 sequence_id = 15
-position = Vector2(-200, -20)
+position = Vector2(-220, -420)
 comment = ""
 items = [SubResource("Resource_m2qb1"), SubResource("kur6e"), SubResource("Resource_ogynd"), SubResource("mjnvi")]
 options = []
@@ -596,12 +596,90 @@ options = []
 continue_sequence_id = -1
 continue_port_index = 0
 
+[sub_resource type="Resource" id="Resource_ukai7"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Splendid! You retrieved the first part of the relic and kept your hunter’s spirit in tune!"
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_kvri2"]
+script = ExtResource("4_f2ijm")
+sequence_id = 20
+position = Vector2(240, -380)
+comment = ""
+items = [SubResource("Resource_ukai7")]
+options = []
+continue_sequence_id = 21
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_cc61g"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Most excellent, I dare hope the trouble wasn’t so terrible. We have found signs that another piece of the relic has revealed itself. Beware, whatever is in the forest doesn’t take kindly to the reclamation. Same as before, I shall check in next month. Best of luck to you, dear hunter."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_udfvu"]
+script = ExtResource("4_f2ijm")
+sequence_id = 21
+position = Vector2(660, -380)
+comment = ""
+items = [SubResource("Resource_cc61g")]
+options = []
+continue_sequence_id = 22
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_qcrkj"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "May the Mother bless your path!"
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_gvup7"]
+script = ExtResource("4_f2ijm")
+sequence_id = 22
+position = Vector2(1080, -380)
+comment = ""
+items = [SubResource("Resource_qcrkj")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
 [sub_resource type="Resource" id="Resource_86kbs"]
 script = ExtResource("5_vkpn8")
 sheet_id = "cultist"
 sheet_description = ""
-next_sequence_id = 20
-nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs"), SubResource("kcpb4"), SubResource("Resource_1e8bj"), SubResource("Resource_ji0hg"), SubResource("Resource_iioy7"), SubResource("Resource_ty1re")]
+next_sequence_id = 23
+nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs"), SubResource("kcpb4"), SubResource("Resource_1e8bj"), SubResource("Resource_ji0hg"), SubResource("Resource_iioy7"), SubResource("Resource_ty1re"), SubResource("Resource_kvri2"), SubResource("Resource_udfvu"), SubResource("Resource_gvup7")]
 
 [sub_resource type="Resource" id="12"]
 script = ExtResource("2_48vp3")
