@@ -35,7 +35,7 @@ unique_name_in_owner = true
 
 [node name="dialog_blocker" parent="." instance=ExtResource("17_ssvqc")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2177, 1.9198, -11.164)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2177, 1.9198, -11.2556)
 
 [node name="player" parent="." instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true

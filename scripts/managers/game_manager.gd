@@ -34,9 +34,12 @@ func _ready() -> void:
 
 
 func start_new_month() -> void:
-	# reset monster/deer spawns
 	$fade.transition()
 	reset.emit()
+	if GlobalVariables.deer_killed >= 1:
+		GlobalVariables.villager_reputation += 1
+	elif GlobalVariables.deer_killed < 15 and GlobalVariables.artifact_piece_collected:
+		GlobalVariables.cultist_reputation += 1
 	GlobalVariables.artifact_piece_collected = false
 	GlobalVariables.deer_killed = 0
 	GlobalVariables.month += 1
