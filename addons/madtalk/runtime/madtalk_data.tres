@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=123 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=129 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -1333,7 +1333,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_hkg3h"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(780, -180)
+position = Vector2(760, -520)
 comment = ""
 items = [SubResource("Resource_uwwod")]
 options = []
@@ -1360,7 +1360,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_uj1nl"]
 script = ExtResource("4_f2ijm")
 sequence_id = 2
-position = Vector2(1200, -160)
+position = Vector2(1180, -500)
 comment = ""
 items = [SubResource("Resource_ig706")]
 options = []
@@ -1386,7 +1386,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_lge7f"]
 script = ExtResource("4_f2ijm")
 sequence_id = 3
-position = Vector2(360, -180)
+position = Vector2(340, -520)
 comment = ""
 items = [SubResource("Resource_t2a6b")]
 options = []
@@ -1412,11 +1412,11 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_scbln"]
 script = ExtResource("4_f2ijm")
 sequence_id = 4
-position = Vector2(360, 80)
+position = Vector2(340, -260)
 comment = ""
 items = [SubResource("Resource_ronjm")]
 options = []
-continue_sequence_id = -1
+continue_sequence_id = 7
 continue_port_index = 0
 
 [sub_resource type="Resource" id="Resource_0mplr"]
@@ -1486,7 +1486,7 @@ effect_values = []
 [sub_resource type="Resource" id="pxkw5"]
 script = ExtResource("4_f2ijm")
 sequence_id = 5
-position = Vector2(-200, -60)
+position = Vector2(-200, -240)
 comment = ""
 items = [SubResource("Resource_0mplr"), SubResource("Resource_fwb2u"), SubResource("Resource_1yy6g"), SubResource("Resource_ghijk")]
 options = []
@@ -1496,7 +1496,7 @@ continue_port_index = 4
 [sub_resource type="Resource" id="tx1nx"]
 script = ExtResource("2_48vp3")
 item_type = 1
-connected_to_id = -1
+connected_to_id = 8
 message_speaker_id = ""
 message_speaker_variant = ""
 message_voice_clip = ""
@@ -1567,12 +1567,90 @@ options = []
 continue_sequence_id = -1
 continue_port_index = 4
 
+[sub_resource type="Resource" id="Resource_s11vk"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "I would like to once again request that you give us another [15] deer to help me get through the month. I’ll be taking my leave."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_0bfks"]
+script = ExtResource("4_f2ijm")
+sequence_id = 7
+position = Vector2(760, -260)
+comment = ""
+items = [SubResource("Resource_s11vk")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_6twqy"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Good morning mister. We would’ve appreciated more deer, but that’s ok. We were somewhat able to get by."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_uslxw"]
+script = ExtResource("4_f2ijm")
+sequence_id = 8
+position = Vector2(260, 360)
+comment = ""
+items = [SubResource("Resource_6twqy")]
+options = []
+continue_sequence_id = 9
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_xyc8a"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Again I urge you, just 15 deer. We will leave the sled outside in the same place, thank you for taking the time in your hunts to help little ol’ me."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_grl7v"]
+script = ExtResource("4_f2ijm")
+sequence_id = 9
+position = Vector2(680, 340)
+comment = ""
+items = [SubResource("Resource_xyc8a")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
 [sub_resource type="Resource" id="Resource_wspnu"]
 script = ExtResource("5_vkpn8")
 sheet_id = "villager"
 sheet_description = "Villager NPC"
-next_sequence_id = 7
-nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln"), SubResource("pxkw5"), SubResource("a6kxj")]
+next_sequence_id = 10
+nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln"), SubResource("pxkw5"), SubResource("a6kxj"), SubResource("Resource_0bfks"), SubResource("Resource_uslxw"), SubResource("Resource_grl7v")]
 
 [resource]
 script = ExtResource("1_giduu")
