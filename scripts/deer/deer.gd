@@ -4,7 +4,6 @@ extends CharacterBody3D
 
 # Signals
 signal deer_dead
-signal deer_get
 
 # Gamemanager Reference
 const GAMEMANAGER_NAME: String = "game_manager"
@@ -69,7 +68,6 @@ func _ready():
 	original_position = position
 	$detection.body_entered.connect(_on_body_entered)
 	deer_anim_player.animation_finished.connect(graze_finished)
-	$StaticBody3D.deer_get.connect(deer_picked_up)
 
 
 func _process(delta: float) -> void:
@@ -190,11 +188,6 @@ func reset_ragdoll() -> void:
 	skel_sim.physical_bones_stop_simulation()
 	skel_sim.active = false
 	$deer_model.visible = true
-
-
-func deer_picked_up():
-	print("deer get")
-	deer_get.emit()
 
 #endregion
 
