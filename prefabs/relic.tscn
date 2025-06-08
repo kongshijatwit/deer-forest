@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=4 uid="uid://dnjfhpa6a8ec1"]
 
-[ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/interactables/examplerelic.gd" id="1_1j0x0"]
+[ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/interactables/relic.gd" id="1_1j0x0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5kh6"]
 resource_name = "AgedParchment"
