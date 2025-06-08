@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=159 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=169 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -1723,7 +1723,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_hkg3h"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(760, -520)
+position = Vector2(680, -520)
 comment = ""
 items = [SubResource("Resource_uwwod")]
 options = []
@@ -1750,7 +1750,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_uj1nl"]
 script = ExtResource("4_f2ijm")
 sequence_id = 2
-position = Vector2(1180, -500)
+position = Vector2(1100, -500)
 comment = ""
 items = [SubResource("Resource_ig706")]
 options = []
@@ -1776,7 +1776,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_lge7f"]
 script = ExtResource("4_f2ijm")
 sequence_id = 3
-position = Vector2(340, -520)
+position = Vector2(260, -520)
 comment = ""
 items = [SubResource("Resource_t2a6b")]
 options = []
@@ -1802,7 +1802,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_scbln"]
 script = ExtResource("4_f2ijm")
 sequence_id = 4
-position = Vector2(340, -260)
+position = Vector2(260, -260)
 comment = ""
 items = [SubResource("Resource_ronjm")]
 options = []
@@ -1902,7 +1902,7 @@ effect_values = []
 [sub_resource type="Resource" id="tbnpn"]
 script = ExtResource("2_48vp3")
 item_type = 1
-connected_to_id = -1
+connected_to_id = 10
 message_speaker_id = ""
 message_speaker_variant = ""
 message_voice_clip = ""
@@ -1918,7 +1918,7 @@ effect_values = []
 [sub_resource type="Resource" id="6j3g3"]
 script = ExtResource("2_48vp3")
 item_type = 1
-connected_to_id = -1
+connected_to_id = 12
 message_speaker_id = ""
 message_speaker_variant = ""
 message_voice_clip = ""
@@ -1934,7 +1934,7 @@ effect_values = []
 [sub_resource type="Resource" id="ks1fx"]
 script = ExtResource("2_48vp3")
 item_type = 1
-connected_to_id = -1
+connected_to_id = 14
 message_speaker_id = ""
 message_speaker_variant = ""
 message_voice_clip = ""
@@ -1976,7 +1976,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_0bfks"]
 script = ExtResource("4_f2ijm")
 sequence_id = 7
-position = Vector2(760, -260)
+position = Vector2(680, -260)
 comment = ""
 items = [SubResource("Resource_s11vk")]
 options = []
@@ -2002,7 +2002,7 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_uslxw"]
 script = ExtResource("4_f2ijm")
 sequence_id = 8
-position = Vector2(260, 360)
+position = Vector2(260, 120)
 comment = ""
 items = [SubResource("Resource_6twqy")]
 options = []
@@ -2028,9 +2028,139 @@ effect_values = []
 [sub_resource type="Resource" id="Resource_grl7v"]
 script = ExtResource("4_f2ijm")
 sequence_id = 9
-position = Vector2(680, 340)
+position = Vector2(680, 120)
 comment = ""
 items = [SubResource("Resource_xyc8a")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_45srj"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Hello once again, mister. Winter is quite brutal and some of our elders didn’t quite make it."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_c3itg"]
+script = ExtResource("4_f2ijm")
+sequence_id = 10
+position = Vector2(260, 360)
+comment = ""
+items = [SubResource("Resource_45srj")]
+options = []
+continue_sequence_id = 11
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_s4tyb"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "I hate being at your mercy, but we are literally starving off. All I ask of you is 15 deer. Some meat and blood to keep the village alive til spring."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_pps0h"]
+script = ExtResource("4_f2ijm")
+sequence_id = 11
+position = Vector2(680, 360)
+comment = ""
+items = [SubResource("Resource_s4tyb")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_7pn4a"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "  Sorry to bother you, mister. But I see that you have once again given us less than the amount of deer we had asked for. Is it your wish to see me on my knees, begging for your salvation?"
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_kswah"]
+script = ExtResource("4_f2ijm")
+sequence_id = 12
+position = Vector2(260, 600)
+comment = ""
+items = [SubResource("Resource_7pn4a")]
+options = []
+continue_sequence_id = 13
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_uha0y"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "If you know what’s good for you, then, hunt us 15 more deer."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_avksf"]
+script = ExtResource("4_f2ijm")
+sequence_id = 13
+position = Vector2(680, 600)
+comment = ""
+items = [SubResource("Resource_uha0y")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_wm7hx"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Villager"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "15 deer. Just 15 deer to recuperate what remains of us. We need their blood… and meat. Please."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_ow7hh"]
+script = ExtResource("4_f2ijm")
+sequence_id = 14
+position = Vector2(260, 860)
+comment = ""
+items = [SubResource("Resource_wm7hx")]
 options = []
 continue_sequence_id = -1
 continue_port_index = 0
@@ -2039,8 +2169,8 @@ continue_port_index = 0
 script = ExtResource("5_vkpn8")
 sheet_id = "villager"
 sheet_description = "Villager NPC"
-next_sequence_id = 10
-nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln"), SubResource("pxkw5"), SubResource("a6kxj"), SubResource("Resource_0bfks"), SubResource("Resource_uslxw"), SubResource("Resource_grl7v")]
+next_sequence_id = 15
+nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln"), SubResource("pxkw5"), SubResource("a6kxj"), SubResource("Resource_0bfks"), SubResource("Resource_uslxw"), SubResource("Resource_grl7v"), SubResource("Resource_c3itg"), SubResource("Resource_pps0h"), SubResource("Resource_kswah"), SubResource("Resource_avksf"), SubResource("Resource_ow7hh")]
 
 [resource]
 script = ExtResource("1_giduu")
