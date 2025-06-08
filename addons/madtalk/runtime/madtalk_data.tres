@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=185 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=187 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -999,7 +999,7 @@ position = Vector2(1420, -100)
 comment = ""
 items = [SubResource("Resource_jl78q")]
 options = []
-continue_sequence_id = -1
+continue_sequence_id = 36
 continue_port_index = 0
 
 [sub_resource type="Resource" id="Resource_wvxik"]
@@ -1028,12 +1028,38 @@ options = []
 continue_sequence_id = -1
 continue_port_index = 0
 
+[sub_resource type="Resource" id="Resource_5d44h"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Casey"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Regardless, your help has been priceless to our endeavor. We are eternally grateful. Thank you, truly."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_ch18o"]
+script = ExtResource("4_f2ijm")
+sequence_id = 36
+position = Vector2(1840, -100)
+comment = ""
+items = [SubResource("Resource_5d44h")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
 [sub_resource type="Resource" id="Resource_86kbs"]
 script = ExtResource("5_vkpn8")
 sheet_id = "cultist"
 sheet_description = ""
-next_sequence_id = 36
-nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs"), SubResource("kcpb4"), SubResource("Resource_1e8bj"), SubResource("Resource_ji0hg"), SubResource("Resource_iioy7"), SubResource("Resource_ty1re"), SubResource("Resource_kvri2"), SubResource("Resource_udfvu"), SubResource("Resource_gvup7"), SubResource("j3pel"), SubResource("n8wo2"), SubResource("cenje"), SubResource("Resource_x2ldl"), SubResource("Resource_j4aaj"), SubResource("Resource_4qw0o"), SubResource("Resource_uakif"), SubResource("Resource_7lsnw"), SubResource("Resource_jp4jm"), SubResource("Resource_bkhx4"), SubResource("Resource_s0amn"), SubResource("Resource_tbm1p"), SubResource("Resource_v7t0u")]
+next_sequence_id = 37
+nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs"), SubResource("kcpb4"), SubResource("Resource_1e8bj"), SubResource("Resource_ji0hg"), SubResource("Resource_iioy7"), SubResource("Resource_ty1re"), SubResource("Resource_kvri2"), SubResource("Resource_udfvu"), SubResource("Resource_gvup7"), SubResource("j3pel"), SubResource("n8wo2"), SubResource("cenje"), SubResource("Resource_x2ldl"), SubResource("Resource_j4aaj"), SubResource("Resource_4qw0o"), SubResource("Resource_uakif"), SubResource("Resource_7lsnw"), SubResource("Resource_jp4jm"), SubResource("Resource_bkhx4"), SubResource("Resource_s0amn"), SubResource("Resource_tbm1p"), SubResource("Resource_v7t0u"), SubResource("Resource_ch18o")]
 
 [sub_resource type="Resource" id="12"]
 script = ExtResource("2_48vp3")
@@ -2135,7 +2161,7 @@ connected_to_id = -1
 message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "  Sorry to bother you, mister. But I see that you have once again given us less than the amount of deer we had asked for. Is it your wish to see me on my knees, begging for your salvation?"
+message_text = "Sorry to bother you, mister. But I see that you have once again given us less than the amount of deer we had asked for. Is it your wish to see me on my knees, begging for your salvation?"
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
