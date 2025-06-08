@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://drpjjr562r50x"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o2e5h"]
+
+[node name="snow_cap" type="Node3D"]
+
+[node name="snow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0851805, -0.0212503)
+mesh = SubResource("BoxMesh_o2e5h")
+
+[node name="snow2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.831198, 0.555977, 0, -0.555977, 0.831198, 0, 0, 0, 1, -0.429639, -0.118454, -0.0142158)
+mesh = SubResource("BoxMesh_o2e5h")
+
+[node name="snow3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.831198, 0.555977, 0, -0.35201, 0.526263, -0.774039, -0.430348, 0.64338, 0.633138, 0.0338991, -0.0805727, 0.57442)
+mesh = SubResource("BoxMesh_o2e5h")
+
+[node name="snow4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.831198, 0.555977, 0, -0.290067, 0.433656, -0.853114, -0.474311, 0.709107, 0.521725, 0.241637, -0.419498, -0.300413)
+mesh = SubResource("BoxMesh_o2e5h")

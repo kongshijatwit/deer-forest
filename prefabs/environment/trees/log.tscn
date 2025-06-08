@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=4 uid="uid://dfmdsg7jghfn8"]
+
+[ext_resource type="Texture2D" uid="uid://boje1xtifiord" path="res://assets/models/Tree/Tree1_Wood Base Color.png" id="1_esbma"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ka1e"]
+resource_name = "Wood"
+cull_mode = 2
+albedo_texture = ExtResource("1_esbma")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hgnq7"]
+_surfaces = [{
+"aabb": AABB(-0.659231, 9.53674e-07, -0.761215, 1.31846, 19.5843, 1.52243),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAAGAAEAAwACAAEABgADAAEABwAAAAIABwAGAAAABwACAAgABgAJAAMACgAHAAgABgAHAAQABAAHAAoABgAEAAkACQAFAAMACQAEAAUAAgADAAsAAgALAAgACwADAAUACgAIAAsABAALAAUABAAKAAsA"),
+"lods": [0.804189, PackedByteArray("AAABAAIAAwACAAEAAAAEAAEABAADAAEABAAAAAIAAgADAAUABAAFAAMABAACAAUA")],
+"name": "Wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAAAAAAD//////z8AAP9///8AAAAA//////+/AAD/fwAA//8AAP9//////wAA//8AAP8/AAAAAAAA/z8AAAAA////PwAA//8AAP+/AAAAAAAA/78AAAAA////vwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2y2xd"]
+resource_name = "Tree1_Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.659231, 9.53674e-07, -0.761215, 1.31846, 19.5843, 1.52243),
+"attribute_data": PackedByteArray("xQHFAa0GOf7FATn+ZRXFAX0QOf5lFTn+HEFR+Zw4meocQYHvnDg5/vEYxQGRLDn+8Rg5/pEsxQGtBsUBrQbFAX0QOf6tBjn+fRDFAX0QxQHZHTn+2R3FAR0wUfkdMIHv2R3FAaknOf7ZHTn+qSfFAaknxQGpJzn+HEFV2B0wVdicOG3TnDgN5xxBJeIdMCXi"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAAOAAEADwAQABEADwASABAAEwAFAAQAEwADAAUACgAUAAwACgAVABQABgAHAAgABwAGABYAFgAGAAkABwAWABcAGAAZABoAGAAbABkAHAALAB0AHAANAAsAHgAfACAAHwAeACEAIQAeACIAHwAhACMA"),
+"lods": [0.804189, PackedByteArray("AAABAAIAAAADAAEAAwAEAAEAAwAFAAQABgAHAAgABwAGAAkACgALAAwACgANAAsA")],
+"material": SubResource("StandardMaterial3D_1ka1e"),
+"name": "Wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("/38AAAAA/////////z////9///8AAP///38AAP///////////7////9///////////////+//7//f///AAD/v///////P/+//3///////7//fwAA//////9///8AAP///3//////////fwAAAAD/////AAD/P/////8AAP8//////////7//////////P/////8AAP+//////wAA/7///wAA////v///AAAAAP+///8AAP///7//vwAA////P/+/AAAAAP+///8AAP///z///wAA////v///AAAAAP8///8AAAAA/z///wAA////P///AAAAAP8//////wAA/z////9/AAAAAP///38AAP////8AAAAA/7//////AAD/v///8uT/f/Lk/3/y5P9/DJv/fwyb/38Mm/9//v//f////3/+//9/////f/Jk/3///wyb8mT/f///DJvy5P9//7//f/+//3//v/9//7//fwyb/3/yZP9/8mT/f/7//3/+//9//z//f/8//3//P/9//z//f///DJv//wyb/3//P/9//z//f/8//3//P/9//z//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hgnq7")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8ons5"]
+height = 19.478
+radius = 0.703613
+
+[node name="log" type="Node3D"]
+
+[node name="Tree1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="Wood" type="MeshInstance3D" parent="Tree1"]
+mesh = SubResource("ArrayMesh_2y2xd")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.74928, 0)
+shape = SubResource("CylinderShape3D_8ons5")
