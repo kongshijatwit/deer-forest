@@ -13,6 +13,7 @@ func _ready() -> void:
 
 
 func on_interacted(_body):
+	$AudioStreamPlayer3D.play()
 	GlobalVariables.artifact_piece_collected = true
 	GlobalVariables.artifact_pieces_gathered += 1
 	get_relic.emit()

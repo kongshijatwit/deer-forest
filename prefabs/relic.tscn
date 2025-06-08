@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=4 uid="uid://dnjfhpa6a8ec1"]
+[gd_scene load_steps=26 format=4 uid="uid://dnjfhpa6a8ec1"]
 
 [ext_resource type="Script" uid="uid://j1nw6gwm28e4" path="res://scripts/interactables/relic.gd" id="1_1j0x0"]
+[ext_resource type="AudioStream" uid="uid://5nim2kiiiyjk" path="res://assets/audio/sfx/relic/A_Relic_Take.ogg" id="2_7mksi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5kh6"]
 resource_name = "AgedParchment"
@@ -411,3 +412,6 @@ shape = SubResource("BoxShape3D_1j0x0")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.612861, 0)
 omni_range = 1327.56
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_7mksi")
