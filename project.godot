@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="deer-forest"
-run/main_scene="uid://dnkm877aji76i"
+run/main_scene="uid://ca1g4f5nxrh4d"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
