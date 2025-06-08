@@ -26,7 +26,7 @@ func start_new_month() -> void:
 		GlobalVariables.villager_reputation = GlobalVariables.month + 1
 		GlobalVariables.cultist_reputation = GlobalVariables.month * -1 - 1
 	elif GlobalVariables.deer_killed < REQUIRED_DEER_AMOUNT and GlobalVariables.artifact_piece_collected:
-		GlobalVariables.cultist_reputation += GlobalVariables.month + 1
+		GlobalVariables.cultist_reputation = GlobalVariables.month + 1
 		GlobalVariables.villager_reputation = GlobalVariables.month * -1 - 1
 	GlobalVariables.artifact_piece_collected = false
 	GlobalVariables.deer_killed = 0
