@@ -9,6 +9,7 @@ var pieces_array : PackedScene
 func _ready() -> void:
 	interacted.connect(on_interacted)
 	game_manager.reset.connect(reset_relic)
+	reset_relic()
 
 
 func on_interacted(_body):
@@ -24,6 +25,10 @@ func set_active(active: bool) -> void:
 	
 
 func reset_relic():
-	# get the current month to correlate to the index in pieces_array
+	for piece in $DividedScroll.get_children():
+		piece.visible = false
+	print("month: " + str(GlobalVariables.month))
+	print($DividedScroll.get_child(GlobalVariables.month).name)
+	$DividedScroll.get_child(GlobalVariables.month).visible = true
 	set_active(true)
 
