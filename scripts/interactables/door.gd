@@ -3,6 +3,8 @@ extends Interactable
 @export var ray_path := "/root/Main/NavigationRegion3D/Player/GroundRay"
 @onready var door_sfx = $"../AudioStreamPlayer3D"
 @onready var timer = $"../Timer"
+@onready var game_manager: Node = $"../../%game_manager"
+@onready var dialog_blocker: Node = $"../../%dialog_blocker"
 
 var playback : AnimationNodeStateMachinePlayback
 var is_open := false
@@ -18,6 +20,8 @@ func _ready() -> void:
 	playback = $AnimationTree.get("parameters/playback")
 	# groundray = get_node(ray_path)
 	groundray = get_node("../%player/GroundRay")
+	game_manager.reset.connect(reset_talk)
+	dialog_blocker.talking.connect(talk)
 	
 func _process(delta) -> void:
 	if !is_open and !talked and !knocked:
@@ -53,5 +57,9 @@ func _shelter():
 			print("NO WIND!")
 			AudioServer.set_bus_effect_enabled(ambiance_bus, 0, true)
 		
-#func _on_dialog_blocker_talking() -> void:
-#	talked = true
+func talk() -> void:
+	talked = true
+	print("WHOOP WHOOP")
+
+func reset_talk() -> void:
+	talked = false
