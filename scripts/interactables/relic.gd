@@ -27,8 +27,6 @@ func set_active(active: bool) -> void:
 func reset_relic():
 	for piece in $DividedScroll.get_children():
 		piece.visible = false
-	print("month: " + str(GlobalVariables.month))
-	print($DividedScroll.get_child(GlobalVariables.month).name)
 	$DividedScroll.get_child(GlobalVariables.month).visible = true
 	set_active(true)
 
