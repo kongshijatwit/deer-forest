@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dnkm877aji76i"]
+[gd_scene load_steps=35 format=3 uid="uid://dnkm877aji76i"]
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://drpjjr562r50x" path="res://prefabs/environment/snow_cap.tscn" id="29_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://v3o5l7lleru6" path="res://prefabs/environment/campfire.tscn" id="29_suyxu"]
 [ext_resource type="PackedScene" uid="uid://cf8ctdqjt0hy8" path="res://prefabs/People/villager.tscn" id="31_qouja"]
+[ext_resource type="Script" uid="uid://bw44a360v1w0o" path="res://scripts/people_container.gd" id="31_v2yb1"]
 [ext_resource type="PackedScene" uid="uid://b43emmiene8iw" path="res://prefabs/People/cultist.tscn" id="32_wljb1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0tnpc"]
@@ -855,6 +856,7 @@ transform = Transform3D(3.5, 0, 0, 0, 0.998017, -0.153277, 0, 0.0629473, 2.43017
 transform = Transform3D(1.14, 0, 0, 0, 1.14, 0, 0, 0, 1.14, 23.3094, 0.0921688, -4.89408)
 
 [node name="people_container" type="Node3D" parent="."]
+script = ExtResource("31_v2yb1")
 
 [node name="villager" parent="people_container" instance=ExtResource("31_qouja")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 15.25, -0.005, -10.65)
