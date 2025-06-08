@@ -59,6 +59,10 @@ func _process(delta: float) -> void:
 				run_finished = false
 			run(delta)
 		"Secret":
+			if run_finished:
+				nonfeet_sfx.stream = load(spot_sfx_lib[(randi() % 4)])
+				nonfeet_sfx.play()
+				run_finished = false
 			run(delta)
 		"Walk":
 			if !turn_done:
@@ -118,6 +122,8 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		last_position = position
 		start_ragdoll()
 		set_active(false)
+		nonfeet_sfx.stream = load("res://assets/audio/sfx/skeleton/A_Skeleton_Dying.ogg")
+		nonfeet_sfx.play()
 		dead = true
 
 func set_active(active: bool):

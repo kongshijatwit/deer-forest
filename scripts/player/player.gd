@@ -42,7 +42,12 @@ var reload_finished = true
 @onready var feet_sfx = $feet_sfx
 @onready var feet_sfx_lib = ["res://assets/audio/sfx/player/A_Footsteps_Walk-001.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-002.ogg",
 "res://assets/audio/sfx/player/A_Footsteps_Walk-003.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-004.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-005.ogg",
-"res://assets/audio/sfx/player/A_Footsteps_Walk-006.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-007.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-008.ogg"]
+"res://assets/audio/sfx/player/A_Footsteps_Walk-006.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-007.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-008.ogg",
+"res://assets/audio/sfx/player/A_Footstep_Wood-001.ogg","res://assets/audio/sfx/player/A_Footstep_Wood-002.ogg","res://assets/audio/sfx/player/A_Footstep_Wood-003.ogg",
+"res://assets/audio/sfx/player/A_Footstep_Wood-004.ogg","res://assets/audio/sfx/player/A_Footstep_Wood-005.ogg","res://assets/audio/sfx/player/A_Footstep_Wood-006.ogg",
+"res://assets/audio/sfx/player/A_Footstep_Wood-007.ogg","res://assets/audio/sfx/player/A_Footstep_Wood-008.ogg"]
+@onready var death_sfx_lib = ["res://assets/audio/sfx/player/A_Player_Dying-001.ogg","res://assets/audio/sfx/player/A_Player_Dying-002.ogg",
+"res://assets/audio/sfx/player/A_Player_Dying-003.ogg","res://assets/audio/sfx/player/A_Player_Dying-004.ogg","res://assets/audio/sfx/player/A_Player_Dying-005.ogg"]
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -153,6 +158,9 @@ func _make_footstep():
 			feet_sfx.play()
 		elif groundray.get_collider().is_in_group("wood"):
 			print("Wood Fella")
+			var random_int = randi_range(8,15)
+			feet_sfx.stream = load(feet_sfx_lib[random_int])
+			feet_sfx.play()
 		else:
 			feet_sfx.stop()
 			
@@ -162,6 +170,11 @@ func hit(damage, knockback_origin):
 	velocity.y += 3
 	move_and_slide()
 	velocity += (global_transform.origin - knockback_origin).normalized() * 10
+	if HEALTH <= 0:
+		var random_int = randi_range(0,4)
+		feet_sfx.stream = load(death_sfx_lib[random_int])
+		feet_sfx.play()
+		print("player dead")
 	
 func reload():
 	reload_finished = true
