@@ -17,8 +17,15 @@ func _on_options_pressed() -> void:
 	pass # Replace with function body.
 
 
+func _on_credits_pressed() -> void:
+	$"../credits_cam".make_current()
+	$title.visible = false
+	$button_container.visible = false
+
+
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	# get_tree().quit()
+	$"../main_menu_cam".make_current()
 
 
 func go_to_game() -> void:

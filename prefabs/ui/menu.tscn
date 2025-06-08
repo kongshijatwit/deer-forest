@@ -99,9 +99,9 @@ vertical_alignment = 1
 [node name="button_container" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = 825.0
-offset_top = 314.0
+offset_top = 270.0
 offset_right = 900.0
-offset_bottom = 415.0
+offset_bottom = 390.0
 scale = Vector2(2.75, 2.75)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="button_container"]
@@ -116,6 +116,11 @@ text = "Play"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r8at4")
 text = "Options"
+
+[node name="credits" type="Button" parent="button_container/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8at4")
+text = "Credits"
 
 [node name="quit" type="Button" parent="button_container/VBoxContainer"]
 layout_mode = 2
@@ -134,5 +139,6 @@ flat = true
 
 [connection signal="pressed" from="button_container/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="button_container/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button_container/VBoxContainer/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="button_container/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="deer_button" to="." method="_on_deer_pressed"]

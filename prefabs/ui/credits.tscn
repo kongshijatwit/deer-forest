@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://lb4tjkkpp4jr"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 96.0
+offset_right = 1034.0
+offset_bottom = 428.0
+text = "Credits"
+horizontal_alignment = 1
