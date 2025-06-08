@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://lb4tjkkpp4jr"]
+[gd_scene load_steps=2 format=3 uid="uid://lb4tjkkpp4jr"]
+
+[ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="1_7lgdr"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -8,11 +10,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="CREDITS" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 700.0
-offset_top = 96.0
-offset_right = 1034.0
-offset_bottom = 428.0
+offset_left = 764.0
+offset_top = 87.0
+offset_right = 990.0
+offset_bottom = 155.0
+theme_override_fonts/normal_font = ExtResource("1_7lgdr")
+theme_override_font_sizes/normal_font_size = 52
 text = "Credits"
 horizontal_alignment = 1
+
+[node name="roles" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 208.0
+offset_right = 1099.0
+offset_bottom = 559.0
+theme_override_fonts/normal_font = ExtResource("1_7lgdr")
+theme_override_font_sizes/normal_font_size = 24
+text = "3D Modeler
+
+Programmers
+
+Music & Sound Effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 533.0
+offset_right = 907.0
+offset_bottom = 571.0
+theme_override_fonts/font = ExtResource("1_7lgdr")
+text = "Back"
