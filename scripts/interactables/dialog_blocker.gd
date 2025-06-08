@@ -10,6 +10,10 @@ var finished_talking: bool = true
 var villager_talked: bool = false
 var cultist_talked: bool = false
 
+@onready var sfx_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
+var villager_sfx = "res://assets/audio/sfx/dialogue/A_Voice.ogg"
+var cultist_sfx = "res://assets/audio/sfx/dialogue/A_Voice_Cult.ogg"
+
 
 func _ready():
 	prompt_message = TALK_PROMPT
@@ -27,11 +31,14 @@ func begin_dialog(_body):
 			villager_talked = true
 			finished_talking = false
 			dialog_controller.start_dialog("villager")
+			sfx_player.stream = load(villager_sfx)
 		elif !cultist_talked:
 			MadTalkGlobals.set_variable("cultist_reputation", GlobalVariables.cultist_reputation)
 			cultist_talked = true
 			finished_talking = false
 			dialog_controller.start_dialog("cultist")
+			sfx_player.stream = load(cultist_sfx)
+		sfx_player.play()
 	
 
 func finish_dialog(_sheet_name: Variant, _sequence_id: Variant):
