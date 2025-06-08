@@ -85,21 +85,22 @@ libraries = {
 
 [node name="title" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 456.0
+offset_left = 667.0
 offset_top = 82.0
-offset_right = 877.0
+offset_right = 1088.0
 offset_bottom = 249.0
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 48
 text = "Deer Forest"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="button_container" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 640.0
-offset_top = 271.0
-offset_right = 710.0
-offset_bottom = 372.0
+offset_left = 840.0
+offset_top = 314.0
+offset_right = 910.0
+offset_bottom = 415.0
+scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="button_container"]
 layout_mode = 2
@@ -116,7 +117,7 @@ text = "Options"
 layout_mode = 2
 text = "Quit"
 
-[node name="Button" type="Button" parent="."]
+[node name="deer_button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 163.0
@@ -129,4 +130,4 @@ flat = true
 [connection signal="pressed" from="button_container/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="button_container/VBoxContainer/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="button_container/VBoxContainer/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_deer_pressed"]
+[connection signal="pressed" from="deer_button" to="." method="_on_deer_pressed"]
