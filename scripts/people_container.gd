@@ -14,16 +14,16 @@ func _ready():
 
 func _process(delta):
 	if can_move:
-		print("can_move")
-		# position.x = lerp(position.x, move_amount, delta)
 		position.x += 10.0 * delta
 		if position.x > move_amount:
 			can_move = false
 			if first_convo:
 				visible = false
+			else:
+				first_convo = true
 	
 
 func start_lerp():
-	first_convo = true
 	move_amount = position.x + 5.3
 	can_move = true
+
