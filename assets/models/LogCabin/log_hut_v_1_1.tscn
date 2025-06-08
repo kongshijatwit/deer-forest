@@ -513,7 +513,7 @@ tree_root = SubResource("AnimationNodeStateMachine_jmhrl")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="Henry410_Item" parent="." instance=ExtResource("10_pwbp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86815, 2.63674, -0.0775938)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86815, 3.90606, -0.731152)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523676, 2.23216, 4.72721)
