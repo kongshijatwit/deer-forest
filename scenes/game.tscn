@@ -247,6 +247,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62657, 0, -6.5606)
 [node name="Skeleton2" parent="skeleton_container" instance=ExtResource("10_vtaks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.84964, 0, 13.7123)
 
+[node name="Skeleton3" parent="skeleton_container" instance=ExtResource("10_vtaks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7292, 0, -9.32192)
+
+[node name="Skeleton4" parent="skeleton_container" instance=ExtResource("10_vtaks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.063, 0, 20.6224)
+
+[node name="Skeleton5" parent="skeleton_container" instance=ExtResource("10_vtaks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64973, 0, 2.85044)
+
 [node name="dim_zone" parent="." instance=ExtResource("12_kvuet")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -125, 0, 125)
 
