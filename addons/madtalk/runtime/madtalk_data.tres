@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=187 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=191 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -1051,6 +1051,32 @@ position = Vector2(1840, -100)
 comment = ""
 items = [SubResource("Resource_5d44h")]
 options = []
+continue_sequence_id = 37
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_4thgc"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "End of game"
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_n83o6"]
+script = ExtResource("4_f2ijm")
+sequence_id = 37
+position = Vector2(2260, -100)
+comment = ""
+items = [SubResource("Resource_4thgc")]
+options = []
 continue_sequence_id = -1
 continue_port_index = 0
 
@@ -1058,8 +1084,8 @@ continue_port_index = 0
 script = ExtResource("5_vkpn8")
 sheet_id = "cultist"
 sheet_description = ""
-next_sequence_id = 37
-nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs"), SubResource("kcpb4"), SubResource("Resource_1e8bj"), SubResource("Resource_ji0hg"), SubResource("Resource_iioy7"), SubResource("Resource_ty1re"), SubResource("Resource_kvri2"), SubResource("Resource_udfvu"), SubResource("Resource_gvup7"), SubResource("j3pel"), SubResource("n8wo2"), SubResource("cenje"), SubResource("Resource_x2ldl"), SubResource("Resource_j4aaj"), SubResource("Resource_4qw0o"), SubResource("Resource_uakif"), SubResource("Resource_7lsnw"), SubResource("Resource_jp4jm"), SubResource("Resource_bkhx4"), SubResource("Resource_s0amn"), SubResource("Resource_tbm1p"), SubResource("Resource_v7t0u"), SubResource("Resource_ch18o")]
+next_sequence_id = 38
+nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs"), SubResource("kcpb4"), SubResource("Resource_1e8bj"), SubResource("Resource_ji0hg"), SubResource("Resource_iioy7"), SubResource("Resource_ty1re"), SubResource("Resource_kvri2"), SubResource("Resource_udfvu"), SubResource("Resource_gvup7"), SubResource("j3pel"), SubResource("n8wo2"), SubResource("cenje"), SubResource("Resource_x2ldl"), SubResource("Resource_j4aaj"), SubResource("Resource_4qw0o"), SubResource("Resource_uakif"), SubResource("Resource_7lsnw"), SubResource("Resource_jp4jm"), SubResource("Resource_bkhx4"), SubResource("Resource_s0amn"), SubResource("Resource_tbm1p"), SubResource("Resource_v7t0u"), SubResource("Resource_ch18o"), SubResource("Resource_n83o6")]
 
 [sub_resource type="Resource" id="12"]
 script = ExtResource("2_48vp3")
@@ -2411,6 +2437,32 @@ position = Vector2(320, -100)
 comment = ""
 items = [SubResource("Resource_mjnvi")]
 options = []
+continue_sequence_id = 22
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_v2gu3"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = ""
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "End of game"
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_1yilx"]
+script = ExtResource("4_f2ijm")
+sequence_id = 22
+position = Vector2(740, -100)
+comment = ""
+items = [SubResource("Resource_v2gu3")]
+options = []
 continue_sequence_id = -1
 continue_port_index = 0
 
@@ -2418,8 +2470,8 @@ continue_port_index = 0
 script = ExtResource("5_vkpn8")
 sheet_id = "villager"
 sheet_description = "Villager NPC"
-next_sequence_id = 22
-nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln"), SubResource("pxkw5"), SubResource("a6kxj"), SubResource("Resource_0bfks"), SubResource("Resource_uslxw"), SubResource("Resource_grl7v"), SubResource("Resource_c3itg"), SubResource("Resource_pps0h"), SubResource("Resource_kswah"), SubResource("Resource_avksf"), SubResource("Resource_ow7hh"), SubResource("Resource_avev5"), SubResource("Resource_x6vuo"), SubResource("Resource_3nvab"), SubResource("k2ilm"), SubResource("y2dp7"), SubResource("e2wrs"), SubResource("Resource_iyv7e")]
+next_sequence_id = 24
+nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln"), SubResource("pxkw5"), SubResource("a6kxj"), SubResource("Resource_0bfks"), SubResource("Resource_uslxw"), SubResource("Resource_grl7v"), SubResource("Resource_c3itg"), SubResource("Resource_pps0h"), SubResource("Resource_kswah"), SubResource("Resource_avksf"), SubResource("Resource_ow7hh"), SubResource("Resource_avev5"), SubResource("Resource_x6vuo"), SubResource("Resource_3nvab"), SubResource("k2ilm"), SubResource("y2dp7"), SubResource("e2wrs"), SubResource("Resource_iyv7e"), SubResource("Resource_1yilx")]
 
 [resource]
 script = ExtResource("1_giduu")
