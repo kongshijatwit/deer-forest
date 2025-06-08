@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dnkm877aji76i"]
+[gd_scene load_steps=34 format=3 uid="uid://dnkm877aji76i"]
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bjfvi5eel24cl" path="res://prefabs/boundary/boundary.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://7t7et22kn5bi" path="res://prefabs/ui/pause_menu.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b3dltjou21eqy" path="res://prefabs/ambient_areas/snow_area.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://c0w4xuesodu3y" path="res://prefabs/Lamp/hanging_lamp.tscn" id="10_js0lu"]
 [ext_resource type="PackedScene" uid="uid://br3yal5wxvsr6" path="res://prefabs/skeleton/skeleton.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://drkufm64ckkt7" path="res://scenes/test/dim_world.tscn" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bwr51xtfo6uoi" path="res://prefabs/dim_zone.tscn" id="12_kvuet"]
@@ -30,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dfmdsg7jghfn8" path="res://prefabs/environment/trees/log.tscn" id="28_sww3w"]
 [ext_resource type="PackedScene" uid="uid://drpjjr562r50x" path="res://prefabs/environment/snow_cap.tscn" id="29_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://v3o5l7lleru6" path="res://prefabs/environment/campfire.tscn" id="29_suyxu"]
+[ext_resource type="PackedScene" uid="uid://bu0wlo6eer6jq" path="res://prefabs/People/people_container.tscn" id="32_wljb1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0tnpc"]
 vertices = PackedVector3Array(-75.5, 0.5, 75.25, -75.5, 0.5, 25.5, -174.5, 0.5, 25.5, -25.5, 0.5, 174.5, -25.5, 0.5, 75.5, -174.5, 0.5, 174.5)
@@ -176,13 +178,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.5, 200)
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 15, 0.01, -15)
 
 [node name="Lamp" parent="cabin" instance=ExtResource("7_trtic")]
-transform = Transform3D(0.214286, 0, 0, 0, 0.214286, 0, 0, 0, 0.214286, -3.5268, 0.649176, 2.03714)
+transform = Transform3D(0.214286, 0, 0, 0, 0.214286, 0, 0, 0, 0.214286, 2.24003, 2.79711, 3.81692)
 
-[node name="Lamp2" parent="cabin" instance=ExtResource("7_trtic")]
-transform = Transform3D(0.214286, 0, 0, 0, 0.214286, 0, 0, 0, 0.214286, 3.4774, 0.649176, -3.36553)
+[node name="hanging_lamp" parent="cabin" instance=ExtResource("10_js0lu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.46079, 5.60749, -0.0383606)
 
 [node name="bed" parent="." instance=ExtResource("6_p57ef")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.5568, 0.805385, -13.8599)
+transform = Transform3D(-1.5299e-07, 0, -3.5, 0, 3.5, 0, 3.5, 0, -1.5299e-07, 17.5568, 0.805385, -14.2985)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -286,7 +288,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 10, 175)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -175, 10, 75)
 
 [node name="relic" parent="." instance=ExtResource("18_ssvqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6216, 1.49906, -2.40407)
+transform = Transform3D(0.282341, 0, 0.959314, 0, 1, 0, -0.959314, 0, 0.282341, -105.323, 1.79594, 132.324)
 
 [node name="tree_container" type="Node3D" parent="."]
 
@@ -851,3 +853,6 @@ transform = Transform3D(3.5, 0, 0, 0, 0.998017, -0.153277, 0, 0.0629473, 2.43017
 
 [node name="campfire" parent="other_decorations" instance=ExtResource("29_suyxu")]
 transform = Transform3D(1.14, 0, 0, 0, 1.14, 0, 0, 0, 1.14, 23.3094, 0.0921688, -4.89408)
+
+[node name="people_container" parent="." instance=ExtResource("32_wljb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.35, 0, -10.25)

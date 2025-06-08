@@ -21,7 +21,6 @@ func _ready() -> void:
 
 func start_new_month() -> void:
 	$fade.transition()
-	reset.emit()
 	if GlobalVariables.deer_killed >= REQUIRED_DEER_AMOUNT:  # Remember to replace with 15
 		GlobalVariables.villager_reputation = GlobalVariables.month + 1
 		GlobalVariables.cultist_reputation = GlobalVariables.month * -1 - 1
@@ -31,6 +30,7 @@ func start_new_month() -> void:
 	GlobalVariables.artifact_piece_collected = false
 	GlobalVariables.deer_killed = 0
 	GlobalVariables.month += 1
+	reset.emit()
 
 
 func connect_signal(obj_string: String, sig_string: String, call_func: Callable) -> bool:
