@@ -1,10 +1,13 @@
-[gd_scene load_steps=99 format=4 uid="uid://cut4wtq6x7bm8"]
+[gd_scene load_steps=102 format=4 uid="uid://cut4wtq6x7bm8"]
 
 [ext_resource type="Script" uid="uid://ttpkwhwrvat3" path="res://scripts/player/player.gd" id="1_d2i1d"]
 [ext_resource type="PackedScene" uid="uid://d2xigii8t148c" path="res://prefabs/gun/view_model.tscn" id="2_5qkxa"]
 [ext_resource type="PackedScene" uid="uid://xqqi8tpajkv5" path="res://prefabs/player/interact/interact_ray.tscn" id="3_hm3fc"]
 [ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="4_hm3fc"]
 [ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="5_aa7my"]
+[ext_resource type="Texture2D" uid="uid://510ohmvanaqy" path="res://assets/2DTextures/health_back.jpg" id="6_6eqlq"]
+[ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/health_border.png" id="7_0yp8f"]
+[ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/health_main.jpg" id="8_bpfqs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_867we"]
 resource_name = "Material.001"
@@ -2828,12 +2831,22 @@ max_polyphony = 8
 bus = &"Sfx"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="PlayerHUD" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -324.0
+offset_right = 577.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("4_hm3fc")
 
 [node name="BulletCount" type="RichTextLabel" parent="CanvasLayer/PlayerHUD"]
@@ -2843,10 +2856,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1008.0
-offset_top = 538.0
-offset_right = 1112.0
-offset_bottom = 608.0
+offset_left = -104.0
+offset_top = -70.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -2857,3 +2868,16 @@ text = "0/0"
 
 [node name="NoAmmo" type="Timer" parent="CanvasLayer/PlayerHUD/BulletCount"]
 wait_time = 3.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/PlayerHUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 400.0
+grow_vertical = 0
+value = 100.0
+texture_under = ExtResource("6_6eqlq")
+texture_over = ExtResource("7_0yp8f")
+texture_progress = ExtResource("8_bpfqs")
