@@ -17,8 +17,16 @@ func _on_options_pressed() -> void:
 	pass # Replace with function body.
 
 
+func _on_credits_pressed() -> void:
+	$"../credits_cam".make_current()
+	$credits.visible = true
+	$title.visible = false
+	$button_container.visible = false
+
+
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+	# $"../main_menu_cam".make_current()
 
 
 func go_to_game() -> void:
@@ -30,3 +38,9 @@ func _on_deer_pressed() -> void:
 	%Deer/AudioStreamPlayer3D.play()
 	print("deer pressed")
 
+
+func _on_credits_back_pressed() -> void:
+	$credits.visible = false
+	$title.visible = true
+	$button_container.visible = true
+	$"../main_menu_cam".make_current()
