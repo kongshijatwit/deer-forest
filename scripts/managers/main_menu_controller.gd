@@ -12,6 +12,12 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	$fade.transition_to_scene("res://scenes/game.tscn")
+	GlobalVariables.month = 0
+	GlobalVariables.deer_killed = 0
+	GlobalVariables.artifact_pieces_gathered = 0
+	GlobalVariables.artifact_piece_collected = false
+	GlobalVariables.cultist_reputation = 0
+	GlobalVariables.villager_reputation = 0
 
 
 func _on_options_pressed() -> void:
