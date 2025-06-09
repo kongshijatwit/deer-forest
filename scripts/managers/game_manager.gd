@@ -52,4 +52,5 @@ func update_quest_status():
 
 func end_game():
 	if GlobalVariables.month == 4:
+		$fade2.transition_to_scene("res://scenes/main_menu.tscn")
 		print("End of Game. THANKS FOR PLAYING")

@@ -22,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_s8aqg"]
 resource_name = "fade_to_black"
-length = 5.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,6 +84,7 @@ color = Color(0, 0, 0, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_xrlm7")
 }
+autoplay = "fade_to_normal"
 
 [node name="title" type="RichTextLabel" parent="."]
 layout_mode = 0
