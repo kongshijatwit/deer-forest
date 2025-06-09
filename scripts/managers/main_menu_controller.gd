@@ -4,13 +4,13 @@ extends Control
 var deer_sfx_lib = ["res://assets/audio/sfx/deer/A_Deer-001.ogg", "res://assets/audio/sfx/deer/A_Deer-002.ogg", "res://assets/audio/sfx/deer/A_Deer-003.ogg",
 "res://assets/audio/sfx/deer/A_Deer-004.ogg", "res://assets/audio/sfx/deer/A_Deer-005.ogg"]
 
-func _ready() -> void:
-	$fade.transitioned.connect(go_to_game)
+# func _ready() -> void:
+	# $fade.transitioned.connect(go_to_game)
 	# $fade.black_screen.connect(go_to_game)
 
 
 func _on_play_pressed() -> void:
-	$fade.transition()
+	$fade.transition_to_scene("res://scenes/game.tscn")
 
 
 func _on_options_pressed() -> void:
