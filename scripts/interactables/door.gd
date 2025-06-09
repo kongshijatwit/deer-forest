@@ -23,7 +23,7 @@ func _ready() -> void:
 	game_manager.reset.connect(reset_talk)
 	dialog_blocker.talking.connect(talk)
 	
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if !is_open and !talked and !knocked:
 		timer.wait_time = randf_range(3.0,5.0)
 		timer.start()
@@ -38,7 +38,7 @@ func _process(delta) -> void:
 
 func toggle(_body):
 	is_open = not is_open
-	
+	$CollisionShape3D.disabled = true
 	if is_open:
 		door_sfx.stream = load(door_sfx_lib[1])
 		door_sfx.play()
@@ -63,3 +63,7 @@ func talk() -> void:
 
 func reset_talk() -> void:
 	talked = false
+
+
+func _on_animation_player_animation_finished(_anim_name:StringName) -> void:
+	$CollisionShape3D.disabled = false
