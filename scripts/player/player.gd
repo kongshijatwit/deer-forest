@@ -208,6 +208,7 @@ func death():
 	feet_sfx.stream = load(death_sfx_lib[random_int])
 	feet_sfx.play()
 	print("DIEDIEDIEDIE")
+	%game_manager/fade.restart_scene()
 	
 func fall():
 	var random_int = randi_range(0,4)
