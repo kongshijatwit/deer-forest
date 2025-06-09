@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://ttpkwhwrvat3" path="res://scripts/player/player.gd" id="1_d2i1d"]
 [ext_resource type="PackedScene" uid="uid://d2xigii8t148c" path="res://prefabs/gun/view_model.tscn" id="2_5qkxa"]
 [ext_resource type="PackedScene" uid="uid://xqqi8tpajkv5" path="res://prefabs/player/interact/interact_ray.tscn" id="3_hm3fc"]
+[ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="4_hm3fc"]
+[ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="5_aa7my"]
+[ext_resource type="Texture2D" uid="uid://510ohmvanaqy" path="res://assets/2DTextures/health_back.jpg" id="6_6eqlq"]
+[ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/health_border.png" id="7_0yp8f"]
+[ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/health_main.jpg" id="8_bpfqs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjh0h"]
 resource_name = "Material"
