@@ -39,6 +39,7 @@ var reload_finished = true
 "res://assets/audio/sfx/gun/A_Shotgun_Reload-002.ogg"]
 @onready var gun_anim_tree = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/HuntingViewmodelNLA/AnimationTree
 @onready var anim_play = $AnimationPlayer
+@onready var anim_tree = $AnimationTree
 @onready var char_model = $Humanoid
 @onready var feet_sfx = $feet_sfx
 @onready var feet_sfx_lib = ["res://assets/audio/sfx/player/A_Footsteps_Walk-001.ogg","res://assets/audio/sfx/player/A_Footsteps_Walk-002.ogg",
@@ -71,6 +72,8 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
+	anim_tree.set("parameters/conditions/death", HEALTH == 0 and !crouching)
+	anim_tree.set("parameters/conditions/crouch_death", HEALTH == 0 and crouching)
 	print(gun_anim_tree.get("parameters/playback").get_current_node())
 	# Add the gravity.
 	if not is_on_floor():
@@ -106,6 +109,11 @@ func _physics_process(delta):
 	if velocity == Vector3(0,0,0):
 		anim_play.stop()
 		anim_play.play("Default")
+		
+	anim_tree.set("parameters/conditions/walk", direction and !crouching and is_on_floor())
+	anim_tree.set("parameters/conditions/crouch_walk", direction and crouching and is_on_floor())
+	anim_tree.set("parameters/conditions/idle", !direction and !crouching)
+	anim_tree.set("parameters/conditions/crouch_idle", !direction and crouching)
 		
 
 		
@@ -178,11 +186,6 @@ func hit(damage, knockback_origin):
 	velocity.y += 3
 	move_and_slide()
 	velocity += (global_transform.origin - knockback_origin).normalized() * 10
-	if HEALTH <= 0:
-		var random_int = randi_range(0,4)
-		feet_sfx.stream = load(death_sfx_lib[random_int])
-		feet_sfx.play()
-		print("player dead")
 	
 func reload():
 	reload_finished = true
@@ -199,3 +202,15 @@ func enable_actions():
 func reset_gun() -> void:
 	gun_viewmodel.visible = false
 	gun_equipped = false
+	
+func death():
+	var random_int = randi_range(0,4)
+	feet_sfx.stream = load(death_sfx_lib[random_int])
+	feet_sfx.play()
+	print("DIEDIEDIEDIE")
+	
+func fall():
+	var random_int = randi_range(0,4)
+	feet_sfx.stream = load(death_sfx_lib[random_int])
+	feet_sfx.play()
+	
