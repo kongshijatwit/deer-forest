@@ -1,8 +1,10 @@
-[gd_scene load_steps=97 format=4 uid="uid://cut4wtq6x7bm8"]
+[gd_scene load_steps=99 format=4 uid="uid://cut4wtq6x7bm8"]
 
 [ext_resource type="Script" uid="uid://ttpkwhwrvat3" path="res://scripts/player/player.gd" id="1_d2i1d"]
 [ext_resource type="PackedScene" uid="uid://d2xigii8t148c" path="res://prefabs/gun/view_model.tscn" id="2_5qkxa"]
 [ext_resource type="PackedScene" uid="uid://xqqi8tpajkv5" path="res://prefabs/player/interact/interact_ray.tscn" id="3_hm3fc"]
+[ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="4_hm3fc"]
+[ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="5_aa7my"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_867we"]
 resource_name = "Material.001"
@@ -2824,3 +2826,34 @@ attenuation_model = 1
 volume_db = 1.0
 max_polyphony = 8
 bus = &"Sfx"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerHUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_hm3fc")
+
+[node name="BulletCount" type="RichTextLabel" parent="CanvasLayer/PlayerHUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1008.0
+offset_top = 538.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_aa7my")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "0/0"
+
+[node name="NoAmmo" type="Timer" parent="CanvasLayer/PlayerHUD/BulletCount"]
+wait_time = 3.0
