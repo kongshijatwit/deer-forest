@@ -207,6 +207,7 @@ func death():
 	var random_int = randi_range(0,4)
 	feet_sfx.stream = load(death_sfx_lib[random_int])
 	feet_sfx.play()
+	print("DIEDIEDIEDIE")
 	
 func fall():
 	var random_int = randi_range(0,4)
