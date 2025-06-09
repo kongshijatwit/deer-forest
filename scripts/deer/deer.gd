@@ -66,6 +66,7 @@ func _ready():
 	reset_all_timers()
 	add_gamemanager_signal()
 	original_position = position
+	position_before_death = position
 	$detection.body_entered.connect(_on_body_entered)
 	deer_anim_player.animation_finished.connect(graze_finished)
 
@@ -161,7 +162,8 @@ func reset_deer() -> void:
 	set_active(true)
 	reset_ragdoll()
 	global_position = position_before_death
-	print(name + ": deer has been reset")
+	$deer_model.enable_footsteps_audio()
+	# print(name + ": deer has been reset")
 
 
 func set_active(active: bool) -> void:

@@ -5,14 +5,15 @@
 [ext_resource type="Script" uid="uid://bcjcu30o2gutj" path="res://scripts/interactables/deer_pickup.gd" id="3_bt2a0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55h0u"]
-radius = 0.25
-height = 0.925674
+radius = 0.455
+height = 1.72
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bt2a0"]
-height = 2.2854
+radius = 0.69
+height = 2.80628
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_55h0u"]
-size = Vector3(0.175446, 1.11646, 0.253687)
+size = Vector3(0.638016, 1.11646, 0.517462)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gcwh4"]
 radius = 6.04495
@@ -21,6 +22,7 @@ radius = 6.04495
 size = Vector3(0.712237, 0.58262, 1.84764)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jgq7x"]
+size = Vector3(0.22058, 1.86914, 1.49826)
 
 [node name="Deer" type="CharacterBody3D"]
 collision_layer = 3
@@ -49,7 +51,11 @@ shape = SubResource("CapsuleShape3D_bt2a0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54328, 0.447181)
 
 [node name="top_right_collider" type="CollisionShape3D" parent="leg_area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240171, -0.989275, 0.175138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00888602, -0.989275, 0.163355)
+shape = SubResource("BoxShape3D_55h0u")
+
+[node name="top_right_collider2" type="CollisionShape3D" parent="leg_area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009, -0.989, -1.332)
 shape = SubResource("BoxShape3D_55h0u")
 
 [node name="detection" type="Area3D" parent="."]
@@ -73,7 +79,7 @@ collision_layer = 2
 script = ExtResource("3_bt2a0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(2.09, 0, 0, 0, 2.09, 0, 0, 0, 2.09, 0, 1.26185, 0)
+transform = Transform3D(2.09, 0, 0, 0, 2.09, 0, 0, 0, 2.09, 0.0244279, 1.43602, 0.113471)
 shape = SubResource("BoxShape3D_jgq7x")
 
 [connection signal="area_entered" from="head_area" to="." method="on_head_hit"]

@@ -6,11 +6,13 @@ var can_interact: bool = false
 
 
 func _ready():
+	$CollisionShape3D.disabled = true
 	interacted.connect(pickup_deer)
 	prompt_message = ""
 	get_parent().deer_dead.connect(can_pickup)
 
 func can_pickup() -> void:
+	$CollisionShape3D.set_deferred("disabled", false)
 	can_interact = true
 	prompt_message = PICKUP_PROMPT
 
