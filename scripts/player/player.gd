@@ -17,6 +17,7 @@ var t_bob = 0.0
 var gravity = 9.8
 var gun_equipped = false
 var crouching = false
+var actions_disabled = false
 
 # Bullets
 var bullet = load("res://prefabs/gun/bullet.tscn")
@@ -53,6 +54,9 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Head/Camera3D/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
 	gun_viewmodel.visible = false
+	%dialog_blocker.talking.connect(disable_actions)
+	%dialog_blocker.done_talking.connect(enable_actions)
+
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -104,10 +108,11 @@ func _physics_process(delta):
 
 		
 	# Head bobbing
-	t_bob += delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
-	$Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera.global_transform = camera.global_transform
-	
+	if !actions_disabled:
+		t_bob += delta * velocity.length() * float(is_on_floor())
+		camera.transform.origin = _headbob(t_bob)
+		$Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera.global_transform = camera.global_transform
+		
 	# Shooting
 	if Input.is_action_just_pressed("shoot") and bullet_count > 0 and reload_finished and gun_equipped:
 		instance = bullet.instantiate()
@@ -133,8 +138,8 @@ func _physics_process(delta):
 	# if Input.is_action_pressed("crouch"):
 		
 		
-
-	move_and_slide()
+	if !actions_disabled:
+		move_and_slide()
 	
 	
 func _headbob(time) -> Vector3:
@@ -150,7 +155,7 @@ func gun_taken():
 	gun_sfx.play()
 	
 func _make_footstep():
-	if groundray.is_colliding():
+	if groundray.is_colliding() and !actions_disabled:
 		if groundray.get_collider().is_in_group("snow"):
 			print("Snow Fella")
 			var random_int = randi_range(0,7)
@@ -182,4 +187,9 @@ func reload():
 	gun_anim_tree.set("parameters/conditions/idle", !crouching)
 	gun_anim_tree.set("parameters/conditions/crouch", crouching)
 	
-	
+func disable_actions():
+	actions_disabled = true
+
+func enable_actions():
+	actions_disabled = false
+
