@@ -22,7 +22,7 @@ radius = 6.04495
 size = Vector3(0.712237, 0.58262, 1.84764)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jgq7x"]
-size = Vector3(0.194458, 1, 0.755493)
+size = Vector3(0.22058, 1.86914, 1.49826)
 
 [node name="Deer" type="CharacterBody3D"]
 collision_layer = 3
@@ -79,7 +79,7 @@ collision_layer = 2
 script = ExtResource("3_bt2a0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(2.09, 0, 0, 0, 2.09, 0, 0, 0, 2.09, 0.00497496, 2.34427, -0.101479)
+transform = Transform3D(2.09, 0, 0, 0, 2.09, 0, 0, 0, 2.09, 0.0244279, 1.43602, 0.113471)
 shape = SubResource("BoxShape3D_jgq7x")
 
 [connection signal="area_entered" from="head_area" to="." method="on_head_hit"]
