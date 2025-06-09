@@ -1,8 +1,9 @@
-[gd_scene load_steps=140 format=4 uid="uid://cktu24rsmgrsu"]
+[gd_scene load_steps=145 format=4 uid="uid://cktu24rsmgrsu"]
 
 [ext_resource type="Script" uid="uid://cj7fnu3u5qmgh" path="res://scripts/gun/gun_anims.gd" id="1_3daxm"]
 [ext_resource type="Texture2D" uid="uid://d3gphxe0tetur" path="res://assets/models/ViewModel/HuntingViewmodelNLA_leatherskibidi.png" id="1_cx5ly"]
 [ext_resource type="Texture2D" uid="uid://cnexd2d65abyb" path="res://assets/models/ViewModel/HuntingViewmodelNLA_winterskibidi.png" id="2_3daxm"]
+[ext_resource type="Texture2D" uid="uid://byjur546pncum" path="res://assets/models/HuntingViewmodelNLA_textured-concrete-wall(1).jpg" id="4_j5g8j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1i8l"]
 resource_name = "Glove"
@@ -529,6 +530,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nl3dm")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iloyv"]
+albedo_texture = ExtResource("4_j5g8j")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_78f3y"]
 _surfaces = [{
 "aabb": AABB(-0.29357, -0.240555, -0.103653, 0.587139, 0.48111, 0.207306),
@@ -560,6 +564,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_78f3y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvx6x"]
+albedo_texture = ExtResource("4_j5g8j")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_r4mog"]
 _surfaces = [{
@@ -1073,6 +1080,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u6qdb")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si4hr"]
+albedo_texture = ExtResource("4_j5g8j")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_qaklf"]
 _surfaces = [{
 "aabb": AABB(-0.293537, -0.24065, -0.103653, 0.587074, 0.481301, 0.207306),
@@ -1104,6 +1114,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qaklf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lm23p"]
+albedo_texture = ExtResource("4_j5g8j")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp2h1"]
 resource_name = "Blue"
@@ -6354,7 +6367,7 @@ bones/89/parent = 86
 bones/89/rest = Transform3D(1, 9.98212e-07, 9.52263e-07, -9.46641e-07, -0.00561678, 0.999984, 1.00354e-06, -0.999984, -0.00561678, 8.67584e-08, -0.00672621, -0.0302399)
 bones/89/enabled = true
 bones/89/position = Vector3(8.67584e-08, -0.00672621, -0.0302399)
-bones/89/rotation = Quaternion(-0.700044, 4.1247e-12, -6.67633e-07, 0.7141)
+bones/89/rotation = Quaternion(-0.898243, 2.65175e-11, -8.56688e-07, 0.439499)
 bones/89/scale = Vector3(1, 1, 1)
 bones/90/name = "Hammer_2"
 bones/90/parent = 89
@@ -6563,6 +6576,7 @@ bone_idx = 38
 [node name="Forearm_L" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Forearm_L"]
 mesh = SubResource("ArrayMesh_kpgs6")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_iloyv")
 
 [node name="UpperArm_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
 transform = Transform3D(0.278124, 0.415989, -0.865794, 0.116112, 0.880188, 0.460204, 0.953502, -0.228523, 0.1965, 0.293221, -0.280213, 0.259857)
@@ -6572,6 +6586,7 @@ bone_idx = 39
 [node name="UpperArm_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/UpperArm_L_2"]
 mesh = SubResource("ArrayMesh_80rwc")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_pvx6x")
 
 [node name="Pointer_3_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
 transform = Transform3D(0.477703, 0.878511, 0.00437489, -0.351515, 0.186573, 0.917403, 0.805132, -0.439784, 0.397936, -0.0976856, -0.184433, 0.323081)
@@ -6716,6 +6731,7 @@ bone_idx = 80
 [node name="Forearm_R" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Forearm_R"]
 mesh = SubResource("ArrayMesh_kk16i")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_si4hr")
 
 [node name="UpperArm_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
 transform = Transform3D(0.539736, -0.727157, 0.424179, 0.185107, 0.594056, 0.782837, -0.821231, -0.344006, 0.455235, -0.308361, -0.246326, -0.434438)
@@ -6725,6 +6741,7 @@ bone_idx = 81
 [node name="UpperArm_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/UpperArm_R_2"]
 mesh = SubResource("ArrayMesh_ffd1y")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_lm23p")
 
 [node name="Shell_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
 transform = Transform3D(1, 4.09466e-09, -2.47726e-07, -4.32709e-09, 1, 1.62804e-06, 2.47755e-07, -1.71736e-06, 1, -0.146148, -0.0930991, 0.500881)
@@ -6736,7 +6753,7 @@ mesh = SubResource("ArrayMesh_xbjd3")
 skeleton = NodePath("")
 
 [node name="Hammer_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(1, -7.72333e-09, -2.36403e-07, 1.46182e-09, 0.999675, -0.0254915, 2.36552e-07, 0.0254914, 0.999675, -0.146148, -0.11069, 0.419875)
+transform = Transform3D(1, 1.41161e-07, -1.82961e-07, -7.05597e-10, 0.792988, 0.609238, 2.31116e-07, -0.609238, 0.792988, -0.146148, -0.109988, 0.42001)
 bone_name = "Hammer_2"
 bone_idx = 90
 
