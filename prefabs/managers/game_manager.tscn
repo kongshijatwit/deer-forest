@@ -1,9 +1,135 @@
-[gd_scene load_steps=3 format=3 uid="uid://bc8iw3toa1o3k"]
+[gd_scene load_steps=8 format=3 uid="uid://bc8iw3toa1o3k"]
 
 [ext_resource type="Script" uid="uid://6yg0hxw1e478" path="res://scripts/managers/game_manager.gd" id="1_0h1wg"]
 [ext_resource type="PackedScene" uid="uid://s6cj65kg7cdv" path="res://prefabs/ui/fade.tscn" id="2_njnq8"]
+[ext_resource type="Script" uid="uid://chp6weobttp3p" path="res://scripts/ui/fade.gd" id="3_ixwe7"]
+
+[sub_resource type="Animation" id="Animation_yt1bb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s8aqg"]
+resource_name = "fade_to_black"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xrlm7"]
+resource_name = "fade_to_normal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrlm7"]
+_data = {
+&"RESET": SubResource("Animation_yt1bb"),
+&"fade_to_black": SubResource("Animation_s8aqg"),
+&"fade_to_normal": SubResource("Animation_xrlm7")
+}
 
 [node name="game_manager" type="Node3D"]
 script = ExtResource("1_0h1wg")
 
 [node name="fade" parent="." instance=ExtResource("2_njnq8")]
+
+[node name="fade2" type="CanvasLayer" parent="."]
+script = ExtResource("3_ixwe7")
+
+[node name="ColorRect" type="ColorRect" parent="fade2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Label" type="Label" parent="fade2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -62.5
+offset_right = 255.5
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade2"]
+libraries = {
+&"": SubResource("AnimationLibrary_xrlm7")
+}
+autoplay = "fade_to_normal"
