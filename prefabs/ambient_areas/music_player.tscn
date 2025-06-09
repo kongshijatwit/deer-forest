@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch0pjmavl2exb"]
+
+[ext_resource type="AudioStream" uid="uid://daa776xpbohnv" path="res://assets/audio/music/Loop_Day.ogg" id="1_c8q7n"]
+[ext_resource type="AudioStream" uid="uid://ctccol15le7fi" path="res://assets/audio/music/Loop_Dark.ogg" id="2_312vh"]
+
+[node name="music_player" type="Node3D"]
+
+[node name="bright_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_c8q7n")
+autoplay = true
+
+[node name="dark_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_312vh")
