@@ -2883,6 +2883,7 @@ texture_over = ExtResource("7_0yp8f")
 texture_progress = ExtResource("8_bpfqs")
 
 [node name="ObjectiveTitle" type="RichTextLabel" parent="CanvasLayer/PlayerHUD"]
+visible = false
 layout_mode = 0
 offset_right = 149.0
 offset_bottom = 43.0
@@ -2894,6 +2895,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = " Objective"
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+visible = false
 offset_left = 4.0
 offset_top = 34.0
 offset_right = 154.0
