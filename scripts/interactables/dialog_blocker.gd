@@ -2,6 +2,7 @@ extends Interactable
 
 signal talking
 signal done_talking
+signal finish_conversation
 
 const TALK_PROMPT: String = "Talk"
 @onready var dialog_controller: Node = $"../%dialogue_manager/MadTalk"
@@ -46,6 +47,7 @@ func finish_dialog(_sheet_name: Variant, _sequence_id: Variant):
 	prompt_message = TALK_PROMPT
 	finished_talking = true
 	if villager_talked and cultist_talked:
+		finish_conversation.emit()
 		$CollisionShape3D.disabled = true
 		visible = false
 

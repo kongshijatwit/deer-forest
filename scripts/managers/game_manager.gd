@@ -14,6 +14,7 @@ const REQUIRED_DEER_AMOUNT: int = 1
 func _ready() -> void:
 	connect_signal(BED_STRING, "sleep", start_new_month)
 	connect_signal("relic", "get_relic", update_quest_status)
+	connect_signal("dialog_blocker", "finish_conversation", end_game)
 	for deer: CharacterBody3D in deer_container.get_children():
 		deer.get_node("StaticBody3D").deer_get.connect(update_quest_status)
 		# deer.deer_get.connect(update_quest_status)
@@ -47,3 +48,8 @@ func update_quest_status():
 	# print("deer killed: " + str(GlobalVariables.deer_killed) + " vs. artifact coll:" + str(GlobalVariables.artifact_piece_collected))
 	if GlobalVariables.deer_killed >= REQUIRED_DEER_AMOUNT or GlobalVariables.artifact_piece_collected:
 		quest_complete.emit()
+
+
+func end_game():
+	if GlobalVariables.month == 4:
+		print("End of Game. THANKS FOR PLAYING")
