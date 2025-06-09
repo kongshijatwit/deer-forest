@@ -56,10 +56,11 @@ func _ready():
 	gun_viewmodel.visible = false
 	%dialog_blocker.talking.connect(disable_actions)
 	%dialog_blocker.done_talking.connect(enable_actions)
+	%game_manager/fade.transitioned.connect(enable_actions)
 
 	
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and !actions_disabled:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		interactray.rotate_x(-event.relative.y * SENSITIVITY)
 		interactray.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
