@@ -17,9 +17,10 @@ func _ready() -> void:
 func on_bed_interacted(_body):
 	if can_use:
 		can_use = false
-		sleep.emit()
 		audio_stream.play()
 		prompt_message = ""
+		_body.disable_actions()
+		sleep.emit()
 	else:
 		print("sleep unavailable")
 	# call a body.reset() function in the player that interacts with the bed to reset bullets?

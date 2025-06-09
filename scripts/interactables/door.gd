@@ -62,6 +62,11 @@ func talk() -> void:
 	print("WHOOP WHOOP")
 
 func reset_talk() -> void:
+	if is_open:
+		playback.travel("DoorClose")
+		prompt_message = "Open Door"
+		is_open = false
+	knocked = false
 	talked = false
 
 
