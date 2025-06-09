@@ -8,7 +8,7 @@ signal quest_complete
 # signal game_end
 
 const BED_STRING: String = "bed"
-const REQUIRED_DEER_AMOUNT: int = 1
+const REQUIRED_DEER_AMOUNT: int = 15
 
 
 func _ready() -> void:

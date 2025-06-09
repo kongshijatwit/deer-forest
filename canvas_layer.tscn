@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://crs17qeb41ics"]
+[gd_scene load_steps=6 format=3 uid="uid://c2i84wlbw0353"]
 
 [ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="1_mx0kw"]
 [ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="2_w4oxd"]
@@ -32,7 +32,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -104.0
+offset_left = -131.0
 offset_top = -70.0
 grow_horizontal = 0
 grow_vertical = 0

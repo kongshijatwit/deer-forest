@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ttpkwhwrvat3" path="res://scripts/player/player.gd" id="1_d2i1d"]
 [ext_resource type="PackedScene" uid="uid://d2xigii8t148c" path="res://prefabs/gun/view_model.tscn" id="2_5qkxa"]
 [ext_resource type="PackedScene" uid="uid://xqqi8tpajkv5" path="res://prefabs/player/interact/interact_ray.tscn" id="3_hm3fc"]
-[ext_resource type="PackedScene" path="res://canvas_layer.tscn" id="4_5qkxa"]
+[ext_resource type="PackedScene" uid="uid://c2i84wlbw0353" path="res://canvas_layer.tscn" id="4_5qkxa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjh0h"]
 resource_name = "Material"

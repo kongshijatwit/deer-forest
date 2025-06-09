@@ -23,7 +23,7 @@ var actions_disabled = false
 var bullet = load("res://prefabs/gun/bullet.tscn")
 var instance
 var bullet_count = 1
-var bullet_reserve = 12
+var bullet_reserve = 24
 var reload_finished = true
 
 @onready var head = $Head
@@ -159,7 +159,7 @@ func _headbob(time) -> Vector3:
 	return pos
 	
 func gun_taken():
-	bullet_reserve = 12
+	bullet_reserve = 24
 	gun_viewmodel.visible = true
 	gun_equipped = true
 	gun_sfx.stream = load(gun_sfx_lib[1])
