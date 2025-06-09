@@ -57,6 +57,7 @@ func _ready():
 	%dialog_blocker.talking.connect(disable_actions)
 	%dialog_blocker.done_talking.connect(enable_actions)
 	%game_manager/fade.transitioned.connect(enable_actions)
+	%game_manager.reset.connect(reset_gun)
 
 	
 func _unhandled_input(event):
@@ -150,6 +151,7 @@ func _headbob(time) -> Vector3:
 	return pos
 	
 func gun_taken():
+	bullet_reserve = 12
 	gun_viewmodel.visible = true
 	gun_equipped = true
 	gun_sfx.stream = load(gun_sfx_lib[1])
@@ -194,3 +196,6 @@ func disable_actions():
 func enable_actions():
 	actions_disabled = false
 
+func reset_gun() -> void:
+	gun_viewmodel.visible = false
+	gun_equipped = false
