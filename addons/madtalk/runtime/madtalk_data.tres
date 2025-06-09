@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=191 format=3 uid="uid://dxkjjrap15vxu"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=203 format=3 uid="uid://dxkjjrap15vxu"]
 
 [ext_resource type="Script" uid="uid://bw2q2eucjkylk" path="res://addons/madtalk/components/resources/DialogData.gd" id="1_giduu"]
 [ext_resource type="Script" uid="uid://c2bv5lwcvdmrb" path="res://addons/madtalk/components/resources/DialogNodeItemData.gd" id="2_48vp3"]
@@ -853,7 +853,7 @@ connected_to_id = -1
 message_speaker_id = "Cultist"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "No cultist approval dialog for this month."
+message_text = "I cannot begin to describe my gratitude for your actions as of late."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -869,7 +869,7 @@ position = Vector2(160, -600)
 comment = ""
 items = [SubResource("Resource_tiiv5")]
 options = []
-continue_sequence_id = -1
+continue_sequence_id = 42
 continue_port_index = 0
 
 [sub_resource type="Resource" id="Resource_f0gcp"]
@@ -905,7 +905,7 @@ connected_to_id = -1
 message_speaker_id = "Cultist"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "No cultist disapproval for this final month."
+message_text = "I don’t understand…"
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -921,7 +921,7 @@ position = Vector2(180, 980)
 comment = ""
 items = [SubResource("Resource_hvdsk")]
 options = []
-continue_sequence_id = -1
+continue_sequence_id = 38
 continue_port_index = 0
 
 [sub_resource type="Resource" id="Resource_qtnka"]
@@ -1009,7 +1009,7 @@ connected_to_id = -1
 message_speaker_id = "Cultist"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "No Cultist approval this month"
+message_text = "We are very close to putting an end to this never-ending winter. I greatly appreciate your gratitude over the past few months. I understand trudging through the deep forest is no easy task."
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -1025,7 +1025,7 @@ position = Vector2(160, -360)
 comment = ""
 items = [SubResource("Resource_wvxik")]
 options = []
-continue_sequence_id = -1
+continue_sequence_id = 43
 continue_port_index = 0
 
 [sub_resource type="Resource" id="Resource_5d44h"]
@@ -1080,12 +1080,168 @@ options = []
 continue_sequence_id = -1
 continue_port_index = 0
 
+[sub_resource type="Resource" id="Resource_5shhg"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Is it your wish to see the downfall of this piece of land? To mercilessly slaughter and take from this world like a savage? Perhaps you need to see the consequences of your actions to properly understand the weight of your decisions…"
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_n5q6y"]
+script = ExtResource("4_f2ijm")
+sequence_id = 38
+position = Vector2(600, 980)
+comment = ""
+items = [SubResource("Resource_5shhg")]
+options = []
+continue_sequence_id = 39
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_cixus"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Regardless, I will be departing from this forest. Mother warns of a creature that has descended the world, caused by your…"
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_4ddi2"]
+script = ExtResource("4_f2ijm")
+sequence_id = 39
+position = Vector2(1020, 980)
+comment = ""
+items = [SubResource("Resource_cixus")]
+options = []
+continue_sequence_id = 40
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_voa0p"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "very… "
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_sl7ea"]
+script = ExtResource("4_f2ijm")
+sequence_id = 40
+position = Vector2(1440, 980)
+comment = ""
+items = [SubResource("Resource_voa0p")]
+options = []
+continue_sequence_id = 41
+continue_port_index = 0
+
+[sub_resource type="Resource" id="k2ilm"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "hands."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="7kkex"]
+script = ExtResource("4_f2ijm")
+sequence_id = 41
+position = Vector2(1860, 980)
+comment = ""
+items = [SubResource("k2ilm")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_1ueti"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Another relic has shown itself, as it does with each new month. Remember to let the deer have their peace, as our Mother intended."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_p0wbi"]
+script = ExtResource("4_f2ijm")
+sequence_id = 42
+position = Vector2(580, -600)
+comment = ""
+items = [SubResource("Resource_1ueti")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_u3upv"]
+script = ExtResource("2_48vp3")
+item_type = 0
+connected_to_id = -1
+message_speaker_id = "Cultist"
+message_speaker_variant = ""
+message_voice_clip = ""
+message_text = "Another piece of the relic has been located. This should be the final piece of the puzzle. Our Mother thanks you for your hard work and continued support."
+message_voice_clip_locales = {}
+message_text_locales = {}
+message_hide_on_end = 0
+condition_type = 10
+condition_values = []
+effect_type = 10
+effect_values = []
+
+[sub_resource type="Resource" id="Resource_s4isg"]
+script = ExtResource("4_f2ijm")
+sequence_id = 43
+position = Vector2(580, -360)
+comment = ""
+items = [SubResource("Resource_u3upv")]
+options = []
+continue_sequence_id = -1
+continue_port_index = 0
+
 [sub_resource type="Resource" id="Resource_86kbs"]
 script = ExtResource("5_vkpn8")
 sheet_id = "cultist"
 sheet_description = ""
-next_sequence_id = 38
-nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs"), SubResource("kcpb4"), SubResource("Resource_1e8bj"), SubResource("Resource_ji0hg"), SubResource("Resource_iioy7"), SubResource("Resource_ty1re"), SubResource("Resource_kvri2"), SubResource("Resource_udfvu"), SubResource("Resource_gvup7"), SubResource("j3pel"), SubResource("n8wo2"), SubResource("cenje"), SubResource("Resource_x2ldl"), SubResource("Resource_j4aaj"), SubResource("Resource_4qw0o"), SubResource("Resource_uakif"), SubResource("Resource_7lsnw"), SubResource("Resource_jp4jm"), SubResource("Resource_bkhx4"), SubResource("Resource_s0amn"), SubResource("Resource_tbm1p"), SubResource("Resource_v7t0u"), SubResource("Resource_ch18o"), SubResource("Resource_n83o6")]
+next_sequence_id = 44
+nodes = [SubResource("Resource_6d3fn"), SubResource("6yf53"), SubResource("0mplr"), SubResource("uwwod"), SubResource("uj1nl"), SubResource("86kbs"), SubResource("kcpb4"), SubResource("Resource_1e8bj"), SubResource("Resource_ji0hg"), SubResource("Resource_iioy7"), SubResource("Resource_ty1re"), SubResource("Resource_kvri2"), SubResource("Resource_udfvu"), SubResource("Resource_gvup7"), SubResource("j3pel"), SubResource("n8wo2"), SubResource("cenje"), SubResource("Resource_x2ldl"), SubResource("Resource_j4aaj"), SubResource("Resource_4qw0o"), SubResource("Resource_uakif"), SubResource("Resource_7lsnw"), SubResource("Resource_jp4jm"), SubResource("Resource_bkhx4"), SubResource("Resource_s0amn"), SubResource("Resource_tbm1p"), SubResource("Resource_v7t0u"), SubResource("Resource_ch18o"), SubResource("Resource_n83o6"), SubResource("Resource_n5q6y"), SubResource("Resource_4ddi2"), SubResource("Resource_sl7ea"), SubResource("7kkex"), SubResource("Resource_p0wbi"), SubResource("Resource_s4isg")]
 
 [sub_resource type="Resource" id="12"]
 script = ExtResource("2_48vp3")
@@ -1950,7 +2106,7 @@ condition_values = ["villager_reputation", 4.0]
 effect_type = 10
 effect_values = []
 
-[sub_resource type="Resource" id="7kkex"]
+[sub_resource type="Resource" id="Resource_hwe12"]
 script = ExtResource("2_48vp3")
 item_type = 1
 connected_to_id = 21
@@ -1971,7 +2127,7 @@ script = ExtResource("4_f2ijm")
 sequence_id = 5
 position = Vector2(-220, -680)
 comment = ""
-items = [SubResource("Resource_0mplr"), SubResource("Resource_fwb2u"), SubResource("Resource_1yy6g"), SubResource("Resource_ghijk"), SubResource("7kkex")]
+items = [SubResource("Resource_0mplr"), SubResource("Resource_fwb2u"), SubResource("Resource_1yy6g"), SubResource("Resource_ghijk"), SubResource("Resource_hwe12")]
 options = []
 continue_sequence_id = -1
 continue_port_index = 5
@@ -2239,7 +2395,7 @@ connected_to_id = -1
 message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "15 deer. Just 15 deer to recuperate what remains of us. We need their blood… and meat. Please."
+message_text = "15 deer. Just 15 deer to recuperate what remains of us. We need their blood… and meat. Please. I need blood, I require it!"
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -2352,7 +2508,7 @@ condition_values = []
 effect_type = 10
 effect_values = []
 
-[sub_resource type="Resource" id="k2ilm"]
+[sub_resource type="Resource" id="Resource_t0rmu"]
 script = ExtResource("4_f2ijm")
 sequence_id = 18
 position = Vector2(320, -340)
@@ -2395,7 +2551,7 @@ connected_to_id = -1
 message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "We only require [15] more. You’d help a little ol’ guy like me, right? Get to it!"
+message_text = "We only require 15 more. You’d help a little ol’ guy like me, right? Get to it!"
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -2421,7 +2577,7 @@ connected_to_id = -1
 message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "There is no villager approval dialog for the final month"
+message_text = "Hello there, mister. I must congratulate you for assisting me and my village. Today marks a day where we fight against the higher beings!"
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -2444,10 +2600,10 @@ continue_port_index = 0
 script = ExtResource("2_48vp3")
 item_type = 0
 connected_to_id = -1
-message_speaker_id = ""
+message_speaker_id = "Villager"
 message_speaker_variant = ""
 message_voice_clip = ""
-message_text = "End of game"
+message_text = "I’ll become the one that controls the very facet of nature. Haha!"
 message_voice_clip_locales = {}
 message_text_locales = {}
 message_hide_on_end = 0
@@ -2471,7 +2627,7 @@ script = ExtResource("5_vkpn8")
 sheet_id = "villager"
 sheet_description = "Villager NPC"
 next_sequence_id = 24
-nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln"), SubResource("pxkw5"), SubResource("a6kxj"), SubResource("Resource_0bfks"), SubResource("Resource_uslxw"), SubResource("Resource_grl7v"), SubResource("Resource_c3itg"), SubResource("Resource_pps0h"), SubResource("Resource_kswah"), SubResource("Resource_avksf"), SubResource("Resource_ow7hh"), SubResource("Resource_avev5"), SubResource("Resource_x6vuo"), SubResource("Resource_3nvab"), SubResource("k2ilm"), SubResource("y2dp7"), SubResource("e2wrs"), SubResource("Resource_iyv7e"), SubResource("Resource_1yilx")]
+nodes = [SubResource("Resource_6yf53"), SubResource("Resource_hkg3h"), SubResource("Resource_uj1nl"), SubResource("Resource_lge7f"), SubResource("Resource_scbln"), SubResource("pxkw5"), SubResource("a6kxj"), SubResource("Resource_0bfks"), SubResource("Resource_uslxw"), SubResource("Resource_grl7v"), SubResource("Resource_c3itg"), SubResource("Resource_pps0h"), SubResource("Resource_kswah"), SubResource("Resource_avksf"), SubResource("Resource_ow7hh"), SubResource("Resource_avev5"), SubResource("Resource_x6vuo"), SubResource("Resource_3nvab"), SubResource("Resource_t0rmu"), SubResource("y2dp7"), SubResource("e2wrs"), SubResource("Resource_iyv7e"), SubResource("Resource_1yilx")]
 
 [resource]
 script = ExtResource("1_giduu")

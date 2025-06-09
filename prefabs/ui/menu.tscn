@@ -114,11 +114,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r8at4")
 text = "Play"
 
-[node name="options" type="Button" parent="button_container/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_r8at4")
-text = "Options"
-
 [node name="credits" type="Button" parent="button_container/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r8at4")
@@ -144,7 +139,6 @@ visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="button_container/VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="button_container/VBoxContainer/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="button_container/VBoxContainer/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="button_container/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="deer_button" to="." method="_on_deer_pressed"]
