@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dnkm877aji76i"]
+[gd_scene load_steps=35 format=3 uid="uid://dnkm877aji76i"]
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://drpjjr562r50x" path="res://prefabs/environment/snow_cap.tscn" id="29_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://v3o5l7lleru6" path="res://prefabs/environment/campfire.tscn" id="29_suyxu"]
 [ext_resource type="PackedScene" uid="uid://bu0wlo6eer6jq" path="res://prefabs/People/people_container.tscn" id="32_wljb1"]
+[ext_resource type="PackedScene" uid="uid://ch0pjmavl2exb" path="res://prefabs/ambient_areas/music_player.tscn" id="33_v2yb1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0tnpc"]
 vertices = PackedVector3Array(-75.5, 0.5, 75.25, -75.5, 0.5, 25.5, -174.5, 0.5, 25.5, -25.5, 0.5, 174.5, -25.5, 0.5, 75.5, -174.5, 0.5, 174.5)
@@ -856,3 +857,5 @@ transform = Transform3D(1.14, 0, 0, 0, 1.14, 0, 0, 0, 1.14, 23.3094, 0.0921688, 
 
 [node name="people_container" parent="." instance=ExtResource("32_wljb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.35, 0, -10.25)
+
+[node name="music_player" parent="." instance=ExtResource("33_v2yb1")]
