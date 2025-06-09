@@ -162,7 +162,8 @@ func reset_deer() -> void:
 	set_active(true)
 	reset_ragdoll()
 	global_position = position_before_death
-	print(name + ": deer has been reset")
+	$deer_model.enable_footsteps_audio()
+	# print(name + ": deer has been reset")
 
 
 func set_active(active: bool) -> void:
