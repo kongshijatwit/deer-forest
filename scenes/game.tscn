@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bc8iw3toa1o3k" path="res://prefabs/managers/game_manager.tscn" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cv20tbnkrhys2" path="res://prefabs/environment/snow_ground.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cut4wtq6x7bm8" path="res://prefabs/player/tempplayer.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" path="res://prefabs/player/tempplayer.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bkvj18catpkj2" path="res://prefabs/managers/dialogue_manager.tscn" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="4_lbhrr"]
@@ -185,6 +185,7 @@ transform = Transform3D(0.214286, 0, 0, 0, 0.214286, 0, 0, 0, 0.214286, 4.59366,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.46079, 5.60749, -0.0383606)
 
 [node name="bed" parent="." instance=ExtResource("6_p57ef")]
+unique_name_in_owner = true
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 16.2323, 0.805385, -17.01)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

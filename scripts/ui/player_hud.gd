@@ -10,6 +10,8 @@ extends Control
 @onready var crosshair = $Crosshair
 @onready var game_manager: Node = $"../../../%game_manager"
 @onready var between_text = $"../VBoxContainer/Or"
+@onready var bed: Node = $"../../../%bed"
+@onready var objective_title = $"../ObjectiveTitle"
 
 var timer_start = false
 var timer_fin = true
@@ -20,9 +22,11 @@ var third_goal = false
 var fourth_goal = false
 var fourth_goal_relic = false
 var trackable = false
+var new_day = false
 
 func _ready():
 	ammo_hud = str(player.bullet_count) + "/" + str(player.bullet_reserve)
+	bed.sleep.connect(finish_day)
 	goal.text = "Talk to visitor"
 	
 
@@ -114,3 +118,27 @@ func _process(_delta):
 			goal2.text = "Go to bed"
 			timer_start = false
 			fourth_goal_relic = true
+	if new_day and timer_start and timer_fin:
+		goal.visible = true
+		objective_title.visible = true
+		timer_start = false
+		new_day = false
+		goal.text = "Talk to visitor"
+			
+
+func finish_day():
+	trackable = false
+	timer.start()
+	timer_start = true
+	timer_fin = false
+	first_goal = false
+	second_goal = false
+	third_goal = false
+	fourth_goal = false
+	fourth_goal_relic = false
+	goal.visible = false
+	goal2.visible = false
+	between_text.visible = false
+	objective_title.visible = false
+	new_day = true
+	
