@@ -6,6 +6,7 @@ extends Control
 @onready var goal = $"../PanelContainer/Objective"
 @onready var timer = $"../PanelContainer/Timer"
 @onready var dialog_blocker: Node = $"../../../%dialog_blocker"
+@onready var crosshair = $Crosshair
 
 var timer_start = false
 var timer_fin = true
@@ -28,9 +29,11 @@ func _process(_delta):
 	if player.gun_equipped:
 		health_bar.visible = true
 		ammo.visible = true
+		crosshair.visible = true
 	else:
 		health_bar.visible = false
 		ammo.visible = false
+		crosshair.visible = false
 		
 	if timer.wait_time < 1:
 		timer_fin = true
