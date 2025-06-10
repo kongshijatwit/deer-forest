@@ -24,7 +24,10 @@ var bullet = load("res://prefabs/gun/bullet.tscn")
 var instance
 var bullet_count = 1
 var bullet_reserve = 24
+var reloading = false
 var reload_finished = true
+var shooting = false
+var shot_finished = true
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -90,32 +93,24 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
-			anim_play.play("walk")
-			gun_anim_tree.set("parameters/conditions/idle", false)
-			gun_anim_tree.set("parameters/conditions/walk", true)
 		else:
-			gun_anim_tree.set("parameters/conditions/walk", false)
-			gun_anim_tree.set("parameters/conditions/idle", true)
 			velocity.x = 0.0
 			velocity.z = 0.0
 	else:
-		gun_anim_tree.set("parameters/conditions/walk", false)
-		gun_anim_tree.set("parameters/conditions/idle", true)
-		anim_play.stop()
-		anim_play.play("Default")
 		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0) # Adds inertia to fall
 		velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 2.0)
 		
-	if velocity == Vector3(0,0,0):
-		anim_play.stop()
-		anim_play.play("Default")
 		
-	anim_tree.set("parameters/conditions/walk", direction and !crouching and is_on_floor())
-	anim_tree.set("parameters/conditions/crouch_walk", direction and crouching and is_on_floor())
-	anim_tree.set("parameters/conditions/idle", !direction and !crouching)
-	anim_tree.set("parameters/conditions/crouch_idle", !direction and crouching)
-		
-
+	anim_tree.set("parameters/conditions/walk", !(velocity.x == 0 and velocity.z == 0) and reload_finished and !crouching)
+	anim_tree.set("parameters/conditions/crouch_walk", !(velocity.x == 0 and velocity.z == 0) and reload_finished and crouching)
+	anim_tree.set("parameters/conditions/idle", velocity.x == 0 and velocity.z == 0 and reload_finished and !crouching)
+	anim_tree.set("parameters/conditions/crouch_idle", velocity.x == 0 and velocity.z == 0 and reload_finished and !crouching)
+	
+	gun_anim_tree.set("parameters/conditions/idle", velocity.x == 0 and velocity.z == 0 and reload_finished and !crouching)
+	gun_anim_tree.set("parameters/conditions/walk",  !(velocity.x == 0 and velocity.z == 0) and reload_finished and !crouching)
+	gun_anim_tree.set("parameters/conditions/shoot", shooting)
+	gun_anim_tree.set("parameters/conditions/reload", reloading)
+	
 		
 	# Head bobbing
 	if !actions_disabled:
@@ -136,13 +131,14 @@ func _physics_process(delta):
 		gun_sfx.play()
 		get_tree().root.add_child(instance)
 		bullet_count -= 1
-		gun_anim_tree.set("parameters/conditions/shoot", true)
+		shot_finished = false
+		shooting = true
 		
 	if Input.is_action_just_pressed("reload") and bullet_count == 0 and bullet_reserve > 0 and gun_equipped:
 		bullet_count += 1
 		bullet_reserve -= 1
-		gun_anim_tree.set("parameters/conditions/reload", true)
 		reload_finished = false
+		reloading = true
 		
 	# Crouching
 	# if Input.is_action_pressed("crouch"):
@@ -189,9 +185,11 @@ func hit(damage, knockback_origin):
 	
 func reload():
 	reload_finished = true
-	gun_anim_tree.set("parameters/conditions/reload", false)
-	gun_anim_tree.set("parameters/conditions/idle", !crouching)
-	gun_anim_tree.set("parameters/conditions/crouch", crouching)
+	reloading = false
+	
+func shot():
+	shot_finished = true
+	shooting = false
 	
 func disable_actions():
 	actions_disabled = true
