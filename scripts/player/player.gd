@@ -112,6 +112,8 @@ func _physics_process(delta):
 	
 	gun_anim_tree.set("parameters/conditions/idle", velocity.x == 0 and velocity.z == 0 and reload_finished and !crouching)
 	gun_anim_tree.set("parameters/conditions/walk",  !(velocity.x == 0 and velocity.z == 0) and reload_finished and !crouching)
+	gun_anim_tree.set("parameters/conditions/crouch_idle", velocity.x == 0 and velocity.z == 0 and reload_finished and crouching)
+	gun_anim_tree.set("parameters/conditions/crouch_walk", !(velocity.x == 0 and velocity.z == 0) and reload_finished and crouching)
 	gun_anim_tree.set("parameters/conditions/shoot", shooting)
 	gun_anim_tree.set("parameters/conditions/reload", reloading)
 	
