@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://c54a82aiieho"]
+
+[ext_resource type="Script" uid="uid://x6exef6c4e5s" path="res://scenes/test/dialogue_test.gd" id="1_scgyh"]
+[ext_resource type="Script" uid="uid://c6av3xe4m2ujl" path="res://addons/madtalk/runtime/madtalk_runtime.gd" id="1_smxyh"]
+[ext_resource type="Script" uid="uid://crm8hyh7nn5vb" path="res://addons/madtalk/runtime/CharacterData.gd" id="2_smxyh"]
+
+[sub_resource type="Resource" id="Resource_scgyh"]
+script = ExtResource("2_smxyh")
+id = "Villager"
+name = "Villager"
+variants = {}
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[node name="dialogue_test" type="Node3D"]
+script = ExtResource("1_scgyh")
+
+[node name="MadTalk" type="Node" parent="."]
+script = ExtResource("1_smxyh")
+ListOfCharacters = Array[ExtResource("2_smxyh")]([SubResource("Resource_scgyh")])
+DialogMainControl = NodePath("../CanvasLayer/dialogue_manager")
+DialogMessageBox = NodePath("../CanvasLayer/dialogue_manager/Panel")
+DialogMessageLabel = NodePath("../CanvasLayer/dialogue_manager/Panel/RichTextLabel")
+DialogSpeakerLabel = NodePath("../CanvasLayer/dialogue_manager/Panel/RichTextLabel2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="dialogue_manager" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/dialogue_manager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 162.0
+offset_top = 362.0
+offset_right = -207.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/dialogue_manager/Panel"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 66.0
+offset_right = 734.0
+offset_bottom = 190.0
+text = "test text"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/dialogue_manager/Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 24.0
+offset_right = 449.0
+offset_bottom = 148.0
+text = "test text"

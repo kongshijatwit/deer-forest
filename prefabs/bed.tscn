@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://52u0hhl3hvvs"]
+
+[ext_resource type="Script" uid="uid://cv60mxs2doo84" path="res://scripts/interactables/bed.gd" id="1_2k1l4"]
+[ext_resource type="AudioStream" uid="uid://0fcv4k4pqvkw" path="res://assets/audio/sfx/bed/A_GoToSleep.ogg" id="2_8vxqi"]
+[ext_resource type="PackedScene" uid="uid://eye4icm8lbld" path="res://assets/models/Bed/Bed.glb" id="3_8sujg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbuig"]
+size = Vector3(0.964844, 0.337402, 0.678741)
+
+[node name="bed" type="StaticBody3D"]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
+collision_layer = 3
+script = ExtResource("1_2k1l4")
+
+[node name="Bed" parent="." instance=ExtResource("3_8sujg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00683595, 0.154541, 0.0181732)
+shape = SubResource("BoxShape3D_gbuig")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_8vxqi")

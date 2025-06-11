@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://dxqbeieje54w3"]
+
+[ext_resource type="Script" uid="uid://chbnlf4sb5tev" path="res://scripts/deer/deer.gd" id="1_rvdin"]
+[ext_resource type="PackedScene" uid="uid://63uii8sjg15o" path="res://assets/models/Deer/deer_model.tscn" id="2_55h0u"]
+[ext_resource type="Script" uid="uid://bcjcu30o2gutj" path="res://scripts/interactables/deer_pickup.gd" id="3_bt2a0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55h0u"]
+radius = 0.455
+height = 1.72
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bt2a0"]
+radius = 0.69
+height = 2.80628
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_55h0u"]
+size = Vector3(0.638016, 1.11646, 0.517462)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gcwh4"]
+radius = 6.04495
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bt2a0"]
+size = Vector3(0.712237, 0.58262, 1.84764)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jgq7x"]
+size = Vector3(0.22058, 1.86914, 1.49826)
+
+[node name="Deer" type="CharacterBody3D"]
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_rvdin")
+
+[node name="deer_model" parent="." instance=ExtResource("2_55h0u")]
+
+[node name="head_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54328, 0.447181)
+
+[node name="head_collider" type="CollisionShape3D" parent="head_area"]
+transform = Transform3D(1, 0, 0, 0, -0.263385, -0.964691, 0, 0.964691, -0.263385, 0.00927734, 0.779845, 1.23847)
+shape = SubResource("CapsuleShape3D_55h0u")
+
+[node name="body_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54328, 0.447181)
+
+[node name="torso_collider" type="CollisionShape3D" parent="body_area"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00228687, -0.0235703, -0.547602)
+shape = SubResource("CapsuleShape3D_bt2a0")
+
+[node name="leg_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54328, 0.447181)
+
+[node name="top_right_collider" type="CollisionShape3D" parent="leg_area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00888602, -0.989275, 0.163355)
+shape = SubResource("BoxShape3D_55h0u")
+
+[node name="top_right_collider2" type="CollisionShape3D" parent="leg_area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009, -0.989, -1.332)
+shape = SubResource("BoxShape3D_55h0u")
+
+[node name="detection" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.22385, 0.447181)
+
+[node name="DetectionCollider" type="CollisionShape3D" parent="detection"]
+shape = SubResource("SphereShape3D_gcwh4")
+
+[node name="torso" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00591111, 1.58048, -0.0597296)
+shape = SubResource("BoxShape3D_bt2a0")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35929, 2.10816)
+volume_db = 1.0
+bus = &"Sfx"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0513128, 0)
+collision_layer = 2
+script = ExtResource("3_bt2a0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(2.09, 0, 0, 0, 2.09, 0, 0, 0, 2.09, 0.0244279, 1.43602, 0.113471)
+shape = SubResource("BoxShape3D_jgq7x")
+
+[connection signal="area_entered" from="head_area" to="." method="on_head_hit"]
+[connection signal="area_entered" from="body_area" to="." method="on_body_hit"]
+[connection signal="area_entered" from="leg_area" to="." method="on_leg_hit"]
+[connection signal="area_entered" from="detection" to="." method="_on_area_entered"]

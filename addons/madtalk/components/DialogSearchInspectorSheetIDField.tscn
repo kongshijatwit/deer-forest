@@ -1,0 +1,29 @@
+[gd_scene load_steps=0 format=3 uid="uid://b7ojwbheitven"]
+
+[node name="DialogSearchInspectorSheetIDField" type="Control"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueLineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -26.0
+text = "dfgsdfgs"
+placeholder_text = "MadTalk Sheet ID"
+editable = false
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="BtnSearch" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+text = "..."

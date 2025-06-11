@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://v3o5l7lleru6"]
+
+[ext_resource type="PackedScene" uid="uid://c4eak1xl1nbol" path="res://prefabs/environment/rocks/rock.tscn" id="1_nmsyg"]
+[ext_resource type="PackedScene" uid="uid://dfmdsg7jghfn8" path="res://prefabs/environment/trees/log.tscn" id="2_w7ti7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nmsyg"]
+size = Vector3(2.69739, 1, 2.83667)
+
+[node name="campfire" type="Node3D"]
+
+[node name="log_pile" type="Node3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.050026, 0, -0.0575914)
+
+[node name="log" parent="log_pile" instance=ExtResource("2_w7ti7")]
+transform = Transform3D(0.3, 0, 0, 0, 0.244107, -0.034878, 0, 0.17439, 0.0488214, 0.16147, 0.56991, -0.141889)
+
+[node name="log2" parent="log_pile" instance=ExtResource("2_w7ti7")]
+transform = Transform3D(0.229985, -0.111977, -0.0313485, 0, 0.244107, -0.034878, 0.192632, 0.13369, 0.0374273, 0.16147, 0.56991, -0.141889)
+
+[node name="log3" parent="log_pile" instance=ExtResource("2_w7ti7")]
+transform = Transform3D(0.0877516, -0.166763, -0.0466861, 5.74087e-09, 0.244107, -0.034878, 0.286879, 0.0510099, 0.0142805, 0.16147, 0.56991, -0.141889)
+
+[node name="log4" parent="log_pile" instance=ExtResource("2_w7ti7")]
+transform = Transform3D(-0.116168, -0.160785, -0.0450126, 5.10469e-10, 0.244107, -0.034878, 0.276595, -0.0675283, -0.0189049, 0.16147, 0.56991, -0.141889)
+
+[node name="log5" parent="log_pile" instance=ExtResource("2_w7ti7")]
+transform = Transform3D(-0.267459, -0.0789923, -0.0221143, 3.97254e-09, 0.244107, -0.034878, 0.135889, -0.155474, -0.0435257, 0.16147, 0.56991, -0.141889)
+
+[node name="log6" parent="log_pile" instance=ExtResource("2_w7ti7")]
+transform = Transform3D(-0.287583, 0.049652, 0.0139003, 1.20078e-08, 0.244107, -0.034878, -0.0854154, -0.167172, -0.0468007, 0.16147, 0.56991, -0.141889)
+
+[node name="log7" parent="log_pile" instance=ExtResource("2_w7ti7")]
+transform = Transform3D(-0.11244, 0.161678, 0.0452626, 1.20078e-08, 0.244107, -0.034878, -0.278132, -0.0653614, -0.0182983, 0.16147, 0.56991, -0.141889)
+
+[node name="log8" parent="log_pile" instance=ExtResource("2_w7ti7")]
+transform = Transform3D(0.150063, 0.151005, 0.0422746, 2.20607e-08, 0.244107, -0.034878, -0.259771, 0.0872318, 0.024421, 0.16147, 0.56991, -0.141889)
+
+[node name="rock_pile" type="Node3D" parent="."]
+
+[node name="rock" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.3569, 0, -0.350174, 0, 0.5, 0, 0.350174, 0, 0.3569, 1.24316, -0.152327, 0.367462)
+
+[node name="rock2" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.372651, 0, 0.333364, 0, 0.5, 0, -0.333364, 0, 0.372651, 0.599708, -0.211883, 0.933755)
+
+[node name="rock3" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(-0.025387, 0, 0.599463, 0, 0.6, 0, -0.599463, 0, -0.025387, 0.193441, -0.125921, 1.1602)
+
+[node name="rock4" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.150265, 0, 0.570544, 0, 0.59, 0, -0.570544, 0, 0.150265, 0.99674, -0.167843, 0.819967)
+
+[node name="rock5" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(-0.01309, 0, 0.419796, 0, 0.42, 0, -0.419796, 0, -0.01309, -0.183371, -0.105441, 1.02824)
+
+[node name="rock6" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(-0.0155833, 0, 0.499757, 0, 0.5, 0, -0.499757, 0, -0.0155833, 2.76566e-05, -0.105441, -1.4162)
+
+[node name="rock7" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(-0.0155833, 0, 0.499757, 0, 0.5, 0, -0.499757, 0, -0.0155833, 0.398626, -0.105441, -1.30052)
+
+[node name="rock8" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(-0.0155833, 0, 0.499757, 0, 0.5, 0, -0.499757, 0, -0.0155833, 1.34246, -0.105441, -0.0854384)
+
+[node name="rock9" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.294831, 0, 0.403825, 0, 0.5, 0, -0.403825, 0, 0.294831, -1.12595, -0.0946513, -0.301874)
+
+[node name="rock10" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(-0.0155833, 0, 0.499757, 0, 0.5, 0, -0.499757, 0, -0.0155833, -1.05598, -0.105441, 0.111125)
+
+[node name="rock11" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(-0.0176091, 0, 0.564726, 0, 0.565, 0, -0.564726, 0, -0.0176091, -0.89705, -0.0102943, 0.550312)
+
+[node name="rock12" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.1754, 0, 0.589457, 0, 0.615, 0, -0.589457, 0, 0.1754, -0.589969, -0.146922, 0.838676)
+
+[node name="rock13" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.142602, 0, 0.479234, 0, 0.5, 0, -0.479234, 0, 0.142602, 1.23767, -0.146922, -0.549574)
+
+[node name="rock14" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.142602, 0, 0.479234, 0, 0.5, 0, -0.479234, 0, 0.142602, 1.06814, -0.146922, -0.980937)
+
+[node name="rock15" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.193938, 0, 0.651758, 0, 0.68, 0, -0.651758, 0, 0.193938, 0.71604, -0.146922, -1.25696)
+
+[node name="rock16" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.142602, 0, 0.479234, 0, 0.5, 0, -0.479234, 0, 0.142602, -0.473852, -0.146922, -1.30567)
+
+[node name="rock17" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.344997, 0, 0.273088, 0, 0.44, 0, -0.273088, 0, 0.344997, -0.846439, -0.146922, -1.03497)
+
+[node name="rock18" parent="rock_pile" instance=ExtResource("1_nmsyg")]
+transform = Transform3D(0.163992, 0, 0.551119, 0, 0.575, 0, -0.551119, 0, 0.163992, -1.10507, -0.0165976, -0.628067)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0830688, 0, -0.0743408)
+shape = SubResource("BoxShape3D_nmsyg")

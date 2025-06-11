@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3dltjou21eqy"]
+
+[ext_resource type="Script" uid="uid://d4n38apq1l04k" path="res://scripts/ambience/snow_area.gd" id="1_a55te"]
+[ext_resource type="AudioStream" uid="uid://kvpgdale7fdh" path="res://assets/audio/ambience/A_Ambiance.ogg" id="2_a55te"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0mlr1"]
+size = Vector3(50, 50, 50)
+
+[node name="SnowArea" type="Area3D"]
+script = ExtResource("1_a55te")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_0mlr1")
+
+[node name="SnowAmbiance" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_a55te")
+attenuation_model = 1
+volume_db = 1.0
+unit_size = 100.0
+max_distance = 2323.5
+bus = &"Ambiance"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://rdwnhslhgy"]
+
+[ext_resource type="Script" uid="uid://bd4puwmthfxfu" path="res://scripts/ui/sound_slider_settings.gd" id="1_ju3kk"]
+
+[node name="Sound_Slider_Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ju3kk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+theme_override_constants/separation = 10
+
+[node name="Audio_Name_Lbl" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Audio_Num_Lbl" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "100"

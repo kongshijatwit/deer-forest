@@ -1,0 +1,151 @@
+[gd_scene load_steps=6 format=3 uid="uid://7t7et22kn5bi"]
+
+[ext_resource type="Script" uid="uid://djhfp4gj5v7e6" path="res://scripts/ui/pause_menu.gd" id="1_cqca4"]
+[ext_resource type="Texture2D" uid="uid://b5ru4nl137udb" path="res://assets/2DTextures/pause_background.png" id="2_insce"]
+[ext_resource type="Shader" uid="uid://rm0i4m1envk6" path="res://prefabs/ui/pause_menu.gdshader" id="3_iy8c5"]
+[ext_resource type="PackedScene" uid="uid://rdwnhslhgy" path="res://prefabs/ui/sound_slider_settings.tscn" id="4_iy8c5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8an3f"]
+shader = ExtResource("3_iy8c5")
+shader_parameter/lod = 5.0
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cqca4")
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8an3f")
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 0.376471)
+
+[node name="Papyrus" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.5
+offset_top = -367.0
+offset_right = 208.5
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_insce")
+expand_mode = 1
+
+[node name="MenuMessage" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.5
+offset_top = -111.6
+offset_right = 138.5
+offset_bottom = 186.4
+grow_horizontal = 2
+grow_vertical = 2
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -175.0
+offset_right = 202.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartMenu" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="Resume" type="Button" parent="PanelContainer/StartMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Resume"
+
+[node name="Sound Settings" type="Button" parent="PanelContainer/StartMenu"]
+layout_mode = 2
+text = "Sound Settings
+"
+
+[node name="Quit" type="Button" parent="PanelContainer/StartMenu"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="QuitMenu" type="HBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Quit_Real" type="Button" parent="PanelContainer/QuitMenu"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Quit"
+
+[node name="Cancel" type="Button" parent="PanelContainer/QuitMenu"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Cancel"
+
+[node name="SoundMenu" type="ScrollContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/SoundMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+
+[node name="Sound_Slider_Settings" parent="PanelContainer/SoundMenu/VBoxContainer" instance=ExtResource("4_iy8c5")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Sound_Slider_Settings2" parent="PanelContainer/SoundMenu/VBoxContainer" instance=ExtResource("4_iy8c5")]
+layout_mode = 2
+bus_name = "Ambiance"
+
+[node name="Sound_Slider_Settings3" parent="PanelContainer/SoundMenu/VBoxContainer" instance=ExtResource("4_iy8c5")]
+layout_mode = 2
+bus_name = "Sfx"
+
+[node name="Confirm" type="Button" parent="PanelContainer/SoundMenu/VBoxContainer"]
+layout_mode = 2
+text = "Confirm"
+
+[connection signal="pressed" from="PanelContainer/StartMenu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/StartMenu/Sound Settings" to="." method="_on_sound_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/StartMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/QuitMenu/Quit_Real" to="." method="_on_quit_real_pressed"]
+[connection signal="pressed" from="PanelContainer/QuitMenu/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="PanelContainer/SoundMenu/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

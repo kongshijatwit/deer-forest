@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2i84wlbw0353"]
+
+[ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="1_mx0kw"]
+[ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="2_w4oxd"]
+[ext_resource type="Texture2D" uid="uid://510ohmvanaqy" path="res://assets/2DTextures/health_back.jpg" id="3_fsbdh"]
+[ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/health_border.png" id="4_n6wdb"]
+[ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/health_main.jpg" id="5_g3huw"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
+
+[node name="PlayerHUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -324.0
+offset_right = 577.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mx0kw")
+
+[node name="BulletCount" type="RichTextLabel" parent="PlayerHUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_w4oxd")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "0/0"
+
+[node name="NoAmmo" type="Timer" parent="PlayerHUD/BulletCount"]
+wait_time = 3.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerHUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 400.0
+grow_vertical = 0
+value = 100.0
+texture_under = ExtResource("3_fsbdh")
+texture_over = ExtResource("4_n6wdb")
+texture_progress = ExtResource("5_g3huw")
+
+[node name="ObjectiveTitle" type="RichTextLabel" parent="PlayerHUD"]
+visible = false
+layout_mode = 0
+offset_right = 149.0
+offset_bottom = 43.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_w4oxd")
+theme_override_font_sizes/normal_font_size = 25
+text = " Objective"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+offset_left = 4.0
+offset_top = 34.0
+offset_right = 154.0
+offset_bottom = 163.0
+
+[node name="Objective" type="CheckBox" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_pressed_color = Color(0, 0.831373, 0, 1)
+theme_override_fonts/font = ExtResource("2_w4oxd")
+text = "Boo objective!"
+
+[node name="Objective2" type="CheckBox" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_w4oxd")
+text = "Boo objective!"
+
+[node name="Timer" type="Timer" parent="PanelContainer"]
+wait_time = 3.0

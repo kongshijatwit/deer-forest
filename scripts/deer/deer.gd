@@ -1,0 +1,301 @@
+extends CharacterBody3D
+
+#region Variables
+
+# Signals
+signal deer_dead
+
+# Gamemanager Reference
+const GAMEMANAGER_NAME: String = "game_manager"
+var gamemanager_node: Node = null
+
+# State Machine
+enum STATE {IDLE = 0, WALK, GRAZE, SPOOK, RUN, DEAD}
+var current_state := STATE.IDLE
+var spook_object_position := Vector3.ZERO
+
+# Timers
+const MIN_IDLE_TIME: float = 2.0
+const MAX_IDLE_TIME: float = 2.5
+const ROTATE_TIME: float = 5.0
+const MAX_RUN_TIME: float = 5.0
+const MAX_REACT_TIME: float = 0.35
+const MIN_WALK_TIME: float = 2.5
+const MAX_WALK_TIME: float = 5.5
+var idle_timer: float
+var react_timer: float
+var walk_timer: float
+var run_timer: float
+
+# Collision Groups
+const BOUNDARY_GROUP: String = "bound"
+const BULLET_GROUP: String = "bullet"
+const PLAYER_GROUP: String = "player"
+
+# Positioning & Speed
+const WALK_SPEED: float = 100.0
+const RUN_SPEED: float = 400.0
+var original_position: Vector3
+var position_before_death: Vector3
+var run_direction: Vector3
+var rotate_angle: float
+
+# Ragdoll - NOTE: Might replace with skeleton features instead of dummy spawning
+# var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
+@onready var phys_skel: Skeleton3D = $deer_model/Armature/Skeleton3D
+@onready var skel_sim: PhysicalBoneSimulator3D = $deer_model/Armature/Skeleton3D/PhysicalBoneSimulator3D
+
+# Deer Sounds
+@onready var deer_sfx = $AudioStreamPlayer3D
+var deer_sfx_lib = ["res://assets/audio/sfx/deer/A_Deer-001.ogg", "res://assets/audio/sfx/deer/A_Deer-002.ogg", "res://assets/audio/sfx/deer/A_Deer-003.ogg",
+"res://assets/audio/sfx/deer/A_Deer-004.ogg", "res://assets/audio/sfx/deer/A_Deer-005.ogg"]
+var deer_death_sfx_lib = ["res://assets/audio/sfx/deer/A_Deer_Dying-001.ogg","res://assets/audio/sfx/deer/A_Deer_Dying-002.ogg","res://assets/audio/sfx/deer/A_Deer_Dying-003.ogg"]
+
+# Deer Animations
+@onready var deer_anim_player = $deer_model/AnimationPlayer
+
+# Debug constants
+const DEBUG_MODE: bool = true
+const KILL_DEER_INPUT: String = "ui_up"
+const RESET_DEER_INPUT: String = "ui_down"
+
+#endregion
+
+
+func _ready():
+	reset_all_timers()
+	add_gamemanager_signal()
+	original_position = position
+	position_before_death = position
+	$detection.body_entered.connect(_on_body_entered)
+	deer_anim_player.animation_finished.connect(graze_finished)
+
+
+func _process(delta: float) -> void:
+	match current_state:
+		STATE.IDLE:
+			if idle_timer > 0:
+				idle_timer -= delta
+			else:
+				current_state = (randi() % 3) as STATE
+
+				if current_state == STATE.IDLE: 
+					deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
+					deer_sfx.play()
+					play_animation("Idle")
+					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+
+				elif current_state == STATE.WALK:
+					rotate_angle = deg_to_rad(randf_range(0.0, 90.0))
+					idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+					play_animation("Walk")
+
+				elif current_state == STATE.GRAZE:
+					play_animation("Graze")
+
+				debug_state_change(STATE.IDLE)
+
+		STATE.WALK:
+			if walk_timer > 0:
+				walk_timer -= delta
+			else:
+				current_state = STATE.IDLE
+				play_animation("Idle")
+				walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
+				velocity = Vector3.ZERO
+				debug_state_change(STATE.WALK)
+			rotation.y = lerp_angle(rotation.y, rotate_angle, delta)
+
+		STATE.SPOOK:
+			if react_timer > 0:
+				react_timer -= delta
+			else:
+				current_state = STATE.RUN
+				play_animation("Skip")
+				react_timer = MAX_REACT_TIME
+				debug_state_change(STATE.SPOOK)
+
+		STATE.RUN:
+			if run_timer > 0:
+				run_timer -= delta
+			else:
+				current_state = STATE.IDLE
+				play_animation("Idle")
+				run_timer = MAX_RUN_TIME
+				velocity = Vector3.ZERO
+				debug_state_change(STATE.RUN)
+		
+		STATE.DEAD:
+			velocity = Vector3.ZERO
+			
+	debug_inputs()
+
+
+func _physics_process(delta: float) -> void:
+	if current_state == STATE.RUN:
+		velocity = run_direction * RUN_SPEED * delta
+
+	elif current_state == STATE.WALK:
+		velocity = transform.basis.z * WALK_SPEED * delta  # Walk forward in local space
+		
+	move_and_slide()
+
+
+#region State Functions
+
+func kill_deer() -> void:
+	deer_sfx.stream = load(deer_death_sfx_lib[(randi() % 3)])
+	deer_sfx.play()
+	var previous_state: STATE = current_state  # DEBUG VAR
+	current_state = STATE.DEAD
+	position_before_death = global_position
+	debug_state_change(previous_state)
+	set_active(false)
+	start_ragdoll()
+	velocity = Vector3.ZERO
+	deer_dead.emit()
+
+
+func reset_deer() -> void:
+	current_state = STATE.IDLE
+	reset_all_timers()
+	set_active(true)
+	reset_ragdoll()
+	global_position = position_before_death
+	$deer_model.enable_footsteps_audio()
+	# print(name + ": deer has been reset")
+
+
+func set_active(active: bool) -> void:
+	for n: Node3D in get_children():
+		if n.is_class("Area3D"):
+			n.set_deferred("monitorable", active)
+			n.set_deferred("monitoring", active)
+			n.set_deferred("input_ray_pickable", active)
+			n.set_deferred("visible", active)
+		elif n.is_class("CollisionShape3D"):
+			n.set_deferred("disabled", !active)
+			n.set_deferred("visible", active)
+		# n.visible = active
+
+
+func start_ragdoll() -> void:
+	skel_sim.active = true
+	skel_sim.physical_bones_start_simulation()
+	# await get_tree().create_timer(3.0).timeout
+
+
+func reset_ragdoll() -> void:
+	phys_skel.reset_bone_poses()
+	skel_sim.physical_bones_stop_simulation()
+	skel_sim.active = false
+	$deer_model.visible = true
+
+#endregion
+
+
+#region Hitbox Functions
+
+func _on_area_entered(area: Area3D) -> void:
+	if area.is_in_group(BULLET_GROUP):
+		spook_object_position = area.get_parent().position
+		spooked_by_object(spook_object_position, true)
+
+	if area.is_in_group(BOUNDARY_GROUP):
+		spook_object_position = original_position
+		spooked_by_object(spook_object_position, false)
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group(PLAYER_GROUP) or body.name == "Player" or body.name == "player":  # Remove when player is assigned to appropriate group
+		spooked_by_object(body.position, true)
+
+func on_head_hit(area: Area3D) -> void:
+	if area.is_in_group(BULLET_GROUP):
+		debug_deer_print("hit on head")
+		kill_deer()
+
+func on_body_hit(area: Area3D) -> void:
+	if area.is_in_group(BULLET_GROUP):
+		debug_deer_print("hit on body")
+		kill_deer()
+
+func on_leg_hit(area:Area3D) -> void:
+	if area.is_in_group(BULLET_GROUP):
+		debug_deer_print("hit on leg")
+		kill_deer()
+
+#endregion
+
+
+#region Setup Functions
+
+func add_gamemanager_signal():
+	var gamemanager: Node3D = get_tree().root.get_child(2).find_child(GAMEMANAGER_NAME)
+	if gamemanager == null:
+		push_warning("no gamemanager found but that's okay")
+	else:
+		gamemanager.reset.connect(reset_deer)
+
+func reset_all_timers() -> void:
+	idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+	react_timer = MAX_REACT_TIME
+	walk_timer = randf_range(MIN_WALK_TIME, MAX_WALK_TIME)
+	run_timer = MAX_RUN_TIME
+
+#endregion
+
+
+#region Helper Functions
+
+func spooked_by_object(object_position: Vector3, run_away: bool):
+	run_direction = (object_position - global_position)
+	run_direction = run_direction.normalized()
+	if run_away: run_direction *= -1
+	run_direction.y = 0
+	look_at(object_position)
+	if !run_away: rotation.y += deg_to_rad(180)
+	rotation.x = rad_to_deg(0)
+
+	# Debug
+	var previous_state = current_state
+	current_state = STATE.SPOOK
+	debug_state_change(previous_state)
+
+
+func play_animation(anim_name: String) -> void:
+	deer_anim_player.stop()
+	deer_anim_player.play(anim_name)
+
+
+func graze_finished(anim_name: String) -> void:
+	if anim_name == "Graze" && current_state != STATE.DEAD:
+		current_state = STATE.IDLE
+		deer_sfx.stream = load(deer_sfx_lib[(randi() % 5)])
+		deer_sfx.play()
+		play_animation("Idle")
+		idle_timer = randf_range(MIN_IDLE_TIME, MAX_IDLE_TIME)
+
+#endregion
+
+
+#region Debug Functions
+
+func debug_deer_print(message: String) -> void:
+	if DEBUG_MODE:
+		print(message)
+
+func debug_state_change(prev: STATE) -> void:
+	if DEBUG_MODE:
+		print("changing state: " + STATE.keys()[prev] + " -> " + STATE.keys()[current_state])
+		if current_state == STATE.DEAD:
+			print("dead")
+
+func debug_inputs() -> void:
+	if Input.is_action_just_pressed(RESET_DEER_INPUT) && current_state == STATE.DEAD:
+		reset_deer()
+	elif Input.is_action_just_pressed(KILL_DEER_INPUT) && current_state != STATE.DEAD:
+		kill_deer()
+	if Input.is_action_just_pressed("aim_down"):
+		deer_anim_player.play("Walk")
+
+#endregion
