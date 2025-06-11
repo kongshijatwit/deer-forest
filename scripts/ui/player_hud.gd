@@ -22,6 +22,7 @@ var third_goal = false
 var fourth_goal = false
 var fourth_goal_relic = false
 var trackable = false
+var day_end = false
 var new_day = false
 var cultist_known = false
 
@@ -122,28 +123,36 @@ func _process(_delta):
 			goal2.text = "Go to bed"
 			timer_start = false
 			fourth_goal_relic = true
+	if day_end and timer_start and timer_fin:
+		trackable = false
+		timer.start()
+		timer_start = true
+		timer_fin = false
+		first_goal = false
+		second_goal = false
+		third_goal = false
+		fourth_goal = false
+		fourth_goal_relic = false
+		goal.visible = false
+		goal2.visible = false
+		between_text.visible = false
+		objective_title.visible = false
+		day_end = false
+		new_day = true
 	if new_day and timer_start and timer_fin:
 		goal.visible = true
 		objective_title.visible = true
 		timer_start = false
 		new_day = false
 		goal.text = "Talk to Villager"
-		cultist_known = true
-			
+		cultist_known = true	
 
 func finish_day():
-	trackable = false
+	if fourth_goal_relic:
+		goal2.button_pressed = true
+	if fourth_goal:
+		goal.button_pressed = true
 	timer.start()
-	timer_start = true
 	timer_fin = false
-	first_goal = false
-	second_goal = false
-	third_goal = false
-	fourth_goal = false
-	fourth_goal_relic = false
-	goal.visible = false
-	goal2.visible = false
-	between_text.visible = false
-	objective_title.visible = false
-	new_day = true
-	
+	timer_start = true
+	day_end = true
