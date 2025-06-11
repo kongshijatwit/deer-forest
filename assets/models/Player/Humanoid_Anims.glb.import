@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dn8gq2ild3tou"
+uid="uid://bghr8vgvy7cae"
 path="res://.godot/imported/Humanoid_Anims.glb-42ef75aaeb341f8b3a1a4774a56ca112.scn"
 
 [deps]
@@ -1833,7 +1833,7 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"Crouching": {
+"CrouchWalk": {
 "save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "",
