@@ -93,6 +93,7 @@ _data = {
 }
 
 [node name="fade" type="CanvasLayer"]
+layer = 3
 script = ExtResource("1_yt1bb")
 
 [node name="ColorRect" type="ColorRect" parent="."]

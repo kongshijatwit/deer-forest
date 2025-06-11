@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2i84wlbw0353"]
+[gd_scene load_steps=7 format=3 uid="uid://c2i84wlbw0353"]
 
 [ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="1_mx0kw"]
 [ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="2_w4oxd"]
 [ext_resource type="Texture2D" uid="uid://510ohmvanaqy" path="res://assets/2DTextures/health_back.jpg" id="3_fsbdh"]
 [ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/health_border.png" id="4_n6wdb"]
 [ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/health_main.jpg" id="5_g3huw"]
+[ext_resource type="Texture2D" uid="uid://dn8nv6y0g4jqy" path="res://assets/2DTextures/crosshair.png" id="6_w4oxd"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-layer = 2
 
 [node name="PlayerHUD" type="Control" parent="."]
 layout_mode = 3
@@ -26,6 +26,7 @@ mouse_filter = 2
 script = ExtResource("1_mx0kw")
 
 [node name="BulletCount" type="RichTextLabel" parent="PlayerHUD"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -46,6 +47,7 @@ text = "0/0"
 wait_time = 3.0
 
 [node name="HealthBar" type="TextureProgressBar" parent="PlayerHUD"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -58,10 +60,32 @@ texture_under = ExtResource("3_fsbdh")
 texture_over = ExtResource("4_n6wdb")
 texture_progress = ExtResource("5_g3huw")
 
-[node name="ObjectiveTitle" type="RichTextLabel" parent="PlayerHUD"]
+[node name="Crosshair" type="TextureRect" parent="PlayerHUD"]
 visible = false
-layout_mode = 0
-offset_right = 149.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("6_w4oxd")
+
+[node name="PanelContainer" type="PanelContainer" parent="PlayerHUD"]
+layout_mode = 1
+offset_right = 196.0
+offset_bottom = 133.0
+
+[node name="ObjectiveTitle" type="RichTextLabel" parent="."]
+offset_left = -1.0
+offset_right = 148.0
 offset_bottom = 43.0
 theme_override_colors/table_border = Color(0, 0, 0, 1)
 theme_override_colors/default_color = Color(1, 1, 1, 1)
@@ -70,27 +94,38 @@ theme_override_fonts/normal_font = ExtResource("2_w4oxd")
 theme_override_font_sizes/normal_font_size = 25
 text = " Objective"
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
-offset_left = 4.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 2.0
 offset_top = 34.0
-offset_right = 154.0
-offset_bottom = 163.0
+offset_right = 165.0
+offset_bottom = 173.0
 
-[node name="Objective" type="CheckBox" parent="PanelContainer"]
+[node name="Timer" type="Timer" parent="VBoxContainer"]
+wait_time = 3.0
+
+[node name="Objective" type="CheckBox" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_pressed_color = Color(0, 0.831373, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4oxd")
 text = "Boo objective!"
 
-[node name="Objective2" type="CheckBox" parent="PanelContainer"]
+[node name="Or" type="RichTextLabel" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/normal_font = ExtResource("2_w4oxd")
+text = "				Or"
+fit_content = true
+
+[node name="Objective2" type="CheckBox" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_colors/font_disabled_color = Color(0.559523, 1.27546e-06, 3.36915e-07, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4oxd")
 text = "Boo objective!"
-
-[node name="Timer" type="Timer" parent="PanelContainer"]
-wait_time = 3.0
