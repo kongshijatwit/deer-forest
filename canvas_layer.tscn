@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dn8nv6y0g4jqy" path="res://assets/2DTextures/crosshair.png" id="6_w4oxd"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-layer = 2
 
 [node name="PlayerHUD" type="Control" parent="."]
 layout_mode = 3

@@ -23,11 +23,12 @@ var fourth_goal = false
 var fourth_goal_relic = false
 var trackable = false
 var new_day = false
+var cultist_known = false
 
 func _ready():
 	ammo_hud = str(player.bullet_count) + "/" + str(player.bullet_reserve)
 	bed.sleep.connect(finish_day)
-	goal.text = "Talk to visitor"
+	goal.text = "Talk to Stranger"
 	
 
 func _process(_delta):
@@ -56,7 +57,10 @@ func _process(_delta):
 		
 	if dialog_blocker.villager_talked and timer_start and timer_fin and !first_goal and dialog_blocker.finished_talking:
 		goal.button_pressed = false
-		goal.text = "Talk to other visitor"
+		if cultist_known:
+			goal.text = "Talk to Cultist"
+		else:
+			goal.text = "Talk to other Stranger"
 		first_goal = true
 		timer_start = false
 		timer_fin = true
@@ -123,7 +127,8 @@ func _process(_delta):
 		objective_title.visible = true
 		timer_start = false
 		new_day = false
-		goal.text = "Talk to visitor"
+		goal.text = "Talk to Villager"
+		cultist_known = true
 			
 
 func finish_day():
