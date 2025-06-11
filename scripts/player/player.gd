@@ -108,7 +108,7 @@ func _physics_process(delta):
 	anim_tree.set("parameters/conditions/idle", velocity.x == 0 and velocity.z == 0 and reload_finished and !crouching)
 	anim_tree.set("parameters/conditions/crouch_idle", velocity.x == 0 and velocity.z == 0 and reload_finished and crouched)
 	anim_tree.set("parameters/conditions/crouch", Input.is_action_pressed("crouch") and is_on_floor() and !crouching)
-	anim_tree.set("parameters/conditions/uncrouch", Input.is_action_just_released("crouch") and crouched and crouching)
+	anim_tree.set("parameters/conditions/uncrouch", Input.is_action_just_released("crouch") or !Input.is_action_pressed("crouch"))
 	
 	gun_anim_tree.set("parameters/conditions/idle", velocity.x == 0 and velocity.z == 0 and reload_finished and !crouching)
 	gun_anim_tree.set("parameters/conditions/walk",  !(velocity.x == 0 and velocity.z == 0) and reload_finished and !crouching)
@@ -219,8 +219,10 @@ func fall():
 	feet_sfx.stream = load(death_sfx_lib[random_int])
 	feet_sfx.play()
 	
-func _crouch() -> void:
+func _crouch_finished() -> void:
 	crouched = true
+
+func _crouch_started() -> void:
 	crouching = true
 	
 func _uncrouch() -> void:
