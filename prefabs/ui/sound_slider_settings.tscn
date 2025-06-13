@@ -18,6 +18,8 @@ theme_override_constants/separation = 10
 [node name="Audio_Name_Lbl" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
@@ -34,4 +36,6 @@ layout_mode = 2
 
 [node name="Audio_Num_Lbl" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 text = "100"

@@ -61,6 +61,8 @@ offset_right = 138.5
 offset_bottom = 186.4
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 text = "Paused"
 horizontal_alignment = 1
 
@@ -75,6 +77,8 @@ offset_top = 113.69
 offset_right = 36.0
 offset_bottom = 138.69
 grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 text = "Controls"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
