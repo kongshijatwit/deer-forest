@@ -77,23 +77,6 @@ offset_bottom = 138.69
 grow_horizontal = 2
 text = "Controls"
 
-[node name="ReturnControls" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -90.5
-offset_top = -188.0
-offset_right = 90.5
-offset_bottom = -157.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-text = "Return to pause menu"
-
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -222,7 +205,12 @@ action_name = "reload"
 layout_mode = 2
 action_name = "shoot"
 
-[connection signal="pressed" from="ReturnControls" to="." method="_on_return_controls_pressed"]
+[node name="ReturnControls" type="Button" parent="PanelContainer/ControlsMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Return to pause menu"
+
 [connection signal="pressed" from="PanelContainer/StartMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/StartMenu/Sound Settings" to="." method="_on_sound_settings_pressed"]
 [connection signal="pressed" from="PanelContainer/StartMenu/Controls" to="." method="_on_controls_pressed"]
@@ -230,3 +218,4 @@ action_name = "shoot"
 [connection signal="pressed" from="PanelContainer/QuitMenu/Quit_Real" to="." method="_on_quit_real_pressed"]
 [connection signal="pressed" from="PanelContainer/QuitMenu/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="PanelContainer/SoundMenu/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="PanelContainer/ControlsMenu/VBoxContainer/ReturnControls" to="." method="_on_return_controls_pressed"]
