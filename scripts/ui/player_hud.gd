@@ -3,13 +3,13 @@ extends Control
 @onready var ammo = $BulletCount
 @onready var player = $"../.."
 @onready var health_bar = $HealthBar
-@onready var goal = $"../VBoxContainer/Objective"
-@onready var goal2 = $"../VBoxContainer/Objective2"
-@onready var timer = $"../VBoxContainer/Timer"
+@onready var goal = $"../ObjectivesList/Objective"
+@onready var goal2 = $"../ObjectivesList/Objective2"
+@onready var timer = $"../ObjectivesList/Timer"
 @onready var dialog_blocker: Node = $"../../../%dialog_blocker"
 @onready var crosshair = $Crosshair
 @onready var game_manager: Node = $"../../../%game_manager"
-@onready var between_text = $"../VBoxContainer/Or"
+@onready var between_text = $"../ObjectivesList/Or"
 @onready var bed: Node = $"../../../%bed"
 @onready var objective_title = $"../ObjectiveTitle"
 

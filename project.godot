@@ -21,6 +21,10 @@ config/windows_native_icon="uid://dxx4x10ml3cpi"
 MadTalkGlobals="*res://addons/madtalk/runtime/MadTalkGlobals.tscn"
 GlobalVariables="*res://scripts/globals/GlobalVariables.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/madtalk/plugin.cfg")
