@@ -164,7 +164,7 @@ texture = ExtResource("6_w4oxd")
 
 [node name="ObjectivePanelContainer" type="PanelContainer" parent="PlayerHUD"]
 layout_mode = 1
-offset_right = 196.0
+offset_right = 245.0
 offset_bottom = 133.0
 
 [node name="ObjectiveTitle" type="RichTextLabel" parent="."]

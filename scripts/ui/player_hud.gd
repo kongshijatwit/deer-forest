@@ -55,13 +55,13 @@ func _process(_delta):
 	if timer.get_time_left() < 1:
 		timer_fin = true
 		
-	if dialog_blocker.villager_talked and dialog_blocker.finished_talking and !timer_start and !first_goal:
+	if dialog_blocker.villager_talked and !timer_start and !first_goal:
 		timer.start()
 		timer_start = true
 		timer_fin = false
 		goal.button_pressed = true
 		
-	if dialog_blocker.villager_talked and timer_start and timer_fin and !first_goal and dialog_blocker.finished_talking:
+	if dialog_blocker.villager_talked and timer_start and timer_fin and !first_goal:
 		goal.button_pressed = false
 		if cultist_known:
 			goal.text = "Talk to Cultist"
@@ -71,13 +71,13 @@ func _process(_delta):
 		timer_start = false
 		timer_fin = true
 		
-	if dialog_blocker.cultist_talked and !timer_start and !second_goal and dialog_blocker.finished_talking:
+	if dialog_blocker.cultist_talked and !timer_start and !second_goal:
 		timer.start()
 		timer_start = true
 		timer_fin = false
 		goal.button_pressed = true
 		
-	if dialog_blocker.cultist_talked and timer_start and timer_fin and !second_goal and dialog_blocker.finished_talking:
+	if dialog_blocker.cultist_talked and timer_start and timer_fin and !second_goal:
 		goal.button_pressed = false
 		goal.text = "Grab your shotgun"
 		second_goal = true

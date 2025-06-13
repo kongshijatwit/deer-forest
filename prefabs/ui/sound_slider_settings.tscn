@@ -25,7 +25,7 @@ theme_override_constants/outline_size = 4
 layout_mode = 2
 
 [node name="HSlider" type="HSlider" parent="HBoxContainer"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 size_flags_vertical = 4
 max_value = 1.0
