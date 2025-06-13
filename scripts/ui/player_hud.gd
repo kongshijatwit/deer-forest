@@ -25,6 +25,7 @@ var trackable = false
 var day_end = false
 var new_day = false
 var cultist_known = false
+var first_day = true
 
 func _ready():
 	ammo_hud = str(player.bullet_count) + "/" + str(player.bullet_reserve)
@@ -39,6 +40,10 @@ func _process(_delta):
 		ammo.bbcode_text = "[color=#ee0000]%s[/color]" % ammo_hud
 	health_bar.value = player.HEALTH
 	if player.gun_equipped:
+		if first_day:
+			$"../GunControlsScreen".visible = true
+			$"../GunControlsScreen/AnimationPlayer".play("fadeaway")
+			first_day = false
 		health_bar.visible = true
 		ammo.visible = true
 		crosshair.visible = true
