@@ -3,7 +3,10 @@ extends Control
 @onready var StartMenu = $PanelContainer/StartMenu
 @onready var QuitMenu = $PanelContainer/QuitMenu
 @onready var SoundMenu = $PanelContainer/SoundMenu
+@onready var ControlsMenu = $PanelContainer/ControlsMenu
+@onready var returnbutt = $ReturnControls
 @onready var msg = $MenuMessage
+@onready var ctrlmsg = $ControlsTitle
 
 func _ready() -> void:
 	hide()
@@ -12,6 +15,9 @@ func resume():
 	msg.text = "Paused"
 	QuitMenu.visible = false
 	SoundMenu.visible = false
+	ControlsMenu.visible = false
+	returnbutt.visible = false
+	ctrlmsg.visible = false
 	StartMenu.visible = true
 	hide()
 	get_tree().paused = false
@@ -56,3 +62,19 @@ func _on_confirm_pressed() -> void:
 	SoundMenu.visible = false
 	StartMenu.visible = true
 	msg.text = "Paused"
+	
+func _on_controls_pressed() -> void:
+	StartMenu.visible = false
+	ControlsMenu.visible = true
+	msg.text = ""
+	ctrlmsg.visible = true
+	returnbutt.visible = true
+	
+
+func _on_return_controls_pressed() -> void:
+	ControlsMenu.visible = false
+	StartMenu.visible = true
+	ctrlmsg.visible = false
+	msg.text = "Paused"
+	returnbutt.visible = false
+	

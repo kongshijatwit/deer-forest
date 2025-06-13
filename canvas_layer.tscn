@@ -131,6 +131,7 @@ text = "0/0"
 wait_time = 3.0
 
 [node name="HealthBar" type="TextureProgressBar" parent="PlayerHUD"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

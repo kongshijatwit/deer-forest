@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmi3yhcw0iutd"]
+
+[ext_resource type="Script" uid="uid://chij6p8edmgpt" path="res://scripts/ui/keybind.gd" id="1_p3enx"]
+
+[node name="Keybind" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p3enx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+
+[node name="Action_Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Example"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Keybind_Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Example"
+horizontal_alignment = 2
