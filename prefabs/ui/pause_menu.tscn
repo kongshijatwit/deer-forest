@@ -167,6 +167,8 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ControlsMenu"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 30
 
 [node name="Fwd_Keybind" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
@@ -207,8 +209,7 @@ action_name = "shoot"
 
 [node name="ReturnControls" type="Button" parent="PanelContainer/ControlsMenu/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 10
 text = "Return to pause menu"
 
 [connection signal="pressed" from="PanelContainer/StartMenu/Resume" to="." method="_on_resume_pressed"]
