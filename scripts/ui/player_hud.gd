@@ -3,13 +3,13 @@ extends Control
 @onready var ammo = $BulletCount
 @onready var player = $"../.."
 @onready var health_bar = $HealthBar
-@onready var goal = $"../VBoxContainer/Objective"
-@onready var goal2 = $"../VBoxContainer/Objective2"
-@onready var timer = $"../VBoxContainer/Timer"
+@onready var goal = $"../ObjectivesList/Objective"
+@onready var goal2 = $"../ObjectivesList/Objective2"
+@onready var timer = $"../ObjectivesList/Timer"
 @onready var dialog_blocker: Node = $"../../../%dialog_blocker"
 @onready var crosshair = $Crosshair
 @onready var game_manager: Node = $"../../../%game_manager"
-@onready var between_text = $"../VBoxContainer/Or"
+@onready var between_text = $"../ObjectivesList/Or"
 @onready var bed: Node = $"../../../%bed"
 @onready var objective_title = $"../ObjectiveTitle"
 
@@ -25,6 +25,7 @@ var trackable = false
 var day_end = false
 var new_day = false
 var cultist_known = false
+var first_day = true
 
 func _ready():
 	ammo_hud = str(player.bullet_count) + "/" + str(player.bullet_reserve)
@@ -39,6 +40,10 @@ func _process(_delta):
 		ammo.bbcode_text = "[color=#ee0000]%s[/color]" % ammo_hud
 	health_bar.value = player.HEALTH
 	if player.gun_equipped:
+		if first_day:
+			$"../GunControlsScreen".visible = true
+			$"../GunControlsScreen/AnimationPlayer".play("fadeaway")
+			first_day = false
 		health_bar.visible = true
 		ammo.visible = true
 		crosshair.visible = true
@@ -50,13 +55,13 @@ func _process(_delta):
 	if timer.get_time_left() < 1:
 		timer_fin = true
 		
-	if dialog_blocker.villager_talked and dialog_blocker.finished_talking and !timer_start and !first_goal:
+	if dialog_blocker.villager_talked and !timer_start and !first_goal:
 		timer.start()
 		timer_start = true
 		timer_fin = false
 		goal.button_pressed = true
 		
-	if dialog_blocker.villager_talked and timer_start and timer_fin and !first_goal and dialog_blocker.finished_talking:
+	if dialog_blocker.villager_talked and timer_start and timer_fin and !first_goal:
 		goal.button_pressed = false
 		if cultist_known:
 			goal.text = "Talk to Cultist"
@@ -66,13 +71,13 @@ func _process(_delta):
 		timer_start = false
 		timer_fin = true
 		
-	if dialog_blocker.cultist_talked and !timer_start and !second_goal and dialog_blocker.finished_talking:
+	if dialog_blocker.cultist_talked and !timer_start and !second_goal:
 		timer.start()
 		timer_start = true
 		timer_fin = false
 		goal.button_pressed = true
 		
-	if dialog_blocker.cultist_talked and timer_start and timer_fin and !second_goal and dialog_blocker.finished_talking:
+	if dialog_blocker.cultist_talked and timer_start and timer_fin and !second_goal:
 		goal.button_pressed = false
 		goal.text = "Grab your shotgun"
 		second_goal = true
@@ -110,6 +115,7 @@ func _process(_delta):
 			timer_fin = false
 			timer_start = true
 		elif !GlobalVariables.artifact_piece_collected and !timer_start and !fourth_goal:
+			goal2.button_pressed = false
 			goal2.text = "Collect relic: 0/1"
 		if (game_manager.REQUIRED_DEER_AMOUNT == GlobalVariables.deer_killed) and timer_start and timer_fin and !fourth_goal:
 			goal.button_pressed = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://7t7et22kn5bi"]
+[gd_scene load_steps=7 format=3 uid="uid://7t7et22kn5bi"]
 
 [ext_resource type="Script" uid="uid://djhfp4gj5v7e6" path="res://scripts/ui/pause_menu.gd" id="1_cqca4"]
 [ext_resource type="Texture2D" uid="uid://b5ru4nl137udb" path="res://assets/2DTextures/pause_background.png" id="2_insce"]
 [ext_resource type="Shader" uid="uid://rm0i4m1envk6" path="res://prefabs/ui/pause_menu.gdshader" id="3_iy8c5"]
 [ext_resource type="PackedScene" uid="uid://rdwnhslhgy" path="res://prefabs/ui/sound_slider_settings.tscn" id="4_iy8c5"]
+[ext_resource type="PackedScene" uid="uid://bmi3yhcw0iutd" path="res://prefabs/ui/keybind.tscn" id="5_8an3f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8an3f"]
 shader = ExtResource("3_iy8c5")
@@ -60,8 +61,25 @@ offset_right = 138.5
 offset_bottom = 186.4
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 text = "Paused"
 horizontal_alignment = 1
+
+[node name="ControlsTitle" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 113.69
+offset_right = 36.0
+offset_bottom = 138.69
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Controls"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -71,10 +89,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -175.0
-offset_right = 202.0
-offset_bottom = 175.0
+offset_left = -182.0
+offset_top = -173.0
+offset_right = 187.0
+offset_bottom = 185.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -82,7 +100,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 25
+theme_override_constants/separation = 15
 
 [node name="Resume" type="Button" parent="PanelContainer/StartMenu"]
 layout_mode = 2
@@ -94,6 +112,10 @@ text = "Resume"
 layout_mode = 2
 text = "Sound Settings
 "
+
+[node name="Controls" type="Button" parent="PanelContainer/StartMenu"]
+layout_mode = 2
+text = "Controls"
 
 [node name="Quit" type="Button" parent="PanelContainer/StartMenu"]
 layout_mode = 2
@@ -143,9 +165,62 @@ bus_name = "Sfx"
 layout_mode = 2
 text = "Confirm"
 
+[node name="ControlsMenu" type="ScrollContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ControlsMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Fwd_Keybind" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "forward"
+
+[node name="Back_Keybind2" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "back"
+
+[node name="Left_Keybind3" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "left"
+
+[node name="Right_Keybind" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "right"
+
+[node name="Jump_Keybind" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "jump"
+
+[node name="Crouch_Keybind2" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "crouch"
+
+[node name="Int_Keybind" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "interact"
+
+[node name="Rel_Keybind" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "reload"
+
+[node name="Sht_Keybind3" parent="PanelContainer/ControlsMenu/VBoxContainer" instance=ExtResource("5_8an3f")]
+layout_mode = 2
+action_name = "shoot"
+
+[node name="ReturnControls" type="Button" parent="PanelContainer/ControlsMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Return to pause menu"
+
 [connection signal="pressed" from="PanelContainer/StartMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/StartMenu/Sound Settings" to="." method="_on_sound_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/StartMenu/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="PanelContainer/StartMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PanelContainer/QuitMenu/Quit_Real" to="." method="_on_quit_real_pressed"]
 [connection signal="pressed" from="PanelContainer/QuitMenu/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="PanelContainer/SoundMenu/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="PanelContainer/ControlsMenu/VBoxContainer/ReturnControls" to="." method="_on_return_controls_pressed"]
