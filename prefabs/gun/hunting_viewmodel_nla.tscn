@@ -1,9 +1,8 @@
-[gd_scene load_steps=145 format=4 uid="uid://cktu24rsmgrsu"]
+[gd_scene load_steps=144 format=4 uid="uid://cktu24rsmgrsu"]
 
 [ext_resource type="Script" uid="uid://cj7fnu3u5qmgh" path="res://scripts/gun/gun_anims.gd" id="1_3daxm"]
 [ext_resource type="Texture2D" uid="uid://d3gphxe0tetur" path="res://assets/models/ViewModel/HuntingViewmodelNLA_leatherskibidi.png" id="1_cx5ly"]
 [ext_resource type="Texture2D" uid="uid://cnexd2d65abyb" path="res://assets/models/ViewModel/HuntingViewmodelNLA_winterskibidi.png" id="2_3daxm"]
-[ext_resource type="Texture2D" uid="uid://byjur546pncum" path="res://assets/models/HuntingViewmodelNLA_textured-concrete-wall(1).jpg" id="4_j5g8j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1i8l"]
 resource_name = "Glove"
@@ -27,7 +26,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_s5tya"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3daxm"]
 resource_name = "HuntingViewmodelNLA_Cube_034"
 _surfaces = [{
 "aabb": AABB(-0.0271874, -0.0271926, -0.0162154, 0.0543747, 0.0543852, 0.0324308),
@@ -59,7 +58,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_n1scj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_j5g8j"]
 resource_name = "HuntingViewmodelNLA_Cube_033"
 _surfaces = [{
 "aabb": AABB(-0.042418, -0.0369216, -0.0162154, 0.084836, 0.0738432, 0.0324308),
@@ -91,7 +90,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_msufk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_iloyv"]
 resource_name = "HuntingViewmodelNLA_Cube_032"
 _surfaces = [{
 "aabb": AABB(-0.0417454, -0.036492, -0.0162154, 0.0834908, 0.0729839, 0.0324308),
@@ -123,7 +122,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wqjxl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_pvx6x"]
 resource_name = "HuntingViewmodelNLA_Cube_037"
 _surfaces = [{
 "aabb": AABB(-0.030713, -0.0294447, -0.0187323, 0.0614259, 0.0588894, 0.0374647),
@@ -155,7 +154,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xsuke"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_si4hr"]
 resource_name = "HuntingViewmodelNLA_Cube_036"
 _surfaces = [{
 "aabb": AABB(-0.0432396, -0.0374465, -0.0187323, 0.0864792, 0.0748929, 0.0374647),
@@ -187,7 +186,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_d6ylh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lm23p"]
 resource_name = "HuntingViewmodelNLA_Cube_035"
 _surfaces = [{
 "aabb": AABB(-0.050074, -0.0418121, -0.0187323, 0.100148, 0.0836243, 0.0374647),
@@ -219,7 +218,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_kqruo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_aqnyk"]
 resource_name = "HuntingViewmodelNLA_Cube_039"
 _surfaces = [{
 "aabb": AABB(-0.0287019, -0.02816, -0.016557, 0.0574038, 0.0563201, 0.0331139),
@@ -251,7 +250,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4a02r"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xpbr6"]
 resource_name = "HuntingViewmodelNLA_Cube_038"
 _surfaces = [{
 "aabb": AABB(-0.0430954, -0.0373543, -0.016557, 0.0861907, 0.0747086, 0.0331139),
@@ -283,7 +282,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bvq1o"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_34vh3"]
 resource_name = "HuntingViewmodelNLA_Cube_040"
 _surfaces = [{
 "aabb": AABB(-0.0448177, -0.0384545, -0.016557, 0.0896354, 0.076909, 0.0331139),
@@ -315,7 +314,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xexer"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2rk0g"]
 resource_name = "HuntingViewmodelNLA_Cube_043"
 _surfaces = [{
 "aabb": AABB(-0.0262887, -0.0266186, -0.0126151, 0.0525774, 0.0532372, 0.0252303),
@@ -347,7 +346,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2svox"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nc883"]
 resource_name = "HuntingViewmodelNLA_Cube_042"
 _surfaces = [{
 "aabb": AABB(-0.037872, -0.0340178, -0.0126151, 0.075744, 0.0680354, 0.0252303),
@@ -379,7 +378,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2igas"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wgv8p"]
 resource_name = "HuntingViewmodelNLA_Cube_041"
 _surfaces = [{
 "aabb": AABB(-0.0352145, -0.0360236, -0.0126151, 0.0762266, 0.0683437, 0.0252303),
@@ -411,7 +410,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xkde2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_rbnh5"]
 resource_name = "HuntingViewmodelNLA_Cube_031"
 _surfaces = [{
 "aabb": AABB(-0.0315552, -0.0299827, -0.0248277, 0.0631103, 0.0599653, 0.0496555),
@@ -443,7 +442,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_f2b4t"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_a44fb"]
 resource_name = "HuntingViewmodelNLA_Cube_030"
 _surfaces = [{
 "aabb": AABB(-0.0436344, -0.0376987, -0.0394625, 0.0872688, 0.0753974, 0.078925),
@@ -475,7 +474,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cx44d"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ttd4k"]
 resource_name = "HuntingViewmodelNLA_Cube_026"
 _surfaces = [{
 "aabb": AABB(-0.0855922, -0.0655026, -0.0825721, 0.171184, 0.131005, 0.165144),
@@ -512,7 +511,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_kpgs6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3xfxx"]
 resource_name = "HuntingViewmodelNLA_Cube_025"
 _surfaces = [{
 "aabb": AABB(-0.259513, -0.2104, -0.0825721, 0.519025, 0.420801, 0.165144),
@@ -530,9 +529,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nl3dm")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iloyv"]
-albedo_texture = ExtResource("4_j5g8j")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_78f3y"]
 _surfaces = [{
 "aabb": AABB(-0.29357, -0.240555, -0.103653, 0.587139, 0.48111, 0.207306),
@@ -547,7 +543,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_80rwc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_scaou"]
 resource_name = "HuntingViewmodelNLA_Cube_024"
 _surfaces = [{
 "aabb": AABB(-0.29357, -0.240555, -0.103653, 0.587139, 0.48111, 0.207306),
@@ -565,9 +561,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_78f3y")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvx6x"]
-albedo_texture = ExtResource("4_j5g8j")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_r4mog"]
 _surfaces = [{
 "aabb": AABB(-0.0271906, -0.0271958, -0.0162154, 0.0543811, 0.0543916, 0.0324308),
@@ -582,7 +575,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ygcl0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_s253v"]
 resource_name = "HuntingViewmodelNLA_Cube_021"
 _surfaces = [{
 "aabb": AABB(-0.0271906, -0.0271958, -0.0162154, 0.0543811, 0.0543916, 0.0324308),
@@ -614,7 +607,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_tvxne"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ewcj5"]
 resource_name = "HuntingViewmodelNLA_Cube_020"
 _surfaces = [{
 "aabb": AABB(-0.042416, -0.0369329, -0.0162154, 0.084832, 0.0738657, 0.0324308),
@@ -646,7 +639,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vdwu5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_dh1c6"]
 resource_name = "HuntingViewmodelNLA_Cube_013"
 _surfaces = [{
 "aabb": AABB(-0.0417436, -0.0365029, -0.0162154, 0.0834873, 0.0730057, 0.0324308),
@@ -678,7 +671,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4nw1u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xwxob"]
 resource_name = "HuntingViewmodelNLA_Cube_019"
 _surfaces = [{
 "aabb": AABB(-0.030715, -0.0294498, -0.0187323, 0.0614299, 0.0588995, 0.0374647),
@@ -710,7 +703,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jduq1"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_c11qp"]
 resource_name = "HuntingViewmodelNLA_Cube_018"
 _surfaces = [{
 "aabb": AABB(-0.0432373, -0.0374582, -0.0187323, 0.0864746, 0.0749163, 0.0374647),
@@ -742,7 +735,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1fv0s"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_srph4"]
 resource_name = "HuntingViewmodelNLA_Cube_012"
 _surfaces = [{
 "aabb": AABB(-0.0500694, -0.0418275, -0.0187323, 0.100139, 0.083655, 0.0374647),
@@ -774,7 +767,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_50xsr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3tlq5"]
 resource_name = "HuntingViewmodelNLA_Cube_017"
 _surfaces = [{
 "aabb": AABB(-0.0287045, -0.0281641, -0.016557, 0.0574091, 0.0563281, 0.0331139),
@@ -806,7 +799,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qalca"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ghr1q"]
 resource_name = "HuntingViewmodelNLA_Cube_016"
 _surfaces = [{
 "aabb": AABB(-0.0430931, -0.0373659, -0.016557, 0.0861863, 0.0747318, 0.0331139),
@@ -838,7 +831,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qlwvo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jfsiw"]
 resource_name = "HuntingViewmodelNLA_Cube_011"
 _surfaces = [{
 "aabb": AABB(-0.0448149, -0.038467, -0.016557, 0.0896298, 0.0769341, 0.0331139),
@@ -870,7 +863,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2v82l"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qopwi"]
 resource_name = "HuntingViewmodelNLA_Cube_015"
 _surfaces = [{
 "aabb": AABB(-0.0262922, -0.0266213, -0.0126151, 0.0525844, 0.0532426, 0.0252303),
@@ -902,7 +895,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vi8cs"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2wyvk"]
 resource_name = "HuntingViewmodelNLA_Cube_014"
 _surfaces = [{
 "aabb": AABB(-0.0378716, -0.0340266, -0.0126151, 0.0757431, 0.0680532, 0.0252303),
@@ -934,7 +927,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_q67bi"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hpk8f"]
 resource_name = "HuntingViewmodelNLA_Cube_010"
 _surfaces = [{
 "aabb": AABB(-0.0410107, -0.0360341, -0.0126151, 0.0762256, 0.0683617, 0.0252303),
@@ -966,7 +959,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_feo8i"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kx8v7"]
 resource_name = "HuntingViewmodelNLA_Cube_023"
 _surfaces = [{
 "aabb": AABB(-0.0315569, -0.0299881, -0.0248277, 0.0631137, 0.0599763, 0.0496555),
@@ -998,7 +991,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vqgyk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_waekc"]
 resource_name = "HuntingViewmodelNLA_Cube_022"
 _surfaces = [{
 "aabb": AABB(-0.043632, -0.0377107, -0.0394625, 0.087264, 0.0754212, 0.0789249),
@@ -1030,7 +1023,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qqk1h"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jnkla"]
 resource_name = "HuntingViewmodelNLA_Cube_009"
 _surfaces = [{
 "aabb": AABB(-0.0855767, -0.0655357, -0.0825721, 0.171154, 0.131071, 0.165144),
@@ -1062,7 +1055,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_kk16i"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hi2m2"]
 resource_name = "HuntingViewmodelNLA_Cube_008"
 _surfaces = [{
 "aabb": AABB(-0.259481, -0.210487, -0.0825721, 0.518962, 0.420974, 0.165144),
@@ -1080,9 +1073,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u6qdb")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si4hr"]
-albedo_texture = ExtResource("4_j5g8j")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_qaklf"]
 _surfaces = [{
 "aabb": AABB(-0.293537, -0.24065, -0.103653, 0.587074, 0.481301, 0.207306),
@@ -1097,7 +1087,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ffd1y"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kimep"]
 resource_name = "HuntingViewmodelNLA_Cube_007"
 _surfaces = [{
 "aabb": AABB(-0.293537, -0.24065, -0.103653, 0.587074, 0.481301, 0.207306),
@@ -1114,9 +1104,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qaklf")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lm23p"]
-albedo_texture = ExtResource("4_j5g8j")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp2h1"]
 resource_name = "Blue"
@@ -1154,7 +1141,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xbjd3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ch6ma"]
 resource_name = "HuntingViewmodelNLA_Cube_054"
 _surfaces = [{
 "aabb": AABB(-0.0108568, -0.0143658, -0.0120186, 0.0218183, 0.0302874, 0.0503497),
@@ -1205,7 +1192,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_271l0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_augj4"]
 resource_name = "HuntingViewmodelNLA_Cube_052"
 _surfaces = [{
 "aabb": AABB(-0.00564205, -0.000490963, -0.0378241, 0.0113888, 0.0616971, 0.0377453),
@@ -1238,7 +1225,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j0aus"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fl1ft"]
 resource_name = "HuntingViewmodelNLA_Cube_051"
 _surfaces = [{
 "aabb": AABB(-0.00697083, -0.0276309, -0.101242, 0.0140463, 0.0368859, 0.105732),
@@ -1272,7 +1259,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_105dy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vcc3k"]
 resource_name = "HuntingViewmodelNLA_Cube_050"
 _surfaces = [{
 "aabb": AABB(-0.00418197, -0.0543687, -0.00912298, 0.00846863, 0.0492521, 0.0128032),
@@ -1339,7 +1326,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ngoph"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kjgrw"]
 resource_name = "HuntingViewmodelNLA_Cube_048"
 _surfaces = [{
 "aabb": AABB(-0.0196377, -0.0157416, 0.0718248, 0.03938, 0.0653816, 0.52704),
@@ -1408,7 +1395,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6oony"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6kuqg"]
 resource_name = "HuntingViewmodelNLA_Cube_044"
 _surfaces = [{
 "aabb": AABB(-0.0196377, -0.219482, -0.49602, 0.03938, 0.364918, 1.04574),
@@ -1443,6 +1430,7 @@ shadow_mesh = SubResource("ArrayMesh_s4vwq")
 [sub_resource type="Animation" id="Animation_lrxmo"]
 resource_name = "CrouchedIdleCocked"
 length = 2.5
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -1895,6 +1883,7 @@ tracks/63/keys = PackedFloat32Array(0, 1, 0.000588799, -2.84631e-14, 5.61527e-10
 [sub_resource type="Animation" id="Animation_437kb"]
 resource_name = "CrouchedIdleUncocked"
 length = 2.5
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -2795,10 +2784,25 @@ tracks/63/path = NodePath("HunterRig/Skeleton3D:Foregrip")
 tracks/63/interp = 0
 tracks/63/loop_wrap = true
 tracks/63/keys = PackedFloat32Array(0, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.0333333, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.0666667, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.1, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.133333, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.166667, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.2, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.233333, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.266667, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.3, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.333333, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.366667, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.4, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.433333, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.466667, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.5, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.533333, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1, 0.541667, 1, 0.000588799, -2.84631e-14, 5.61527e-10, 1)
+tracks/64/type = "method"
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/path = NodePath(".")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/keys = {
+"times": PackedFloat32Array(0.533333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_shot_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7c8kj"]
 resource_name = "IdleCocked"
 length = 2.5
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -3251,6 +3255,7 @@ tracks/63/keys = PackedFloat32Array(0, 1, 0.000588799, -2.84631e-14, 5.61527e-10
 [sub_resource type="Animation" id="Animation_a5e7o"]
 resource_name = "IdleUncocked"
 length = 2.5
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -4169,6 +4174,7 @@ tracks/64/keys = {
 [sub_resource type="Animation" id="Animation_fx4c7"]
 resource_name = "WalkCocked"
 length = 1.66667
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -4621,6 +4627,7 @@ tracks/63/keys = PackedFloat32Array(0, 1, 0.000588799, -2.84631e-14, 5.61527e-10
 [sub_resource type="Animation" id="Animation_raqes"]
 resource_name = "WalkUncocked"
 length = 1.66667
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -5567,28 +5574,29 @@ advance_mode = 2
 advance_condition = &"crouch"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ukoyj"]
+xfade_time = 0.2
 advance_mode = 2
 advance_condition = &"reload"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3xs87"]
-xfade_time = 0.2
 break_loop_at_end = true
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"crouch"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g4hpb"]
-xfade_time = 0.2
 break_loop_at_end = true
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sdnjy"]
+xfade_time = 0.2
 advance_mode = 2
-advance_condition = &"crouch"
+advance_condition = &"crouch_idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n3rfu"]
+xfade_time = 0.2
 advance_mode = 2
 advance_condition = &"idle"
 
@@ -5609,8 +5617,9 @@ advance_mode = 2
 advance_condition = &"walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j5g8j"]
+xfade_time = 0.2
 advance_mode = 2
-advance_condition = &"crouch"
+advance_condition = &"crouch_walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iloyv"]
 xfade_time = 0.2
@@ -5618,6 +5627,7 @@ advance_mode = 2
 advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pvx6x"]
+xfade_time = 0.2
 advance_mode = 2
 advance_condition = &"walk"
 
@@ -5626,13 +5636,14 @@ advance_mode = 2
 advance_condition = &"shoot"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xpbr6"]
+xfade_time = 0.2
 advance_mode = 2
 advance_condition = &"shoot"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_34vh3"]
 xfade_time = 0.2
 advance_mode = 2
-advance_condition = &"walk"
+advance_condition = &"crouch_walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2rk0g"]
 xfade_time = 0.2
@@ -5640,6 +5651,7 @@ advance_mode = 2
 advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nc883"]
+xfade_time = 0.2
 advance_mode = 2
 advance_condition = &"crouch"
 
@@ -5659,30 +5671,51 @@ advance_mode = 2
 advance_condition = &"reload"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ttd4k"]
-xfade_time = 0.2
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"walk"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3xfxx"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"crouch_walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_scaou"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"reload"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s253v"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ewcj5"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"crouch_idle"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cx5ly"]
 states/CrouchedIdleCocked/node = SubResource("AnimationNodeAnimation_un3le")
-states/CrouchedIdleCocked/position = Vector2(357, 149)
+states/CrouchedIdleCocked/position = Vector2(624, 221)
 states/CrouchedIdleUncocked/node = SubResource("AnimationNodeAnimation_3daxm")
-states/CrouchedIdleUncocked/position = Vector2(878, 191)
+states/CrouchedIdleUncocked/position = Vector2(1041, 196)
 states/Fire/node = SubResource("AnimationNodeAnimation_j5g8j")
-states/Fire/position = Vector2(531, 35)
+states/Fire/position = Vector2(534, 40)
 states/IdleCocked/node = SubResource("AnimationNodeAnimation_sy8x4")
 states/IdleCocked/position = Vector2(318, 65)
 states/IdleUncocked/node = SubResource("AnimationNodeAnimation_jrk71")
-states/IdleUncocked/position = Vector2(726, 65)
+states/IdleUncocked/position = Vector2(991, 40)
 states/Reload/node = SubResource("AnimationNodeAnimation_ok7uy")
-states/Reload/position = Vector2(641, 164)
+states/Reload/position = Vector2(745, 112)
 states/Start/position = Vector2(93, 100)
 states/WalkCocked/node = SubResource("AnimationNodeAnimation_iloyv")
 states/WalkCocked/position = Vector2(168, 204)
 states/WalkUncocked/node = SubResource("AnimationNodeAnimation_pvx6x")
-states/WalkUncocked/position = Vector2(1198, 56)
-transitions = ["Start", "IdleCocked", SubResource("AnimationNodeStateMachineTransition_2lw83"), "Start", "CrouchedIdleCocked", SubResource("AnimationNodeStateMachineTransition_8k37y"), "IdleUncocked", "Reload", SubResource("AnimationNodeStateMachineTransition_ukoyj"), "Reload", "CrouchedIdleCocked", SubResource("AnimationNodeStateMachineTransition_3xs87"), "Reload", "IdleCocked", SubResource("AnimationNodeStateMachineTransition_g4hpb"), "IdleCocked", "CrouchedIdleCocked", SubResource("AnimationNodeStateMachineTransition_sdnjy"), "CrouchedIdleCocked", "IdleCocked", SubResource("AnimationNodeStateMachineTransition_n3rfu"), "IdleCocked", "Fire", SubResource("AnimationNodeStateMachineTransition_si4hr"), "Fire", "IdleUncocked", SubResource("AnimationNodeStateMachineTransition_lm23p"), "IdleCocked", "WalkCocked", SubResource("AnimationNodeStateMachineTransition_3daxm"), "WalkCocked", "CrouchedIdleCocked", SubResource("AnimationNodeStateMachineTransition_j5g8j"), "WalkCocked", "IdleCocked", SubResource("AnimationNodeStateMachineTransition_iloyv"), "CrouchedIdleCocked", "WalkCocked", SubResource("AnimationNodeStateMachineTransition_pvx6x"), "WalkCocked", "Fire", SubResource("AnimationNodeStateMachineTransition_aqnyk"), "CrouchedIdleCocked", "Fire", SubResource("AnimationNodeStateMachineTransition_xpbr6"), "IdleUncocked", "WalkUncocked", SubResource("AnimationNodeStateMachineTransition_34vh3"), "WalkUncocked", "IdleUncocked", SubResource("AnimationNodeStateMachineTransition_2rk0g"), "WalkUncocked", "CrouchedIdleUncocked", SubResource("AnimationNodeStateMachineTransition_nc883"), "CrouchedIdleUncocked", "WalkUncocked", SubResource("AnimationNodeStateMachineTransition_wgv8p"), "WalkUncocked", "Reload", SubResource("AnimationNodeStateMachineTransition_rbnh5"), "CrouchedIdleUncocked", "Reload", SubResource("AnimationNodeStateMachineTransition_a44fb"), "Reload", "WalkCocked", SubResource("AnimationNodeStateMachineTransition_ttd4k")]
+states/WalkUncocked/position = Vector2(1475, 165)
+transitions = ["Start", "IdleCocked", SubResource("AnimationNodeStateMachineTransition_2lw83"), "Start", "CrouchedIdleCocked", SubResource("AnimationNodeStateMachineTransition_8k37y"), "IdleUncocked", "Reload", SubResource("AnimationNodeStateMachineTransition_ukoyj"), "Reload", "CrouchedIdleCocked", SubResource("AnimationNodeStateMachineTransition_3xs87"), "Reload", "IdleCocked", SubResource("AnimationNodeStateMachineTransition_g4hpb"), "IdleCocked", "CrouchedIdleCocked", SubResource("AnimationNodeStateMachineTransition_sdnjy"), "CrouchedIdleCocked", "IdleCocked", SubResource("AnimationNodeStateMachineTransition_n3rfu"), "IdleCocked", "Fire", SubResource("AnimationNodeStateMachineTransition_si4hr"), "Fire", "IdleUncocked", SubResource("AnimationNodeStateMachineTransition_lm23p"), "IdleCocked", "WalkCocked", SubResource("AnimationNodeStateMachineTransition_3daxm"), "WalkCocked", "CrouchedIdleCocked", SubResource("AnimationNodeStateMachineTransition_j5g8j"), "WalkCocked", "IdleCocked", SubResource("AnimationNodeStateMachineTransition_iloyv"), "CrouchedIdleCocked", "WalkCocked", SubResource("AnimationNodeStateMachineTransition_pvx6x"), "WalkCocked", "Fire", SubResource("AnimationNodeStateMachineTransition_aqnyk"), "CrouchedIdleCocked", "Fire", SubResource("AnimationNodeStateMachineTransition_xpbr6"), "IdleUncocked", "WalkUncocked", SubResource("AnimationNodeStateMachineTransition_34vh3"), "WalkUncocked", "IdleUncocked", SubResource("AnimationNodeStateMachineTransition_2rk0g"), "WalkUncocked", "CrouchedIdleUncocked", SubResource("AnimationNodeStateMachineTransition_nc883"), "CrouchedIdleUncocked", "WalkUncocked", SubResource("AnimationNodeStateMachineTransition_wgv8p"), "WalkUncocked", "Reload", SubResource("AnimationNodeStateMachineTransition_rbnh5"), "CrouchedIdleUncocked", "Reload", SubResource("AnimationNodeStateMachineTransition_a44fb"), "Reload", "WalkCocked", SubResource("AnimationNodeStateMachineTransition_ttd4k"), "Fire", "WalkUncocked", SubResource("AnimationNodeStateMachineTransition_3xfxx"), "Fire", "Reload", SubResource("AnimationNodeStateMachineTransition_scaou"), "CrouchedIdleUncocked", "IdleUncocked", SubResource("AnimationNodeStateMachineTransition_s253v"), "IdleUncocked", "CrouchedIdleUncocked", SubResource("AnimationNodeStateMachineTransition_ewcj5")]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3daxm"]
 particle_flag_damping_as_friction = true
@@ -5751,21 +5784,21 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(-0.538313, 0.842571, 0.0170849, -0.842744, -0.538215, -0.0102971, 0.000519322, -0.0199413, 0.999801, 0.290289, -0.00539994, -3.07336e-08)
 bones/1/enabled = true
 bones/1/position = Vector3(0.29029, -0.174772, -3.03335e-08)
-bones/1/rotation = Quaternion(-0.40922, 0.474422, 0.724616, -0.287043)
+bones/1/rotation = Quaternion(-0.414533, 0.468843, 0.724098, -0.289882)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "LowerArm_L"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 2.34623e-05, 3.13522e-06, -2.33017e-05, 0.999032, -0.043983, -4.16413e-06, 0.043983, 0.999032, 1.20905e-07, 0.561012, 9.31323e-10)
 bones/2/enabled = true
 bones/2/position = Vector3(1.20905e-07, 0.561012, 9.31323e-10)
-bones/2/rotation = Quaternion(0.584645, 1.46777e-06, -0.000311068, 0.811289)
+bones/2/rotation = Quaternion(0.583055, 1.47413e-06, -0.000310233, 0.812433)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Hand_L"
 bones/3/parent = 2
 bones/3/rest = Transform3D(0.999977, -0.00684462, -3.50489e-06, 0.00684272, 0.999687, 0.0240489, -0.000161102, -0.0240484, 0.999711, 1.19253e-07, 0.465125, -1.65407e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(1.19253e-07, 0.465125, -1.65407e-09)
-bones/3/rotation = Quaternion(-0.0256752, -0.954148, -0.248043, 0.165583)
+bones/3/rotation = Quaternion(-0.0177121, -0.952922, -0.251937, 0.167791)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Pointer_1_L"
 bones/4/parent = 3
@@ -6037,7 +6070,7 @@ bones/42/name = "Hand_Ctrl_L"
 bones/42/parent = 0
 bones/42/rest = Transform3D(-0.532553, 0.846397, 0.000276613, -0.846397, -0.532553, 0.000439305, 0.000519138, -1.71001e-07, 1, 1.15485, -0.55766, 1.03114e-08)
 bones/42/enabled = true
-bones/42/position = Vector3(-0.0720285, -0.247936, 0.747975)
+bones/42/position = Vector3(-0.0720285, -0.260168, 0.747975)
 bones/42/rotation = Quaternion(0.0128771, -0.00442346, 0.547587, 0.836638)
 bones/42/scale = Vector3(1, 1, 1)
 bones/43/name = "UpperArm_R"
@@ -6045,21 +6078,21 @@ bones/43/parent = 0
 bones/43/rest = Transform3D(-0.538313, -0.842571, -0.0170849, 0.842744, -0.538215, -0.0102971, -0.000519322, -0.0199413, 0.999801, -0.290289, -0.00539994, -3.07336e-08)
 bones/43/enabled = true
 bones/43/position = Vector3(-0.29029, -0.112811, -0.680874)
-bones/43/rotation = Quaternion(0.169787, 0.484623, 0.846651, 0.139625)
+bones/43/rotation = Quaternion(0.171701, 0.479631, 0.849105, 0.139618)
 bones/43/scale = Vector3(1, 1, 1)
 bones/44/name = "LowerArm_R"
 bones/44/parent = 43
 bones/44/rest = Transform3D(1, -2.34623e-05, -3.13522e-06, 2.33017e-05, 0.999032, -0.043983, 4.16413e-06, 0.043983, 0.999032, -1.20905e-07, 0.561012, 9.31323e-10)
 bones/44/enabled = true
 bones/44/position = Vector3(-1.20905e-07, 0.561012, 9.31323e-10)
-bones/44/rotation = Quaternion(0.493776, -1.5679e-06, 0.000262728, 0.869589)
+bones/44/rotation = Quaternion(0.491636, -1.57714e-06, 0.000261607, 0.870801)
 bones/44/scale = Vector3(1, 1, 1)
 bones/45/name = "Hand_R"
 bones/45/parent = 44
 bones/45/rest = Transform3D(0.999977, 0.00684462, 3.50489e-06, -0.00684272, 0.999687, 0.0240489, 0.000161102, -0.0240484, 0.999711, -1.19253e-07, 0.465125, -1.65407e-09)
 bones/45/enabled = true
 bones/45/position = Vector3(-1.19253e-07, 0.465125, -1.65407e-09)
-bones/45/rotation = Quaternion(-0.429609, 0.203403, -0.084712, 0.875721)
+bones/45/rotation = Quaternion(-0.422308, 0.204466, -0.0859038, 0.878903)
 bones/45/scale = Vector3(1, 1, 1)
 bones/46/name = "Pointer_1_R"
 bones/46/parent = 45
@@ -6331,7 +6364,7 @@ bones/84/name = "Hand_Ctrl_R"
 bones/84/parent = 0
 bones/84/rest = Transform3D(-0.532553, -0.846397, -0.000276613, 0.846397, -0.532553, 0.000439305, -0.000519138, -1.71001e-07, 1, -1.15485, -0.55766, 1.03114e-08)
 bones/84/enabled = true
-bones/84/position = Vector3(-0.17865, -0.196757, 0.201677)
+bones/84/position = Vector3(-0.17865, -0.208988, 0.201677)
 bones/84/rotation = Quaternion(0.0015378, 0.54756, 0.83676, -0.00282428)
 bones/84/scale = Vector3(1, 1, 1)
 bones/85/name = "GunRig"
@@ -6434,367 +6467,363 @@ bones/98/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
 bones/98/scale = Vector3(1, 1, 1)
 
 [node name="Pointer_3_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.986542, -0.163274, 0.00876871, 0.163429, 0.986317, -0.0216621, -0.00511185, 0.0228036, 0.999727, -0.161729, -0.0686686, 0.813135)
+transform = Transform3D(0.986542, -0.163274, 0.0087682, 0.16343, 0.986317, -0.0216607, -0.00511162, 0.0228022, 0.999727, -0.161729, -0.0809008, 0.813133)
 bone_name = "Pointer_3_L_2"
 bone_idx = 7
 
 [node name="Pointer_3_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pointer_3_L_2"]
-mesh = SubResource("ArrayMesh_s5tya")
+mesh = SubResource("ArrayMesh_3daxm")
 skeleton = NodePath("")
 
 [node name="Pointer_2_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.356288, -0.934335, 0.00876658, 0.934219, 0.356041, -0.021662, 0.0171183, 0.0159078, 0.999727, -0.210143, -0.0834169, 0.81324)
+transform = Transform3D(0.356287, -0.934335, 0.00876607, 0.93422, 0.35604, -0.0216605, 0.0171172, 0.0159069, 0.999727, -0.210143, -0.0956491, 0.813238)
 bone_name = "Pointer_2_L_2"
 bone_idx = 8
 
 [node name="Pointer_2_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pointer_2_L_2"]
-mesh = SubResource("ArrayMesh_n1scj")
+mesh = SubResource("ArrayMesh_j5g8j")
 skeleton = NodePath("")
 
 [node name="Pointer_1_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.627321, -0.77873, 0.006909, 0.778375, -0.627265, -0.0259161, 0.0245154, -0.01088, 0.99964, -0.236421, -0.142621, 0.812038)
+transform = Transform3D(-0.627321, -0.77873, 0.00690849, 0.778374, -0.627265, -0.0259147, 0.0245141, -0.0108795, 0.99964, -0.236421, -0.154854, 0.812037)
 bone_name = "Pointer_1_L_2"
 bone_idx = 9
 
 [node name="Pointer_1_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pointer_1_L_2"]
-mesh = SubResource("ArrayMesh_msufk")
+mesh = SubResource("ArrayMesh_iloyv")
 skeleton = NodePath("")
 
 [node name="Middle_3_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.98658, -0.163237, 0.00372303, 0.163279, 0.98623, -0.0262903, 0.000619836, 0.0265455, 0.999648, -0.158766, -0.0484355, 0.772057)
+transform = Transform3D(0.98658, -0.163238, 0.00372253, 0.163279, 0.98623, -0.0262889, 0.000620068, 0.0265441, 0.999647, -0.158766, -0.0606677, 0.772055)
 bone_name = "Middle_3_L_2"
 bone_idx = 13
 
 [node name="Middle_3_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Middle_3_L_2"]
-mesh = SubResource("ArrayMesh_wqjxl")
+mesh = SubResource("ArrayMesh_pvx6x")
 skeleton = NodePath("")
 
 [node name="Middle_2_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.356333, -0.934333, 0.00690939, 0.934106, 0.356055, -0.0259193, 0.0217572, 0.01569, 0.99964, -0.211811, -0.0621135, 0.772002)
+transform = Transform3D(0.356333, -0.934333, 0.00690888, 0.934106, 0.356054, -0.0259179, 0.0217561, 0.0156891, 0.99964, -0.211812, -0.0743458, 0.772001)
 bone_name = "Middle_2_L_2"
 bone_idx = 14
 
 [node name="Middle_2_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Middle_2_L_2"]
-mesh = SubResource("ArrayMesh_xsuke")
+mesh = SubResource("ArrayMesh_si4hr")
 skeleton = NodePath("")
 
 [node name="Middle_1_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.627321, -0.77873, 0.00690896, 0.778375, -0.627265, -0.0259161, 0.0245154, -0.01088, 0.99964, -0.237793, -0.131715, 0.770377)
+transform = Transform3D(-0.627322, -0.778729, 0.00690845, 0.778374, -0.627266, -0.0259147, 0.0245141, -0.0108796, 0.99964, -0.237793, -0.143947, 0.770376)
 bone_name = "Middle_1_L_2"
 bone_idx = 15
 
 [node name="Middle_1_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Middle_1_L_2"]
-mesh = SubResource("ArrayMesh_d6ylh")
+mesh = SubResource("ArrayMesh_lm23p")
 skeleton = NodePath("")
 
 [node name="Index_3_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.985199, -0.163965, 0.049983, 0.16471, 0.986279, -0.0111429, -0.0474701, 0.0192107, 0.998688, -0.160195, -0.0589314, 0.727037)
+transform = Transform3D(0.985199, -0.163965, 0.0499825, 0.164711, 0.986279, -0.0111415, -0.0474699, 0.0192093, 0.998688, -0.160195, -0.0711637, 0.727035)
 bone_name = "Index_3_L_2"
 bone_idx = 19
 
 [node name="Index_3_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Index_3_L_2"]
-mesh = SubResource("ArrayMesh_kqruo")
+mesh = SubResource("ArrayMesh_aqnyk")
 skeleton = NodePath("")
 
 [node name="Index_2_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.35618, -0.934348, 0.011363, 0.934357, 0.355993, -0.0157077, 0.0106313, 0.0162119, 0.999812, -0.210887, -0.0734811, 0.728109)
+transform = Transform3D(0.35618, -0.934348, 0.0113625, 0.934357, 0.355992, -0.0157063, 0.0106302, 0.016211, 0.999812, -0.210887, -0.0857134, 0.728107)
 bone_name = "Index_2_L_2"
 bone_idx = 20
 
 [node name="Index_2_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Index_2_L_2"]
-mesh = SubResource("ArrayMesh_4a02r")
+mesh = SubResource("ArrayMesh_xpbr6")
 skeleton = NodePath("")
 
 [node name="Index_1_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.627321, -0.77873, 0.00690899, 0.778375, -0.627265, -0.025916, 0.0245154, -0.0108799, 0.99964, -0.237409, -0.136793, 0.727023)
+transform = Transform3D(-0.627321, -0.77873, 0.00690848, 0.778375, -0.627265, -0.0259146, 0.0245141, -0.0108795, 0.99964, -0.237409, -0.149025, 0.727022)
 bone_name = "Index_1_L_2"
 bone_idx = 21
 
 [node name="Index_1_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Index_1_L_2"]
-mesh = SubResource("ArrayMesh_bvq1o")
+mesh = SubResource("ArrayMesh_34vh3")
 skeleton = NodePath("")
 
 [node name="Pinky_3_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.986506, -0.163368, 0.0108401, 0.163527, 0.98641, -0.0159278, -0.00809066, 0.0174856, 0.999815, -0.171279, -0.0800676, 0.690501)
+transform = Transform3D(0.986506, -0.163368, 0.0108396, 0.163528, 0.98641, -0.0159264, -0.00809043, 0.0174842, 0.999815, -0.171279, -0.0923, 0.6905)
 bone_name = "Pinky_3_L_2"
 bone_idx = 25
 
 [node name="Pinky_3_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pinky_3_L_2"]
-mesh = SubResource("ArrayMesh_xexer")
+mesh = SubResource("ArrayMesh_2rk0g")
 skeleton = NodePath("")
 
 [node name="Pinky_2_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.356186, -0.934347, 0.0112909, 0.934353, 0.355996, -0.0158738, 0.0108121, 0.0162037, 0.99981, -0.214378, -0.0920266, 0.690791)
+transform = Transform3D(0.356185, -0.934347, 0.0112904, 0.934353, 0.355996, -0.0158724, 0.010811, 0.0162028, 0.99981, -0.214378, -0.104259, 0.690789)
 bone_name = "Pinky_2_L_2"
 bone_idx = 26
 
 [node name="Pinky_2_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pinky_2_L_2"]
-mesh = SubResource("ArrayMesh_2svox")
+mesh = SubResource("ArrayMesh_nc883")
 skeleton = NodePath("")
 
 [node name="Pinky_1_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.62732, -0.778731, 0.00690897, 0.778376, -0.627264, -0.0259162, 0.0245155, -0.01088, 0.99964, -0.236417, -0.147159, 0.689822)
+transform = Transform3D(-0.627321, -0.77873, 0.00690847, 0.778375, -0.627265, -0.0259148, 0.0245142, -0.0108795, 0.99964, -0.236417, -0.159392, 0.68982)
 bone_name = "Pinky_1_L_2"
 bone_idx = 27
 
 [node name="Pinky_1_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pinky_1_L_2"]
-mesh = SubResource("ArrayMesh_2igas")
+mesh = SubResource("ArrayMesh_wgv8p")
 skeleton = NodePath("")
 
 [node name="Thumb_2_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.988776, 0.149245, 0.0069077, -0.149375, -0.988441, -0.0259162, 0.00295994, -0.0266573, 0.99964, -0.137078, -0.223511, 0.878869)
+transform = Transform3D(-0.988776, 0.149246, 0.00690717, -0.149376, -0.988441, -0.0259148, 0.00295967, -0.0266559, 0.99964, -0.137078, -0.235743, 0.878867)
 bone_name = "Thumb_2_L_2"
 bone_idx = 30
 
 [node name="Thumb_2_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Thumb_2_L_2"]
-mesh = SubResource("ArrayMesh_xkde2")
+mesh = SubResource("ArrayMesh_rbnh5")
 skeleton = NodePath("")
 
 [node name="Thumb_1_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.988776, 0.149245, 0.00690901, -0.149375, -0.988441, -0.0259153, 0.00296143, -0.0266565, 0.99964, -0.10327, -0.237672, 0.840178)
+transform = Transform3D(-0.988776, 0.149245, 0.00690854, -0.149376, -0.988441, -0.0259139, 0.00296116, -0.0266551, 0.99964, -0.10327, -0.249904, 0.840177)
 bone_name = "Thumb_1_L_2"
 bone_idx = 31
 
 [node name="Thumb_1_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Thumb_1_L_2"]
-mesh = SubResource("ArrayMesh_f2b4t")
+mesh = SubResource("ArrayMesh_a44fb")
 skeleton = NodePath("")
 
 [node name="Hand_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.988776, 0.149245, 0.00690858, -0.149375, -0.988441, -0.0259161, 0.00296085, -0.0266572, 0.99964, -0.152667, -0.213408, 0.749477)
+transform = Transform3D(-0.988776, 0.149245, 0.00690807, -0.149376, -0.988441, -0.0259147, 0.0029606, -0.0266558, 0.99964, -0.152667, -0.22564, 0.749475)
 bone_name = "Hand_L_2"
 bone_idx = 37
 
 [node name="Hand_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Hand_L_2"]
-mesh = SubResource("ArrayMesh_cx44d")
+mesh = SubResource("ArrayMesh_ttd4k")
 skeleton = NodePath("")
 
 [node name="Forearm_L" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.409244, 0.854717, -0.319341, 0.681408, 0.519055, 0.516009, 0.606798, -0.00642779, -0.794831, 0.129832, -0.321879, 0.618908)
+transform = Transform3D(-0.418997, 0.846677, -0.327994, 0.668816, 0.532105, 0.519182, 0.614106, -0.00183163, -0.789221, 0.130808, -0.329688, 0.617982)
 bone_name = "Forearm_L"
 bone_idx = 38
 
 [node name="Forearm_L" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Forearm_L"]
-mesh = SubResource("ArrayMesh_kpgs6")
+mesh = SubResource("ArrayMesh_3xfxx")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_iloyv")
 
 [node name="UpperArm_L_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.278124, 0.415989, -0.865794, 0.116112, 0.880188, 0.460204, 0.953502, -0.228523, 0.1965, 0.293221, -0.280213, 0.259857)
+transform = Transform3D(0.274399, 0.404097, -0.872589, 0.112045, 0.887802, 0.446377, 0.955066, -0.220255, 0.198335, 0.294136, -0.282324, 0.258978)
 bone_name = "UpperArm_L_2"
 bone_idx = 39
 
 [node name="UpperArm_L_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/UpperArm_L_2"]
-mesh = SubResource("ArrayMesh_80rwc")
+mesh = SubResource("ArrayMesh_scaou")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_pvx6x")
 
 [node name="Pointer_3_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.477703, 0.878511, 0.00437489, -0.351515, 0.186573, 0.917403, 0.805132, -0.439784, 0.397936, -0.0976856, -0.184433, 0.323081)
+transform = Transform3D(0.477705, 0.87851, 0.00437605, -0.351515, 0.186572, 0.917403, 0.805131, -0.439786, 0.397935, -0.0976835, -0.196665, 0.32308)
 bone_name = "Pointer_3_R_2"
 bone_idx = 49
 
 [node name="Pointer_3_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pointer_3_R_2"]
-mesh = SubResource("ArrayMesh_ygcl0")
+mesh = SubResource("ArrayMesh_s253v")
 skeleton = NodePath("")
 
 [node name="Pointer_2_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.783466, 0.621421, 0.0041362, -0.243962, -0.313687, 0.917651, 0.571545, 0.717939, 0.397367, -0.0923643, -0.202213, 0.364061)
+transform = Transform3D(-0.783465, 0.621423, 0.00413736, -0.243962, -0.313687, 0.917651, 0.571547, 0.717938, 0.397367, -0.0923622, -0.214446, 0.36406)
 bone_name = "Pointer_2_R_2"
 bone_idx = 50
 
 [node name="Pointer_2_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pointer_2_R_2"]
-mesh = SubResource("ArrayMesh_tvxne")
+mesh = SubResource("ArrayMesh_ewcj5")
 skeleton = NodePath("")
 
 [node name="Pointer_1_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.746695, -0.665166, -0.000438102, 0.26569, -0.298859, 0.916565, -0.609799, 0.684278, 0.399884, -0.140592, -0.214149, 0.391753)
+transform = Transform3D(-0.746697, -0.665165, -0.000436941, 0.26569, -0.298859, 0.916566, -0.609798, 0.68428, 0.399884, -0.14059, -0.226381, 0.391752)
 bone_name = "Pointer_1_R_2"
 bone_idx = 51
 
 [node name="Pointer_1_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pointer_1_R_2"]
-mesh = SubResource("ArrayMesh_vdwu5")
+mesh = SubResource("ArrayMesh_dh1c6")
 skeleton = NodePath("")
 
 [node name="Middle_3_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.864017, 0.503452, 0.00328954, -0.205622, 0.346906, 0.915082, 0.459559, -0.791323, 0.403254, -0.110566, -0.218921, 0.298078)
+transform = Transform3D(0.864018, 0.50345, 0.00329071, -0.205622, 0.346906, 0.915083, 0.459557, -0.791325, 0.403254, -0.110564, -0.231154, 0.298077)
 bone_name = "Middle_3_R_2"
 bone_idx = 55
 
 [node name="Middle_3_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Middle_3_R_2"]
-mesh = SubResource("ArrayMesh_4nw1u")
+mesh = SubResource("ArrayMesh_xwxob")
 skeleton = NodePath("")
 
 [node name="Middle_2_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.511378, 0.859356, -0.000128299, -0.344104, -0.20463, 0.916362, 0.787454, 0.468652, 0.400351, -0.0853819, -0.233807, 0.33196)
+transform = Transform3D(-0.511377, 0.859357, -0.000127136, -0.344104, -0.20463, 0.916362, 0.787456, 0.46865, 0.400351, -0.0853799, -0.246039, 0.331959)
 bone_name = "Middle_2_R_2"
 bone_idx = 56
 
 [node name="Middle_2_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Middle_2_R_2"]
-mesh = SubResource("ArrayMesh_jduq1")
+mesh = SubResource("ArrayMesh_c11qp")
 skeleton = NodePath("")
 
 [node name="Middle_1_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.85461, -0.51927, -6.45396e-05, 0.207809, -0.342124, 0.916388, -0.475875, 0.783141, 0.400292, -0.130288, -0.249794, 0.368547)
+transform = Transform3D(-0.854611, -0.519268, -6.33774e-05, 0.207809, -0.342124, 0.916388, -0.475873, 0.783142, 0.400292, -0.130286, -0.262026, 0.368546)
 bone_name = "Middle_1_R_2"
 bone_idx = 57
 
 [node name="Middle_1_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Middle_1_R_2"]
-mesh = SubResource("ArrayMesh_1fv0s")
+mesh = SubResource("ArrayMesh_srph4")
 skeleton = NodePath("")
 
 [node name="Index_3_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.86308, 0.50419, -0.0297594, -0.154895, 0.320314, 0.934562, 0.480729, -0.801992, 0.354553, -0.120633, -0.260126, 0.280652)
+transform = Transform3D(0.863081, 0.504188, -0.0297583, -0.154895, 0.320313, 0.934562, 0.480727, -0.801994, 0.354553, -0.120631, -0.272358, 0.28065)
 bone_name = "Index_3_R_2"
 bone_idx = 61
 
 [node name="Index_3_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Index_3_R_2"]
-mesh = SubResource("ArrayMesh_50xsr")
+mesh = SubResource("ArrayMesh_3tlq5")
 skeleton = NodePath("")
 
 [node name="Index_2_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.51135, 0.859305, 0.0108054, -0.329848, -0.207863, 0.920865, 0.79355, 0.46732, 0.389731, -0.097841, -0.273976, 0.314905)
+transform = Transform3D(-0.511348, 0.859306, 0.0108065, -0.329848, -0.207863, 0.920866, 0.793552, 0.467318, 0.38973, -0.097839, -0.286208, 0.314904)
 bone_name = "Index_2_R_2"
 bone_idx = 62
 
 [node name="Index_2_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Index_2_R_2"]
-mesh = SubResource("ArrayMesh_qalca")
+mesh = SubResource("ArrayMesh_ghr1q")
 skeleton = NodePath("")
 
 [node name="Index_1_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.854611, -0.519269, -6.45233e-05, 0.207809, -0.342125, 0.916388, -0.475873, 0.783142, 0.400292, -0.136525, -0.289442, 0.351381)
+transform = Transform3D(-0.854612, -0.519267, -6.33611e-05, 0.207809, -0.342125, 0.916388, -0.475871, 0.783143, 0.400292, -0.136523, -0.301674, 0.35138)
 bone_name = "Index_1_R_2"
 bone_idx = 63
 
 [node name="Index_1_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Index_1_R_2"]
-mesh = SubResource("ArrayMesh_qlwvo")
+mesh = SubResource("ArrayMesh_jfsiw")
 skeleton = NodePath("")
 
 [node name="Pinky_3_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.863969, 0.50342, 0.011165, -0.205422, 0.332129, 0.920593, 0.459737, -0.797658, 0.390363, -0.133295, -0.298113, 0.27781)
+transform = Transform3D(0.863971, 0.503419, 0.0111661, -0.205422, 0.332128, 0.920594, 0.459735, -0.79766, 0.390363, -0.133293, -0.310345, 0.277809)
 bone_name = "Pinky_3_R_2"
 bone_idx = 67
 
 [node name="Pinky_3_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pinky_3_R_2"]
-mesh = SubResource("ArrayMesh_2v82l")
+mesh = SubResource("ArrayMesh_qopwi")
 skeleton = NodePath("")
 
 [node name="Pinky_2_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.511351, 0.859306, 0.0106276, -0.33008, -0.20781, 0.920794, 0.793453, 0.467341, 0.389904, -0.113539, -0.310357, 0.30616)
+transform = Transform3D(-0.511349, 0.859307, 0.0106287, -0.33008, -0.20781, 0.920794, 0.793454, 0.467339, 0.389904, -0.113537, -0.322589, 0.306159)
 bone_name = "Pinky_2_R_2"
 bone_idx = 68
 
 [node name="Pinky_2_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pinky_2_R_2"]
-mesh = SubResource("ArrayMesh_vi8cs")
+mesh = SubResource("ArrayMesh_2wyvk")
 skeleton = NodePath("")
 
 [node name="Pinky_1_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.85461, -0.519271, -6.46131e-05, 0.207809, -0.342124, 0.916388, -0.475875, 0.78314, 0.400292, -0.147917, -0.323374, 0.336843)
+transform = Transform3D(-0.854611, -0.519269, -6.34508e-05, 0.207809, -0.342124, 0.916388, -0.475873, 0.783142, 0.400292, -0.147915, -0.335606, 0.336842)
 bone_name = "Pinky_1_R_2"
 bone_idx = 69
 
 [node name="Pinky_1_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Pinky_1_R_2"]
-mesh = SubResource("ArrayMesh_q67bi")
+mesh = SubResource("ArrayMesh_hpk8f")
 skeleton = NodePath("")
 
 [node name="Thumb_2_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.567591, -0.475384, -0.672198, 0.77421, -0.0304473, -0.632196, 0.280069, -0.879251, 0.385329, -0.104875, -0.157975, 0.259705)
+transform = Transform3D(-0.567591, -0.475386, -0.672197, 0.77421, -0.0304474, -0.632196, 0.280071, -0.87925, 0.385331, -0.104873, -0.170207, 0.259704)
 bone_name = "Thumb_2_R_2"
 bone_idx = 72
 
 [node name="Thumb_2_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Thumb_2_R_2"]
-mesh = SubResource("ArrayMesh_feo8i")
+mesh = SubResource("ArrayMesh_kx8v7")
 skeleton = NodePath("")
 
 [node name="Thumb_1_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(-0.575062, -0.399443, 0.713967, -0.768447, 0.563163, -0.30387, -0.280701, -0.72339, -0.630804, -0.142326, -0.143931, 0.253015)
+transform = Transform3D(-0.575063, -0.399445, 0.713966, -0.768447, 0.563163, -0.30387, -0.280699, -0.723389, -0.630806, -0.142325, -0.156163, 0.253014)
 bone_name = "Thumb_1_R_2"
 bone_idx = 73
 
 [node name="Thumb_1_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Thumb_1_R_2"]
-mesh = SubResource("ArrayMesh_vqgyk")
+mesh = SubResource("ArrayMesh_waekc")
 skeleton = NodePath("")
 
 [node name="Hand_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.527116, -0.849793, -1.74128e-06, 0.340213, 0.211028, 0.916363, -0.778719, -0.48303, 0.400348, -0.178523, -0.232036, 0.282461)
+transform = Transform3D(0.527114, -0.849795, -5.78817e-07, 0.340213, 0.211028, 0.916364, -0.778721, -0.483028, 0.400347, -0.178521, -0.244268, 0.28246)
 bone_name = "Hand_R_2"
 bone_idx = 79
 
 [node name="Hand_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Hand_R_2"]
-mesh = SubResource("ArrayMesh_qqk1h")
+mesh = SubResource("ArrayMesh_jnkla")
 skeleton = NodePath("")
 
 [node name="Forearm_R" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.21665, -0.933449, 0.285895, -0.546463, 0.126718, 0.827841, -0.808975, -0.335583, -0.482642, -0.25877, -0.294975, -0.0142141)
+transform = Transform3D(0.215474, -0.932654, 0.289356, -0.534389, 0.135388, 0.834325, -0.817312, -0.334404, -0.469228, -0.25891, -0.303491, -0.0158153)
 bone_name = "Forearm_R"
 bone_idx = 80
 
 [node name="Forearm_R" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Forearm_R"]
-mesh = SubResource("ArrayMesh_kk16i")
+mesh = SubResource("ArrayMesh_hi2m2")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_si4hr")
 
 [node name="UpperArm_R_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(0.539736, -0.727157, 0.424179, 0.185107, 0.594056, 0.782837, -0.821231, -0.344006, 0.455235, -0.308361, -0.246326, -0.434438)
+transform = Transform3D(0.539438, -0.725801, 0.426872, 0.192895, 0.599996, 0.776399, -0.819633, -0.336478, 0.463664, -0.308495, -0.249068, -0.435953)
 bone_name = "UpperArm_R_2"
 bone_idx = 81
 
 [node name="UpperArm_R_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/UpperArm_R_2"]
-mesh = SubResource("ArrayMesh_ffd1y")
+mesh = SubResource("ArrayMesh_kimep")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_lm23p")
 
 [node name="Shell_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(1, 4.09466e-09, -2.47726e-07, -4.32709e-09, 1, 1.62804e-06, 2.47755e-07, -1.71736e-06, 1, -0.146148, -0.0930991, 0.500881)
+transform = Transform3D(1, 4.09466e-09, -2.47726e-07, -4.32709e-09, 1, 1.62804e-06, 2.47755e-07, -1.71736e-06, 1, -0.146148, -0.10533, 0.500881)
 bone_name = "Shell_2"
 bone_idx = 88
 
 [node name="Shell_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Shell_2"]
-mesh = SubResource("ArrayMesh_xbjd3")
+mesh = SubResource("ArrayMesh_ch6ma")
 skeleton = NodePath("")
 
 [node name="Hammer_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(1, 1.41161e-07, -1.82961e-07, -7.05597e-10, 0.792988, 0.609238, 2.31116e-07, -0.609238, 0.792988, -0.146148, -0.109988, 0.42001)
+transform = Transform3D(1, 1.41161e-07, -1.82961e-07, -7.05597e-10, 0.792988, 0.609238, 2.31116e-07, -0.609238, 0.792988, -0.146148, -0.122218, 0.42001)
 bone_name = "Hammer_2"
 bone_idx = 90
 
 [node name="Hammer_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Hammer_2"]
-mesh = SubResource("ArrayMesh_271l0")
+mesh = SubResource("ArrayMesh_augj4")
 skeleton = NodePath("")
 
 [node name="Break_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(1, 9.93363e-08, -2.1339e-07, -9.95739e-08, 0.999997, 2.89083e-06, 2.13421e-07, -1.37091e-06, 1, -0.146148, -0.0982747, 0.360716)
+transform = Transform3D(1, 9.93363e-08, -2.1339e-07, -9.95739e-08, 0.999997, 2.89083e-06, 2.13421e-07, -1.37091e-06, 1, -0.146148, -0.110505, 0.360716)
 bone_name = "Break_2"
 bone_idx = 92
 
 [node name="Break_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Break_2"]
-mesh = SubResource("ArrayMesh_j0aus")
+mesh = SubResource("ArrayMesh_fl1ft")
 skeleton = NodePath("")
 
 [node name="Trigger_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(1, 1.48118e-08, -2.03602e-07, -1.50444e-08, 1, 7.15256e-07, 2.03632e-07, -8.04663e-07, 1, -0.146147, -0.189814, 0.393661)
+transform = Transform3D(1, 1.48118e-08, -2.03602e-07, -1.50444e-08, 1, 7.15256e-07, 2.03632e-07, -8.04663e-07, 1, -0.146147, -0.202045, 0.393661)
 bone_name = "Trigger_2"
 bone_idx = 94
 
 [node name="Trigger_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Trigger_2"]
-mesh = SubResource("ArrayMesh_105dy")
+mesh = SubResource("ArrayMesh_vcc3k")
 skeleton = NodePath("")
 
 [node name="Foregrip_2" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(1, -4.26528e-08, -3.70896e-07, 4.24208e-08, 1, 1.74902e-06, 3.70925e-07, -1.83843e-06, 1, -0.146149, -0.163419, 0.611642)
+transform = Transform3D(1, -4.26528e-08, -3.70896e-07, 4.24208e-08, 1, 1.74902e-06, 3.70925e-07, -1.83843e-06, 1, -0.146149, -0.175649, 0.611642)
 bone_name = "Foregrip_2"
 bone_idx = 96
 
 [node name="Foregrip_2" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Foregrip_2"]
-mesh = SubResource("ArrayMesh_ngoph")
+mesh = SubResource("ArrayMesh_kjgrw")
 skeleton = NodePath("")
 
 [node name="Receiver" type="BoneAttachment3D" parent="HunterRig/Skeleton3D"]
-transform = Transform3D(1, -1.40752e-08, -2.86811e-07, 1.38428e-08, 1, 1.34297e-06, 2.8684e-07, -1.43237e-06, 1, -0.146148, -0.2163, 0.102127)
+transform = Transform3D(1, -1.40752e-08, -2.86811e-07, 1.38428e-08, 1, 1.34297e-06, 2.8684e-07, -1.43237e-06, 1, -0.146148, -0.228531, 0.102127)
 bone_name = "Receiver"
 bone_idx = 97
 
 [node name="Receiver" type="MeshInstance3D" parent="HunterRig/Skeleton3D/Receiver"]
-mesh = SubResource("ArrayMesh_6oony")
+mesh = SubResource("ArrayMesh_6kuqg")
 skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -6806,6 +6835,8 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_cx5ly")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/crouch = false
+parameters/conditions/crouch_idle = false
+parameters/conditions/crouch_walk = false
 parameters/conditions/idle = false
 parameters/conditions/reload = false
 parameters/conditions/shoot = false

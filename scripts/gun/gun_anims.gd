@@ -18,3 +18,6 @@ func _process(delta: float) -> void:
 
 func _reload_finished():
 	player.reload()
+	
+func _shot_finished():
+	player.shot()
