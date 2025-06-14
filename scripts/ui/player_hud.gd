@@ -115,6 +115,7 @@ func _process(_delta):
 			timer_fin = false
 			timer_start = true
 		elif !GlobalVariables.artifact_piece_collected and !timer_start and !fourth_goal:
+			goal2.button_pressed = false
 			goal2.text = "Collect relic: 0/1"
 		if (game_manager.REQUIRED_DEER_AMOUNT == GlobalVariables.deer_killed) and timer_start and timer_fin and !fourth_goal:
 			goal.button_pressed = false

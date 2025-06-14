@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2i84wlbw0353"]
+[gd_scene load_steps=25 format=3 uid="uid://c2i84wlbw0353"]
 
 [ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="1_mx0kw"]
 [ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="2_w4oxd"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/health_border.png" id="4_n6wdb"]
 [ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/health_main.jpg" id="5_g3huw"]
 [ext_resource type="Texture2D" uid="uid://dn8nv6y0g4jqy" path="res://assets/2DTextures/crosshair.png" id="6_w4oxd"]
+[ext_resource type="Texture2D" uid="uid://c3kmoithfa7vb" path="res://assets/2DTextures/checkbox.png" id="7_ml53l"]
 [ext_resource type="FontFile" uid="uid://nyn1uo6eelid" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Italic.ttf" id="7_n6wdb"]
+[ext_resource type="Texture2D" uid="uid://bssght7g0s6fy" path="res://assets/2DTextures/anticheckbox.png" id="8_eyv6i"]
 [ext_resource type="Texture2D" uid="uid://bl5sgco1vlwtw" path="res://assets/2DTextures/wkey.png" id="8_g3huw"]
 [ext_resource type="Texture2D" uid="uid://vvss5ofr0gku" path="res://assets/2DTextures/skey.png" id="9_robvp"]
 [ext_resource type="Texture2D" uid="uid://cpmh4gf00ohnh" path="res://assets/2DTextures/akey.png" id="10_86mtp"]
@@ -193,6 +195,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_pressed_color = Color(0, 0.831373, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4oxd")
+theme_override_icons/checked = ExtResource("7_ml53l")
 text = "Boo objective!"
 
 [node name="Or" type="RichTextLabel" parent="ObjectivesList"]
@@ -209,9 +212,12 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_colors/font_disabled_color = Color(0.559523, 1.27546e-06, 3.36915e-07, 1)
+theme_override_colors/font_disabled_color = Color(0.947325, 0.000752187, 0.000412577, 1)
 theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4oxd")
+theme_override_icons/checked = ExtResource("7_ml53l")
+theme_override_icons/checked_disabled = ExtResource("8_eyv6i")
+button_pressed = true
 text = "Boo objective!"
 
 [node name="FirstControlsScreen" type="Control" parent="."]
