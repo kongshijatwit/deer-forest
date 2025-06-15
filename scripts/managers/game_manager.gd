@@ -19,7 +19,7 @@ func _ready() -> void:
 	dialog_blocker.finish_conversation.connect(end_game)
 	player.dead.connect(on_player_dead)
 	for deer: CharacterBody3D in deer_container.get_children():
-		deer.get_node("StaticBody3D").deer_get.connect(update_quest_status)
+		deer.get_node("deer_model/Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Root/pickup").deer_get.connect(update_quest_status)
 
 
 func start_new_month() -> void:
