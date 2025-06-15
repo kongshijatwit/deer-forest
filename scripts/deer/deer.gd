@@ -34,7 +34,7 @@ const PLAYER_GROUP: String = "player"
 
 # Positioning & Speed
 const WALK_SPEED: float = 100.0
-const RUN_SPEED: float = 400.0
+const RUN_SPEED: float = 800.0
 var original_position: Vector3
 var position_before_death: Vector3
 var run_direction: Vector3
