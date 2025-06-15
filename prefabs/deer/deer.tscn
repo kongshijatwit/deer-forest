@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bcjcu30o2gutj" path="res://scripts/interactables/deer_pickup.gd" id="3_bt2a0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jgq7x"]
-size = Vector3(1, 1, 2.5)
+size = Vector3(1.25, 1, 2.5)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55h0u"]
 radius = 0.455
