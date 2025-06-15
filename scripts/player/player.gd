@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal dead
 
 const SPEED = 5.0
 const CROUCH_SPEED = 2.5
@@ -63,7 +64,7 @@ func _ready():
 	%dialog_blocker.talking.connect(disable_actions)
 	%dialog_blocker.done_talking.connect(enable_actions)
 	%game_manager/fade.transitioned.connect(enable_actions)
-	%game_manager.reset.connect(reset_gun)
+	%game_manager.reset.connect(reset_player)
 
 	
 func _unhandled_input(event):
@@ -205,16 +206,17 @@ func disable_actions():
 func enable_actions():
 	actions_disabled = false
 
-func reset_gun() -> void:
+func reset_player() -> void:
 	gun_viewmodel.visible = false
 	gun_equipped = false
+	HEALTH = 100
 	
 func death():
 	var random_int = randi_range(0,4)
 	feet_sfx.stream = load(death_sfx_lib[random_int])
 	feet_sfx.play()
 	print("DIEDIEDIEDIE")
-	%game_manager/fade.restart_scene()
+	dead.emit()
 	
 func fall():
 	var random_int = randi_range(0,4)
