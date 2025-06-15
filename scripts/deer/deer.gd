@@ -159,6 +159,7 @@ func kill_deer() -> void:
 func reset_deer() -> void:
 	current_state = STATE.IDLE
 	reset_all_timers()
+	$deer_model.enable_skeleton()
 	set_active(true)
 	reset_ragdoll()
 	global_position = position_before_death

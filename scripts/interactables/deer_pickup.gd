@@ -21,8 +21,7 @@ func can_pickup() -> void:
 func pickup_deer(_body) -> void:
 	if can_interact:
 		can_interact = false
-		# get_parent().visible = false
-		deer_prefab.visible = false
+		deer_prefab.get_node("deer_model").visible = false
 		prompt_message = ""
 		GlobalVariables.deer_killed += 1
 		deer_get.emit()

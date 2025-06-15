@@ -25,4 +25,8 @@ func enable_footsteps_audio():
 
 func disable_skeleton():
 	for bone: PhysicalBone3D in $Armature/Skeleton3D/PhysicalBoneSimulator3D.get_children():
-		pass
+		bone.get_node("CollisionShape3D").disabled = true
+
+func enable_skeleton():
+	for bone: PhysicalBone3D in $Armature/Skeleton3D/PhysicalBoneSimulator3D.get_children():
+		bone.get_node("CollisionShape3D").disabled = false
