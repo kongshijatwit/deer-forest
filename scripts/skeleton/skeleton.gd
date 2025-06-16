@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 const ATTACK_RANGE = 2
 const SPEED = 1.0
-const RUN_SPEED = 5.1
+const RUN_SPEED = 6
 const JUMP_VELOCITY = 4.5
 const BONES_TIMER: float = 4.5
 var skeleton_state_machine 
@@ -26,6 +26,8 @@ var feet_sfx_lib = ["res://assets/audio/sfx/player/A_Footsteps_Walk-001.ogg","re
 var run_finished = true
 
 @onready var ray = $RayCast3D
+@onready var leftray = $LeftCast3D
+@onready var rightray = $RightCast3D
 @onready var head = $Humanoid/Skeleton3D/Head
 @onready var phys_skel = $Humanoid/Skeleton3D/PhysicalBoneSimulator3D
 @onready var anim_tree = $AnimationTree
@@ -47,9 +49,12 @@ func _ready():
 		
 
 func _process(delta: float) -> void:
-	if !(skeleton_state_machine.get_current_node() == "Secret"):
-		ray.rotation = head.rotation
-		ray.transform = head.transform
+	ray.rotation = head.rotation
+	ray.transform = head.transform
+	leftray.rotation = head.rotation
+	leftray.transform = head.transform
+	rightray.rotation = head.rotation
+	rightray.transform = head.transform
 	
 	match skeleton_state_machine.get_current_node():
 		"Run":
@@ -107,8 +112,8 @@ func _process(delta: float) -> void:
 	
 # Checks if player is detected
 func _player_detection():
-	if ray.is_colliding():
-		if ray.get_collider() == player:
+	if ray.is_colliding() or leftray.is_colliding() or rightray.is_colliding():
+		if ray.get_collider() == player or leftray.get_collider() == player or rightray.get_collider() == player :
 			player_detected = true
 			return true
 	else:
@@ -145,7 +150,7 @@ func reset_ragdoll():
 func run(delta):
 	walk_done = true
 #	print(timer.get_time_left())
-	if ray.get_collider() != player and !timer_started:
+	if (ray.get_collider() != player or leftray.get_collider() != player or rightray.get_collider() != player)  and !timer_started:
 		timer.set_paused(false)
 		timer.start()
 		timer_started = true
@@ -153,7 +158,7 @@ func run(delta):
 		timer.stop()
 		player_detected = false
 		has_gambled = false
-	if ray.get_collider() == player:
+	if ray.get_collider() == player or leftray.get_collider() == player or rightray.get_collider() == player:
 		timer_started = false
 		timer.set_paused(true)
 	nav_agent.set_target_position(player.global_transform.origin)
