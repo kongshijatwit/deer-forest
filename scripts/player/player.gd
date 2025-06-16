@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal dead
 
 const SPEED = 5.0
 const CROUCH_SPEED = 2.5
@@ -63,7 +64,7 @@ func _ready():
 	%dialog_blocker.talking.connect(disable_actions)
 	%dialog_blocker.done_talking.connect(enable_actions)
 	%game_manager/fade.transitioned.connect(enable_actions)
-	%game_manager.reset.connect(reset_gun)
+	%game_manager.reset.connect(reset_player)
 
 	
 func _unhandled_input(event):
@@ -112,8 +113,7 @@ func _physics_process(delta):
 	
 	gun_anim_tree.set("parameters/conditions/idle", velocity.x == 0 and velocity.z == 0 and reload_finished and !crouching)
 	gun_anim_tree.set("parameters/conditions/walk",  !(velocity.x == 0 and velocity.z == 0) and reload_finished and !crouching)
-	gun_anim_tree.set("parameters/conditions/crouch_idle", velocity.x == 0 and velocity.z == 0 and reload_finished and crouching)
-	gun_anim_tree.set("parameters/conditions/crouch_walk", !(velocity.x == 0 and velocity.z == 0) and reload_finished and crouching)
+	gun_anim_tree.set("parameters/conditions/crouch_idle", reload_finished and crouching)
 	gun_anim_tree.set("parameters/conditions/shoot", shooting)
 	gun_anim_tree.set("parameters/conditions/reload", reloading)
 	
@@ -143,8 +143,6 @@ func _physics_process(delta):
 		
 	# Reloading
 	if Input.is_action_just_pressed("reload") and bullet_count == 0 and bullet_reserve > 0 and gun_equipped:
-		bullet_count += 1
-		bullet_reserve -= 1
 		reload_finished = false
 		reloading = true
 		
@@ -192,6 +190,9 @@ func hit(damage, knockback_origin):
 	velocity += (global_transform.origin - knockback_origin).normalized() * 10
 	
 func reload():
+	if bullet_count == 0:
+		bullet_count += 1
+		bullet_reserve -= 1
 	reload_finished = true
 	reloading = false
 	
@@ -205,16 +206,17 @@ func disable_actions():
 func enable_actions():
 	actions_disabled = false
 
-func reset_gun() -> void:
+func reset_player() -> void:
 	gun_viewmodel.visible = false
 	gun_equipped = false
+	HEALTH = 100
 	
 func death():
 	var random_int = randi_range(0,4)
 	feet_sfx.stream = load(death_sfx_lib[random_int])
 	feet_sfx.play()
 	print("DIEDIEDIEDIE")
-	%game_manager/fade.restart_scene()
+	dead.emit()
 	
 func fall():
 	var random_int = randi_range(0,4)

@@ -29,5 +29,4 @@ func transition_to_scene(path: String) -> void:
 
 func restart_scene():
 	get_tree().reload_current_scene()
-	GlobalVariables.deer_killed = 0
-	GlobalVariables.artifact_piece_collected = false
+	

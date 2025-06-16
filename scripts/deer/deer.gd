@@ -34,14 +34,13 @@ const PLAYER_GROUP: String = "player"
 
 # Positioning & Speed
 const WALK_SPEED: float = 100.0
-const RUN_SPEED: float = 400.0
+const RUN_SPEED: float = 800.0
 var original_position: Vector3
 var position_before_death: Vector3
 var run_direction: Vector3
 var rotate_angle: float
 
-# Ragdoll - NOTE: Might replace with skeleton features instead of dummy spawning
-# var dummy_prefab: PackedScene = load("res://prefabs/skeleton/ragdoll_skeleton_test.tscn")
+# Ragdoll
 @onready var phys_skel: Skeleton3D = $deer_model/Armature/Skeleton3D
 @onready var skel_sim: PhysicalBoneSimulator3D = $deer_model/Armature/Skeleton3D/PhysicalBoneSimulator3D
 
@@ -159,11 +158,11 @@ func kill_deer() -> void:
 func reset_deer() -> void:
 	current_state = STATE.IDLE
 	reset_all_timers()
+	$deer_model.enable_skeleton()
 	set_active(true)
 	reset_ragdoll()
 	global_position = position_before_death
 	$deer_model.enable_footsteps_audio()
-	# print(name + ": deer has been reset")
 
 
 func set_active(active: bool) -> void:
@@ -176,13 +175,11 @@ func set_active(active: bool) -> void:
 		elif n.is_class("CollisionShape3D"):
 			n.set_deferred("disabled", !active)
 			n.set_deferred("visible", active)
-		# n.visible = active
 
 
 func start_ragdoll() -> void:
 	skel_sim.active = true
 	skel_sim.physical_bones_start_simulation()
-	# await get_tree().create_timer(3.0).timeout
 
 
 func reset_ragdoll() -> void:
