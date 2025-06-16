@@ -143,8 +143,6 @@ func _physics_process(delta):
 		
 	# Reloading
 	if Input.is_action_just_pressed("reload") and bullet_count == 0 and bullet_reserve > 0 and gun_equipped:
-		bullet_count += 1
-		bullet_reserve -= 1
 		reload_finished = false
 		reloading = true
 		
@@ -192,6 +190,9 @@ func hit(damage, knockback_origin):
 	velocity += (global_transform.origin - knockback_origin).normalized() * 10
 	
 func reload():
+	if bullet_count == 0:
+		bullet_count += 1
+		bullet_reserve -= 1
 	reload_finished = true
 	reloading = false
 	
