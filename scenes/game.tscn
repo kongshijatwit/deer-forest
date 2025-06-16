@@ -232,7 +232,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.5385, 0, -35.357)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.4367, 7.62939e-06, 1.90379)
 
 [node name="Deer12" parent="deer_container" instance=ExtResource("4_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.266, 0, -26.2542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -165.131, -4.76837e-07, -38.4265)
 
 [node name="Deer13" parent="deer_container" instance=ExtResource("4_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127.247, 3.8147e-06, 7.9195)
@@ -735,7 +735,7 @@ transform = Transform3D(-0.796316, 0, 1.56394, 0, 1.755, 0, -1.56394, 0, -0.7963
 transform = Transform3D(1.67027, 2.24848e-08, 0.538711, -0.371438, 1.27113, 1.15164, -0.390184, -1.21006, 1.20977, -125.598, -1.89725, 81.0986)
 
 [node name="large_rock8" parent="rock_container" instance=ExtResource("27_sww3w")]
-transform = Transform3D(-1.0059, 0, -0.645131, 0, 1.195, 0, 0.645131, 0, -1.0059, 48.1823, 0, 122.603)
+transform = Transform3D(-1.0059, 0, -0.645131, 0, 1.195, 0, 0.645131, 0, -1.0059, 32.977, 0, 129.605)
 
 [node name="large_rock2" parent="rock_container" instance=ExtResource("27_sww3w")]
 transform = Transform3D(0.911611, 0, -0.411053, 0.343868, -0.547884, 0.762612, -0.22521, -0.836554, -0.499458, 29.7913, 0, -18.348)
