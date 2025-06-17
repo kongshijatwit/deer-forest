@@ -103,6 +103,7 @@ func _process(_delta):
 			goal2.visible = true
 			between_text.visible = true
 		elif (game_manager.REQUIRED_DEER_AMOUNT == GlobalVariables.deer_killed) and !timer_start and !fourth_goal:
+			goal.text = "Hunt %s deer: %s/%s" % [str(game_manager.REQUIRED_DEER_AMOUNT),str(GlobalVariables.deer_killed),str(game_manager.REQUIRED_DEER_AMOUNT)]
 			goal.button_pressed = true
 			goal2.disabled = true
 			goal2.button_pressed = true
