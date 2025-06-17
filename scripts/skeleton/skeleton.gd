@@ -100,6 +100,8 @@ func _process(delta: float) -> void:
 			bones_despawn_timer -= delta
 		else:
 			print("SET FALSE NOW")
+			for bone: PhysicalBone3D in phys_skel.get_children():
+				bone.get_node("CollisionShape3D").disabled = true
 			$Humanoid.visible = false
 
 	anim_tree.set("parameters/conditions/run", _player_detection() and gamble == 1)
@@ -143,6 +145,8 @@ func start_ragdoll():
 	await get_tree().create_timer(3.0).timeout
 
 func reset_ragdoll():
+	for bone: PhysicalBone3D in phys_skel.get_children():
+		bone.get_node("CollisionShape3D").disabled = false
 	$Humanoid/Skeleton3D.reset_bone_poses()
 	phys_skel.physical_bones_stop_simulation()
 	phys_skel.active = false
