@@ -217,7 +217,6 @@ theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4oxd")
 theme_override_icons/checked = ExtResource("7_ml53l")
 theme_override_icons/checked_disabled = ExtResource("8_eyv6i")
-button_pressed = true
 text = "Boo objective!"
 
 [node name="FirstControlsScreen" type="Control" parent="."]
