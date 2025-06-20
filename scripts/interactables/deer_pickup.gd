@@ -3,6 +3,7 @@ extends Interactable
 signal deer_get
 
 @onready var deer_prefab = $"../../../../../../"
+
 const PICKUP_PROMPT: String = "Pickup Deer"
 var can_interact: bool = false
 
@@ -20,6 +21,7 @@ func can_pickup() -> void:
 
 func pickup_deer(_body) -> void:
 	if can_interact:
+		$"../../../../../../PickUpSFX".play()
 		can_interact = false
 		deer_prefab.get_node("deer_model").visible = false
 		prompt_message = ""

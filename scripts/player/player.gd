@@ -143,11 +143,10 @@ func _physics_process(delta):
 		
 	# Reloading
 	if Input.is_action_just_pressed("reload") and bullet_count == 0 and bullet_reserve > 0 and gun_equipped:
+		gun_sfx.stream = load(gun_sfx_lib[randi_range(2,3)])
+		gun_sfx.play()
 		reload_finished = false
 		reloading = true
-		
-	# Crouching
-		
 		
 	if !actions_disabled:
 		move_and_slide()

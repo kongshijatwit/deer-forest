@@ -153,6 +153,10 @@ theme_override_constants/separation = 30
 layout_mode = 2
 bus_name = "Master"
 
+[node name="Sound_Slider_Settings4" parent="PanelContainer/SoundMenu/VBoxContainer" instance=ExtResource("4_iy8c5")]
+layout_mode = 2
+bus_name = "Music"
+
 [node name="Sound_Slider_Settings2" parent="PanelContainer/SoundMenu/VBoxContainer" instance=ExtResource("4_iy8c5")]
 layout_mode = 2
 bus_name = "Ambiance"
