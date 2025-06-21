@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bw44a360v1w0o" path="res://scripts/people_container.gd" id="1_w6ghk"]
 [ext_resource type="PackedScene" uid="uid://cf8ctdqjt0hy8" path="res://prefabs/People/villager.tscn" id="2_qt2hm"]
-[ext_resource type="PackedScene" uid="uid://dpty47usbq5f3" path="res://cool_cultist.tscn" id="4_qt2hm"]
+[ext_resource type="PackedScene" uid="uid://dpty47usbq5f3" path="res://prefabs/People/cultist.tscn" id="4_qt2hm"]
 
 [sub_resource type="Animation" id="Animation_qt2hm"]
 length = 0.001
