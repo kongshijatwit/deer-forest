@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ji1fcq18t8h"
-path.s3tc="res://.godot/imported/HuntingViewmodelNLA_leatherskibidi.png-a83e07741962b677da7ce69550c73d3a.s3tc.ctex"
+uid="uid://byjur546pncum"
+path.s3tc="res://.godot/imported/HuntingViewmodelNLA_textured-concrete-wall(1).jpg-fd39531d41ddaf49898e7f5d7669769f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2152494f7cd0e55f423995619c051321"
+"md5": "756955db4dc0a9dd34619526f4b7926c"
 }
 
 [deps]
 
-source_file="res://assets/models/HuntingViewmodelNLA_leatherskibidi.png"
-dest_files=["res://.godot/imported/HuntingViewmodelNLA_leatherskibidi.png-a83e07741962b677da7ce69550c73d3a.s3tc.ctex"]
+source_file="res://assets/models/ViewModel/HuntingViewmodelNLA_textured-concrete-wall(1).jpg"
+dest_files=["res://.godot/imported/HuntingViewmodelNLA_textured-concrete-wall(1).jpg-fd39531d41ddaf49898e7f5d7669769f.s3tc.ctex"]
 
 [params]
 
