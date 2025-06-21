@@ -1,12 +1,101 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsiwneq0qry5i"]
+[gd_scene load_steps=25 format=3 uid="uid://c2i84wlbw0353"]
 
-[ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="1_6lojs"]
-[ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="2_3b1sv"]
-[ext_resource type="Texture2D" uid="uid://510ohmvanaqy" path="res://assets/2DTextures/healthbar/health_back.jpg" id="3_ojyri"]
-[ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/healthbar/health_border.png" id="4_hltgp"]
-[ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/healthbar/health_main.jpg" id="5_61rf8"]
+[ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="1_mx0kw"]
+[ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="2_w4oxd"]
+[ext_resource type="Texture2D" uid="uid://510ohmvanaqy" path="res://assets/2DTextures/healthbar/health_back.jpg" id="3_fsbdh"]
+[ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/healthbar/health_border.png" id="4_n6wdb"]
+[ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/healthbar/health_main.jpg" id="5_g3huw"]
+[ext_resource type="Texture2D" uid="uid://dn8nv6y0g4jqy" path="res://assets/2DTextures/hud/crosshair.png" id="6_w4oxd"]
+[ext_resource type="Texture2D" uid="uid://c3kmoithfa7vb" path="res://assets/2DTextures/hud/checkbox.png" id="7_ml53l"]
+[ext_resource type="FontFile" uid="uid://nyn1uo6eelid" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Italic.ttf" id="7_n6wdb"]
+[ext_resource type="Texture2D" uid="uid://bssght7g0s6fy" path="res://assets/2DTextures/hud/anticheckbox.png" id="8_eyv6i"]
+[ext_resource type="Texture2D" uid="uid://bl5sgco1vlwtw" path="res://assets/2DTextures/keys/wkey.png" id="8_g3huw"]
+[ext_resource type="Texture2D" uid="uid://vvss5ofr0gku" path="res://assets/2DTextures/keys/skey.png" id="9_robvp"]
+[ext_resource type="Texture2D" uid="uid://cpmh4gf00ohnh" path="res://assets/2DTextures/keys/akey.png" id="10_86mtp"]
+[ext_resource type="Texture2D" uid="uid://cxhm7f8gn4c2s" path="res://assets/2DTextures/keys/dkey.png" id="11_lrj6d"]
+[ext_resource type="Texture2D" uid="uid://dk04qg31tcnc5" path="res://assets/2DTextures/keys/ctrlkey.png" id="12_fkxa7"]
+[ext_resource type="Texture2D" uid="uid://kbcxyglxsqlk" path="res://assets/2DTextures/keys/ekey.png" id="13_ml53l"]
+[ext_resource type="Texture2D" uid="uid://be8bpmscjniub" path="res://assets/2DTextures/keys/spacekey.png" id="14_eyv6i"]
+[ext_resource type="Texture2D" uid="uid://cmam3obre04f3" path="res://assets/2DTextures/keys/rkey.png" id="15_lrj6d"]
+[ext_resource type="Texture2D" uid="uid://du484ckd73v1f" path="res://assets/2DTextures/keys/leftclick.png" id="16_fkxa7"]
 
-[node name="PlayerHUD" type="Control"]
+[sub_resource type="Animation" id="Animation_5cw7b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_280g2"]
+resource_name = "fadeaway"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.03333, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_as1ww"]
+_data = {
+&"RESET": SubResource("Animation_5cw7b"),
+&"fadeaway": SubResource("Animation_280g2")
+}
+
+[sub_resource type="Animation" id="Animation_fkxa7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lrj6d"]
+resource_name = "fadeaway"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ml53l"]
+_data = {
+&"RESET": SubResource("Animation_fkxa7"),
+&"fadeaway": SubResource("Animation_lrj6d")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="PlayerHUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,29 +109,31 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_6lojs")
+script = ExtResource("1_mx0kw")
 
-[node name="BulletCount" type="RichTextLabel" parent="."]
+[node name="BulletCount" type="RichTextLabel" parent="PlayerHUD"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -104.0
+offset_left = -131.0
 offset_top = -70.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_3b1sv")
+theme_override_fonts/normal_font = ExtResource("2_w4oxd")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "0/0"
 
-[node name="NoAmmo" type="Timer" parent="BulletCount"]
+[node name="NoAmmo" type="Timer" parent="PlayerHUD/BulletCount"]
 wait_time = 3.0
 
-[node name="HealthBar" type="TextureProgressBar" parent="."]
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerHUD"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -51,18 +142,397 @@ offset_top = -40.0
 offset_right = 400.0
 grow_vertical = 0
 value = 100.0
-texture_under = ExtResource("3_ojyri")
-texture_over = ExtResource("4_hltgp")
-texture_progress = ExtResource("5_61rf8")
+texture_under = ExtResource("3_fsbdh")
+texture_over = ExtResource("4_n6wdb")
+texture_progress = ExtResource("5_g3huw")
+
+[node name="Crosshair" type="TextureRect" parent="PlayerHUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("6_w4oxd")
+
+[node name="ObjectivePanelContainer" type="PanelContainer" parent="PlayerHUD"]
+layout_mode = 1
+offset_right = 245.0
+offset_bottom = 133.0
 
 [node name="ObjectiveTitle" type="RichTextLabel" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 149.0
+offset_left = -1.0
+offset_right = 148.0
 offset_bottom = 43.0
 theme_override_colors/table_border = Color(0, 0, 0, 1)
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/normal_font = ExtResource("2_3b1sv")
+theme_override_fonts/normal_font = ExtResource("2_w4oxd")
 theme_override_font_sizes/normal_font_size = 25
 text = " Objective"
+
+[node name="ObjectivesList" type="VBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 34.0
+offset_right = 165.0
+offset_bottom = 173.0
+
+[node name="Timer" type="Timer" parent="ObjectivesList"]
+wait_time = 3.0
+
+[node name="Objective" type="CheckBox" parent="ObjectivesList"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_pressed_color = Color(0, 0.831373, 0, 1)
+theme_override_fonts/font = ExtResource("2_w4oxd")
+theme_override_icons/checked = ExtResource("7_ml53l")
+text = "Boo objective!"
+
+[node name="Or" type="RichTextLabel" parent="ObjectivesList"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/normal_font = ExtResource("2_w4oxd")
+text = "				Or"
+fit_content = true
+
+[node name="Objective2" type="CheckBox" parent="ObjectivesList"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_colors/font_disabled_color = Color(0.947325, 0.000752187, 0.000412577, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_w4oxd")
+theme_override_icons/checked = ExtResource("7_ml53l")
+theme_override_icons/checked_disabled = ExtResource("8_eyv6i")
+text = "Boo objective!"
+
+[node name="FirstControlsScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Background" type="PanelContainer" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -165.0
+offset_right = 417.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlsTitle" type="RichTextLabel" parent="FirstControlsScreen"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -144.0
+offset_right = 148.0
+offset_bottom = -101.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_w4oxd")
+theme_override_font_sizes/normal_font_size = 25
+text = " Controls"
+
+[node name="Movement" type="RichTextLabel" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = -19.0
+offset_right = 203.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_n6wdb")
+text = "Movement"
+
+[node name="WKey" type="TextureRect" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 61.0
+offset_top = -122.0
+offset_right = 106.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_g3huw")
+expand_mode = 1
+
+[node name="SKey" type="TextureRect" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 61.0
+offset_top = -68.0
+offset_right = 106.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_robvp")
+expand_mode = 1
+
+[node name="AKey" type="TextureRect" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -68.0
+offset_right = 52.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_86mtp")
+expand_mode = 1
+
+[node name="DKey" type="TextureRect" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 115.0
+offset_top = -68.0
+offset_right = 160.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_lrj6d")
+expand_mode = 1
+
+[node name="Crouch" type="RichTextLabel" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 180.0
+offset_top = -19.0
+offset_right = 339.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_n6wdb")
+text = "Crouch"
+
+[node name="CtrlKey" type="TextureRect" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 187.0
+offset_top = -68.0
+offset_right = 232.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_fkxa7")
+expand_mode = 1
+
+[node name="Interact" type="RichTextLabel" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 295.0
+offset_top = -19.0
+offset_right = 454.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_n6wdb")
+text = "Interact"
+
+[node name="EKey" type="TextureRect" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 310.0
+offset_top = -68.0
+offset_right = 355.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_ml53l")
+expand_mode = 1
+
+[node name="Jump" type="RichTextLabel" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 248.0
+offset_top = -91.0
+offset_right = 407.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_n6wdb")
+text = "Jump"
+
+[node name="SpaceKey" type="TextureRect" parent="FirstControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -121.0
+offset_right = 351.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_eyv6i")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FirstControlsScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_as1ww")
+}
+autoplay = "fadeaway"
+
+[node name="GunControlsScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -77.0
+offset_right = 40.0
+offset_bottom = -37.0
+grow_vertical = 0
+
+[node name="Background" type="PanelContainer" parent="GunControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -165.0
+offset_right = 255.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlsTitle" type="RichTextLabel" parent="GunControlsScreen"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -144.0
+offset_right = 214.0
+offset_bottom = -106.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_w4oxd")
+theme_override_font_sizes/normal_font_size = 25
+text = " Gun Controls"
+
+[node name="RKey" type="TextureRect" parent="GunControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = -88.0
+offset_right = 188.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_lrj6d")
+expand_mode = 1
+
+[node name="Reload" type="RichTextLabel" parent="GunControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 136.0
+offset_top = -32.0
+offset_right = 295.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_n6wdb")
+text = "Reload"
+
+[node name="Shoot" type="RichTextLabel" parent="GunControlsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = -32.0
+offset_right = 200.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_n6wdb")
+text = "Shoot"
+
+[node name="LeftClick" type="TextureRect" parent="GunControlsScreen"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = -91.0
+offset_right = 105.0
+offset_bottom = -21.0
+texture = ExtResource("16_fkxa7")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GunControlsScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_ml53l")
+}
