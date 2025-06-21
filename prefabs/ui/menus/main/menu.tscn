@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dalloegnvp570" path="res://scripts/managers/main_menu_controller.gd" id="1_yfgkr"]
 [ext_resource type="Script" uid="uid://chp6weobttp3p" path="res://scripts/ui/fade.gd" id="2_bs8l2"]
 [ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="3_r8at4"]
-[ext_resource type="PackedScene" uid="uid://lb4tjkkpp4jr" path="res://prefabs/ui/credits.tscn" id="4_fx48d"]
+[ext_resource type="PackedScene" uid="uid://lb4tjkkpp4jr" path="res://prefabs/ui/menus/credits/credits.tscn" id="4_fx48d"]
 
 [sub_resource type="Animation" id="Animation_yt1bb"]
 length = 0.001

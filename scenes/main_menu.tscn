@@ -1,7 +1,7 @@
 [gd_scene load_steps=223 format=4 uid="uid://ca1g4f5nxrh4d"]
 
 [ext_resource type="PackedScene" uid="uid://drkufm64ckkt7" path="res://scenes/test/dim_world.tscn" id="1_engjn"]
-[ext_resource type="PackedScene" uid="uid://d1mrvnadkfyh0" path="res://prefabs/ui/menu.tscn" id="1_gw5y6"]
+[ext_resource type="PackedScene" uid="uid://d1mrvnadkfyh0" path="res://prefabs/ui/menus/main/menu.tscn" id="1_gw5y6"]
 [ext_resource type="PackedScene" uid="uid://d1itilofvh3xm" path="res://assets/models/LogCabin/LogHutV1.1.fbx" id="4_gw5y6"]
 [ext_resource type="AudioStream" uid="uid://kvpgdale7fdh" path="res://assets/audio/ambience/A_Ambiance.ogg" id="5_8egab"]
 [ext_resource type="PackedScene" uid="uid://c1d4h3mvm2eof" path="res://prefabs/particles/snow.tscn" id="6_xyero"]

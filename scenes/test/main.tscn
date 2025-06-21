@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bk7ejw8y0x74w" path="res://assets/models/LogCabin/log_hut_v_1_1.tscn" id="3_ae60x"]
 [ext_resource type="PackedScene" uid="uid://br3yal5wxvsr6" path="res://prefabs/skeleton/skeleton.tscn" id="3_bteet"]
 [ext_resource type="PackedScene" uid="uid://fmdsv1u00roj" path="res://prefabs/deer/deer_test.tscn" id="4_o0ihb"]
-[ext_resource type="PackedScene" uid="uid://cut4wtq6x7bm8" path="res://prefabs/player/tempplayer.tscn" id="4_yvr0t"]
+[ext_resource type="PackedScene" uid="uid://ten8n4gwcndm" path="res://prefabs/player/tempplayer.tscn" id="4_yvr0t"]
 [ext_resource type="PackedScene" uid="uid://dxqbeieje54w3" path="res://prefabs/deer/deer.tscn" id="6_2qhjg"]
-[ext_resource type="PackedScene" uid="uid://7t7et22kn5bi" path="res://prefabs/ui/pause_menu.tscn" id="9_25u10"]
+[ext_resource type="PackedScene" uid="uid://7t7et22kn5bi" path="res://prefabs/ui/menus/pause/pause_menu.tscn" id="9_25u10"]
 [ext_resource type="PackedScene" uid="uid://b3dltjou21eqy" path="res://prefabs/ambient_areas/snow_area.tscn" id="9_bteet"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwlvk"]
