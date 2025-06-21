@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dk0bkcmifbrhu" path="res://scripts/ui/player_hud.gd" id="1_6lojs"]
 [ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="2_3b1sv"]
-[ext_resource type="Texture2D" uid="uid://510ohmvanaqy" path="res://assets/2DTextures/health_back.jpg" id="3_ojyri"]
-[ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/health_border.png" id="4_hltgp"]
-[ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/health_main.jpg" id="5_61rf8"]
+[ext_resource type="Texture2D" uid="uid://510ohmvanaqy" path="res://assets/2DTextures/healthbar/health_back.jpg" id="3_ojyri"]
+[ext_resource type="Texture2D" uid="uid://1twwp7q01q72" path="res://assets/2DTextures/healthbar/health_border.png" id="4_hltgp"]
+[ext_resource type="Texture2D" uid="uid://cqeeixuc1yqs5" path="res://assets/2DTextures/healthbar/health_main.jpg" id="5_61rf8"]
 
 [node name="PlayerHUD" type="Control"]
 layout_mode = 3

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn8nv6y0g4jqy"
-path="res://.godot/imported/crosshair.png-066c17099d89bc67af2ac0dc0064f992.ctex"
+uid="uid://bssght7g0s6fy"
+path="res://.godot/imported/anticheckbox.png-ffecabc977564186bba4514d541dfd45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2DTextures/crosshair.png"
-dest_files=["res://.godot/imported/crosshair.png-066c17099d89bc67af2ac0dc0064f992.ctex"]
+source_file="res://assets/2DTextures/hud/anticheckbox.png"
+dest_files=["res://.godot/imported/anticheckbox.png-ffecabc977564186bba4514d541dfd45.ctex"]
 
 [params]
 

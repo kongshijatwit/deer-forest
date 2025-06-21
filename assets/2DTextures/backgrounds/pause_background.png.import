@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1twwp7q01q72"
-path="res://.godot/imported/health_border.png-1462798c052886bfe15005a6680c699b.ctex"
+uid="uid://b5ru4nl137udb"
+path="res://.godot/imported/pause_background.png-fbb31e9b128f16e052c0e174448c0042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2DTextures/health_border.png"
-dest_files=["res://.godot/imported/health_border.png-1462798c052886bfe15005a6680c699b.ctex"]
+source_file="res://assets/2DTextures/backgrounds/pause_background.png"
+dest_files=["res://.godot/imported/pause_background.png-fbb31e9b128f16e052c0e174448c0042.ctex"]
 
 [params]
 

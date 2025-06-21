@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kbcxyglxsqlk"
-path="res://.godot/imported/ekey.png-74ed53b0cac0d04246ba349799033809.ctex"
+uid="uid://510ohmvanaqy"
+path="res://.godot/imported/health_back.jpg-a2133f83f05a999f198c0f2ec58fbafd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2DTextures/ekey.png"
-dest_files=["res://.godot/imported/ekey.png-74ed53b0cac0d04246ba349799033809.ctex"]
+source_file="res://assets/2DTextures/healthbar/health_back.jpg"
+dest_files=["res://.godot/imported/health_back.jpg-a2133f83f05a999f198c0f2ec58fbafd.ctex"]
 
 [params]
 

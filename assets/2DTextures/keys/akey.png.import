@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bssght7g0s6fy"
-path="res://.godot/imported/anticheckbox.png-dff5ace3aee8f7a9d9f04144713d70cb.ctex"
+uid="uid://cpmh4gf00ohnh"
+path="res://.godot/imported/akey.png-e59073bee4a5104047a295c4e8c95d46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2DTextures/anticheckbox.png"
-dest_files=["res://.godot/imported/anticheckbox.png-dff5ace3aee8f7a9d9f04144713d70cb.ctex"]
+source_file="res://assets/2DTextures/keys/akey.png"
+dest_files=["res://.godot/imported/akey.png-e59073bee4a5104047a295c4e8c95d46.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://7t7et22kn5bi"]
 
 [ext_resource type="Script" uid="uid://djhfp4gj5v7e6" path="res://scripts/ui/pause_menu.gd" id="1_cqca4"]
-[ext_resource type="Texture2D" uid="uid://b5ru4nl137udb" path="res://assets/2DTextures/pause_background.png" id="2_insce"]
+[ext_resource type="Texture2D" uid="uid://b5ru4nl137udb" path="res://assets/2DTextures/backgrounds/pause_background.png" id="2_insce"]
 [ext_resource type="Shader" uid="uid://rm0i4m1envk6" path="res://prefabs/ui/pause_menu.gdshader" id="3_iy8c5"]
 [ext_resource type="PackedScene" uid="uid://rdwnhslhgy" path="res://prefabs/ui/sound_slider_settings.tscn" id="4_iy8c5"]
 [ext_resource type="PackedScene" uid="uid://bmi3yhcw0iutd" path="res://prefabs/ui/keybind.tscn" id="5_8an3f"]

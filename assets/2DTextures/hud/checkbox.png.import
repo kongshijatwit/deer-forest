@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du484ckd73v1f"
-path="res://.godot/imported/leftclick.png-fee2e141c03538bc5cb302d85577bb30.ctex"
+uid="uid://c3kmoithfa7vb"
+path="res://.godot/imported/checkbox.png-141eb6bc17f70ae1feee3b1d879b2ac4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2DTextures/leftclick.png"
-dest_files=["res://.godot/imported/leftclick.png-fee2e141c03538bc5cb302d85577bb30.ctex"]
+source_file="res://assets/2DTextures/hud/checkbox.png"
+dest_files=["res://.godot/imported/checkbox.png-141eb6bc17f70ae1feee3b1d879b2ac4.ctex"]
 
 [params]
 

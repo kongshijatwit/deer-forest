@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl5sgco1vlwtw"
-path="res://.godot/imported/wkey.png-c07255381acc75b140d6eece283ee603.ctex"
+uid="uid://dk04qg31tcnc5"
+path="res://.godot/imported/ctrlkey.png-c341c7893e341236d77517729bea784d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2DTextures/wkey.png"
-dest_files=["res://.godot/imported/wkey.png-c07255381acc75b140d6eece283ee603.ctex"]
+source_file="res://assets/2DTextures/keys/ctrlkey.png"
+dest_files=["res://.godot/imported/ctrlkey.png-c341c7893e341236d77517729bea784d.ctex"]
 
 [params]
 
