@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6jj86qh8y6qi"
-path.s3tc="res://.godot/imported/FatCloak.png-afa318708248fbeb509b59d9fa130dd4.s3tc.ctex"
+path.s3tc="res://.godot/imported/FatCloak.png-578f7d36c443b08b01544647fdcf7d07.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/FatCloak.png"
-dest_files=["res://.godot/imported/FatCloak.png-afa318708248fbeb509b59d9fa130dd4.s3tc.ctex"]
+source_file="res://assets/models/People/FatCloak.png"
+dest_files=["res://.godot/imported/FatCloak.png-578f7d36c443b08b01544647fdcf7d07.s3tc.ctex"]
 
 [params]
 

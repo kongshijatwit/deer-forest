@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dcwypjqkmvfmm"
-path="res://.godot/imported/CultistAnim.fbx-f6443ab53dede808660b77b6b31e9815.scn"
+path="res://.godot/imported/CultistAnim.fbx-575bda1607ed94fcbb2b6fe3bb5a6b47.scn"
 
 [deps]
 
-source_file="res://assets/models/CultistAnim.fbx"
-dest_files=["res://.godot/imported/CultistAnim.fbx-f6443ab53dede808660b77b6b31e9815.scn"]
+source_file="res://assets/models/People/CultistAnim.fbx"
+dest_files=["res://.godot/imported/CultistAnim.fbx-575bda1607ed94fcbb2b6fe3bb5a6b47.scn"]
 
 [params]
 

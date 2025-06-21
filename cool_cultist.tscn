@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=4 uid="uid://dpty47usbq5f3"]
 
-[ext_resource type="Texture2D" uid="uid://6jj86qh8y6qi" path="res://assets/models/FatCloak.png" id="1_kaolu"]
+[ext_resource type="Texture2D" uid="uid://6jj86qh8y6qi" path="res://assets/models/People/FatCloak.png" id="1_kaolu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hbd7"]
 resource_name = "Brown"
@@ -602,7 +602,7 @@ mesh = SubResource("ArrayMesh_65ovh")
 skeleton = NodePath("")
 
 [node name="UpperArm_R" type="BoneAttachment3D" parent="CultistAnim/Armature/Skeleton3D"]
-transform = Transform3D(0.999997, 1.46561e-07, -1.49008e-08, -1.4795e-07, 1, -2.07455e-07, 4.79845e-14, 2.01985e-07, 1, 0.00520113, -3.23574e-09, 0.0216168)
+transform = Transform3D(0.999997, 1.246e-07, -4.47034e-08, -1.40499e-07, 1, -2.86413e-08, 4.47035e-08, 1.97821e-07, 1, 0.00520113, -3.23574e-09, 0.0216168)
 bone_name = "UpperArm_R"
 bone_idx = 6
 
@@ -611,7 +611,7 @@ mesh = SubResource("ArrayMesh_r37mk")
 skeleton = NodePath("")
 
 [node name="LowerArm_R" type="BoneAttachment3D" parent="CultistAnim/Armature/Skeleton3D"]
-transform = Transform3D(0.999997, 2.56235e-07, 4.47036e-08, -2.62092e-07, 1, -2.10203e-08, -2.98023e-08, 1.08634e-07, 1, 0.00607066, -3.52601e-09, 0.0157062)
+transform = Transform3D(0.999997, 2.79489e-07, 4.47037e-08, -2.69543e-07, 1, -1.4023e-07, -4.47034e-08, -8.52223e-09, 1, 0.00607066, -3.52601e-09, 0.0157062)
 bone_name = "LowerArm_R"
 bone_idx = 8
 
@@ -629,7 +629,7 @@ mesh = SubResource("ArrayMesh_m3wda")
 skeleton = NodePath("")
 
 [node name="LowerArm_L_2" type="BoneAttachment3D" parent="CultistAnim/Armature/Skeleton3D"]
-transform = Transform3D(0.999997, 3.66652e-07, 6.85453e-07, -3.6495e-07, 1, -1.81311e-07, -6.92905e-07, 2.08563e-07, 1, -0.00607066, -3.49462e-09, 0.0157062)
+transform = Transform3D(0.999997, 3.66652e-07, 6.85453e-07, -3.64951e-07, 1, -1.81311e-07, -6.92905e-07, 2.08563e-07, 1, -0.00607066, -3.49462e-09, 0.0157062)
 bone_name = "LowerArm_L_2"
 bone_idx = 13
 
