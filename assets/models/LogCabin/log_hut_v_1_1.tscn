@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cxldghd73haa" path="res://scripts/interactables/door.gd" id="7_5iss0"]
 [ext_resource type="Texture2D" uid="uid://dmm6pbg3c3cu7" path="res://assets/models/LogCabin/LogDoor1Albedo.png" id="8_85eji"]
 [ext_resource type="Texture2D" uid="uid://daa8k025u4g" path="res://assets/models/LogCabin/LogDoor1Normal.png" id="9_d1yh7"]
-[ext_resource type="PackedScene" uid="uid://dcpb3dnc1lv3g" path="res://prefabs/gun/henry_410_item.tscn" id="10_pwbp5"]
+[ext_resource type="PackedScene" uid="uid://dcpb3dnc1lv3g" path="res://prefabs/gun/gun_item.tscn" id="10_pwbp5"]
 [ext_resource type="AudioStream" uid="uid://6xsooi31ows3" path="res://assets/audio/sfx/door/A_Door_Open.ogg" id="11_sb6au"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwohg"]

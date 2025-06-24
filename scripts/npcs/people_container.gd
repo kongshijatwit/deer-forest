@@ -20,4 +20,3 @@ func move_people():
 func reset_people():
 	first_convo_done = false
 	animation_player.play("RESET")
-

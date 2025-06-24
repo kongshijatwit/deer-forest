@@ -13,8 +13,12 @@ config_version=5
 config/name="deer-forest"
 run/main_scene="uid://ca1g4f5nxrh4d"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icons/icon.svg"
 config/windows_native_icon="uid://dxx4x10ml3cpi"
+
+[audio]
+
+buses/default_bus_layout="res://assets/audio/default_bus_layout.tres"
 
 [autoload]
 

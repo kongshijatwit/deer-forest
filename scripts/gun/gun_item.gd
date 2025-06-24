@@ -23,4 +23,3 @@ func reset_gun() -> void:
 	for colliders in get_children():
 		if colliders.is_class("CollisionShape3D"):
 			colliders.disabled = false
-

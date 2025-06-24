@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxx4x10ml3cpi"
-path="res://.godot/imported/deerforrest.png-fcc6f2a215b44e1f31e0dc065755e461.ctex"
+path="res://.godot/imported/deerforrest.png-bf61bac45d7e094145ccae6f84e54473.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://deerforrest.png"
-dest_files=["res://.godot/imported/deerforrest.png-fcc6f2a215b44e1f31e0dc065755e461.ctex"]
+source_file="res://icons/deerforrest.png"
+dest_files=["res://.godot/imported/deerforrest.png-bf61bac45d7e094145ccae6f84e54473.ctex"]
 
 [params]
 
