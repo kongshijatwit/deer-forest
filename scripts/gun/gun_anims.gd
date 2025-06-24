@@ -8,7 +8,7 @@ var gun_state_machine
 func _ready():
 	gun_state_machine = gun_anim_tree.get("parameters/playback")
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match gun_state_machine.get_current_node():
 		"Reload":
 			gun_anim_tree.set("parameters/conditions/shoot", false)

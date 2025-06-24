@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1mrvnadkfyh0"]
+
+[ext_resource type="Script" uid="uid://dalloegnvp570" path="res://scripts/managers/main_menu_controller.gd" id="1_yfgkr"]
+[ext_resource type="Script" uid="uid://chp6weobttp3p" path="res://scripts/ui/fade.gd" id="2_bs8l2"]
+[ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="3_r8at4"]
+[ext_resource type="PackedScene" uid="uid://lb4tjkkpp4jr" path="res://prefabs/ui/menus/credits/credits.tscn" id="4_fx48d"]
+
+[sub_resource type="Animation" id="Animation_yt1bb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s8aqg"]
+resource_name = "fade_to_black"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xrlm7"]
+resource_name = "fade_to_normal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrlm7"]
+_data = {
+&"RESET": SubResource("Animation_yt1bb"),
+&"fade_to_black": SubResource("Animation_s8aqg"),
+&"fade_to_normal": SubResource("Animation_xrlm7")
+}
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yfgkr")
+
+[node name="fade" type="CanvasLayer" parent="."]
+script = ExtResource("2_bs8l2")
+
+[node name="ColorRect" type="ColorRect" parent="fade"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_xrlm7")
+}
+autoplay = "fade_to_normal"
+
+[node name="title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 82.0
+offset_right = 1088.0
+offset_bottom = 249.0
+theme_override_fonts/normal_font = ExtResource("3_r8at4")
+theme_override_font_sizes/normal_font_size = 48
+text = "Deer Forest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_container" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 825.0
+offset_top = 270.0
+offset_right = 900.0
+offset_bottom = 390.0
+scale = Vector2(2.75, 2.75)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="button_container"]
+layout_mode = 2
+
+[node name="play" type="Button" parent="button_container/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8at4")
+text = "Play"
+
+[node name="credits" type="Button" parent="button_container/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8at4")
+text = "Credits"
+
+[node name="quit" type="Button" parent="button_container/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8at4")
+text = "Quit"
+
+[node name="deer_button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 163.0
+offset_top = 281.0
+offset_right = 171.0
+offset_bottom = 289.0
+scale = Vector2(22.925, 11.97)
+flat = true
+
+[node name="credits" parent="." instance=ExtResource("4_fx48d")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="button_container/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="button_container/VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="button_container/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="deer_button" to="." method="_on_deer_pressed"]
+[connection signal="pressed" from="credits/back_button" to="." method="_on_credits_back_pressed"]
+
+[editable path="credits"]

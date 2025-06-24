@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://lb4tjkkpp4jr"]
+
+[ext_resource type="FontFile" uid="uid://cyhca1grl6s3a" path="res://assets/fonts/FreeCheese_Font/FreeCheese-Regular.ttf" id="1_7lgdr"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CREDITS" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 87.0
+offset_right = 946.0
+offset_bottom = 155.0
+theme_override_fonts/normal_font = ExtResource("1_7lgdr")
+theme_override_font_sizes/normal_font_size = 52
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="roles" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 172.0
+offset_right = 1055.0
+offset_bottom = 589.0
+theme_override_fonts/normal_font = ExtResource("1_7lgdr")
+theme_override_font_sizes/normal_font_size = 24
+text = "3D Modeler
+
+PhoeeyHue
+
+
+Programmers
+
+BallisticBear703
+CannoliBroth
+
+Music & Sound Effects
+
+Oduun"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 558.0
+offset_right = 1113.0
+offset_bottom = 612.0
+theme_override_fonts/font = ExtResource("1_7lgdr")
+theme_override_font_sizes/font_size = 20
+text = "Back"

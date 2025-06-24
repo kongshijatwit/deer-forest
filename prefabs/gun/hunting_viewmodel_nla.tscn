@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cj7fnu3u5qmgh" path="res://scripts/gun/gun_anims.gd" id="1_3daxm"]
 [ext_resource type="Texture2D" uid="uid://d3gphxe0tetur" path="res://assets/models/ViewModel/HuntingViewmodelNLA_leatherskibidi.png" id="1_cx5ly"]
 [ext_resource type="Texture2D" uid="uid://cnexd2d65abyb" path="res://assets/models/ViewModel/HuntingViewmodelNLA_winterskibidi.png" id="2_3daxm"]
-[ext_resource type="Texture2D" uid="uid://byjur546pncum" path="res://assets/models/HuntingViewmodelNLA_textured-concrete-wall(1).jpg" id="4_j5g8j"]
+[ext_resource type="Texture2D" uid="uid://byjur546pncum" path="res://assets/models/ViewModel/HuntingViewmodelNLA_textured-concrete-wall(1).jpg" id="4_j5g8j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1i8l"]
 resource_name = "Glove"
