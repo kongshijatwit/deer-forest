@@ -165,11 +165,13 @@ pivot_offset = Vector2(20, 20)
 texture = ExtResource("6_w4oxd")
 
 [node name="ObjectivePanelContainer" type="PanelContainer" parent="PlayerHUD"]
+visible = false
 layout_mode = 1
 offset_right = 245.0
 offset_bottom = 133.0
 
 [node name="ObjectiveTitle" type="RichTextLabel" parent="."]
+visible = false
 offset_left = -1.0
 offset_right = 148.0
 offset_bottom = 43.0
@@ -181,6 +183,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = " Objective"
 
 [node name="ObjectivesList" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 2.0
 offset_top = 34.0
 offset_right = 165.0
