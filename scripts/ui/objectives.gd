@@ -34,7 +34,6 @@ func _ready():
 	dialog_blocker.done_talking.connect(update_talking_objective)
 	game_manager.quest_complete.connect(complete_hunt_objective)
 	bed.sleep.connect(complete_bed_objective)
-	game_manager.reset.connect(reset_objectives)
 	timer.timeout.connect(check_next_objective)
 	player.objective_gun.connect(complete_gun_objective)
 	game_manager.objective_update.connect(update_hunt_objective)
@@ -108,6 +107,10 @@ func check_objective():
 
 
 func check_next_objective():
+
+	# Check reset
+	if objective_pointer_1 >= 6:
+		reset_objectives()
 
 	# Reset checkbox pressed status
 	objective1_checkbox.button_pressed = false
