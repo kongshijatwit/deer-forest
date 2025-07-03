@@ -84,6 +84,12 @@ func reset_objectives():
 	objective1_checkbox.button_pressed = false
 	objective2_checkbox.button_pressed = false
 	objective2_checkbox.disabled = false
+
+	# Reset to invisible if already visible
+	if objective2_checkbox.visible:
+		or_text.visible = false
+		objective2_checkbox.visible = false
+
 	update_objective_panel()
 	
 
@@ -109,7 +115,7 @@ func check_objective():
 func check_next_objective():
 
 	# Check reset
-	if objective_pointer_1 >= 6:
+	if objective_pointer_1 >= 6 || objective_pointer_2 >= 6:
 		reset_objectives()
 
 	# Reset checkbox pressed status
