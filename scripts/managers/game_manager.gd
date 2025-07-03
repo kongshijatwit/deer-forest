@@ -1,8 +1,8 @@
 extends Node3D
 
-
 signal reset
 signal quest_complete
+signal objective_update
 
 const REQUIRED_DEER_AMOUNT: int = 15
 
@@ -37,6 +37,7 @@ func start_new_month() -> void:
 
 
 func update_quest_status():
+	objective_update.emit()
 	if GlobalVariables.deer_killed >= REQUIRED_DEER_AMOUNT or GlobalVariables.artifact_piece_collected:
 		quest_complete.emit()
 

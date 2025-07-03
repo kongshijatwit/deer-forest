@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 signal dead
+signal objective_gun
 
 const SPEED = 5.0
 const CROUCH_SPEED = 2.5
@@ -160,6 +161,7 @@ func _headbob(time) -> Vector3:
 	return pos
 	
 func gun_taken():
+	objective_gun.emit()
 	bullet_reserve = 24
 	gun_viewmodel.visible = true
 	gun_equipped = true
